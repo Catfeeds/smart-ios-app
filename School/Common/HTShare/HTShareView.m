@@ -1,0 +1,152 @@
+//
+//  HTShareView.m
+//  School
+//
+//  Created by hublot on 2017/6/14.
+//  Copyright © 2017年 hublot. All rights reserved.
+//
+
+#import "HTShareView.h"
+#import <UIButton+HTButtonCategory.h>
+
+@interface HTShareView ()
+
+@property (nonatomic, strong) UIView *contentView;
+
+@property (nonatomic, strong) UIButton *cancelButton;
+
+@property (nonatomic, strong) UIView *shareButtonPanel;
+
+@property (nonatomic, strong) UILabel *shareToLabel;
+
+@property (nonatomic, strong) NSMutableArray *shareButtonArray;
+
+
+@property (nonatomic, strong) NSString *title;
+
+@property (nonatomic, strong) NSString *detail;
+
+@property (nonatomic, strong) UIImage *image;
+
+@property (nonatomic, strong) NSString *url;
+
+@property (nonatomic, assign) SSDKContentType type;
+
+@end
+
+static HTShareView *shareView;
+
+@implementation HTShareView
+
++ (instancetype)defaultShareView {
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		shareView = [[HTShareView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	});
+	return shareView;
+}
+
++ (void)showTitle:(NSString *)title detail:(NSString *)detail image:(id)image url:(NSString *)url type:(SSDKContentType)type {
+	[HTShareView defaultShareView].title = title;
+	[HTShareView defaultShareView].detail = detail;
+	[HTShareView defaultShareView].image = image;
+	[HTShareView defaultShareView].url = url;
+	[HTShareView defaultShareView].type = type;
+	[[UIApplication sharedApplication].keyWindow addSubview:[HTShareView defaultShareView]];
+	[[HTShareView defaultShareView].shareButtonArray enumerateObjectsUsingBlock:^(UIButton *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		[obj sizeToFit];
+		obj.imageView.transform = CGAffineTransformMakeScale(0, 0);
+		[UIView animateWithDuration:1 delay:idx * 0.2 usingSpringWithDamping:1 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+			obj.imageView.transform = CGAffineTransformIdentity;
+		} completion:^(BOOL finished) {
+			
+		}];
+	}];
+}
+
+- (void)didMoveToSuperview {
+	self.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.7];
+	[self addSubview:self.contentView];
+	[self.contentView addSubview:self.shareToLabel];
+	[self.contentView addSubview:self.shareButtonPanel];
+	[self.contentView addSubview:self.cancelButton];
+	[self ht_whenTap:^(UIView *view) {
+		[self.cancelButton ht_responderTap];
+	}];
+	[self.contentView ht_whenTap:^(UIView *view) {
+		
+	}];
+}
+
+- (UIView *)contentView {
+	if (!_contentView) {
+		_contentView = [[UIView alloc] initWithFrame:CGRectMake(0, self.ht_h - 210, self.ht_w, 210)];
+		_contentView.backgroundColor = [UIColor ht_colorStyle:HTColorStyleCompareBackground];
+	}
+	return _contentView;
+}
+
+- (UIButton *)cancelButton {
+	if (!_cancelButton) {
+		_cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.contentView.ht_h - 49, self.ht_w, 49)];
+		_cancelButton.backgroundColor = [UIColor whiteColor];
+		[_cancelButton setTitleColor:[UIColor ht_colorStyle:HTColorStylePrimaryTitle] forState:UIControlStateNormal];
+		_cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
+		[_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+		[_cancelButton ht_whenTap:^(UIView *view) {
+			[shareView removeFromSuperview];
+		}];
+	}
+	return _cancelButton;
+}
+
+- (UIView *)shareButtonPanel {
+	if (!_shareButtonPanel) {
+		_shareButtonPanel = [[UIView alloc] initWithFrame:CGRectMake(0, self.contentView.ht_h - self.cancelButton.ht_h - 120, self.ht_w, 120)];
+		NSArray *titleButtonArray = @[@"QQ", @"空间", @"微信", @"朋友圈", @"微博"];
+		NSArray *imageButtonArray = @[@"ToeflQQ", @"Toeflkongjian", @"Toeflweixin", @"Toeflpengyouquan", @"Toeflweibo"];
+		NSArray <NSNumber *> *shareTypeNumber = @[@(SSDKPlatformTypeQQ), @(SSDKPlatformSubTypeQZone), @(SSDKPlatformTypeWechat), @(SSDKPlatformSubTypeWechatTimeline), @(SSDKPlatformTypeSinaWeibo)];
+		[titleButtonArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+			UIButton *button = [[UIButton alloc] init];
+			[button setTitleColor:[UIColor ht_colorStyle:HTColorStylePrimaryTitle] forState:UIControlStateNormal];
+			button.titleLabel.font = [UIFont systemFontOfSize:15];
+			[button setTitle:obj forState:UIControlStateNormal];
+			[button setImage:[UIImage imageNamed:imageButtonArray[idx]] forState:UIControlStateNormal];
+			[button ht_makeEdgeWithDirection:HTButtonEdgeDirectionVertical imageViewToTitleLabelSpeceOffset:10];
+			[button ht_whenTap:^(UIView *view) {
+				NSMutableDictionary *shareParams = [@{} mutableCopy];
+				[shareParams SSDKSetupShareParamsByText:self.detail
+												 images:self.image
+													url:[NSURL URLWithString:self.url]
+												  title:self.title
+												   type:self.type];
+				[ShareSDK share:[shareTypeNumber[idx] integerValue] parameters:shareParams onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+					
+				}];
+				[self removeFromSuperview];
+			}];
+			[self.shareButtonArray addObject:button];
+		}];
+		[_shareButtonPanel ht_addStackDistanceWithSubViews:self.shareButtonArray foreSpaceDistance:10 backSpaceDistance:10 stackDistanceDirection:HTStackDistanceDirectionHorizontal];
+	}
+	return _shareButtonPanel;
+}
+
+- (UILabel *)shareToLabel {
+	if (!_shareToLabel) {
+		_shareToLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, self.ht_w - 40, self.contentView.ht_h - self.cancelButton.ht_h - self.shareButtonPanel.ht_h)];
+		_shareToLabel.text = @"分享到";
+		_shareToLabel.textColor = [UIColor ht_colorStyle:HTColorStylePrimaryTitle];
+		_shareToLabel.font = [UIFont systemFontOfSize:14];
+	}
+	return _shareToLabel;
+}
+
+- (NSMutableArray *)shareButtonArray {
+	if (!_shareButtonArray) {
+		_shareButtonArray = [NSMutableArray new];
+	}
+	return _shareButtonArray;
+}
+
+@end
