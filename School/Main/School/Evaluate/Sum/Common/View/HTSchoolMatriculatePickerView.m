@@ -129,10 +129,10 @@
 	if (!_backgroundView) {
 		_backgroundView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 		
-		__weak typeof(self) weakSelf = self;
-		[_backgroundView ht_whenTap:^(UIView *view) {
-			[weakSelf removePickerViewWithSaveSelected:true];
-		}];
+	//	__weak typeof(self) weakSelf = self;
+//        [_backgroundView ht_whenTap:^(UIView *view) {
+//        //    [weakSelf removePickerViewWithSaveSelected:true];
+//        }];
 	}
 	return _backgroundView;
 }
@@ -144,20 +144,21 @@
 		UIImage *image = [[UIImage alloc] init];
 		[_toolButtonBar setShadowImage:image forToolbarPosition:UIBarPositionAny];
 		
-		__weak typeof(self) weakSelf = self;
-		UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"     取消" style:UIBarButtonItemStylePlain handler:^(id sender) {
-			[weakSelf removePickerViewWithSaveSelected:false];
-		}];
+        __weak typeof(self) weakSelf = self;
+        UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"     取消" style:UIBarButtonItemStylePlain handler:^(id sender) {
+            [weakSelf removePickerViewWithSaveSelected:false];
+        }];
+        
 		UIBarButtonItem *centerBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace handler:^(id sender) {
 			
 		}];
-		UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"完成     " style:UIBarButtonItemStylePlain handler:^(id sender) {
-			[weakSelf removePickerViewWithSaveSelected:true];
-		}];
+        UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"完成     " style:UIBarButtonItemStylePlain handler:^(id sender) {
+            [weakSelf removePickerViewWithSaveSelected:true];
+        }];
+        
 		_toolButtonBar.items = @[leftBarButtonItem, centerBarButtonItem, rightBarButtonItem];
 	}
 	return _toolButtonBar;
 }
-
 
 @end

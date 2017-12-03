@@ -11,8 +11,8 @@
 
 @interface HTGradeEvaluationController : HTChooseSchoolController
 
-@property (weak, nonatomic) IBOutlet UITextField *GPALabel;
-@property (weak, nonatomic) IBOutlet UITextField *GMATLabel;
-@property (weak, nonatomic) IBOutlet UITextField *TOFELLabel;
+@property (weak, nonatomic) IBOutlet UITextField *GPAField;
+@property (weak, nonatomic) IBOutlet UITextField *GMATField;
+@property (weak, nonatomic) IBOutlet UITextField *TOFELField;
 
 @end

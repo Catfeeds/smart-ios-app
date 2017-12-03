@@ -18,9 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	self.contentHeight = 340.0f;
-	self.GPALabel.layer.borderColor = [UIColor ht_colorString:@"e6e6e6"].CGColor;
-	self.GMATLabel.layer.borderColor = [UIColor ht_colorString:@"e6e6e6"].CGColor;
-	self.TOFELLabel.layer.borderColor = [UIColor ht_colorString:@"e6e6e6"].CGColor;
+	self.GPAField.layer.borderColor = [UIColor ht_colorString:@"e6e6e6"].CGColor;
+	self.GMATField.layer.borderColor = [UIColor ht_colorString:@"e6e6e6"].CGColor;
+	self.TOFELField.layer.borderColor = [UIColor ht_colorString:@"e6e6e6"].CGColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,9 +29,9 @@
 }
 - (IBAction)nextAction:(id)sender {
 	
-	CGFloat gpa = self.GPALabel.text.floatValue;
-	CGFloat gmat_gre = self.GMATLabel.text.floatValue;
-	CGFloat toefl_ielts = self.TOFELLabel.text.floatValue;
+	CGFloat gpa = self.GPAField.text.floatValue;
+	CGFloat gmat_gre = self.GMATField.text.floatValue;
+	CGFloat toefl_ielts = self.TOFELField.text.floatValue;
 	
 	NSString *errorString = @"";
 	if (gpa >= 2.5 && gpa <=4.0) {

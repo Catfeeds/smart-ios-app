@@ -348,9 +348,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="GMATLabel" destination="ebz-zN-GpM" id="ZvY-Dq-HJU"/>
-                        <outlet property="GPALabel" destination="oUD-aW-8RP" id="n5P-j1-Ota"/>
-                        <outlet property="TOFELLabel" destination="Thn-aL-kAM" id="UuS-Gw-gcd"/>
+                        <outlet property="GMATField" destination="ebz-zN-GpM" id="lX6-Aw-xf6"/>
+                        <outlet property="GPAField" destination="oUD-aW-8RP" id="MBc-xf-6uL"/>
+                        <outlet property="TOFELField" destination="Thn-aL-kAM" id="PgA-5k-jWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB9-2G-Y9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -419,6 +419,9 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="kwi-5c-pdG" id="uYt-3i-btY"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="未选择" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7SY-b4-Z80">
                                         <rect key="frame" x="24" y="113.5" width="287" height="30"/>
@@ -434,6 +437,9 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="kwi-5c-pdG" id="JUK-CE-Ib0"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lmc-Ly-FSt">
                                         <rect key="frame" x="24" y="180.5" width="287" height="30"/>
@@ -449,6 +455,9 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="kwi-5c-pdG" id="lGo-nN-MDy"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpu-c8-dTW">
                                         <rect key="frame" x="12" y="22" width="6" height="14.5"/>
@@ -468,14 +477,14 @@
                                         <color key="textColor" red="0.92941176469999998" green="0.18823529410000001" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AXWebViewControllerActivityChrome-iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="yBa-7e-Fqu">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sjx" translatesAutoresizingMaskIntoConstraints="NO" id="yBa-7e-Fqu">
                                         <rect key="frame" x="288" y="55" width="8" height="8"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="8" id="FBe-mx-ess"/>
                                             <constraint firstAttribute="height" constant="8" id="JmR-IN-lcs"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AXWebViewControllerActivityChrome-iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nfz-WI-kVB">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sjx" translatesAutoresizingMaskIntoConstraints="NO" id="Nfz-WI-kVB">
                                         <rect key="frame" x="288" y="124.5" width="8" height="8"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="8" id="c2U-Cg-hoh"/>
@@ -591,6 +600,12 @@
                             <constraint firstItem="r78-5Z-lkb" firstAttribute="leading" secondItem="b1L-4x-EVt" secondAttribute="leading" constant="27" id="eTP-6T-DmL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currenRducationalField" destination="y9c-eT-zE0" id="Jut-lw-l5W"/>
+                        <outlet property="currenSchoolField" destination="7SY-b4-Z80" id="hwZ-Z5-1dk"/>
+                        <outlet property="professionField" destination="te7-NS-TIU" id="uyt-nf-jbb"/>
+                        <outlet property="schoolNameField" destination="Lmc-Ly-FSt" id="Azd-hc-ucJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1g-O3-82m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -953,5 +968,6 @@
     </scenes>
     <resources>
         <image name="AXWebViewControllerActivityChrome-iPad.png" width="76" height="76"/>
+        <image name="sjx" width="10" height="8"/>
     </resources>
 </document>

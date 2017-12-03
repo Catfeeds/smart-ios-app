@@ -43,7 +43,7 @@
 		if ([obj isKindOfClass:[HTApplyBackgroundController class]]) self.childControllerArray[3] = obj;
 	}];
 	
-	[self transitionController:currentController toController:self.childControllerArray.firstObject];
+	[self transitionController:currentController toControllerIndex:0];
 	
 	UIBarButtonItem *testItem = [[UIBarButtonItem alloc]initWithTitle:@"测试的" style:UIBarButtonItemStylePlain target:self action:@selector(teset)];
 	self.navigationItem.rightBarButtonItem = testItem;
@@ -59,28 +59,26 @@
 #pragma mark - HTChooseSchoolEvaluationDelegate
 - (void)next:(UIViewController *) controller {
 	NSInteger index = [self.childControllerArray indexOfObject:controller];
-	[self transitionController:controller toController:self.childControllerArray[index+1]];
+	[self transitionController:controller toControllerIndex:index+1];
 	
 }
 
 - (void)previous:(UIViewController *) controller{
 	NSInteger index = [self.childControllerArray indexOfObject:controller];
-	[self transitionController:controller toController:self.childControllerArray[index-1]];
+	[self transitionController:controller toControllerIndex:index-1];
 }
 
 - (void)submit{
 	
 }
 
-- (void)transitionController:(UIViewController *)controller toController:(UIViewController *)toController{
-	
-	[self transitionFromViewController:controller toViewController:toController duration:0 options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
-		controller.view.hidden = YES;
+- (void)transitionController:(UIViewController *)currentController toControllerIndex:(NSInteger)index{
+    self.chooseSchoolProgressView.progress = index;
+    UIViewController *toController = self.childControllerArray[index];
+	[self transitionFromViewController:currentController toViewController:toController duration:0 options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
+		currentController.view.hidden = YES;
 		toController.view.hidden = NO;
 		((HTChooseSchoolController *)toController).parameter = self.parameterModel;
-//		CGRect toControllerFrame = toController.view.frame;
-//		toControllerFrame.size.height = ((HTChooseSchoolController *)toController).contentHeight;
-//		toController.view.frame = toControllerFrame;
 		self.contentHeightLayout.constant = ((HTChooseSchoolController *)toController).contentHeight + 200;
 		
 		
