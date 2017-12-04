@@ -106,7 +106,7 @@
 	if (model.currentPage < 1) {
 		model.currentPage = 1;
 	}
-	[HTRequestManager requestExampleListWithNetworkModel:networkModel catIdString:model.catId pageSize:[NSString stringWithFormat:@"%ld", currentTableView.ht_pageSize] currentPage:[NSString stringWithFormat:@"%ld", model.currentPage] complete:^(id response, HTError *errorModel) {
+    [HTRequestManager requestExampleListWithNetworkModel:networkModel catIdString:[NSString stringWithFormat:@"%@",model.catId] pageSize:[NSString stringWithFormat:@"%ld", currentTableView.ht_pageSize] currentPage:[NSString stringWithFormat:@"%ld", model.currentPage] complete:^(id response, HTError *errorModel) {
 		if (errorModel.existError) {
 			if (complete) {
 				complete();

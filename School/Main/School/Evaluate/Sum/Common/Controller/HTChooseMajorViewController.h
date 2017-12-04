@@ -12,7 +12,6 @@
 typedef NS_ENUM(NSUInteger, HTMajorType) {
 	HTMajorFirstType,
 	HTMajorSecondType
-	
 };
 
 @protocol HTChooseMajorViewControllerDelegate <NSObject>
@@ -24,9 +23,10 @@ typedef NS_ENUM(NSUInteger, HTMajorType) {
 
 @interface HTChooseMajorViewController : UIViewController
 
+@property (nonatomic, strong) NSString *selectedMajorId;
+@property (nonatomic, strong) NSString *selectedDetailMajorId;
 @property (nonatomic, assign) id<HTChooseMajorViewControllerDelegate> delegate;
-@property (nonatomic, assign)HTMajorType type;
-@property (nonatomic, strong)NSArray *majorArray;
+@property (nonatomic, assign) HTMajorType type;
 @property (nonatomic, strong) HTMatriculateMajorModel *selectMajorModel;
 
 @end

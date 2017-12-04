@@ -8,10 +8,12 @@
 
 #import "HTChooseMajorViewController.h"
 #import "HTChooseMajorCell.h"
+#import "RTRootNavigationController.h"
 
 @interface HTChooseMajorViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *majorTableView;
+@property (nonatomic, strong) NSArray *majorArray;
 //@property (nonatomic, strong) NSString *
 
 @end
@@ -31,6 +33,14 @@
 
 - (void)loadData{
 	if (self.selectMajorModel) {
+        if (self.selectedDetailMajorId) {
+            [self.selectMajorModel.child enumerateObjectsUsingBlock:^(HTMatriculateProfessionalModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([obj.ID isEqualToString:self.selectedDetailMajorId]) {
+                    obj.isSelected = YES;
+                }
+            }];
+        }
+        
 		[self.majorTableView reloadData];
 	}else{
 		HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
@@ -40,6 +50,16 @@
 			}
 			HTMatriculateDynamicModel *majorModel = [HTMatriculateDynamicModel mj_objectWithKeyValues:response];
 			self.majorArray = majorModel.major;
+            if (self.selectedMajorId) {
+                [self.majorArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    HTMatriculateMajorModel *major = (HTMatriculateMajorModel*)obj;
+                    if ([major.ID isEqualToString:self.selectedMajorId]) {
+                        major.isSelected = YES;
+                        *stop = YES;
+                    }
+                }];
+            }
+            
 			[self.majorTableView reloadData];
 		}];
 	}
@@ -78,19 +98,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	HTSchoolMatriculateSelectedModel *selectedModel = self.majorArray[indexPath.row];
-	selectedModel.isSelected = YES;
 	if (self.type == HTMajorFirstType) {
+        HTSchoolMatriculateSelectedModel *selectedModel = self.majorArray[indexPath.row];
+        selectedModel.isSelected = YES;
 		HTChooseMajorViewController *controller = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTChooseMajorViewController");
 		controller.type = HTMajorSecondType;
+        controller.selectedDetailMajorId = self.selectedDetailMajorId;
 		controller.selectMajorModel = self.majorArray[indexPath.row];
 		controller.delegate = self.delegate;
 		[self.navigationController pushViewController:controller animated:YES];
 	}else{
+        HTSchoolMatriculateSelectedModel *selectedModel = self.selectMajorModel.child[indexPath.row];
+        selectedModel.isSelected = YES;
 		[self.delegate chooseMajor:self.selectMajorModel detailMajor:selectedModel];
-
-		UIViewController *popToController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count - 3];
-		[self.navigationController popToViewController:popToController animated:YES];
+        UIViewController *popToController = [self.rt_navigationController.rt_viewControllers objectAtIndex:self.rt_navigationController.rt_viewControllers.count - 3];
+		
+		[self.rt_navigationController popToViewController:popToController animated:YES];
 		
 	}
 }

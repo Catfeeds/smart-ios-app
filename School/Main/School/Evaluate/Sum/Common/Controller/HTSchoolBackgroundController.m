@@ -11,6 +11,9 @@
 #import "HTChooseMajorViewController.h"
 @interface HTSchoolBackgroundController () <UITextFieldDelegate, HTChooseMajorViewControllerDelegate>
 
+@property (nonatomic, strong) NSString *majorId;
+@property (nonatomic, strong) NSString *detailMajorId;
+
 @end
 
 @implementation HTSchoolBackgroundController
@@ -63,6 +66,8 @@
 		
 		HTChooseMajorViewController *chooseMajorViewController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTChooseMajorViewController");
 		chooseMajorViewController.delegate = self;
+        chooseMajorViewController.selectedMajorId = self.majorId;
+        chooseMajorViewController.selectedDetailMajorId = self.detailMajorId;
 		[self.parentViewController.navigationController pushViewController:chooseMajorViewController animated:YES];
         return NO;
 		
@@ -80,6 +85,8 @@
 	self.parameter.major_top  	= majorModel.ID;
 	self.parameter.major_name1  = detailMajor.name;
 	self.parameter.school_major = detailMajor.ID;
+    self.majorId = majorModel.ID;
+    self.detailMajorId = detailMajor.ID;
 	self.professionField.text = [NSString stringWithFormat:@"%@-%@",majorModel.name,detailMajor.name];
 }
 
