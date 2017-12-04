@@ -11,12 +11,14 @@
 		027637481FC1DB4B00959DD1 /* HTChooseSchoolEvaluationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027637471FC1DB4B00959DD1 /* HTChooseSchoolEvaluationController.m */; };
 		560C66611FCF930300D56070 /* HTChooseSchoolEvaluationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 560C66601FCF930300D56070 /* HTChooseSchoolEvaluationModel.m */; };
 		563103D11FCC01E1004C85D7 /* HTGradeEvaluationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D01FCC01E1004C85D7 /* HTGradeEvaluationController.m */; };
-		563103D41FCC02A0004C85D7 /* HTSchoolBackroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D31FCC02A0004C85D7 /* HTSchoolBackroundController.m */; };
+		563103D41FCC02A0004C85D7 /* HTSchoolBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D31FCC02A0004C85D7 /* HTSchoolBackgroundController.m */; };
 		563103D71FCC02EA004C85D7 /* HTPersonBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D61FCC02EA004C85D7 /* HTPersonBackgroundController.m */; };
 		563103DA1FCC0324004C85D7 /* HTApplyBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D91FCC0324004C85D7 /* HTApplyBackgroundController.m */; };
 		5663C0A71FAAC6660026663E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5663C0A61FAAC6660026663E /* Home.storyboard */; };
 		5663C0A91FAB18C20026663E /* ChooseSchoolHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5663C0A81FAB18C20026663E /* ChooseSchoolHead.xib */; };
 		56A7D7431FCE4A6900F20D2C /* HTChooseSchoolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7D7421FCE4A6900F20D2C /* HTChooseSchoolController.m */; };
+		56F3A5391FD4F25F002D0016 /* HTChooseMajorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3A5381FD4F25F002D0016 /* HTChooseMajorViewController.m */; };
+		56F3A53C1FD4F487002D0016 /* HTChooseMajorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3A53B1FD4F487002D0016 /* HTChooseMajorCell.m */; };
 		6053C1090280FC03306A4081 /* libPods-School.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFFBDF53A6B61930E730DDD /* libPods-School.a */; };
 		C20381161F41061700194A9D /* HTAnswerIssueController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20381151F41061700194A9D /* HTAnswerIssueController.m */; };
 		C20381241F4637C300194A9D /* HTFansController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20381231F4637C300194A9D /* HTFansController.m */; };
@@ -582,8 +584,8 @@
 		560C66621FCF938900D56070 /* HTChooseSchoolEvaluationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseSchoolEvaluationModel.h; sourceTree = "<group>"; };
 		563103CF1FCC01E1004C85D7 /* HTGradeEvaluationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTGradeEvaluationController.h; sourceTree = "<group>"; };
 		563103D01FCC01E1004C85D7 /* HTGradeEvaluationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTGradeEvaluationController.m; sourceTree = "<group>"; };
-		563103D21FCC02A0004C85D7 /* HTSchoolBackroundController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolBackroundController.h; sourceTree = "<group>"; };
-		563103D31FCC02A0004C85D7 /* HTSchoolBackroundController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolBackroundController.m; sourceTree = "<group>"; };
+		563103D21FCC02A0004C85D7 /* HTSchoolBackgroundController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolBackgroundController.h; sourceTree = "<group>"; };
+		563103D31FCC02A0004C85D7 /* HTSchoolBackgroundController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolBackgroundController.m; sourceTree = "<group>"; };
 		563103D51FCC02EA004C85D7 /* HTPersonBackgroundController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTPersonBackgroundController.h; sourceTree = "<group>"; };
 		563103D61FCC02EA004C85D7 /* HTPersonBackgroundController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTPersonBackgroundController.m; sourceTree = "<group>"; };
 		563103D81FCC0324004C85D7 /* HTApplyBackgroundController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTApplyBackgroundController.h; sourceTree = "<group>"; };
@@ -592,6 +594,10 @@
 		5663C0A81FAB18C20026663E /* ChooseSchoolHead.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseSchoolHead.xib; sourceTree = "<group>"; };
 		56A7D7411FCE4A6900F20D2C /* HTChooseSchoolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseSchoolController.h; sourceTree = "<group>"; };
 		56A7D7421FCE4A6900F20D2C /* HTChooseSchoolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseSchoolController.m; sourceTree = "<group>"; };
+		56F3A5371FD4F25F002D0016 /* HTChooseMajorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseMajorViewController.h; sourceTree = "<group>"; };
+		56F3A5381FD4F25F002D0016 /* HTChooseMajorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseMajorViewController.m; sourceTree = "<group>"; };
+		56F3A53A1FD4F487002D0016 /* HTChooseMajorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseMajorCell.h; sourceTree = "<group>"; };
+		56F3A53B1FD4F487002D0016 /* HTChooseMajorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseMajorCell.m; sourceTree = "<group>"; };
 		A3FA8F91C90097514747711E /* Pods-School.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-School.debug.xcconfig"; path = "Pods/Target Support Files/Pods-School/Pods-School.debug.xcconfig"; sourceTree = "<group>"; };
 		C20381141F41061700194A9D /* HTAnswerIssueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAnswerIssueController.h; sourceTree = "<group>"; };
 		C20381151F41061700194A9D /* HTAnswerIssueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAnswerIssueController.m; sourceTree = "<group>"; };
@@ -3913,14 +3919,16 @@
 				027637471FC1DB4B00959DD1 /* HTChooseSchoolEvaluationController.m */,
 				563103CF1FCC01E1004C85D7 /* HTGradeEvaluationController.h */,
 				563103D01FCC01E1004C85D7 /* HTGradeEvaluationController.m */,
-				563103D21FCC02A0004C85D7 /* HTSchoolBackroundController.h */,
-				563103D31FCC02A0004C85D7 /* HTSchoolBackroundController.m */,
+				563103D21FCC02A0004C85D7 /* HTSchoolBackgroundController.h */,
+				563103D31FCC02A0004C85D7 /* HTSchoolBackgroundController.m */,
 				563103D51FCC02EA004C85D7 /* HTPersonBackgroundController.h */,
 				563103D61FCC02EA004C85D7 /* HTPersonBackgroundController.m */,
 				563103D81FCC0324004C85D7 /* HTApplyBackgroundController.h */,
 				563103D91FCC0324004C85D7 /* HTApplyBackgroundController.m */,
 				56A7D7411FCE4A6900F20D2C /* HTChooseSchoolController.h */,
 				56A7D7421FCE4A6900F20D2C /* HTChooseSchoolController.m */,
+				56F3A5371FD4F25F002D0016 /* HTChooseMajorViewController.h */,
+				56F3A5381FD4F25F002D0016 /* HTChooseMajorViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3957,6 +3965,8 @@
 				C251C61E1F73763000D0D165 /* HTSchoolResultCircleView.m */,
 				027637401FC17FA100959DD1 /* HTChooseSchoolAppraisalHeaderView.h */,
 				027637411FC17FA100959DD1 /* HTChooseSchoolAppraisalHeaderView.m */,
+				56F3A53A1FD4F487002D0016 /* HTChooseMajorCell.h */,
+				56F3A53B1FD4F487002D0016 /* HTChooseMajorCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5952,6 +5962,7 @@
 				C251C6771F73BDBC00D0D165 /* HTSchoolController.m in Sources */,
 				C2D1D8331F46921F007B6269 /* HTMatriculateRecordCell.m in Sources */,
 				C25304461F53A903002354A4 /* HTImageTextView.m in Sources */,
+				56F3A53C1FD4F487002D0016 /* HTChooseMajorCell.m in Sources */,
 				C2FF3E221F4141620005F287 /* HTCommunityImageView.m in Sources */,
 				C20CDE831EF11B8A00BA6D60 /* CALayer+YYAdd.m in Sources */,
 				C2242FD31F75856700EC82F0 /* HTDropBoxDetailView.m in Sources */,
@@ -6034,7 +6045,7 @@
 				C2FF3E231F4141620005F287 /* HTCommunityLikeReplyView.m in Sources */,
 				C251C5D11F734DD100D0D165 /* HTExampleHeaderView.m in Sources */,
 				C296468B1F5CED130031C109 /* UIColor+JSQMessages.m in Sources */,
-				563103D41FCC02A0004C85D7 /* HTSchoolBackroundController.m in Sources */,
+				563103D41FCC02A0004C85D7 /* HTSchoolBackgroundController.m in Sources */,
 				C20CDEAD1EF11B8A00BA6D60 /* YYTextMagnifier.m in Sources */,
 				C2EE1FA81F5B281200C8176F /* HTIndexAdvisorCell.m in Sources */,
 				C29646901F5CED130031C109 /* JSQMessagesAvatarImageFactory.m in Sources */,
@@ -6175,6 +6186,7 @@
 				C24BC0311F7152790025CBEB /* HTMajorCountryCollectionCell.m in Sources */,
 				C29646C61F5CFFE60031C109 /* HTChatManager.m in Sources */,
 				C20381271F4637DA00194A9D /* HTFansCell.m in Sources */,
+				56F3A5391FD4F25F002D0016 /* HTChooseMajorViewController.m in Sources */,
 				C2F180191F7B70C600EFD083 /* HTExampleSectionScrollView.m in Sources */,
 				C29646A21F5CED130031C109 /* JSQVideoMediaItem.m in Sources */,
 				C2EE1F0E1F59FBF900C8176F /* HTStoreItemModel.m in Sources */,

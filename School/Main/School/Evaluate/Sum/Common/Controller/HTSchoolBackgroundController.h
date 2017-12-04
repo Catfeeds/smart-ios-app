@@ -1,5 +1,5 @@
 //
-//  HTSchoolBackroundController.h
+//  HTSchoolBackgroundController.h
 //  School
 //
 //  Created by Charles Cao on 2017/11/27.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HTChooseSchoolController.h"
 
-@interface HTSchoolBackroundController : HTChooseSchoolController
+@interface HTSchoolBackgroundController : HTChooseSchoolController
 
 //目前学历
 @property (weak, nonatomic) IBOutlet UITextField *currenRducationalField;

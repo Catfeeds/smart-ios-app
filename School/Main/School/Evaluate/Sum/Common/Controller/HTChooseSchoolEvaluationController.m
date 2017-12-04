@@ -8,7 +8,7 @@
 
 #import "HTChooseSchoolEvaluationController.h"
 #import "HTGradeEvaluationController.h"
-#import "HTSchoolBackroundController.h"
+#import "HTSchoolBackgroundController.h"
 #import "HTPersonBackgroundController.h"
 #import "HTApplyBackgroundController.h"
 #import "HTChooseSchoolAppraisalHeaderView.h"
@@ -38,7 +38,7 @@
 		((HTChooseSchoolController *)obj).delegate = self;
 		obj.view.hidden = YES;
 		if ([obj isKindOfClass:[HTGradeEvaluationController class]]) self.childControllerArray[0] = obj;
-		if ([obj isKindOfClass:[HTSchoolBackroundController class]]) self.childControllerArray[1] = obj;
+		if ([obj isKindOfClass:[HTSchoolBackgroundController class]]) self.childControllerArray[1] = obj;
 		if ([obj isKindOfClass:[HTPersonBackgroundController class]]) self.childControllerArray[2] = obj;
 		if ([obj isKindOfClass:[HTApplyBackgroundController class]]) self.childControllerArray[3] = obj;
 	}];
@@ -53,8 +53,6 @@
 	HTSchoolMatriculateDetailController *sumController = [[HTSchoolMatriculateDetailController alloc] init];
 	[self.navigationController pushViewController:sumController animated:YES];
 }
-
-
 
 #pragma mark - HTChooseSchoolEvaluationDelegate
 - (void)next:(UIViewController *) controller {

@@ -68,7 +68,7 @@
 					}
 				}
 				if (viewController) {
-					[weakSelf.navigationController pushViewController:viewController animated:true];
+					[self.navigationController pushViewController:viewController animated:true];
 				}
 			}];
 		}];

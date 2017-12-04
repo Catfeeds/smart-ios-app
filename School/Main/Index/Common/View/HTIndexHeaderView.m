@@ -138,7 +138,7 @@
 					}
 				}
 				if (viewController) {
-					[weakSelf.ht_controller.navigationController pushViewController:viewController animated:true];
+					[weakSelf.ht_controller.rt_navigationController pushViewController:viewController animated:true];
 				}
 			}];
 		}];
