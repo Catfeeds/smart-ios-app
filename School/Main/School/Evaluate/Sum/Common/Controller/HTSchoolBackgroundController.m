@@ -37,6 +37,24 @@
 	[self.delegate previous:self];
 }
 - (IBAction)nextAction:(id)sender {
+	self.parameter.schoolName = self.schoolNameField.text;
+	NSString *errorStr = nil;
+	if (self.parameter.education == nil) {
+		errorStr = @"请选择你的目前学历";
+	}else if (self.parameter.school == nil){
+		errorStr = @"请选择你的院校等级";
+	}else if (self.parameter.schoolName == nil || self.parameter.schoolName.length == 0){
+		errorStr = @"请填写你的学校名称";
+	}else if (self.parameter.major_top == nil || self.parameter.major_name1 == nil ||self.parameter.school_major == nil){
+		errorStr = @"请选择你的当前专业";
+	}
+	
+//	if (errorStr) {
+//		[HTAlert title:errorStr];
+//	}else{
+//		[self.delegate next:self];
+//	}
+	
 	[self.delegate next:self];
 }
 
@@ -50,6 +68,7 @@
         [HTSchoolMatriculatePickerView showModelArray:@[array] selectedRowArray:@[@(0)] didSelectedBlock:^(NSArray<NSArray *> *totalModelArray, NSArray *selectedModelArray, NSArray<NSNumber *> *selectedRowArray) {
             NSLog(@"%@",selectedModelArray);
             textField.text = selectedModelArray.firstObject;
+			self.parameter.education = textField.text;
         }];
         return NO;
 		
@@ -58,10 +77,22 @@
         NSArray *array = @[@"清北复交浙大",@"985学校",@"211学校", @"非211本科", @"专科"];
         [HTSchoolMatriculatePickerView showModelArray:@[array] selectedRowArray:@[@(0)] didSelectedBlock:^(NSArray<NSArray *> *totalModelArray, NSArray *selectedModelArray, NSArray<NSNumber *> *selectedRowArray) {
             NSLog(@"%@",selectedModelArray);
-            textField.text = selectedModelArray.firstObject;
+			NSString *str = selectedModelArray.firstObject;
+            textField.text = str;
+			
+			if ([str isEqualToString:@"清北复交浙大"]) {
+				self.parameter.school = @"1";
+			}else if ([str isEqualToString:@"985学校"]){
+				self.parameter.school = @"2";
+			}else if ([str isEqualToString:@"211学校"]){
+				self.parameter.school = @"3";
+			}else if ([str isEqualToString:@"非211本科"]){
+				self.parameter.school = @"4";
+			}else if ([str isEqualToString:@"专科"]){
+				self.parameter.school = @"5";
+			}
          }];
         return NO;
-		
     }else if (textField == self.professionField){
 		
 		HTChooseMajorViewController *chooseMajorViewController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTChooseMajorViewController");

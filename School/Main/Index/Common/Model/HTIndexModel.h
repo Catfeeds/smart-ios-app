@@ -33,26 +33,6 @@ typedef NS_ENUM(NSInteger, HTIndexHeaderType) {
 
 @property (nonatomic, strong) NSArray<HTIndexBanner *> *banner;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @property (nonatomic, strong) NSArray <HTIndexHeaderModel *> *headerModelArray;
 
 @end

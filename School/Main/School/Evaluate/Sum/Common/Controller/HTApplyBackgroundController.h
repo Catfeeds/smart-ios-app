@@ -11,4 +11,10 @@
 
 @interface HTApplyBackgroundController : HTChooseSchoolController
 
+//留学目的地
+@property (weak, nonatomic) IBOutlet UITextField *destinationField;
+
+//专业
+@property (weak, nonatomic) IBOutlet UITextField *applyMajorField;
+
 @end

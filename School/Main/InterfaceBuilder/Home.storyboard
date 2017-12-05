@@ -591,7 +591,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -638,13 +638,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实习/工作经验:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnv-ZH-3kb">
                                 <rect key="frame" x="10" y="25" width="107.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目经验:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRR-ht-squ">
                                 <rect key="frame" x="10" y="157" width="70" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="未选择" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fP-Vk-bdL">
@@ -652,79 +652,102 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="TvU-jv-pZ1"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.32156862749999998" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xvi-Ck-acf" id="ffE-BK-oL8"/>
+                                </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AXWebViewControllerActivityChrome-iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="TIS-zr-DqG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sjx" translatesAutoresizingMaskIntoConstraints="NO" id="TIS-zr-DqG">
                                 <rect key="frame" x="266" y="31" width="8" height="8"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="mxd-NP-7YE"/>
                                     <constraint firstAttribute="width" constant="8" id="rHB-vr-oVJ"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写跟申请" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zPw-QE-kTd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写跟申请方向相关的工作经验, 若没有完整工作经验, 请填写相关实习经验, 描述不少于30字, 可不填" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zPw-QE-kTd">
                                 <rect key="frame" x="10" y="60" width="355" height="87"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="2Ge-lh-kxF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xvi-Ck-acf" id="PWz-mr-fyf"/>
+                                </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写跟申请" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CSZ-Mz-hxG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写跟申请方向相关的项目经验, 如比赛经历, 商业项目, 试验项目, 论文发表等, 描述不少于30字, 可不填" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CSZ-Mz-hxG">
                                 <rect key="frame" x="10" y="187" width="355" height="87"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="HnF-eY-0J1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xvi-Ck-acf" id="iqO-fS-Rsf"/>
+                                </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海外留学:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omm-DQ-x46">
                                 <rect key="frame" x="10" y="284" width="70" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写跟申请" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XOG-S0-GDj">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写海外留学经历, 如交换项目, 海外实践课程等, 可不填" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XOG-S0-GDj">
                                 <rect key="frame" x="10" y="314" width="355" height="87"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="x0e-Cx-d52"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xvi-Ck-acf" id="j03-0m-pRM"/>
+                                </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公益活动:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrS-Yk-6sW">
                                 <rect key="frame" x="10" y="411" width="70" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写跟申请" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bZc-2p-Mts">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写所参与公益项目, 可不填" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bZc-2p-Mts">
                                 <rect key="frame" x="10" y="441" width="355" height="87"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="w2a-kc-6k2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xvi-Ck-acf" id="oOa-6v-ZIO"/>
+                                </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="获奖经历:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67e-YS-A2l">
                                 <rect key="frame" x="10" y="538" width="70" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写跟申请" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UN1-4Z-2py">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请如实填写获奖经历, 可不填" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UN1-4Z-2py">
                                 <rect key="frame" x="10" y="568" width="355" height="87"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="mBM-b4-Acp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xvi-Ck-acf" id="F7C-9H-e7w"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRh-qV-VQg">
                                 <rect key="frame" x="27" y="677" width="126" height="34"/>
@@ -805,6 +828,14 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="awardExperienceTextView" destination="UN1-4Z-2py" id="dUX-qb-Heb"/>
+                        <outlet property="benefitActivityTextView" destination="bZc-2p-Mts" id="pUh-dD-mw9"/>
+                        <outlet property="overseasTextView" destination="XOG-S0-GDj" id="72a-IN-GS1"/>
+                        <outlet property="projectExperienceTextView" destination="CSZ-Mz-hxG" id="Uio-wC-wGl"/>
+                        <outlet property="workExperienceTextView" destination="zPw-QE-kTd" id="y6J-gH-pIG"/>
+                        <outlet property="workUnitField" destination="1fP-Vk-bdL" id="nR9-H2-PYg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSz-8w-puT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -831,12 +862,12 @@
                                             <constraint firstAttribute="height" constant="14" id="m53-d5-16C"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="未选择" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NRf-XZ-5HZ">
                                         <rect key="frame" x="24" y="57" width="287" height="30"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.32156862749999998" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -848,6 +879,9 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="QGl-wj-YDI" id="CxS-qT-xOL"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaU-25-PRe">
                                         <rect key="frame" x="12" y="35" width="6" height="14.5"/>
@@ -861,7 +895,7 @@
                                         <color key="textColor" red="0.92941176469999998" green="0.18823529410000001" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AXWebViewControllerActivityChrome-iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Vr-Mv-3sc">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sjx" translatesAutoresizingMaskIntoConstraints="NO" id="6Vr-Mv-3sc">
                                         <rect key="frame" x="288" y="68" width="8" height="8"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="5qT-Q7-CoC"/>
@@ -870,7 +904,7 @@
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请填写你们的专业" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nC6-nc-2Gs">
                                         <rect key="frame" x="24" y="135" width="287" height="30"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.32156862749999998" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -882,6 +916,9 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="QGl-wj-YDI" id="nRT-aK-Ed5"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="专        业:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn8-kx-Kec">
                                         <rect key="frame" x="24" y="104" width="63.5" height="14"/>
@@ -889,16 +926,25 @@
                                             <constraint firstAttribute="height" constant="14" id="gJM-Bs-mhv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="14"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sjx" translatesAutoresizingMaskIntoConstraints="NO" id="5Ju-n7-BLS">
+                                        <rect key="frame" x="288" y="146" width="8" height="8"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="FQT-sK-d1p"/>
+                                            <constraint firstAttribute="width" constant="8" id="cba-QS-RTD"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NRf-XZ-5HZ" secondAttribute="trailing" constant="24" id="0wY-7U-vnx"/>
+                                    <constraint firstItem="5Ju-n7-BLS" firstAttribute="trailing" secondItem="nC6-nc-2Gs" secondAttribute="trailing" constant="-15" id="3tj-4e-Nm3"/>
                                     <constraint firstItem="Ypv-US-ufk" firstAttribute="leading" secondItem="UaU-25-PRe" secondAttribute="trailing" constant="6" id="4Io-xv-jHJ"/>
                                     <constraint firstItem="NRf-XZ-5HZ" firstAttribute="leading" secondItem="Ypv-US-ufk" secondAttribute="leading" id="5sa-qq-81E"/>
                                     <constraint firstItem="NRf-XZ-5HZ" firstAttribute="top" secondItem="Ypv-US-ufk" secondAttribute="bottom" constant="8" id="6f6-fM-rNd"/>
+                                    <constraint firstItem="5Ju-n7-BLS" firstAttribute="centerY" secondItem="nC6-nc-2Gs" secondAttribute="centerY" id="9cN-NK-ctV"/>
                                     <constraint firstItem="Ypv-US-ufk" firstAttribute="top" secondItem="UaU-25-PRe" secondAttribute="top" id="Ma3-V5-gva"/>
                                     <constraint firstItem="Ypv-US-ufk" firstAttribute="leading" secondItem="yM5-P7-hBo" secondAttribute="leading" constant="24" id="NJM-3c-ob5"/>
                                     <constraint firstAttribute="height" constant="213" id="PdN-np-zCw"/>
@@ -972,6 +1018,10 @@
                             <constraint firstItem="Jhr-QD-YUr" firstAttribute="top" secondItem="yM5-P7-hBo" secondAttribute="bottom" constant="22" id="sJv-VS-shQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="applyMajorField" destination="nC6-nc-2Gs" id="klg-D7-XCZ"/>
+                        <outlet property="destinationField" destination="NRf-XZ-5HZ" id="FWu-CB-a03"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8aj-bW-bOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1026,7 +1076,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AXWebViewControllerActivityChrome-iPad.png" width="76" height="76"/>
         <image name="sjx" width="10" height="8"/>
     </resources>
 </document>

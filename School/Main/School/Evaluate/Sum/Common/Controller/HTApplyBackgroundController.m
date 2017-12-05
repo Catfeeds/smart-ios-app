@@ -8,7 +8,7 @@
 
 #import "HTApplyBackgroundController.h"
 
-@interface HTApplyBackgroundController ()
+@interface HTApplyBackgroundController ()<UITextFieldDelegate>
 
 @end
 
@@ -17,8 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	self.destinationField.layer.borderColor = [UIColor ht_colorString:@"e6e6e6"].CGColor;
+	self.applyMajorField.layer.borderColor = [UIColor ht_colorString:@"e6e6e6"].CGColor;
+	
 	self.contentHeight = 310.0f;
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -28,10 +34,22 @@
 - (IBAction)previousAction:(id)sender {
 	[self.delegate previous:self];
 }
+
 - (IBAction)submitAction:(id)sender {
 	[self.delegate submit];
 }
 
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+	
+	if (textField == self.destinationField) {
+		
+	}else {
+		
+	}
+	
+	return NO;
+}
 
 /*
 #pragma mark - Navigation

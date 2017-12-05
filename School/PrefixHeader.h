@@ -29,6 +29,9 @@
 #define HTSCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define HTADAPT568(number) (number * sqrt(MIN([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width) / 320))
 
+#define StringNotEmpty(str)             (str && (str.length > 0))
+#define ArrayNotEmpty(arr)              (arr && (arr.count > 0))
+
 #define STORYBOARD_VIEWCONTROLLER(sb, vc) [[UIStoryboard storyboardWithName:sb bundle:nil] instantiateViewControllerWithIdentifier:vc];
 
 #endif /* PrefixHeader_h */

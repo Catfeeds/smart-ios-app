@@ -216,7 +216,7 @@
 						return;
 					}
 					break;
-				}
+				} 
 				case HTSchoolMatriculateTypeOverSea: {
 					if (model.currentInputText.length) {
 						[parameter setValue:model.currentInputText forKey:@"studyTour"];

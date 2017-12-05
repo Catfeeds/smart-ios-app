@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *majorTableView;
 @property (nonatomic, strong) NSArray *majorArray;
-//@property (nonatomic, strong) NSString *
 
 @end
 

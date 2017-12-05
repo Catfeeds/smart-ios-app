@@ -68,7 +68,6 @@
 	
 	[self.delegate next:self];
 	
-	
 }
 
 
