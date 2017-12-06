@@ -30,7 +30,7 @@
 - (IBAction)nextAction:(id)sender {
 	
 	CGFloat gpa = self.GPAField.text.floatValue;
-	CGFloat gmat_gre = self.GMATField.text.floatValue;
+	//CGFloat gmat_gre = self.GMATField.text.floatValue;
 	CGFloat toefl_ielts = self.TOFELField.text.floatValue;
 	
 	NSString *errorString = @"";
@@ -40,15 +40,15 @@
 		errorString = @"gpa 成绩在 2.5 至 4.0 之间";
 	}
 	
-	if (gmat_gre >= 200 && gmat_gre <= 340) {
-		self.parameter.gre = @(gmat_gre).stringValue;
-		self.parameter.result_gmat = @"";
-	}else if (gmat_gre >= 400 && gmat_gre <= 780){
-		self.parameter.result_gmat = @(gmat_gre).stringValue;
-		self.parameter.gre = @"";
-	}else {
-		errorString = @"gmat 成绩在 400 至 700 之间, gre 成绩在 200 至 340 之间";
-	}
+//	if (gmat_gre >= 200 && gmat_gre <= 340) {
+//		self.parameter.gre = @(gmat_gre).stringValue;
+//		self.parameter.result_gmat = @"";
+//	}else if (gmat_gre >= 400 && gmat_gre <= 780){
+//		self.parameter.result_gmat = @(gmat_gre).stringValue;
+//		self.parameter.gre = @"";
+//	}else {
+//		errorString = @"gmat 成绩在 400 至 700 之间, gre 成绩在 200 至 340 之间";
+//	}
 	
 	if (toefl_ielts >= 60 && toefl_ielts <= 120) {
 		self.parameter.result_toefl = @(toefl_ielts).stringValue;
@@ -60,13 +60,11 @@
 		errorString = @"toefl 成绩在 60 至 120 之间, ielts 成绩在 5.0 至 9.0 之间";
 	}
 	
-//	if (errorString.length > 0) {
-//		[HTAlert title:errorString];
-//	}else{
-//		[self.delegate next:self];
-//	}
-	
-	[self.delegate next:self];
+	if (errorString.length > 0) {
+		[HTAlert title:errorString];
+	}else{
+		[self.delegate next:self];
+	}
 	
 }
 

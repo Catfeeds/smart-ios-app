@@ -49,13 +49,11 @@
 		errorStr = @"请选择你的当前专业";
 	}
 	
-//	if (errorStr) {
-//		[HTAlert title:errorStr];
-//	}else{
-//		[self.delegate next:self];
-//	}
-	
-	[self.delegate next:self];
+	if (errorStr) {
+		[HTAlert title:errorStr];
+	}else{
+		[self.delegate next:self];
+	}
 }
 
 #pragma mark - UITextFieldDelegate

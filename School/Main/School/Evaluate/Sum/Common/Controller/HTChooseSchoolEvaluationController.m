@@ -68,6 +68,20 @@
 
 - (void)submit{
 	
+	HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
+	networkModel.autoAlertString = @"上传智能选校";
+	networkModel.autoShowError = true;
+	networkModel.offlineCacheStyle = HTCacheStyleNone;
+	
+	NSDictionary *para = [self.parameterModel mj_keyValues];
+	
+	[HTRequestManager requestSendSchoolMatriculateWithNetworkModel:networkModel parameter:para complete:^(id response, HTError *errorModel) {
+		if (errorModel.existError) {
+			return;
+		}
+//		HTSchoolMatriculateResultController *resultController = [[HTSchoolMatriculateResultController alloc] init];
+//		[weakSelf.navigationController pushViewController:resultController animated:true];
+	}];
 }
 
 - (void)transitionController:(UIViewController *)currentController toControllerIndex:(NSInteger)index{
