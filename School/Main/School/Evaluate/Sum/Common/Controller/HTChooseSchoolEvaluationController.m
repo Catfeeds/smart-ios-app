@@ -12,7 +12,7 @@
 #import "HTPersonBackgroundController.h"
 #import "HTApplyBackgroundController.h"
 #import "HTChooseSchoolAppraisalHeaderView.h"
-
+#import "HTUserManager.h"
 #import "HTSchoolMatriculateDetailController.h"
 
 @interface HTChooseSchoolEvaluationController ()<HTChooseSchoolEvaluationDelegate>
@@ -68,17 +68,26 @@
 
 - (void)submit{
 	
-	HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
-	networkModel.autoAlertString = @"上传智能选校";
-	networkModel.autoShowError = true;
-	networkModel.offlineCacheStyle = HTCacheStyleNone;
-	
-	NSDictionary *para = [self.parameterModel mj_keyValues];
-	
-	[HTRequestManager requestSendSchoolMatriculateWithNetworkModel:networkModel parameter:para complete:^(id response, HTError *errorModel) {
-		if (errorModel.existError) {
-			return;
-		}
+		[HTUserManager surePermissionHighOrEqual:HTUserPermissionExerciseAbleUser passCompareBlock:^(HTUser *user) {
+			
+			HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
+			networkModel.autoAlertString = @"上传智能选校";
+			networkModel.autoShowError = true;
+			networkModel.offlineCacheStyle = HTCacheStyleNone;
+			NSDictionary *para = [self.parameterModel mj_keyValues];
+			
+			[HTRequestManager requestSendSchoolMatriculateWithNetworkModel:networkModel parameter:para complete:^(id response, HTError *errorModel) {
+				if ([[NSString stringWithFormat:@"%@",response[@"code"]] isEqualToString:@"1"]) {
+					
+					HTNetworkModel *resultNetwork = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleNone];
+					[HTRequestManager requestSchoolMatriculateAllResultListWithNetworkModel:resultNetwork resultIdString:@"" complete:^(id response, HTError *errorModel) {
+						if (errorModel.existError) {
+							return;
+						}
+					}];
+				}
+		}];
+		
 //		HTSchoolMatriculateResultController *resultController = [[HTSchoolMatriculateResultController alloc] init];
 //		[weakSelf.navigationController pushViewController:resultController animated:true];
 	}];

@@ -72,7 +72,6 @@
 
 - (void)setEvaluationSchool:(HTSchoolModel *)evaluationSchool{
     _evaluationSchool = evaluationSchool;
-	
 }
 
 - (void)viewWillAppear:(BOOL)animated{
