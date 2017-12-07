@@ -43,7 +43,7 @@ NSString *awardExperienceHint = @"请如实填写获奖经历, 可不填";
 - (IBAction)nextAction:(id)sender {
 	
 	if (![self.workExperienceTextView.text isEqualToString:workExperienceHint]) {
-		self.parameter.work = self.workExperienceTextView.text;
+		self.parameter.live = self.workExperienceTextView.text;
 	}
 	if (![self.projectExperienceTextView.text isEqualToString:projectExperienceHint]) {
 		self.parameter.project = self.projectExperienceTextView.text;

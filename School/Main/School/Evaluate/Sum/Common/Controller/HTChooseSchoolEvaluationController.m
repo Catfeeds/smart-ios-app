@@ -81,15 +81,12 @@
 					
 					HTNetworkModel *resultNetwork = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleNone];
 					[HTRequestManager requestSchoolMatriculateAllResultListWithNetworkModel:resultNetwork resultIdString:@"" complete:^(id response, HTError *errorModel) {
-						if (errorModel.existError) {
-							return;
+						if (!errorModel.existError) {
+							[self performSegueWithIdentifier:@"evaluationToResult" sender:nil];
 						}
 					}];
 				}
 		}];
-		
-//		HTSchoolMatriculateResultController *resultController = [[HTSchoolMatriculateResultController alloc] init];
-//		[weakSelf.navigationController pushViewController:resultController animated:true];
 	}];
 }
 
@@ -116,8 +113,8 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+     Get the new view controller using [segue destinationViewController].
+     Pass the selected object to the new view controller.
 }
 */
 
