@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTChooseSchoolEvaluationResultModel.h"
 
 @interface HTConditionCell : UITableViewCell
 
 
 @property (weak, nonatomic) IBOutlet UILabel *conditionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, strong) HTCompareResult *result;
 
 @end

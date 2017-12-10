@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02348D181FDD83D2007DE05C /* HTSchoolMatriculateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02348D171FDD83D2007DE05C /* HTSchoolMatriculateController.m */; };
+		02348D1B1FDD869C007DE05C /* HTSelectSchoolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02348D1A1FDD869C007DE05C /* HTSelectSchoolController.m */; };
+		02348D211FDD88DA007DE05C /* HTSchoolMatriculateContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02348D201FDD88DA007DE05C /* HTSchoolMatriculateContainerController.m */; };
+		024B74641FDD8FBA005B8BEB /* HTPersonMessageContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024B74631FDD8FBA005B8BEB /* HTPersonMessageContainerController.m */; };
+		024B74671FDD9C6F005B8BEB /* HTSchoolMatriculateGradeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024B74661FDD9C6F005B8BEB /* HTSchoolMatriculateGradeController.m */; };
+		024B746A1FDD9E41005B8BEB /* HTSchoolMatriculateSchoolBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024B74691FDD9E41005B8BEB /* HTSchoolMatriculateSchoolBackgroundController.m */; };
+		024B746D1FDDA18F005B8BEB /* HTSchoolMatriculateExperienceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024B746C1FDDA18F005B8BEB /* HTSchoolMatriculateExperienceController.m */; };
 		027637421FC17FA100959DD1 /* HTChooseSchoolAppraisalHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 027637411FC17FA100959DD1 /* HTChooseSchoolAppraisalHeaderView.m */; };
 		027637481FC1DB4B00959DD1 /* HTChooseSchoolEvaluationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027637471FC1DB4B00959DD1 /* HTChooseSchoolEvaluationController.m */; };
 		560C66611FCF930300D56070 /* HTChooseSchoolEvaluationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 560C66601FCF930300D56070 /* HTChooseSchoolEvaluationModel.m */; };
@@ -582,6 +589,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02348D161FDD83D2007DE05C /* HTSchoolMatriculateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateController.h; sourceTree = "<group>"; };
+		02348D171FDD83D2007DE05C /* HTSchoolMatriculateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateController.m; sourceTree = "<group>"; };
+		02348D191FDD869C007DE05C /* HTSelectSchoolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSelectSchoolController.h; sourceTree = "<group>"; };
+		02348D1A1FDD869C007DE05C /* HTSelectSchoolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSelectSchoolController.m; sourceTree = "<group>"; };
+		02348D1F1FDD88DA007DE05C /* HTSchoolMatriculateContainerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateContainerController.h; sourceTree = "<group>"; };
+		02348D201FDD88DA007DE05C /* HTSchoolMatriculateContainerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateContainerController.m; sourceTree = "<group>"; };
+		024B74621FDD8FBA005B8BEB /* HTPersonMessageContainerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTPersonMessageContainerController.h; sourceTree = "<group>"; };
+		024B74631FDD8FBA005B8BEB /* HTPersonMessageContainerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTPersonMessageContainerController.m; sourceTree = "<group>"; };
+		024B74651FDD9C6F005B8BEB /* HTSchoolMatriculateGradeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateGradeController.h; sourceTree = "<group>"; };
+		024B74661FDD9C6F005B8BEB /* HTSchoolMatriculateGradeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateGradeController.m; sourceTree = "<group>"; };
+		024B74681FDD9E41005B8BEB /* HTSchoolMatriculateSchoolBackgroundController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateSchoolBackgroundController.h; sourceTree = "<group>"; };
+		024B74691FDD9E41005B8BEB /* HTSchoolMatriculateSchoolBackgroundController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateSchoolBackgroundController.m; sourceTree = "<group>"; };
+		024B746B1FDDA18F005B8BEB /* HTSchoolMatriculateExperienceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateExperienceController.h; sourceTree = "<group>"; };
+		024B746C1FDDA18F005B8BEB /* HTSchoolMatriculateExperienceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateExperienceController.m; sourceTree = "<group>"; };
 		027637401FC17FA100959DD1 /* HTChooseSchoolAppraisalHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseSchoolAppraisalHeaderView.h; sourceTree = "<group>"; };
 		027637411FC17FA100959DD1 /* HTChooseSchoolAppraisalHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseSchoolAppraisalHeaderView.m; sourceTree = "<group>"; };
 		027637461FC1DB4B00959DD1 /* HTChooseSchoolEvaluationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseSchoolEvaluationController.h; sourceTree = "<group>"; };
@@ -1736,6 +1757,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02348D141FDD8389007DE05C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		02348D151FDD8389007DE05C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5663C0A51FAAC62E0026663E /* InterfaceBuilder */ = {
 			isa = PBXGroup;
 			children = (
@@ -3814,9 +3849,9 @@
 		C251C5F21F73763000D0D165 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				02348D141FDD8389007DE05C /* Model */,
+				02348D151FDD8389007DE05C /* View */,
 				C251C5F31F73763000D0D165 /* Controller */,
-				C251C5F61F73763000D0D165 /* Model */,
-				C251C5F71F73763000D0D165 /* View */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -3826,22 +3861,22 @@
 			children = (
 				C251C5F41F73763000D0D165 /* HTSchoolMatriculateSingleController.h */,
 				C251C5F51F73763000D0D165 /* HTSchoolMatriculateSingleController.m */,
+				02348D1F1FDD88DA007DE05C /* HTSchoolMatriculateContainerController.h */,
+				02348D201FDD88DA007DE05C /* HTSchoolMatriculateContainerController.m */,
+				02348D161FDD83D2007DE05C /* HTSchoolMatriculateController.h */,
+				02348D171FDD83D2007DE05C /* HTSchoolMatriculateController.m */,
+				02348D191FDD869C007DE05C /* HTSelectSchoolController.h */,
+				02348D1A1FDD869C007DE05C /* HTSelectSchoolController.m */,
+				024B74621FDD8FBA005B8BEB /* HTPersonMessageContainerController.h */,
+				024B74631FDD8FBA005B8BEB /* HTPersonMessageContainerController.m */,
+				024B74651FDD9C6F005B8BEB /* HTSchoolMatriculateGradeController.h */,
+				024B74661FDD9C6F005B8BEB /* HTSchoolMatriculateGradeController.m */,
+				024B74681FDD9E41005B8BEB /* HTSchoolMatriculateSchoolBackgroundController.h */,
+				024B74691FDD9E41005B8BEB /* HTSchoolMatriculateSchoolBackgroundController.m */,
+				024B746B1FDDA18F005B8BEB /* HTSchoolMatriculateExperienceController.h */,
+				024B746C1FDDA18F005B8BEB /* HTSchoolMatriculateExperienceController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		C251C5F61F73763000D0D165 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C251C5F71F73763000D0D165 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C251C5F81F73763000D0D165 /* Result */ = {
@@ -5820,6 +5855,7 @@
 				C20CDF131EF1298F00BA6D60 /* HTAlert.m in Sources */,
 				C260CB231F4BDE3E00E70E61 /* HTWorkDetailController.m in Sources */,
 				C20CDEC31EF11B8A00BA6D60 /* YYTimer.m in Sources */,
+				024B746D1FDDA18F005B8BEB /* HTSchoolMatriculateExperienceController.m in Sources */,
 				C2D617711F78DF7600F4C932 /* THToeflDiscoverModel.m in Sources */,
 				C20CDE9D1EF11B8A00BA6D60 /* YYFrameImage.m in Sources */,
 				C2D1D8631F46C183007B6269 /* HTSearchTitleView.m in Sources */,
@@ -5891,6 +5927,7 @@
 				C29646981F5CED130031C109 /* JSQMessagesCollectionViewFlowLayout.m in Sources */,
 				C23EB4E11F441F41004F9639 /* RTDragCellTableView.m in Sources */,
 				C2EE1FA31F5B281200C8176F /* HTAdvisorDetailInformationCell.m in Sources */,
+				024B74641FDD8FBA005B8BEB /* HTPersonMessageContainerController.m in Sources */,
 				C21022E01F42A3CB00C6902C /* HTLibraryApplyController.m in Sources */,
 				C23C03801F58157C0093F354 /* HTHistoryItemModel.m in Sources */,
 				C24BC0521F7152790025CBEB /* HTSchoolModel.m in Sources */,
@@ -5913,6 +5950,7 @@
 				C20CDE691EF11B8A00BA6D60 /* TZAssetModel.m in Sources */,
 				C2D1D8621F46C183007B6269 /* HTSearchController.m in Sources */,
 				C24BC00C1F7152790025CBEB /* HTSchoolCell.m in Sources */,
+				02348D1B1FDD869C007DE05C /* HTSelectSchoolController.m in Sources */,
 				C24BC0331F7152790025CBEB /* HTMajorCourseCollectionCell.m in Sources */,
 				C251C5C41F734A1800D0D165 /* HTDiscoverExampleDetailController.m in Sources */,
 				C24BC0361F7152790025CBEB /* HTMajorSchoolCell.m in Sources */,
@@ -5924,6 +5962,7 @@
 				C2EE1FAB1F5B975F00C8176F /* HTAdvisorDetailHeaderView.m in Sources */,
 				C29E367D1F74056F000A85D9 /* HTProfessionalController.m in Sources */,
 				C2FA0FBD1F67BFC4002F111D /* HTOrganizationCountryCell.m in Sources */,
+				02348D211FDD88DA007DE05C /* HTSchoolMatriculateContainerController.m in Sources */,
 				56A7D7431FCE4A6900F20D2C /* HTChooseSchoolController.m in Sources */,
 				C20CDE361EF11B8A00BA6D60 /* SCCatWaitingHUD.m in Sources */,
 				C24BBF3F1F7151800025CBEB /* HTLibraryModel.m in Sources */,
@@ -5996,6 +6035,7 @@
 				C20CDE8C1EF11B8A00BA6D60 /* UIGestureRecognizer+YYAdd.m in Sources */,
 				C20CDEDC1EF11F8400BA6D60 /* HTFirstIntroduceController.m in Sources */,
 				C2E66ACD1F2F0AD60000651A /* HTDiscoverHeaderView.m in Sources */,
+				024B746A1FDD9E41005B8BEB /* HTSchoolMatriculateSchoolBackgroundController.m in Sources */,
 				C20CDE971EF11B8A00BA6D60 /* _YYWebImageSetter.m in Sources */,
 				C2EE1FF71F5C4B2200C8176F /* HTMinePreferenceCell.m in Sources */,
 				56829A441FD9193F0093DA25 /* HTAllSchoolCell.m in Sources */,
@@ -6167,6 +6207,7 @@
 				C20CDEB21EF11B8A00BA6D60 /* YYTextArchiver.m in Sources */,
 				C251C62D1F73763000D0D165 /* HTSchoolMatriculateSingleController.m in Sources */,
 				C29646941F5CED130031C109 /* JSQMessagesToolbarButtonFactory.m in Sources */,
+				024B74671FDD9C6F005B8BEB /* HTSchoolMatriculateGradeController.m in Sources */,
 				56829A411FD917430093DA25 /* HTConditionCell.m in Sources */,
 				C291B0EA1F5699A800B1BEDC /* HTSellerDetailController.m in Sources */,
 				C20CDEBD1EF11B8A00BA6D60 /* YYGestureRecognizer.m in Sources */,
@@ -6206,6 +6247,7 @@
 				C20CDE791EF11B8A00BA6D60 /* NSDictionary+YYAdd.m in Sources */,
 				C2D1D85A1F46C120007B6269 /* HTIndexWorkHeaderView.m in Sources */,
 				C20CDE761EF11B8A00BA6D60 /* NSBundle+YYAdd.m in Sources */,
+				02348D181FDD83D2007DE05C /* HTSchoolMatriculateController.m in Sources */,
 				C2FA0FC01F67BFC4002F111D /* HTOrganizationTextCell.m in Sources */,
 				C20CDECF1EF11D7B00BA6D60 /* HTVersionManager.m in Sources */,
 				C23EE68B1F3ED97F00DBB2E5 /* HTLibraryCell.m in Sources */,

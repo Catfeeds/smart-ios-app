@@ -18,6 +18,7 @@
 #import "HTMatriculateRecordModel.h"
 #import "HTUserManager.h"
 
+
 @interface HTSchoolMatriculateSingleController ()
 
 @property (nonatomic, strong) UIButton *footerNameButton;

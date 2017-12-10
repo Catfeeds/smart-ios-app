@@ -16,7 +16,6 @@
 @property (nonatomic, strong) NSString *majorId;
 @property (nonatomic, strong) NSString *detailMajorId;
 
-
 @end
 
 @implementation HTApplyBackgroundController

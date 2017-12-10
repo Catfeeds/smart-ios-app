@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol HTAllSchoolCellDelegate <NSObject>
+
+- (void)shareAction;
+- (void)resetAction;
+
+@end
+
 @interface HTAllSchoolCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *schoolNumberlabel;
+@property (nonatomic, assign) id<HTAllSchoolCellDelegate>delegate;
 
+@property (weak, nonatomic) IBOutlet UILabel *schoolNumberlabel;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 

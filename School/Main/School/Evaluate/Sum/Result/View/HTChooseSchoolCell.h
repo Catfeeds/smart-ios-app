@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTChooseSchoolEvaluationResultModel.h"
 
 @interface HTChooseSchoolCell : UITableViewCell
 
-
+@property (nonatomic, strong) HTResultSchool *school;
 @property (weak, nonatomic) IBOutlet UIImageView *schoolImageView;
 @property (weak, nonatomic) IBOutlet UILabel *schoolNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *EnglishNameLabel;

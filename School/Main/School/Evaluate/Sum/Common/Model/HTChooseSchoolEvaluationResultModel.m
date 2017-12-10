@@ -23,7 +23,7 @@
 @end
 
 
-@implementation HTData
+@implementation HTResultData
 
 + (NSDictionary *)mj_objectClassInArray{
 	return @{
@@ -39,6 +39,31 @@
 
 
 @implementation HTScore
+
+- (void)mj_keyValuesDidFinishConvertingToObject{
+    self.allScores = [NSMutableArray array];
+    if (self.gpa) {
+        self.gpa.scoreType = HTCompareResultGpa;
+        [self.allScores addObject:self.gpa];
+    }
+    if (self.gmat){
+        self.gmat.scoreType = HTCompareResultGMAT;
+        [self.allScores addObject:self.gmat];
+    }
+    if (self.toefl) {
+        self.toefl.scoreType = HTCompareResultToefl;
+        [self.allScores addObject:self.toefl];
+    }
+    if (self.school) {
+        self.school.scoreType = HTCompareResultSchool;
+        [self.allScores addObject:self.school];
+    }
+    if (self.work) {
+        self.work.scoreType = HTCompareResultWork;
+        [self.allScores addObject:self.work];
+    }
+    
+}
 
 @end
 

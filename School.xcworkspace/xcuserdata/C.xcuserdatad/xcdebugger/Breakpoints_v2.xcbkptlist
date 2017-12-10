@@ -35,29 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "School/Main/School/Evaluate/Sum/Common/Controller/HTChooseMajorViewController.m"
-            timestampString = "534099225.413276"
+            filePath = "School/Main/School/Evaluate/Sum/Common/Model/HTChooseSchoolEvaluationResultModel.m"
+            timestampString = "534605161.410698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-loadData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "School/Main/School/Evaluate/Sum/Common/Controller/HTChooseMajorViewController.m"
-            timestampString = "534099225.413889"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-loadData"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-mj_keyValuesDidFinishConvertingToObject"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

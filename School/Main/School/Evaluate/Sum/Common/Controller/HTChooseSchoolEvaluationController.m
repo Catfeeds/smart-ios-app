@@ -14,6 +14,7 @@
 #import "HTChooseSchoolAppraisalHeaderView.h"
 #import "HTUserManager.h"
 #import "HTSchoolMatriculateDetailController.h"
+#import "HTChooseSchoolResultController.h"
 
 @interface HTChooseSchoolEvaluationController ()<HTChooseSchoolEvaluationDelegate>
 
@@ -44,15 +45,9 @@
 	}];
 	
 	[self transitionController:currentController toControllerIndex:0];
-	
-	UIBarButtonItem *testItem = [[UIBarButtonItem alloc]initWithTitle:@"测试的" style:UIBarButtonItemStylePlain target:self action:@selector(teset)];
-	self.navigationItem.rightBarButtonItem = testItem;
 }
 
-- (void)teset{
-	HTSchoolMatriculateDetailController *sumController = [[HTSchoolMatriculateDetailController alloc] init];
-	[self.navigationController pushViewController:sumController animated:YES];
-}
+
 
 #pragma mark - HTChooseSchoolEvaluationDelegate
 - (void)next:(UIViewController *) controller {
@@ -80,9 +75,20 @@
 				if ([[NSString stringWithFormat:@"%@",response[@"code"]] isEqualToString:@"1"]) {
 					
 					HTNetworkModel *resultNetwork = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleNone];
+                    networkModel.autoAlertString = @"获取选校结果";
 					[HTRequestManager requestSchoolMatriculateAllResultListWithNetworkModel:resultNetwork resultIdString:@"" complete:^(id response, HTError *errorModel) {
 						if (!errorModel.existError) {
-							[self performSegueWithIdentifier:@"evaluationToResult" sender:nil];
+                            [HTRequestManager requestSchoolMatriculateAllResultListWithNetworkModel:resultNetwork resultIdString:@"" complete:^(id response, HTError *errorModel) {
+                                if (errorModel.existError) {
+                                    return;
+                                }
+                                
+                                HTChooseSchoolEvaluationResultModel *resultModel = [HTChooseSchoolEvaluationResultModel mj_objectWithKeyValues:response];
+                                
+                                [self performSegueWithIdentifier:@"evaluationToResult" sender:resultModel];
+                                
+                            }];
+                            
 						}
 					}];
 				}
@@ -93,13 +99,12 @@
 - (void)transitionController:(UIViewController *)currentController toControllerIndex:(NSInteger)index{
     self.chooseSchoolProgressView.progress = index;
     UIViewController *toController = self.childControllerArray[index];
+    if (toController == currentController) return;
 	[self transitionFromViewController:currentController toViewController:toController duration:0 options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
 		currentController.view.hidden = YES;
 		toController.view.hidden = NO;
 		((HTChooseSchoolController *)toController).parameter = self.parameterModel;
 		self.contentHeightLayout.constant = ((HTChooseSchoolController *)toController).contentHeight + 200;
-		
-		
 	}];
 }
 
@@ -108,14 +113,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     Get the new view controller using [segue destinationViewController].
-     Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"evaluationToResult"]) {
+        HTChooseSchoolResultController *controller = segue.destinationViewController;
+        controller.resultModel = sender;
+    }
 }
-*/
+
 
 @end

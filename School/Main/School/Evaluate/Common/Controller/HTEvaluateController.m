@@ -14,6 +14,7 @@
 #import "HTSchoolMatriculateSingleController.h"
 #import "HTSchoolMatriculateDetailController.h"
 #import "HTChooseSchoolEvaluationController.h"
+#import "HTSchoolMatriculateContainerController.h"
 
 @interface HTEvaluateController ()
 
@@ -55,14 +56,15 @@
 						break;
 					}
 					case HTEvaluateTypeSum: {
-						HTSchoolMatriculateDetailController *sumController = [[HTSchoolMatriculateDetailController alloc] init];
+//                        HTSchoolMatriculateDetailController *sumController = [[HTSchoolMatriculateDetailController alloc] init];
 //						viewController = sumController;
                         HTChooseSchoolEvaluationController *gradeController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTChooseSchoolEvaluationController");
                         viewController = gradeController;
 						break;
 					}
 					case HTEvaluateTypeSingle: {
-						HTSchoolMatriculateSingleController *singleController = [[HTSchoolMatriculateSingleController alloc] init];
+//                        HTSchoolMatriculateSingleController *singleController = [[HTSchoolMatriculateSingleController alloc] init];
+                        HTSchoolMatriculateContainerController *singleController =STORYBOARD_VIEWCONTROLLER(@"Home", @"HTSchoolMatriculateContainerController");
 						viewController = singleController;
 						break;
 					}

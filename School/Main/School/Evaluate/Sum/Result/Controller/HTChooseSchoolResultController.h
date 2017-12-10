@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTChooseSchoolEvaluationResultModel.h"
 
 @interface HTChooseSchoolResultController : UIViewController
+
+@property (nonatomic, strong) HTChooseSchoolEvaluationResultModel *resultModel;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -20,3 +23,6 @@
 
 @end
 
+@interface HTTabelSectionHeaderView : UITableViewHeaderFooterView
+@property (nonatomic, strong) UILabel *sectionTitleLabel;
+@end;

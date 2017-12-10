@@ -10,11 +10,19 @@
 #import "HTUser.h"
 #import "HTSchoolModel.h"
 
-@class HTData,HTScore,HTResultUser;
+typedef NS_ENUM(NSUInteger, HTCompareResultType) {
+    HTCompareResultGpa,
+    HTCompareResultGMAT,
+    HTCompareResultToefl,
+    HTCompareResultSchool,
+    HTCompareResultWork
+};
+
+@class HTResultData,HTScore,HTResultUser;
 
 @interface HTChooseSchoolEvaluationResultModel : NSObject
 
-@property (nonatomic, strong) HTData *data;
+@property (nonatomic, strong) HTResultData *data;
 @property (nonatomic, strong) HTScore *score;
 @property (nonatomic, strong) HTResultUser *user;
 
@@ -30,7 +38,7 @@
 
 @end
 
-@interface HTData : NSObject
+@interface HTResultData : NSObject
 
 @property (nonatomic, strong) NSArray <HTResultSchool *> *res;
 @property (nonatomic, strong) NSString *score;
@@ -39,6 +47,7 @@
 
 @interface HTCompareResult : NSObject
 
+@property (nonatomic, assign) HTCompareResultType scoreType;
 @property (nonatomic, strong) NSString *score;
 @property (nonatomic, assign) NSInteger num;
 @property (nonatomic, assign) NSInteger type;
@@ -48,6 +57,7 @@
 
 @interface HTScore : NSObject
 
+@property (nonatomic, strong) NSMutableArray<HTCompareResult *> *allScores;
 @property (nonatomic, strong) HTCompareResult *gpa;
 @property (nonatomic, strong) HTCompareResult *gmat;
 @property (nonatomic, strong) HTCompareResult *toefl;
