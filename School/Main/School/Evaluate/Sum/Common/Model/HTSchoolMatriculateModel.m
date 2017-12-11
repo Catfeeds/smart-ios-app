@@ -104,7 +104,7 @@
 					} else if (!model.optionValue) {
 						sectionModel.isSelected = false;
 						NSIndexPath *errorIndexPath = [NSIndexPath indexPathForRow:row inSection:section];
-						completeBlock(@{}, @"gmat 成绩在 400 至 700 之间, gre 成绩在 200 至 340 之间", errorIndexPath);
+						completeBlock(@{}, @"gmat 成绩在 400 至 780 之间, gre 成绩在 200 至 340 之间", errorIndexPath);
 						return;
 					}
 					break;

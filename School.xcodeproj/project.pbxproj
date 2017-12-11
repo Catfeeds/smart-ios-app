@@ -29,6 +29,9 @@
 		56829A471FD91D8C0093DA25 /* HTChooseSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56829A461FD91D8C0093DA25 /* HTChooseSchoolCell.m */; };
 		56829A4A1FD92F170093DA25 /* HTChooseSchoolEvaluationResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56829A491FD92F170093DA25 /* HTChooseSchoolEvaluationResultModel.m */; };
 		56A7D7431FCE4A6900F20D2C /* HTChooseSchoolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7D7421FCE4A6900F20D2C /* HTChooseSchoolController.m */; };
+		56CFDE891FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFDE881FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m */; };
+		56CFDE8C1FDE5773002FAAE5 /* HTWorkExperienceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFDE8B1FDE5773002FAAE5 /* HTWorkExperienceCell.m */; };
+		56CFDE921FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFDE911FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.m */; };
 		56E6B73F1FD7815400B6A148 /* HTDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E6B73E1FD7815400B6A148 /* HTDestinationViewController.m */; };
 		56E6B7421FD7819E00B6A148 /* HTDestinationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E6B7411FD7819E00B6A148 /* HTDestinationCell.m */; };
 		56F3A5391FD4F25F002D0016 /* HTChooseMajorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3A5381FD4F25F002D0016 /* HTChooseMajorViewController.m */; };
@@ -632,6 +635,12 @@
 		56829A491FD92F170093DA25 /* HTChooseSchoolEvaluationResultModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseSchoolEvaluationResultModel.m; sourceTree = "<group>"; };
 		56A7D7411FCE4A6900F20D2C /* HTChooseSchoolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseSchoolController.h; sourceTree = "<group>"; };
 		56A7D7421FCE4A6900F20D2C /* HTChooseSchoolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseSchoolController.m; sourceTree = "<group>"; };
+		56CFDE871FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateSelectMajorController.h; sourceTree = "<group>"; };
+		56CFDE881FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateSelectMajorController.m; sourceTree = "<group>"; };
+		56CFDE8A1FDE5773002FAAE5 /* HTWorkExperienceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTWorkExperienceCell.h; sourceTree = "<group>"; };
+		56CFDE8B1FDE5773002FAAE5 /* HTWorkExperienceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTWorkExperienceCell.m; sourceTree = "<group>"; };
+		56CFDE901FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateParameterModel.h; sourceTree = "<group>"; };
+		56CFDE911FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateParameterModel.m; sourceTree = "<group>"; };
 		56E6B73D1FD7815400B6A148 /* HTDestinationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDestinationViewController.h; sourceTree = "<group>"; };
 		56E6B73E1FD7815400B6A148 /* HTDestinationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDestinationViewController.m; sourceTree = "<group>"; };
 		56E6B7401FD7819E00B6A148 /* HTDestinationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDestinationCell.h; sourceTree = "<group>"; };
@@ -1760,6 +1769,8 @@
 		02348D141FDD8389007DE05C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				56CFDE901FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.h */,
+				56CFDE911FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1767,6 +1778,8 @@
 		02348D151FDD8389007DE05C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56CFDE8A1FDE5773002FAAE5 /* HTWorkExperienceCell.h */,
+				56CFDE8B1FDE5773002FAAE5 /* HTWorkExperienceCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3875,6 +3888,8 @@
 				024B74691FDD9E41005B8BEB /* HTSchoolMatriculateSchoolBackgroundController.m */,
 				024B746B1FDDA18F005B8BEB /* HTSchoolMatriculateExperienceController.h */,
 				024B746C1FDDA18F005B8BEB /* HTSchoolMatriculateExperienceController.m */,
+				56CFDE871FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.h */,
+				56CFDE881FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -5831,6 +5846,7 @@
 				C251C5C81F734A1800D0D165 /* HTDiscoverExampleContentCell.m in Sources */,
 				C2FF3E761F4175AF0005F287 /* HTMineCell.m in Sources */,
 				C20CDCCB1EF11A1000BA6D60 /* HTRequestManager.m in Sources */,
+				56CFDE921FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.m in Sources */,
 				C2B2E3011F20471B00AE4E96 /* HTManagerController+HTPresent.m in Sources */,
 				C241A4691EF21EEC00094EF7 /* HTRegisterController.m in Sources */,
 				C20CDE7A1EF11B8A00BA6D60 /* NSKeyedUnarchiver+YYAdd.m in Sources */,
@@ -5935,6 +5951,7 @@
 				C26D701B1EF3B43A00697EC1 /* HTReuseController.m in Sources */,
 				C23C03701F5801470093F354 /* HTHistoryContentController.m in Sources */,
 				C254773C1EF141FE007D86B7 /* HTBroadCastModel.m in Sources */,
+				56CFDE891FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m in Sources */,
 				C2FA0FC41F67BFC4002F111D /* HTOrganizationCell.m in Sources */,
 				C20CDE9F1EF11B8A00BA6D60 /* YYImageCache.m in Sources */,
 				C2FF3E2D1F4141620005F287 /* HTPhotoCollectionView.m in Sources */,
@@ -6231,6 +6248,7 @@
 				C20CDE701EF11B8A00BA6D60 /* TZPhotoPreviewCell.m in Sources */,
 				C251C6271F73763000D0D165 /* HTBackgroundController.m in Sources */,
 				C2D6176B1F78DA0000F4C932 /* THToeflDiscoverTableCell.m in Sources */,
+				56CFDE8C1FDE5773002FAAE5 /* HTWorkExperienceCell.m in Sources */,
 				C2E66AAC1F2F09DF0000651A /* HTIndexController.m in Sources */,
 				C296468D1F5CED130031C109 /* UIView+JSQMessages.m in Sources */,
 				C2D1D8571F46C120007B6269 /* HTIndexWorkController.m in Sources */,

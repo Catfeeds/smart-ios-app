@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HTSchoolMatriculateParameterModel.h"
+
 @protocol TSchoolMatriculateDelegate <NSObject>
 
 - (void)next:(UIViewController *) controller;
@@ -20,7 +22,7 @@
 
 @interface HTSchoolMatriculateController : UIViewController
 
-//@property (nonatomic, strong) HTChooseSchoolEvaluationModel *parameter;
+@property (nonatomic, strong) HTSchoolMatriculateParameterModel *parameter;
 @property (nonatomic, assign) CGFloat contentHeight;
 @property (nonatomic, assign) id<TSchoolMatriculateDelegate> delegate;
 

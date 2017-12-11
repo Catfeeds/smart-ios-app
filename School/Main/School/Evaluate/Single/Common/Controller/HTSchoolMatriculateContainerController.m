@@ -11,10 +11,14 @@
 #import "HTSelectSchoolController.h"
 #import "HTPersonMessageContainerController.h"
 #import "HTSchoolMatriculateController.h"
+#import "HTUserManager.h"
+#import "HTMatriculateRecordModel.h"
+#import "HTSchoolMatriculateSingleResultView.h"
 
 @interface HTSchoolMatriculateContainerController ()<TSchoolMatriculateDelegate>
 
 @property (nonatomic, strong) NSMutableArray *childControllerArray;
+@property (nonatomic, strong) HTSchoolMatriculateParameterModel *parameter;
 
 @end
 
@@ -24,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+	self.parameter = [HTSchoolMatriculateParameterModel new];
     self.childControllerArray = [NSMutableArray arrayWithArray:self.childViewControllers];
     UIViewController *currentController = self.childViewControllers.lastObject;
     
@@ -36,15 +40,7 @@
     }];
     
     [self transitionController:currentController toControllerIndex:0];
-    
-    
-    UIBarButtonItem *right = [[UIBarButtonItem alloc]initWithTitle:@"ceshi" style:UIBarButtonItemStylePlain target:self action:@selector(test)];
-    self.navigationItem.rightBarButtonItem = right;
-}
-
-- (void)test{
-    HTSchoolMatriculateSingleController *singleController = [[HTSchoolMatriculateSingleController alloc] init];
-    [self.navigationController pushViewController:singleController animated:YES];
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,13 +62,44 @@
 }
 
 - (void)submit{
-    
+	
+	NSDictionary *parameterDic = [self.parameter mj_keyValues];
+	
+	[HTUserManager surePermissionHighOrEqual:HTUserPermissionExerciseAbleUser passCompareBlock:^(HTUser *user) {
+		
+				HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
+				networkModel.autoShowError = true;
+				networkModel.autoAlertString = @"获取学校录取测评中";
+				networkModel.offlineCacheStyle = HTCacheStyleNone;
+			
+				[HTRequestManager requestSchoolSingleMatriculateResultWithNetworkModel:networkModel parameter:parameterDic complete:^(id response, HTError *errorModel) {
+					if (errorModel.existError) {
+						return;
+					}
+					[HTRequestManager requestSchoolMatriculateSingleResultListWithNetworkModel:networkModel resultIdString:nil complete:^(id response, HTError *errorModel) {
+						if (errorModel.existError) {
+							return;
+						}
+						HTMatriculateSingleSchoolModel *model = [HTMatriculateSingleSchoolModel mj_objectWithKeyValues:response[@"data"]];
+						[HTSchoolMatriculateSingleResultView showResultViewWithResultModel:model];
+					}];
+			}];
+	}];
+	
 }
 
 - (void)transitionController:(UIViewController *)currentController toControllerIndex:(NSInteger)index{
-    
-        UIViewController *toController = self.childControllerArray[index];
+	
+        HTSchoolMatriculateController *toController = (HTSchoolMatriculateController*)self.childControllerArray[index];
+		toController.parameter = self.parameter;
       if (toController == currentController) return;
+	  if ([toController isKindOfClass:[HTPersonMessageContainerController class]]) {
+			HTPersonMessageContainerController *tempToController = (HTPersonMessageContainerController *)toController;
+			HTSelectSchoolController *tempCurrentController = (HTSelectSchoolController *)currentController;
+			tempToController.selectedSchoolName = tempCurrentController.selectedSchool.name;
+			tempToController.selectedMajorName  = tempCurrentController.selectedMajor.name;
+	    }
+	
         [self transitionFromViewController:currentController toViewController:toController duration:0 options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
             currentController.view.hidden = YES;
             toController.view.hidden = NO;

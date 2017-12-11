@@ -10,4 +10,15 @@
 
 @interface HTSchoolMatriculateExperienceController : HTSchoolMatriculateController
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
 @end
+
+@interface WorkExperienceModel : NSObject
+
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, assign) BOOL isSelect;
+@property (nonatomic, strong) NSString *key;
+
+@end;

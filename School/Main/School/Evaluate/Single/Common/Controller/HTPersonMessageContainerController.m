@@ -13,6 +13,10 @@
 
 @interface HTPersonMessageContainerController ()<TSchoolMatriculateDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *schoolLabel;
+@property (weak, nonatomic) IBOutlet UILabel *majorLabel;
+
+
 @property (nonatomic, strong) NSMutableArray *childControllerArray;
 
 @end
@@ -36,18 +40,34 @@
     [self transitionController:currentController toControllerIndex:0];
 }
 
+- (void)setSelectedMajorName:(NSString *)selectedMajorName{
+	_selectedMajorName = selectedMajorName;
+	self.majorLabel.text = selectedMajorName;
+}
+
+- (void)setSelectedSchoolName:(NSString *)selectedSchoolName{
+	_selectedSchoolName = selectedSchoolName;
+	self.schoolLabel.text = selectedSchoolName;
+}
+
+- (void)setParameter:(HTSchoolMatriculateParameterModel *)parameter{
+	[super setParameter:parameter];
+	HTSchoolMatriculateController *first = (HTSchoolMatriculateController *)self.childControllerArray.firstObject;
+	first.parameter = parameter;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - TSchoolMatriculateDelegate
 
 - (void)next:(UIViewController *) controller {
     NSInteger index = [self.childControllerArray indexOfObject:controller];
     [self transitionController:controller toControllerIndex:index+1];
-    
+	
 }
 
 - (void)previous:(UIViewController *) controller{
@@ -60,12 +80,14 @@
 }
 
 - (void)submit{
-    
+	[self.delegate submit];
 }
 
 - (void)transitionController:(UIViewController *)currentController toControllerIndex:(NSInteger)index{
-    
-    UIViewController *toController = self.childControllerArray[index];
+	
+	HTSchoolMatriculateController *toController = (HTSchoolMatriculateController*)self.childControllerArray[index];
+	toController.parameter = self.parameter;
+
     if (toController == currentController) return;
     [self transitionFromViewController:currentController toViewController:toController duration:0 options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
         currentController.view.hidden = YES;

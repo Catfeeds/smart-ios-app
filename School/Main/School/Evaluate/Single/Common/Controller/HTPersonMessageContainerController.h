@@ -11,4 +11,7 @@
 
 @interface HTPersonMessageContainerController : HTSchoolMatriculateController
 
+@property (nonatomic, strong) NSString *selectedSchoolName;
+@property (nonatomic, strong) NSString *selectedMajorName;
+
 @end

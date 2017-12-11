@@ -128,7 +128,10 @@
 		[_tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
 			[sectionMaker.cellClass([HTSchoolMatriculateSelectedCell class]).rowHeight(45) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTSchoolModel *model) {
 				model.isSelected = true;
-				weakSelf.matriculateModel.pickerModelArray = @[model];
+				if (weakSelf.matriculateModel) {
+					weakSelf.matriculateModel.pickerModelArray = @[model];
+				}
+				
 				[weakSelf dismissViewControllerAnimated:true completion:^{
 					if (weakSelf.selectedBlock) {
 						weakSelf.selectedBlock(model);

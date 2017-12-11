@@ -128,7 +128,6 @@
 			[HTSchoolMatriculateSelectedManager pushSelectedManagerFromController:weakSelf.ht_controller matriculateModel:model completeSelectedBlock:^{
 				[weakSelf reloadTitleNameButtonWithModel:model];
 			}];
-			
 		}];
 	
 		
