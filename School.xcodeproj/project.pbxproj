@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020D042B1FDED50900021CA4 /* HTProfessionDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 020D042A1FDED50900021CA4 /* HTProfessionDetailController.m */; };
+		020D042E1FDED58900021CA4 /* HTProfessionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 020D042D1FDED58900021CA4 /* HTProfessionDetailCell.m */; };
+		020D04311FDEE19800021CA4 /* HTProfessionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 020D04301FDEE19800021CA4 /* HTProfessionDetailModel.m */; };
 		02348D181FDD83D2007DE05C /* HTSchoolMatriculateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02348D171FDD83D2007DE05C /* HTSchoolMatriculateController.m */; };
 		02348D1B1FDD869C007DE05C /* HTSelectSchoolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02348D1A1FDD869C007DE05C /* HTSelectSchoolController.m */; };
 		02348D211FDD88DA007DE05C /* HTSchoolMatriculateContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02348D201FDD88DA007DE05C /* HTSchoolMatriculateContainerController.m */; };
@@ -592,6 +595,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020D04291FDED50900021CA4 /* HTProfessionDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTProfessionDetailController.h; sourceTree = "<group>"; };
+		020D042A1FDED50900021CA4 /* HTProfessionDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTProfessionDetailController.m; sourceTree = "<group>"; };
+		020D042C1FDED58900021CA4 /* HTProfessionDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTProfessionDetailCell.h; sourceTree = "<group>"; };
+		020D042D1FDED58900021CA4 /* HTProfessionDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTProfessionDetailCell.m; sourceTree = "<group>"; };
+		020D042F1FDEE19800021CA4 /* HTProfessionDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTProfessionDetailModel.h; sourceTree = "<group>"; };
+		020D04301FDEE19800021CA4 /* HTProfessionDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTProfessionDetailModel.m; sourceTree = "<group>"; };
 		02348D161FDD83D2007DE05C /* HTSchoolMatriculateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateController.h; sourceTree = "<group>"; };
 		02348D171FDD83D2007DE05C /* HTSchoolMatriculateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateController.m; sourceTree = "<group>"; };
 		02348D191FDD869C007DE05C /* HTSelectSchoolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSelectSchoolController.h; sourceTree = "<group>"; };
@@ -3390,6 +3399,8 @@
 			children = (
 				C24BBFAD1F7152790025CBEB /* HTMajorDetailController.h */,
 				C24BBFAE1F7152790025CBEB /* HTMajorDetailController.m */,
+				020D04291FDED50900021CA4 /* HTProfessionDetailController.h */,
+				020D042A1FDED50900021CA4 /* HTProfessionDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3399,6 +3410,8 @@
 			children = (
 				C24BBFB01F7152790025CBEB /* HTMajorDetailModel.h */,
 				C24BBFB11F7152790025CBEB /* HTMajorDetailModel.m */,
+				020D042F1FDEE19800021CA4 /* HTProfessionDetailModel.h */,
+				020D04301FDEE19800021CA4 /* HTProfessionDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3422,6 +3435,8 @@
 				C24BBFC01F7152790025CBEB /* HTMajorSectionHeaderView.m */,
 				C24BBFC11F7152790025CBEB /* HTMajorTextCell.h */,
 				C24BBFC21F7152790025CBEB /* HTMajorTextCell.m */,
+				020D042C1FDED58900021CA4 /* HTProfessionDetailCell.h */,
+				020D042D1FDED58900021CA4 /* HTProfessionDetailCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6003,6 +6018,7 @@
 				56829A4A1FD92F170093DA25 /* HTChooseSchoolEvaluationResultModel.m in Sources */,
 				C20CDF0F1EF1289A00BA6D60 /* HTLoginTextFieldGroupView.m in Sources */,
 				C2FF3E2C1F4141620005F287 /* HTPhotoCollectionCell.m in Sources */,
+				020D04311FDEE19800021CA4 /* HTProfessionDetailModel.m in Sources */,
 				C20CDEC21EF11B8A00BA6D60 /* YYThreadSafeDictionary.m in Sources */,
 				C28D39F51F3967D1005FD635 /* HTIndexBookIndexCell.m in Sources */,
 				C22EAB7B1F30345800969300 /* HTAnswerOnlineCell.m in Sources */,
@@ -6123,6 +6139,7 @@
 				C23C03641F5800ED0093F354 /* HTHistoryController.m in Sources */,
 				C29646A81F5CED130031C109 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
 				C20CDEC41EF11B8A00BA6D60 /* YYTransaction.m in Sources */,
+				020D042B1FDED50900021CA4 /* HTProfessionDetailController.m in Sources */,
 				C29646931F5CED130031C109 /* JSQMessagesTimestampFormatter.m in Sources */,
 				C20CDEA41EF11B8A00BA6D60 /* NSObject+YYModel.m in Sources */,
 				C20CDEA91EF11B8A00BA6D60 /* YYTextInput.m in Sources */,
@@ -6267,6 +6284,7 @@
 				C20CDE761EF11B8A00BA6D60 /* NSBundle+YYAdd.m in Sources */,
 				02348D181FDD83D2007DE05C /* HTSchoolMatriculateController.m in Sources */,
 				C2FA0FC01F67BFC4002F111D /* HTOrganizationTextCell.m in Sources */,
+				020D042E1FDED58900021CA4 /* HTProfessionDetailCell.m in Sources */,
 				C20CDECF1EF11D7B00BA6D60 /* HTVersionManager.m in Sources */,
 				C23EE68B1F3ED97F00DBB2E5 /* HTLibraryCell.m in Sources */,
 				C241A4661EF21EDB00094EF7 /* HTForgetPasswordController.m in Sources */,

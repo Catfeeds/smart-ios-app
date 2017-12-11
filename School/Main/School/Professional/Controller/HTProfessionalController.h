@@ -13,3 +13,4 @@
 @property (nonatomic, strong) NSString *professionalId;
 
 @end
+

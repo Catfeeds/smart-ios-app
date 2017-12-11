@@ -15,6 +15,7 @@
 #import "HTProfessionalController.h"
 #import "HTSchoolModel.h"
 #import "RTRootNavigationController.h"
+#import "HTProfessionDetailController.h"
 
 @interface HTFilterResultSchoolController ()
 
@@ -52,7 +53,8 @@
 		}];
 		[weakSelf.tableView ht_updateSection:1 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
 			[sectionMaker.cellClass([HTSchoolFilterProfessionalCell class]).rowHeight(45).modelArray(weakSelf.resultSchoolModel.major) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTFilterResultProfessionalModel *model) {
-				HTProfessionalController *professionalController = [[HTProfessionalController alloc] init];
+			//	HTProfessionalController *professionalController = [[HTProfessionalController alloc] init];
+                HTProfessionDetailController *professionalController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
 				professionalController.professionalId = model.ID;
 				[weakSelf.navigationController pushViewController:professionalController animated:true];
 			}];
