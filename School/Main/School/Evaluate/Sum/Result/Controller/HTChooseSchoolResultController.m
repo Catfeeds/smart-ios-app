@@ -14,6 +14,7 @@
 #import "HTSchoolController.h"
 #import "HTChooseSchoolEvaluationController.h"
 #import "RTRootNavigationController.h"
+#import "HTShareView.h"
 
 #define HEADER @"header"
 
@@ -65,7 +66,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSInteger schoolNum = self.resultModel.score.allScores.count;
+    NSInteger schoolNum = self.resultModel.data.res.count;
     return schoolNum > 0 ? 3 : 2;
 }
 
@@ -139,7 +140,8 @@
 
 #pragma mark - HTAllSchoolCellDelegate
 - (void)shareAction{
-    
+	UIImage *shotScreentImage = [UIImage ht_shotScreen];
+	[HTShareView showTitle:@"选校测评" detail:@"我在雷哥留学的选校测评结果" image:shotScreentImage url:@"http://www.gmatonline.cn" type:SSDKContentTypeImage];
 }
 
 - (void)resetAction{

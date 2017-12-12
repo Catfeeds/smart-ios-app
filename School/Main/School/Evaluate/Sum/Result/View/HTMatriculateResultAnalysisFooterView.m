@@ -9,6 +9,7 @@
 #import "HTMatriculateResultAnalysisFooterView.h"
 #import "HTRootNavigationController.h"
 #import "HTSchoolMatriculateDetailController.h"
+#import "HTChooseSchoolEvaluationController.h"
 
 @interface HTMatriculateResultAnalysisFooterView ()
 
@@ -117,7 +118,10 @@
 		__weak typeof(self) weakSelf = self;
 		[_repeatMatriculateButton ht_whenTap:^(UIView *view) {
 			HTRootNavigationController *navigationController = (HTRootNavigationController *)weakSelf.ht_controller.rt_navigationController;
-			HTSchoolMatriculateDetailController *matriculateController = [[HTSchoolMatriculateDetailController alloc] init];
+//			HTSchoolMatriculateDetailController *matriculateController = [[HTSchoolMatriculateDetailController alloc] init];
+			
+			HTChooseSchoolEvaluationController *matriculateController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTChooseSchoolEvaluationController");
+			
 			UIViewController *willPopViewController = weakSelf.ht_controller;
 			__weak typeof(navigationController) weakNavigationController = navigationController;
 			[navigationController pushViewController:matriculateController animated:true complete:^(BOOL finished) {

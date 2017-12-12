@@ -14,6 +14,7 @@
 #import "HTAnswerDetailController.h"
 #import "HTLibraryApplyContentController.h"
 #import "HTDiscoverActivityDetailController.h"
+#import "HTProfessionDetailController.h"
 
 @interface HTSearchContentController ()
 
@@ -47,7 +48,8 @@
 					break;
 				}
 				case HTSearchTypeProfessional: {
-					HTProfessionalController *detailController = [[HTProfessionalController alloc] init];
+//					HTProfessionalController *detailController = [[HTProfessionalController alloc] init];
+					  HTProfessionDetailController *detailController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
 					detailController.professionalId = model.ID;
 					viewController = detailController;
 					break;

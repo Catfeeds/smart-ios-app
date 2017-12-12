@@ -12,6 +12,7 @@
 #import "HTFilterResultProfessionalCell.h"
 #import <UICollectionViewCell+HTSeparate.h>
 #import "HTProfessionalController.h"
+#import "HTProfessionDetailController.h"
 
 @interface HTFilterResultSchoolCell () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -138,7 +139,8 @@ static NSString *kHTFilterResultCollectionCellIdentifier = @"kHTFilterResultColl
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.row < self.model.major.count) {
 		HTFilterResultProfessionalModel *model = self.model.major[indexPath.row];
-		HTProfessionalController *professionalController = [[HTProfessionalController alloc] init];
+	//	HTProfessionalController *professionalController = [[HTProfessionalController alloc] init];
+		HTProfessionDetailController *professionalController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
 		professionalController.professionalId = model.ID;
 		[self.ht_controller.navigationController pushViewController:professionalController animated:true];
 	}

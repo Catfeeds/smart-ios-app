@@ -12,7 +12,7 @@
 #import "HTProfessionDetailModel.h"
 #import "HTMajorSectionHeaderView.h"
 #import "HTSchoolController.h"
-
+#import "HTWebController.h"
 
 #define headerIdentifier @"HTMajorSectionHeaderView"
 
@@ -44,6 +44,7 @@
 
 - (void)loadData{
     HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
+	networkModel.autoAlertString = @"项目详情";
     [HTRequestManager requestProfessionalWithNetworkModel:networkModel professionalId:self.professionalId complete:^(id response, HTError *errorModel) {
         if (errorModel.errorString) {
             return;
@@ -79,7 +80,7 @@
             NSString *tempStr = [NSString stringWithFormat:@"%@( %@ )",self.detailModel.profession.name,self.detailModel.profession.title];
             attributeString = [self loadCellAttributeString:@"项目名称" detailStr:tempStr];
         }else if (indexPath.row == 1){
-            attributeString = [self loadCellAttributeString:@"项目排名" detailStr:@"不晓得啊"];
+            attributeString = [self loadCellAttributeString:@"项目排名" detailStr:self.detailModel.school.article];
         }else if (indexPath.row == 2){
             attributeString = [self loadCellAttributeString:@"项目网址" detailStr:self.detailModel.profession.url];
         }else if (indexPath.row == 3){
@@ -109,8 +110,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	if (indexPath.section == 0 && indexPath.row == 2 && StringNotEmpty(self.detailModel.profession.url)) {
+		NSURL *url = [NSURL URLWithString:self.detailModel.profession.url];
+		HTWebController *webController = [[HTWebController alloc] initWithURL:url];
+		[self.navigationController pushViewController:webController animated:true];
+	}
+	
 }
 
 #pragma mark -

@@ -35,7 +35,13 @@
     [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ((HTSchoolMatriculateController *)obj).delegate = self;
         obj.view.hidden = YES;
-        if ([obj isKindOfClass:[HTSelectSchoolController class]]) self.childControllerArray[0] = obj;
+		if ([obj isKindOfClass:[HTSelectSchoolController class]]) {
+			
+			HTSelectSchoolController *vc = ((HTSelectSchoolController *)obj);
+			vc.parameter = self.parameter;
+			vc.selectedSchool = self.evaluationSchool;
+			self.childControllerArray[0] = obj;
+		}
         if ([obj isKindOfClass:[HTPersonMessageContainerController class]]) self.childControllerArray[1] = obj;
     }];
     
@@ -47,6 +53,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 #pragma mark - TSchoolMatriculateDelegate
 

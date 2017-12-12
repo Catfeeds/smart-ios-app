@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HTSchoolModel.h"
+
 @interface HTSchoolMatriculateContainerController : UIViewController
+
+//要测评的学校
+@property (nonatomic, strong) HTSchoolModel *evaluationSchool;
 
 @end

@@ -10,8 +10,9 @@
 
 @interface HTProfessionDetailController : UIViewController
 
-@property (nonatomic, strong) NSString *professionalId;
 
+
+@property (nonatomic, strong) NSString *professionalId;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 @property (weak, nonatomic) IBOutlet UIButton *schoolButton;

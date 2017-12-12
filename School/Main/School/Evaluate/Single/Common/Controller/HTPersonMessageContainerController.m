@@ -11,6 +11,12 @@
 #import "HTSchoolMatriculateSchoolBackgroundController.h"
 #import "HTSchoolMatriculateExperienceController.h"
 
+typedef NS_ENUM(NSUInteger, HTAttributeType) {
+	HTSchool,
+	HTMajor
+	
+};
+
 @interface HTPersonMessageContainerController ()<TSchoolMatriculateDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *schoolLabel;
@@ -42,12 +48,34 @@
 
 - (void)setSelectedMajorName:(NSString *)selectedMajorName{
 	_selectedMajorName = selectedMajorName;
-	self.majorLabel.text = selectedMajorName;
+	self.majorLabel.attributedText = [self getAttributeText:selectedMajorName type:HTMajor];
 }
 
 - (void)setSelectedSchoolName:(NSString *)selectedSchoolName{
 	_selectedSchoolName = selectedSchoolName;
-	self.schoolLabel.text = selectedSchoolName;
+	self.schoolLabel.attributedText = [self getAttributeText:selectedSchoolName type:HTSchool];
+}
+
+- (NSAttributedString *)getAttributeText:(NSString *)str type:(HTAttributeType) type {
+	NSString *title;
+	NSTextAttachment *imageAtta = [[NSTextAttachment alloc] init];
+	if (type == HTSchool) {
+		imageAtta.bounds = CGRectMake(0, -3, 26, 26);
+		imageAtta.image = [UIImage imageNamed:@"school"];
+		title = [NSString stringWithFormat:@" 大学 : %@",str];
+	}else{
+		imageAtta.bounds = CGRectMake(0, -3, 26, 18);
+		imageAtta.image = [UIImage imageNamed:@"mz-"];
+		title = [NSString stringWithFormat:@" 专业 : %@",str];
+	}
+	
+	NSAttributedString *attach = [NSAttributedString attributedStringWithAttachment:imageAtta];
+	NSMutableAttributedString *attribute = [[NSMutableAttributedString alloc]initWithString:title];
+	[attribute insertAttributedString:attach atIndex:0];
+	[attribute addAttribute:NSForegroundColorAttributeName value:[UIColor ht_colorString:@"777777"] range:NSMakeRange(0, attribute.length)];
+	[attribute addAttribute:NSForegroundColorAttributeName value:[UIColor ht_colorString:@"98BC36"] range:NSMakeRange(0, attribute.length - str.length)];
+	
+	return attribute;
 }
 
 - (void)setParameter:(HTSchoolMatriculateParameterModel *)parameter{

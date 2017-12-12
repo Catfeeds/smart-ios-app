@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *duration;
+@property (nonatomic, strong) NSString *article;
 
 @end
 

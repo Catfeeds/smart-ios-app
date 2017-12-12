@@ -17,6 +17,8 @@
 #import "HTSchoolMatriculateSingleController.h"
 #import "HTManagerController.h"
 #import "HTRootNavigationController.h"
+#import "HTChooseSchoolEvaluationController.h"
+#import "HTSchoolMatriculateContainerController.h"
 
 @interface HTMatriculateRecordController ()
 
@@ -88,12 +90,18 @@
 					UIViewController *viewController;
 					switch (model.type) {
 						case HTMatriculateRecordTypeAll: {
-							HTSchoolMatriculateDetailController *allController = [[HTSchoolMatriculateDetailController alloc] init];
+//							HTSchoolMatriculateDetailController *allController = [[HTSchoolMatriculateDetailController alloc] init];
+							
+							HTChooseSchoolEvaluationController *allController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTChooseSchoolEvaluationController");
+							
 							viewController = allController;
 							break;
 						}
 						case HTMatriculateRecordTypeSingle: {
-							HTSchoolMatriculateSingleController *singleController = [[HTSchoolMatriculateSingleController alloc] init];
+//							HTSchoolMatriculateSingleController *singleController = [[HTSchoolMatriculateSingleController alloc] init];
+							
+							HTSchoolMatriculateContainerController *singleController =STORYBOARD_VIEWCONTROLLER(@"Home", @"HTSchoolMatriculateContainerController");
+							
 							viewController = singleController;
 							break;
 						}

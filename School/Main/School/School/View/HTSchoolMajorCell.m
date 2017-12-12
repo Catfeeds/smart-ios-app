@@ -13,6 +13,7 @@
 #import <NSObject+HTTableRowHeight.h>
 #import "HTSchoolMajorDetailCell.h"
 #import "HTProfessionalController.h"
+#import "HTProfessionDetailController.h"
 
 @interface HTSchoolMajorCell () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -109,7 +110,8 @@ static NSString *kHTSchoolMajorReuseIdentifier = @"kHTSchoolMajorReuseIdentifier
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	HTSchoolProfessionalSubModel *model = self.selectedProfessionalModel.content[indexPath.row];
-	HTProfessionalController *professionalController = [[HTProfessionalController alloc] init];
+	//HTProfessionalController *professionalController = [[HTProfessionalController alloc] init];
+	HTProfessionDetailController *professionalController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
 	professionalController.professionalId = model.ID;
 	[self.ht_controller.navigationController pushViewController:professionalController animated:true];
 	[collectionView deselectItemAtIndexPath:indexPath animated:true];

@@ -14,8 +14,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.shareButton.layer.borderColor = [UIColor ht_colorString:@"598912"].CGColor;
-    self.resetButton.layer.borderColor = [UIColor ht_colorString:@"598912"].CGColor;
+    self.shareButton.layer.borderColor = [UIColor ht_colorString:@"9bbb3b"].CGColor;
+    self.resetButton.layer.borderColor = [UIColor ht_colorString:@"9bbb3b"].CGColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -26,8 +26,8 @@
 
 //分享
 - (IBAction)shareAction:(id)sender {
-//    [self.delegate shareAction];
-//    [HTShareView showTitle:@"" detail:@"" image:nil url:nil type:SSDKContentTypeImage];
+    [self.delegate shareAction];
+
 }
 
 //重新评估

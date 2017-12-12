@@ -43,6 +43,7 @@
 		[self.majorTableView reloadData];
 	}else{
 		HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
+		networkModel.autoAlertString = @"选择专业";
 		[HTRequestManager requestSchoolMatriculateCountryListAndMajorListWithNetworkModel:networkModel complete:^(id response, HTError *errorModel) {
 			if (errorModel.existError) {
 				

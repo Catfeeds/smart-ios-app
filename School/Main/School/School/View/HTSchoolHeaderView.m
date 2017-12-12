@@ -9,6 +9,7 @@
 #import "HTSchoolHeaderView.h"
 #import <UIButton+HTButtonCategory.h>
 #import "HTSchoolMatriculateSingleController.h"
+#import "HTSchoolMatriculateContainerController.h"
 
 @interface HTSchoolHeaderView ()
 
@@ -49,10 +50,14 @@
 	[self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:SchoolResourse(model.duration)] placeholderImage:HTPLACEHOLDERIMAGE];
 	[self.headImageView sd_setImageWithURL:[NSURL URLWithString:SchoolResourse(model.image)] placeholderImage:HTPLACEHOLDERIMAGE];
 	
+	NSDictionary *dic = [model mj_keyValues];
+	
 	__weak typeof(self) weakSelf = self;
 	[self.matriculateButton ht_whenTap:^(UIView *view) {
-		HTSchoolMatriculateSingleController *singleController = [[HTSchoolMatriculateSingleController alloc] init];
-        singleController.evaluationSchool = model;
+//		HTSchoolMatriculateSingleController *singleController = [[HTSchoolMatriculateSingleController alloc] init];
+		HTSchoolMatriculateContainerController *singleController =STORYBOARD_VIEWCONTROLLER(@"Home", @"HTSchoolMatriculateContainerController");
+		
+		singleController.evaluationSchool = [HTSchoolModel mj_objectWithKeyValues:dic];
 		[weakSelf.ht_controller.navigationController pushViewController:singleController animated:true];
 	}];
 }
