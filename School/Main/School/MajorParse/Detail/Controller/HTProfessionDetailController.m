@@ -13,6 +13,12 @@
 #import "HTMajorSectionHeaderView.h"
 #import "HTSchoolController.h"
 #import "HTWebController.h"
+#import "HTUserActionManager.h"
+#import "HTUserHistoryManager.h"
+#import "HTUserStoreModel.h"
+#import "HTProfessionalModel.h"
+#import "HTStoreBarButtonItem.h"
+#import "HTUserStoreManager.h"
 
 #define headerIdentifier @"HTMajorSectionHeaderView"
 
@@ -42,6 +48,22 @@
     self.tableView.tableHeaderView.frame = CGRectMake(0, 0, HTSCREENWIDTH, 136);
 }
 
+- (void)setHistory:(HTProfessionalModel *) professionalModel {
+    
+    NSString *professionalIdString = HTPlaceholderString(self.professionalId, @"");
+    HTProfessionalDetailModel *detailModel = professionalModel.data.firstObject;
+    [HTUserActionManager trackUserActionWithType:HTUserActionTypeVisitProfessionalDetail keyValue:@{@"id":professionalModel}];
+    [HTUserHistoryManager appendHistoryModel:[HTUserHistoryModel packHistoryModelType:HTUserHistoryTypeProfessionalDetail lookId:professionalIdString titleName:detailModel.name]];
+    
+    HTUserStoreModel *model = [HTUserStoreModel packStoreModelType:HTUserStoreTypeProfessional lookId:detailModel.ID titleName:detailModel.name];
+    HTStoreBarButtonItem *storeBarButtonItem = [[HTStoreBarButtonItem alloc] initWithTapHandler:^(HTStoreBarButtonItem *item) {
+        [HTUserStoreManager switchStoreStateWithModel:model];
+        item.selected = [HTUserStoreManager isStoredWithModel:model];
+    }];
+    storeBarButtonItem.selected = [HTUserStoreManager isStoredWithModel:model];
+    self.navigationItem.rightBarButtonItem = storeBarButtonItem;
+}
+
 - (void)loadData{
     HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
 	networkModel.autoAlertString = @"项目详情";
@@ -49,12 +71,11 @@
         if (errorModel.errorString) {
             return;
         }
-        
         self.detailModel = [HTProfessionDetailModel mj_objectWithKeyValues:response];
+        [self setHistory:[HTProfessionalModel mj_objectWithKeyValues:response]];
         [self loadInterface];
         [self.tableView reloadData];
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning {
