@@ -25,45 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "School/Main/School/Filter/Common/Controller/HTSchoolFilterController.m"
-            timestampString = "534766556.545171"
+            filePath = "School/Main/Index/Common/View/HTIndexHeaderView.m"
+            timestampString = "534852309.371256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "-setChooseResultForTitle"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "School/Main/School/Filter/Common/Controller/HTSchoolFilterController.m"
-            timestampString = "534766839.383743"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-requestSchoolModelArrayPageSize:currentPage:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "School/Main/School/Filter/Common/Controller/HTSchoolFilterController.m"
-            timestampString = "534766899.110254"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-requestSchoolModelArrayPageSize:currentPage:"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-circelCollectionView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

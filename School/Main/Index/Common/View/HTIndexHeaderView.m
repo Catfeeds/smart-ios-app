@@ -25,6 +25,7 @@
 #import "HTEvaluateController.h"
 #import "HTDiscoverActivityModel.h"
 #import "HTDiscoverActivityDetailController.h"
+#import "HTFindAgencyViewController.h"
 
 @interface HTIndexHeaderView ()
 
@@ -127,8 +128,9 @@
 						break;
 					}
 					case HTIndexHeaderCollectionItemTypeOrganization: {
-						HTOrganizationController *organizationController = [[HTOrganizationController alloc] init];
-						viewController = organizationController;
+					//	HTOrganizationController *organizationController = [[HTOrganizationController alloc] init];
+						HTFindAgencyViewController *findAgencyViewController = [[HTFindAgencyViewController alloc]init];
+						viewController = findAgencyViewController;
 						break;
 					}
 					case HTIndexHeaderCollectionItemTypeAdvisor: {

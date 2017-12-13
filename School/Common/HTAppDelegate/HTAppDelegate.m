@@ -32,7 +32,7 @@
 	
 	//-----------------------------------------/ 分享 /-----------------------------------------//
 	
-	[ShareSDK registerApp:@"1a625e75679a8" activePlatforms:@[@(SSDKPlatformTypeSinaWeibo), @(SSDKPlatformTypeWechat), @(SSDKPlatformTypeQQ)] onImport:^(SSDKPlatformType platformType) {
+	[ShareSDK registerApp:@"2305bbd30d4ac" activePlatforms:@[@(SSDKPlatformTypeSinaWeibo), @(SSDKPlatformTypeWechat), @(SSDKPlatformTypeQQ)] onImport:^(SSDKPlatformType platformType) {
 		switch (platformType) {
 			case SSDKPlatformTypeWechat:
 				[ShareSDKConnector connectWeChat:[WXApi class]];

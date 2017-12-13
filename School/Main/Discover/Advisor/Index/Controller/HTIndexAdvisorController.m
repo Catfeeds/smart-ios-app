@@ -58,8 +58,6 @@
 
 - (void)packPageModelArray {
     
-    
-    
     __weak typeof(self) weakSelf = self;
     NSMutableArray *pageModelArray = [@[] mutableCopy];
     [self.itemModelArray enumerateObjectsUsingBlock:^(HTIndexAdvisorItemModel *model, NSUInteger index, BOOL * _Nonnull stop) {

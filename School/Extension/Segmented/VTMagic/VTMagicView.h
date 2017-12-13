@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VTMagicProtocol.h"
 #import "VTEnumType.h"
+#import "VTMenuBar.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -122,6 +123,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - subviews
 /****************************************subviews****************************************/
+
+@property (nonatomic, strong) VTMenuBar *menuBar; // 顶部导航菜单视图
 
 /**
  *  最顶部的头部组件，默认隐藏

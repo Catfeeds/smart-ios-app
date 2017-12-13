@@ -43,6 +43,7 @@
 		565EA2BC1FDFB8810042732B /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2A91FDFB87E0042732B /* MOBFoundation.framework */; };
 		565EA2BD1FDFB8810042732B /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 565EA2AA1FDFB87E0042732B /* ShareSDK.bundle */; };
 		565EA2BE1FDFB8810042732B /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2AB1FDFB87E0042732B /* ShareSDKConnector.framework */; };
+		56610E2E1FE1110D008B7BF6 /* HTFindAgencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56610E2D1FE1110D008B7BF6 /* HTFindAgencyViewController.m */; };
 		5663C0A71FAAC6660026663E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5663C0A61FAAC6660026663E /* Home.storyboard */; };
 		5663C0A91FAB18C20026663E /* ChooseSchoolHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5663C0A81FAB18C20026663E /* ChooseSchoolHead.xib */; };
 		56829A3E1FD914080093DA25 /* HTChooseSchoolResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56829A3D1FD914080093DA25 /* HTChooseSchoolResultController.m */; };
@@ -663,6 +664,8 @@
 		565EA2A91FDFB87E0042732B /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		565EA2AA1FDFB87E0042732B /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
 		565EA2AB1FDFB87E0042732B /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
+		56610E2C1FE1110D008B7BF6 /* HTFindAgencyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFindAgencyViewController.h; sourceTree = "<group>"; };
+		56610E2D1FE1110D008B7BF6 /* HTFindAgencyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTFindAgencyViewController.m; sourceTree = "<group>"; };
 		5663C0A61FAAC6660026663E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		5663C0A81FAB18C20026663E /* ChooseSchoolHead.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseSchoolHead.xib; sourceTree = "<group>"; };
 		56829A3C1FD914080093DA25 /* HTChooseSchoolResultController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseSchoolResultController.h; sourceTree = "<group>"; };
@@ -5088,6 +5091,8 @@
 				C2EE1F951F5B281200C8176F /* HTIndexAdvisorController.m */,
 				C2EE1F921F5B281200C8176F /* HTIndexAdvisorContentController.h */,
 				C2EE1F931F5B281200C8176F /* HTIndexAdvisorContentController.m */,
+				56610E2C1FE1110D008B7BF6 /* HTFindAgencyViewController.h */,
+				56610E2D1FE1110D008B7BF6 /* HTFindAgencyViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -6021,6 +6026,7 @@
 				020D04311FDEE19800021CA4 /* HTProfessionDetailModel.m in Sources */,
 				C20CDEC21EF11B8A00BA6D60 /* YYThreadSafeDictionary.m in Sources */,
 				C28D39F51F3967D1005FD635 /* HTIndexBookIndexCell.m in Sources */,
+				56610E2E1FE1110D008B7BF6 /* HTFindAgencyViewController.m in Sources */,
 				C22EAB7B1F30345800969300 /* HTAnswerOnlineCell.m in Sources */,
 				C20CDE3F1EF11B8A00BA6D60 /* NJKWebViewProgress.m in Sources */,
 				C2D617771F78E1CE00F4C932 /* THToeflDiscoverDetailHeaderView.m in Sources */,

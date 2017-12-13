@@ -39,7 +39,7 @@ static const void *kVTMagicView = &kVTMagicView;
 @interface VTMagicView()<UIScrollViewDelegate,VTContentViewDataSource,VTMenuBarDatasource,VTMenuBarDelegate>
 
 @property (nonatomic, strong) UIView *reviseView; // 避免系统自动调整contentView的inset
-@property (nonatomic, strong) VTMenuBar *menuBar; // 顶部导航菜单视图
+
 @property (nonatomic, strong) VTContentView *contentView; // 容器视图
 @property (nonatomic, strong) UIView *sliderView; // 顶部导航栏滑块
 @property (nonatomic, strong) UIView *separatorView; // 导航模块底部分割线
