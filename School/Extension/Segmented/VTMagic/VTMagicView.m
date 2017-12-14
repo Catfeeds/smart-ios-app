@@ -49,6 +49,7 @@ static const void *kVTMagicView = &kVTMagicView;
 @property (nonatomic, assign) NSInteger previousIndex; // 上一个页面的索引
 @property (nonatomic, assign) BOOL isViewWillAppear;
 @property (nonatomic, assign) BOOL needSkipUpdate; // 是否是跳页切换
+@property (nonatomic, strong) VTMenuBar *menuBar; // 顶部导航菜单视图
 @property (nonatomic, assign) MagicFlags magicFlags;
 @property (nonatomic, assign) VTColor normalVTColor;
 @property (nonatomic, assign) VTColor selectedVTColor;

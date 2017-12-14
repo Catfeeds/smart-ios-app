@@ -9,8 +9,11 @@
 #import "HTFindAgencyViewController.h"
 #import "HTIndexAdvisorController.h"
 #import "HTOrganizationController.h"
+#import "HTFindAgencyTitleView.h"
 
-@interface HTFindAgencyViewController () <VTMagicViewDataSource>
+@interface HTFindAgencyViewController () <VTMagicViewDataSource, VTMagicViewDelegate, HTFindAgencyTitleViewDelegate>
+
+@property (nonatomic, strong) HTFindAgencyTitleView *findAgencyTitleView;
 
 @end
 
@@ -20,25 +23,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
-	self.magicView.navigationColor = [UIColor whiteColor];
-	self.magicView.sliderColor = [UIColor redColor];
-	self.magicView.layoutStyle = VTLayoutStyleDefault;
-	self.magicView.switchStyle = VTLayoutStyleCenter;
-	self.magicView.sliderStyle = VTSliderStyleDefault;
-	self.magicView.navigationHeight = 64;
 	self.magicView.dataSource = self;
 	self.magicView.delegate = self;
-	
+	self.magicView.navigationHeight = 0;
 	[self.magicView reloadData];
 	
-	self.navigationItem.titleView = self.magicView.menuBar;
+	self.findAgencyTitleView =  [[[NSBundle mainBundle] loadNibNamed:@"HTFindAgencyTitleView" owner:nil options:nil] lastObject];
+	self.findAgencyTitleView.delegate = self;
+	self.navigationItem.titleView = self.findAgencyTitleView;
 	
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - HTFindAgencyTitleViewDelegate
+
+- (void)clickAction:(UIButton *)button{
+	NSInteger tag = button.tag;
+	if (tag == 100) {
+		[self.magicView reloadDataToPage:0];
+		[self.magicView switchToPage:0 animated:YES];
+	}else if (tag == 101){
+		[self.magicView reloadDataToPage:1];
+		[self.magicView switchToPage:1 animated:YES];
+	}
+}
+
 
 #pragma mark - VTMagicViewDataSource
 
@@ -79,6 +93,11 @@
 	return advisorController;
 }
 
+
+#pragma mark - VTMagicViewDelegate
+- (void)magicView:(VTMagicView *)magicView viewDidAppear:(__kindof UIViewController *)viewController atPage:(NSUInteger)pageIndex{
+	[self.findAgencyTitleView setSelectIndex:pageIndex];
+}
 
 /*
 #pragma mark - Navigation

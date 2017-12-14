@@ -21,7 +21,7 @@
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeLibrary), titleNameKey:@"知识库", imageNameKey:@"cn2_index_collection_library"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeMatriculate), titleNameKey:@"做测评", imageNameKey:@"cn_index_collection_matricuclate"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeWork), titleNameKey:@"找实习", imageNameKey:@"cn_index_collection_work"},
-							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeOrganization), titleNameKey:@"寻机构", imageNameKey:@"cn_index_collection_organization"},
+							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeOrganization), titleNameKey:@"找中介", imageNameKey:@"cn_index_collection_organization"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeAdvisor), titleNameKey:@"选顾问", imageNameKey:@"cn_index_collection_advisor"},
 						];
 	NSMutableArray *modelArray = [@[] mutableCopy];

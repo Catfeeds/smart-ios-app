@@ -24,6 +24,8 @@
 		563103D41FCC02A0004C85D7 /* HTSchoolBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D31FCC02A0004C85D7 /* HTSchoolBackgroundController.m */; };
 		563103D71FCC02EA004C85D7 /* HTPersonBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D61FCC02EA004C85D7 /* HTPersonBackgroundController.m */; };
 		563103DA1FCC0324004C85D7 /* HTApplyBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D91FCC0324004C85D7 /* HTApplyBackgroundController.m */; };
+		565406171FE2144000B707CD /* HTFindAgencyTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565406161FE2144000B707CD /* HTFindAgencyTitleView.m */; };
+		565406191FE2144C00B707CD /* HTFindAgencyTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565406181FE2144C00B707CD /* HTFindAgencyTitleView.xib */; };
 		565EA2AC1FDFB8810042732B /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2831FDFB87D0042732B /* ShareSDK.framework */; };
 		565EA2AD1FDFB8810042732B /* ShareSDKConfigFile.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 565EA2861FDFB87D0042732B /* ShareSDKConfigFile.bundle */; };
 		565EA2AE1FDFB8810042732B /* ShareSDKConfigFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2871FDFB87D0042732B /* ShareSDKConfigFile.framework */; };
@@ -631,6 +633,9 @@
 		563103D61FCC02EA004C85D7 /* HTPersonBackgroundController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTPersonBackgroundController.m; sourceTree = "<group>"; };
 		563103D81FCC0324004C85D7 /* HTApplyBackgroundController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTApplyBackgroundController.h; sourceTree = "<group>"; };
 		563103D91FCC0324004C85D7 /* HTApplyBackgroundController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTApplyBackgroundController.m; sourceTree = "<group>"; };
+		565406151FE2144000B707CD /* HTFindAgencyTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFindAgencyTitleView.h; sourceTree = "<group>"; };
+		565406161FE2144000B707CD /* HTFindAgencyTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTFindAgencyTitleView.m; sourceTree = "<group>"; };
+		565406181FE2144C00B707CD /* HTFindAgencyTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTFindAgencyTitleView.xib; sourceTree = "<group>"; };
 		565EA2831FDFB87D0042732B /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		565EA2861FDFB87D0042732B /* ShareSDKConfigFile.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKConfigFile.bundle; sourceTree = "<group>"; };
 		565EA2871FDFB87D0042732B /* ShareSDKConfigFile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConfigFile.framework; sourceTree = "<group>"; };
@@ -5111,6 +5116,9 @@
 			children = (
 				C2EE1F9A1F5B281200C8176F /* HTIndexAdvisorCell.h */,
 				C2EE1F9B1F5B281200C8176F /* HTIndexAdvisorCell.m */,
+				565406151FE2144000B707CD /* HTFindAgencyTitleView.h */,
+				565406161FE2144000B707CD /* HTFindAgencyTitleView.m */,
+				565406181FE2144C00B707CD /* HTFindAgencyTitleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5733,6 +5741,7 @@
 				C20CDE6D1EF11B8A00BA6D60 /* TZImagePickerController.bundle in Resources */,
 				C26C66AA1F25FA3000FFC7E5 /* cn2_launch_introduce_2.png in Resources */,
 				C26C66A91F25FA3000FFC7E5 /* cn2_launch_introduce_1.png in Resources */,
+				565406191FE2144C00B707CD /* HTFindAgencyTitleView.xib in Resources */,
 				C29646881F5CED130031C109 /* JSQMessagesAssets.bundle in Resources */,
 				C29646A71F5CED130031C109 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				C20CDE3A1EF11B8A00BA6D60 /* AXWebViewController.bundle in Resources */,
@@ -6320,6 +6329,7 @@
 				C2D6176E1F78DABB00F4C932 /* THToeflDiscoverIssueController.m in Sources */,
 				C29E36801F740801000A85D9 /* HTProfessionalSectionHeaderView.m in Sources */,
 				C20CDE7D1EF11B8A00BA6D60 /* NSObject+YYAdd.m in Sources */,
+				565406171FE2144000B707CD /* HTFindAgencyTitleView.m in Sources */,
 				C20CDEB71EF11B8A00BA6D60 /* YYTextUtilities.m in Sources */,
 				C23C03551F57E9CE0093F354 /* HTMatriculateAllSchoolController.m in Sources */,
 				C251C5CB1F734BF500D0D165 /* HTExampleSectionModel.m in Sources */,

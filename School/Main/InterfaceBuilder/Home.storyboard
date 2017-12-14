@@ -1654,7 +1654,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hh8-LT-nep" id="PUa-gb-iVj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2025,6 +2025,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IV-G4-q80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2327.1999999999998" y="1468.5157421289357"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e2y-jv-8Xd">
+            <objects>
+                <viewController id="Mwx-hA-l7r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QMv-OF-p1h"/>
+                        <viewControllerLayoutGuide type="bottom" id="QSt-Ht-us6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ebE-qO-lI3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aM-x2-q3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2303" y="2133"/>
         </scene>
         <!--Person Message Container Controller-->
         <scene sceneID="Rs2-if-3Fr">
