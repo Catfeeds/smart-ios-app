@@ -20,6 +20,11 @@
 		027637421FC17FA100959DD1 /* HTChooseSchoolAppraisalHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 027637411FC17FA100959DD1 /* HTChooseSchoolAppraisalHeaderView.m */; };
 		027637481FC1DB4B00959DD1 /* HTChooseSchoolEvaluationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027637471FC1DB4B00959DD1 /* HTChooseSchoolEvaluationController.m */; };
 		560C66611FCF930300D56070 /* HTChooseSchoolEvaluationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 560C66601FCF930300D56070 /* HTChooseSchoolEvaluationModel.m */; };
+		5625E7471FE35A260089034C /* HTUniversityRankClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5625E7461FE35A260089034C /* HTUniversityRankClassController.m */; };
+		5625E74A1FE35A870089034C /* HTUniversityRankClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5625E7491FE35A870089034C /* HTUniversityRankClassCell.m */; };
+		5625E74D1FE3666D0089034C /* HTUniversityRankClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5625E74C1FE3666D0089034C /* HTUniversityRankClassModel.m */; };
+		5625E7501FE3A2AF0089034C /* HTUniversityRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5625E74F1FE3A2AF0089034C /* HTUniversityRankCell.m */; };
+		5625E7531FE3A5150089034C /* HTUniversityRankController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5625E7521FE3A5150089034C /* HTUniversityRankController.m */; };
 		563103D11FCC01E1004C85D7 /* HTGradeEvaluationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D01FCC01E1004C85D7 /* HTGradeEvaluationController.m */; };
 		563103D41FCC02A0004C85D7 /* HTSchoolBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D31FCC02A0004C85D7 /* HTSchoolBackgroundController.m */; };
 		563103D71FCC02EA004C85D7 /* HTPersonBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563103D61FCC02EA004C85D7 /* HTPersonBackgroundController.m */; };
@@ -625,6 +630,16 @@
 		15FE5753DA6136E998080547 /* Pods-School.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-School.release.xcconfig"; path = "Pods/Target Support Files/Pods-School/Pods-School.release.xcconfig"; sourceTree = "<group>"; };
 		560C66601FCF930300D56070 /* HTChooseSchoolEvaluationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseSchoolEvaluationModel.m; sourceTree = "<group>"; };
 		560C66621FCF938900D56070 /* HTChooseSchoolEvaluationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseSchoolEvaluationModel.h; sourceTree = "<group>"; };
+		5625E7451FE35A260089034C /* HTUniversityRankClassController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUniversityRankClassController.h; sourceTree = "<group>"; };
+		5625E7461FE35A260089034C /* HTUniversityRankClassController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUniversityRankClassController.m; sourceTree = "<group>"; };
+		5625E7481FE35A870089034C /* HTUniversityRankClassCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUniversityRankClassCell.h; sourceTree = "<group>"; };
+		5625E7491FE35A870089034C /* HTUniversityRankClassCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUniversityRankClassCell.m; sourceTree = "<group>"; };
+		5625E74B1FE3666D0089034C /* HTUniversityRankClassModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUniversityRankClassModel.h; sourceTree = "<group>"; };
+		5625E74C1FE3666D0089034C /* HTUniversityRankClassModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUniversityRankClassModel.m; sourceTree = "<group>"; };
+		5625E74E1FE3A2AF0089034C /* HTUniversityRankCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUniversityRankCell.h; sourceTree = "<group>"; };
+		5625E74F1FE3A2AF0089034C /* HTUniversityRankCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUniversityRankCell.m; sourceTree = "<group>"; };
+		5625E7511FE3A5150089034C /* HTUniversityRankController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUniversityRankController.h; sourceTree = "<group>"; };
+		5625E7521FE3A5150089034C /* HTUniversityRankController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUniversityRankController.m; sourceTree = "<group>"; };
 		563103CF1FCC01E1004C85D7 /* HTGradeEvaluationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTGradeEvaluationController.h; sourceTree = "<group>"; };
 		563103D01FCC01E1004C85D7 /* HTGradeEvaluationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTGradeEvaluationController.m; sourceTree = "<group>"; };
 		563103D21FCC02A0004C85D7 /* HTSchoolBackgroundController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolBackgroundController.h; sourceTree = "<group>"; };
@@ -3552,6 +3567,10 @@
 			children = (
 				C24BBFEB1F7152790025CBEB /* HTSchoolRankController.h */,
 				C24BBFEC1F7152790025CBEB /* HTSchoolRankController.m */,
+				5625E7451FE35A260089034C /* HTUniversityRankClassController.h */,
+				5625E7461FE35A260089034C /* HTUniversityRankClassController.m */,
+				5625E7511FE3A5150089034C /* HTUniversityRankController.h */,
+				5625E7521FE3A5150089034C /* HTUniversityRankController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3565,6 +3584,8 @@
 				C24BBFF11F7152790025CBEB /* HTSchoolRankModel.m */,
 				C24BBFF21F7152790025CBEB /* HTSchoolRankSelecetdManager.h */,
 				C24BBFF31F7152790025CBEB /* HTSchoolRankSelecetdManager.m */,
+				5625E74B1FE3666D0089034C /* HTUniversityRankClassModel.h */,
+				5625E74C1FE3666D0089034C /* HTUniversityRankClassModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3578,6 +3599,10 @@
 				C24BBFF81F7152790025CBEB /* HTSchoolRankFilterCell.m */,
 				C24BBFF91F7152790025CBEB /* HTSchoolRankFilterView.h */,
 				C24BBFFA1F7152790025CBEB /* HTSchoolRankFilterView.m */,
+				5625E7481FE35A870089034C /* HTUniversityRankClassCell.h */,
+				5625E7491FE35A870089034C /* HTUniversityRankClassCell.m */,
+				5625E74E1FE3A2AF0089034C /* HTUniversityRankCell.h */,
+				5625E74F1FE3A2AF0089034C /* HTUniversityRankCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5892,6 +5917,7 @@
 				C2FA0FBA1F67BFC4002F111D /* HTOrganizationDetailController.m in Sources */,
 				C29646C01F5CF2630031C109 /* HTChatModel.m in Sources */,
 				C2EE1FEB1F5C472300C8176F /* HTMinePreferenceInputController.m in Sources */,
+				5625E74D1FE3666D0089034C /* HTUniversityRankClassModel.m in Sources */,
 				C251C6381F73763000D0D165 /* HTSchoolMatriculateResultCell.m in Sources */,
 				C2EE1F051F59FB5000C8176F /* HTStoreController.m in Sources */,
 				C20CDCCE1EF11A1000BA6D60 /* HTWebController.m in Sources */,
@@ -5965,6 +5991,7 @@
 				C20CDEA61EF11B8A00BA6D60 /* YYTextContainerView.m in Sources */,
 				C20CDE681EF11B8A00BA6D60 /* TZAssetCell.m in Sources */,
 				C2FF3E281F4141620005F287 /* HTCommunityReplyKeyBoardView.m in Sources */,
+				5625E7471FE35A260089034C /* HTUniversityRankClassController.m in Sources */,
 				C26D701C1EF3B43A00697EC1 /* HTPageModel.m in Sources */,
 				C20CDEA81EF11B8A00BA6D60 /* YYTextEffectWindow.m in Sources */,
 				C2EE1FB71F5BAC9300C8176F /* HTCollectionViewLayoutAttributes.m in Sources */,
@@ -5983,6 +6010,7 @@
 				56CFDE891FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m in Sources */,
 				C2FA0FC41F67BFC4002F111D /* HTOrganizationCell.m in Sources */,
 				C20CDE9F1EF11B8A00BA6D60 /* YYImageCache.m in Sources */,
+				5625E7501FE3A2AF0089034C /* HTUniversityRankCell.m in Sources */,
 				C2FF3E2D1F4141620005F287 /* HTPhotoCollectionView.m in Sources */,
 				C2FF3E751F4175AF0005F287 /* HTMineModel.m in Sources */,
 				C24BC02C1F7152790025CBEB /* HTSchoolHotDetailController.m in Sources */,
@@ -6034,6 +6062,7 @@
 				C2FF3E2C1F4141620005F287 /* HTPhotoCollectionCell.m in Sources */,
 				020D04311FDEE19800021CA4 /* HTProfessionDetailModel.m in Sources */,
 				C20CDEC21EF11B8A00BA6D60 /* YYThreadSafeDictionary.m in Sources */,
+				5625E74A1FE35A870089034C /* HTUniversityRankClassCell.m in Sources */,
 				C28D39F51F3967D1005FD635 /* HTIndexBookIndexCell.m in Sources */,
 				56610E2E1FE1110D008B7BF6 /* HTFindAgencyViewController.m in Sources */,
 				C22EAB7B1F30345800969300 /* HTAnswerOnlineCell.m in Sources */,
@@ -6092,6 +6121,7 @@
 				C25304461F53A903002354A4 /* HTImageTextView.m in Sources */,
 				56F3A53C1FD4F487002D0016 /* HTChooseMajorCell.m in Sources */,
 				C2FF3E221F4141620005F287 /* HTCommunityImageView.m in Sources */,
+				5625E7531FE3A5150089034C /* HTUniversityRankController.m in Sources */,
 				C20CDE831EF11B8A00BA6D60 /* CALayer+YYAdd.m in Sources */,
 				C2242FD31F75856700EC82F0 /* HTDropBoxDetailView.m in Sources */,
 				C20CDE841EF11B8A00BA6D60 /* YYCGUtilities.m in Sources */,

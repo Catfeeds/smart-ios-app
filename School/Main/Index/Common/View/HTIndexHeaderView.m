@@ -26,6 +26,7 @@
 #import "HTDiscoverActivityModel.h"
 #import "HTDiscoverActivityDetailController.h"
 #import "HTFindAgencyViewController.h"
+#import "HTUniversityRankClassController.h"
 
 @interface HTIndexHeaderView ()
 
@@ -103,8 +104,10 @@
 						break;
 					}
 					case HTIndexHeaderCollectionItemTypeRank: {
-						HTSchoolRankController *rankController = [[HTSchoolRankController alloc] init];
+					//	HTSchoolRankController *rankController = [[HTSchoolRankController alloc] init];
+						HTUniversityRankClassController *rankController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTUniversityRankClassController");
 						viewController = rankController;
+						
 						break;
 					}
 					case HTIndexHeaderCollectionItemTypeMajor: {

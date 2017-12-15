@@ -12,7 +12,7 @@
 #import <HTValidateManager.h>
 #import <HTNetworkManager+HTNetworkCache.h>
 #import <HTEncodeDecodeManager.h>
-
+#import "NSObject+HTObjectCategory.h"
 #import <BmobSDK/Bmob.h>
 
 static NSString *kHTApplicationIdString = @"1271275068";
@@ -182,6 +182,10 @@ static NSString *kHTApplicationIdString = @"1271275068";
 }
 
 + (void)requestRankSchoolListWithNetworkModel:(HTNetworkModel *)networkModel classIdString:(NSString *)classIdString yearIdString:(NSString *)yearIdString currentPage:(NSString *)currentPage pageSize:(NSString *)pageSize complete:(HTUserTaskCompleteBlock)complete {
+	
+	NSURLSessionTask *task = [networkModel ht_valueForSelector:@selector(task) runtime:false];
+	if(task)[task cancel]; //取消上次请求
+	
 	[HTNetworkManager requestModel:networkModel
 							method:HTNetworkRequestMethodPost
 							   url:@"http://www.smartapply.cn/cn/app-api/university-rank"
