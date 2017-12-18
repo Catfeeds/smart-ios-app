@@ -66,6 +66,14 @@
 		56E6B7421FD7819E00B6A148 /* HTDestinationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E6B7411FD7819E00B6A148 /* HTDestinationCell.m */; };
 		56F3A5391FD4F25F002D0016 /* HTChooseMajorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3A5381FD4F25F002D0016 /* HTChooseMajorViewController.m */; };
 		56F3A53C1FD4F487002D0016 /* HTChooseMajorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F3A53B1FD4F487002D0016 /* HTChooseMajorCell.m */; };
+		56FA64211FE7A2E70013A165 /* HTHeadlineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56FA64201FE7A2E70013A165 /* HTHeadlineHeaderView.xib */; };
+		56FA64241FE7A3150013A165 /* HTHeadlineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA64231FE7A3150013A165 /* HTHeadlineHeaderView.m */; };
+		56FA64281FE7A7220013A165 /* HTHeadlineCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA64261FE7A7220013A165 /* HTHeadlineCollectionCell.m */; };
+		56FA64291FE7A7220013A165 /* HTHeadlineCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56FA64271FE7A7220013A165 /* HTHeadlineCollectionCell.xib */; };
+		56FA642D1FE7DC210013A165 /* HTDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA642B1FE7DC210013A165 /* HTDiscoverCell.m */; };
+		56FA642E1FE7DC210013A165 /* HTDiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56FA642C1FE7DC210013A165 /* HTDiscoverCell.xib */; };
+		56FA64321FE7F0D40013A165 /* HTDiscoverImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA64301FE7F0D40013A165 /* HTDiscoverImageCollectionCell.m */; };
+		56FA64331FE7F0D40013A165 /* HTDiscoverImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56FA64311FE7F0D40013A165 /* HTDiscoverImageCollectionCell.xib */; };
 		6053C1090280FC03306A4081 /* libPods-School.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFFBDF53A6B61930E730DDD /* libPods-School.a */; };
 		C20381161F41061700194A9D /* HTAnswerIssueController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20381151F41061700194A9D /* HTAnswerIssueController.m */; };
 		C20381241F4637C300194A9D /* HTFansController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20381231F4637C300194A9D /* HTFansController.m */; };
@@ -714,6 +722,18 @@
 		56F3A5381FD4F25F002D0016 /* HTChooseMajorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseMajorViewController.m; sourceTree = "<group>"; };
 		56F3A53A1FD4F487002D0016 /* HTChooseMajorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseMajorCell.h; sourceTree = "<group>"; };
 		56F3A53B1FD4F487002D0016 /* HTChooseMajorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseMajorCell.m; sourceTree = "<group>"; };
+		56FA64201FE7A2E70013A165 /* HTHeadlineHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTHeadlineHeaderView.xib; sourceTree = "<group>"; };
+		56FA64221FE7A3150013A165 /* HTHeadlineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTHeadlineHeaderView.h; sourceTree = "<group>"; };
+		56FA64231FE7A3150013A165 /* HTHeadlineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTHeadlineHeaderView.m; sourceTree = "<group>"; };
+		56FA64251FE7A7220013A165 /* HTHeadlineCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTHeadlineCollectionCell.h; sourceTree = "<group>"; };
+		56FA64261FE7A7220013A165 /* HTHeadlineCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTHeadlineCollectionCell.m; sourceTree = "<group>"; };
+		56FA64271FE7A7220013A165 /* HTHeadlineCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTHeadlineCollectionCell.xib; sourceTree = "<group>"; };
+		56FA642A1FE7DC210013A165 /* HTDiscoverCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDiscoverCell.h; sourceTree = "<group>"; };
+		56FA642B1FE7DC210013A165 /* HTDiscoverCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDiscoverCell.m; sourceTree = "<group>"; };
+		56FA642C1FE7DC210013A165 /* HTDiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDiscoverCell.xib; sourceTree = "<group>"; };
+		56FA642F1FE7F0D40013A165 /* HTDiscoverImageCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDiscoverImageCollectionCell.h; sourceTree = "<group>"; };
+		56FA64301FE7F0D40013A165 /* HTDiscoverImageCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDiscoverImageCollectionCell.m; sourceTree = "<group>"; };
+		56FA64311FE7F0D40013A165 /* HTDiscoverImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDiscoverImageCollectionCell.xib; sourceTree = "<group>"; };
 		A3FA8F91C90097514747711E /* Pods-School.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-School.debug.xcconfig"; path = "Pods/Target Support Files/Pods-School/Pods-School.debug.xcconfig"; sourceTree = "<group>"; };
 		C20381141F41061700194A9D /* HTAnswerIssueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAnswerIssueController.h; sourceTree = "<group>"; };
 		C20381151F41061700194A9D /* HTAnswerIssueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAnswerIssueController.m; sourceTree = "<group>"; };
@@ -4940,6 +4960,18 @@
 				C2E66ACC1F2F0AD60000651A /* HTDiscoverHeaderView.m */,
 				C251C5D51F73679400D0D165 /* HTActivityTopLineCell.h */,
 				C251C5D61F73679400D0D165 /* HTActivityTopLineCell.m */,
+				56FA64201FE7A2E70013A165 /* HTHeadlineHeaderView.xib */,
+				56FA64221FE7A3150013A165 /* HTHeadlineHeaderView.h */,
+				56FA64231FE7A3150013A165 /* HTHeadlineHeaderView.m */,
+				56FA64251FE7A7220013A165 /* HTHeadlineCollectionCell.h */,
+				56FA64261FE7A7220013A165 /* HTHeadlineCollectionCell.m */,
+				56FA64271FE7A7220013A165 /* HTHeadlineCollectionCell.xib */,
+				56FA642A1FE7DC210013A165 /* HTDiscoverCell.h */,
+				56FA642B1FE7DC210013A165 /* HTDiscoverCell.m */,
+				56FA642C1FE7DC210013A165 /* HTDiscoverCell.xib */,
+				56FA642F1FE7F0D40013A165 /* HTDiscoverImageCollectionCell.h */,
+				56FA64301FE7F0D40013A165 /* HTDiscoverImageCollectionCell.m */,
+				56FA64311FE7F0D40013A165 /* HTDiscoverImageCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5751,6 +5783,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5663C0A91FAB18C20026663E /* ChooseSchoolHead.xib in Resources */,
+				56FA64331FE7F0D40013A165 /* HTDiscoverImageCollectionCell.xib in Resources */,
 				C20CDE341EF11B8A00BA6D60 /* mouse@2x.png in Resources */,
 				C20CDEDF1EF1219200BA6D60 /* Settings.bundle in Resources */,
 				C26C66AD1F25FB8700FFC7E5 /* cn2_login_background.png in Resources */,
@@ -5762,11 +5795,13 @@
 				C24D88FB1EFAF1EE00E4EDD7 /* Assets.xcassets in Resources */,
 				565EA2B01FDFB8810042732B /* ShareSDKUI.bundle in Resources */,
 				C20CDE321EF11B8A00BA6D60 /* .gitkeep in Resources */,
+				56FA64291FE7A7220013A165 /* HTHeadlineCollectionCell.xib in Resources */,
 				565EA2BD1FDFB8810042732B /* ShareSDK.bundle in Resources */,
 				C20CDE6D1EF11B8A00BA6D60 /* TZImagePickerController.bundle in Resources */,
 				C26C66AA1F25FA3000FFC7E5 /* cn2_launch_introduce_2.png in Resources */,
 				C26C66A91F25FA3000FFC7E5 /* cn2_launch_introduce_1.png in Resources */,
 				565406191FE2144C00B707CD /* HTFindAgencyTitleView.xib in Resources */,
+				56FA642E1FE7DC210013A165 /* HTDiscoverCell.xib in Resources */,
 				C29646881F5CED130031C109 /* JSQMessagesAssets.bundle in Resources */,
 				C29646A71F5CED130031C109 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				C20CDE3A1EF11B8A00BA6D60 /* AXWebViewController.bundle in Resources */,
@@ -5775,6 +5810,7 @@
 				565EA2BB1FDFB8810042732B /* README.txt in Resources */,
 				565EA2AD1FDFB8810042732B /* ShareSDKConfigFile.bundle in Resources */,
 				C20CDE611EF11B8A00BA6D60 /* MTA Advanced Gamming Model Programming Guide.pdf in Resources */,
+				56FA64211FE7A2E70013A165 /* HTHeadlineHeaderView.xib in Resources */,
 				C29646A91F5CED130031C109 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				C29646B31F5CED130031C109 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
 				C20CDE621EF11B8A00BA6D60 /* MTA Developing Guide.pdf in Resources */,
@@ -5914,6 +5950,7 @@
 				C2242FD51F75856700EC82F0 /* HTDropBoxTitleView.m in Sources */,
 				C2E66AD01F2F0BB20000651A /* HTDiscoverItemModel.m in Sources */,
 				C20CDE2E1EF11B8A00BA6D60 /* HTCenterLabelAlert.m in Sources */,
+				56FA64281FE7A7220013A165 /* HTHeadlineCollectionCell.m in Sources */,
 				C2FA0FBA1F67BFC4002F111D /* HTOrganizationDetailController.m in Sources */,
 				C29646C01F5CF2630031C109 /* HTChatModel.m in Sources */,
 				C2EE1FEB1F5C472300C8176F /* HTMinePreferenceInputController.m in Sources */,
@@ -6080,6 +6117,7 @@
 				C2FF3E1E1F4141620005F287 /* HTCommunityMessageModel.m in Sources */,
 				C20CDEBF1EF11B8A00BA6D60 /* YYReachability.m in Sources */,
 				C24BC0371F7152790025CBEB /* HTMajorSectionHeaderView.m in Sources */,
+				56FA642D1FE7DC210013A165 /* HTDiscoverCell.m in Sources */,
 				C20CDE9E1EF11B8A00BA6D60 /* YYImage.m in Sources */,
 				C2FA0FC11F67BFC4002F111D /* HTOrganizationContentController.m in Sources */,
 				C2DA539D1F7C02C000191E30 /* HTAnswerHeaderView.m in Sources */,
@@ -6140,6 +6178,7 @@
 				C29646A41F5CED130031C109 /* JSQMessagesCollectionView.m in Sources */,
 				C2FF3E1F1F4141620005F287 /* HTCommunityModel.m in Sources */,
 				C29E36831F74083D000A85D9 /* HTProfessionalHeaderView.m in Sources */,
+				56FA64321FE7F0D40013A165 /* HTDiscoverImageCollectionCell.m in Sources */,
 				C2E66AAB1F2F09DF0000651A /* HTIndexAnswerController.m in Sources */,
 				C21022E61F42A46800C6902C /* HTLibraryApplyContentController.m in Sources */,
 				C20CDEC81EF11C3D00BA6D60 /* HTAppDelegate.m in Sources */,
@@ -6360,6 +6399,7 @@
 				C29E36801F740801000A85D9 /* HTProfessionalSectionHeaderView.m in Sources */,
 				C20CDE7D1EF11B8A00BA6D60 /* NSObject+YYAdd.m in Sources */,
 				565406171FE2144000B707CD /* HTFindAgencyTitleView.m in Sources */,
+				56FA64241FE7A3150013A165 /* HTHeadlineHeaderView.m in Sources */,
 				C20CDEB71EF11B8A00BA6D60 /* YYTextUtilities.m in Sources */,
 				C23C03551F57E9CE0093F354 /* HTMatriculateAllSchoolController.m in Sources */,
 				C251C5CB1F734BF500D0D165 /* HTExampleSectionModel.m in Sources */,

@@ -11,9 +11,12 @@
 #import "HTLibraryModel.h"
 #import "HTLibraryApplyController.h"
 
+
+
 @interface HTLibraryController ()
 
 @property (nonatomic, strong) HTLibraryModel *libraryModel;
+@property (nonatomic, strong) UISegmentedControl *segement;
 
 @end
 
@@ -25,16 +28,26 @@
     [self initializeUserInterface];
 }
 
+
 - (void)initializeDataSource {
     
 }
 
 - (void)initializeUserInterface {
-    self.navigationItem.title = @"知识库";
-    self.magicView.layoutStyle = VTLayoutStyleDefault;
-    self.magicView.sliderColor = [UIColor ht_colorStyle:HTColorStyleTintColor];
-    self.magicView.sliderHeight =  1 / [UIScreen mainScreen].scale;
+	//self.navigationItem.title = @"知识库";
 	
+	self.segement =  [[UISegmentedControl alloc]initWithItems:@[@"申请项目解析",@"留学规划解析"]];
+	self.segement.selectedSegmentIndex = 0;
+	[self.segement addTarget:self action:@selector(changeController:) forControlEvents:UIControlEventValueChanged];
+	self.segement.tintColor = [UIColor whiteColor];
+	self.navigationItem.titleView = self.segement;
+	
+	self.magicView.navigationHeight = 0;
+//    self.magicView.layoutStyle = VTLayoutStyleDefault;
+//    self.magicView.sliderColor = [UIColor ht_colorStyle:HTColorStyleTintColor];
+//    self.magicView.sliderHeight =  1 / [UIScreen mainScreen].scale;
+
+
 	__weak typeof(self) weakSelf = self;
     NSArray *libraryModelArray = [HTDiscoverItemModel packModelArray];
     NSMutableArray *pageModelArray = [@[] mutableCopy];
@@ -61,8 +74,12 @@
 			}];
 		}
     }];
-    
+
     [self.magicView reloadData];
+}
+
+- (void)changeController:(UISegmentedControl *)segemented{
+	[self.magicView switchToPage:segemented.selectedSegmentIndex animated:YES];
 }
 
 - (UIViewController *)magicView:(VTMagicView *)magicView viewControllerAtPage:(NSUInteger)pageIndex {
@@ -72,6 +89,11 @@
 		applyController.reuseControllerIndex = pageIndex;
 	}
 	return controller;
+}
+
+- (void)magicView:(VTMagicView *)magicView viewDidAppear:(__kindof UIViewController *)viewController atPage:(NSUInteger)pageIndex{
+	self.segement.selectedSegmentIndex = pageIndex;
+	[super magicView:magicView viewDidAppear:viewController atPage:pageIndex];
 }
 
 @end

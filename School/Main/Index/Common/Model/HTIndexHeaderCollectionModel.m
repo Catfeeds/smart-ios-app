@@ -18,7 +18,7 @@
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeSchool), titleNameKey:@"查院校", imageNameKey:@"cn2_index_collection_school"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeRank), titleNameKey:@"看排名", imageNameKey:@"cn2_index_collection_rank"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeMajor), titleNameKey:@"专业库", imageNameKey:@"cn2_index_collection_major"},
-							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeLibrary), titleNameKey:@"知识库", imageNameKey:@"cn2_index_collection_library"},
+							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeLibrary), titleNameKey:@"Mentor课程", imageNameKey:@"cn2_index_collection_library"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeMatriculate), titleNameKey:@"做测评", imageNameKey:@"cn_index_collection_matricuclate"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeWork), titleNameKey:@"找实习", imageNameKey:@"cn_index_collection_work"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeOrganization), titleNameKey:@"找中介", imageNameKey:@"cn_index_collection_organization"},

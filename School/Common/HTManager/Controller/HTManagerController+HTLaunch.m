@@ -15,7 +15,7 @@
 
 - (void)launchChildController {
 
-	UIView.appearance.tintColor = [UIColor ht_colorStyle:HTColorStyleTintColor];
+//	UIView.appearance.tintColor = [UIColor ht_colorStyle:HTColorStyleTintColor];
 	UIScrollView.appearance.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 	UITextView.appearance.keyboardDismissMode = UIScrollViewKeyboardDismissModeNone;
 	UITextField.appearance.clearButtonMode = UITextFieldViewModeWhileEditing;

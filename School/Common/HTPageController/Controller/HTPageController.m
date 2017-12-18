@@ -61,7 +61,7 @@
 		}
 		HTPageModel *pageModel = self.pageModelArray[pageIndex];
 		pageModel.contentOffset = viewController.tableView.contentOffset;
-		viewController.pageModel = nil;
+	//	viewController.pageModel = nil;
 	}
 }
 

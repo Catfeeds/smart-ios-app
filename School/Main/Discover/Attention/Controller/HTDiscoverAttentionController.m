@@ -12,8 +12,9 @@
 #import "THToeflDiscoverModel.h"
 #import "THToeflDiscoverDetailController.h"
 #import <UITableViewCell_HTSeparate.h>
+#import "HTDiscoverCell.h"
 
-@interface HTDiscoverAttentionController ()
+@interface HTDiscoverAttentionController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -45,20 +46,29 @@
 	[self.navigationController pushViewController:detailController animated:true];
 }
 
+
 - (UITableView *)tableView {
 	if (!_tableView) {
 		_tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.ht_w, [UIScreen mainScreen].bounds.size.height - 64 - 49 - 44)];
 		_tableView.backgroundColor = [UIColor ht_colorStyle:HTColorStyleCompareBackground];
 		_tableView.ht_pageSize = 20;
-		_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+		
+		
 		
 		__weak typeof(self) weakSelf = self;
+//		[_tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
+//			[[sectionMaker.cellClass([THToeflDiscoverTableCell class]).rowHeight(100) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof NSObject *model) {
+//				[weakSelf didSelectedTableView:tableView cell:cell row:row model:model];
+//			}] didScrollBlock:^(UIScrollView *scrollView, CGPoint contentOffSet, UIEdgeInsets contentInSet) {
+//
+//			}];
+//		}];
 		[_tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
-			[[sectionMaker.cellClass([THToeflDiscoverTableCell class]).rowHeight(100) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof NSObject *model) {
+			[[sectionMaker.cellClass([HTDiscoverCell class]) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof NSObject *model) {
 				[weakSelf didSelectedTableView:tableView cell:cell row:row model:model];
 			}] didScrollBlock:^(UIScrollView *scrollView, CGPoint contentOffSet, UIEdgeInsets contentInSet) {
-				
-            }];
+
+			}];
 		}];
 	}
 	return _tableView;

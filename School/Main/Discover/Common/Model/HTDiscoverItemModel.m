@@ -18,9 +18,9 @@
 	NSString *imageNameKey = @"imageNameKey";
 	NSString *controllerClassKey = @"controllerClassKey";
 	NSArray *keyValueArray = @[
-								 @{titleNameKey:@"申请前", imageNameKey:@"cn_discover_header_item_before", controllerClassKey:NSStringFromClass([HTLibraryApplyController class])},
-								 @{titleNameKey:@"申请中", imageNameKey:@"cn_discover_header_item_ing", controllerClassKey:NSStringFromClass([HTLibraryApplyController class])},
-								 @{titleNameKey:@"申请后", imageNameKey:@"cn_discover_header_item_after", controllerClassKey:NSStringFromClass([HTLibraryApplyController class])},
+//								 @{titleNameKey:@"申请前", imageNameKey:@"cn_discover_header_item_before", controllerClassKey:NSStringFromClass([HTLibraryApplyController class])},
+//								 @{titleNameKey:@"申请中", imageNameKey:@"cn_discover_header_item_ing", controllerClassKey:NSStringFromClass([HTLibraryApplyController class])},
+//								 @{titleNameKey:@"申请后", imageNameKey:@"cn_discover_header_item_after", controllerClassKey:NSStringFromClass([HTLibraryApplyController class])},
 								 @{titleNameKey:@"申请项目视频解析", imageNameKey:@"cn_discover_header_item_video", controllerClassKey:NSStringFromClass([HTLibraryVideoController class])},
 								 @{titleNameKey:@"留学规划视频解析", imageNameKey:@"cn_discover_header_item_video", controllerClassKey:NSStringFromClass([HTLibraryAnalysisController class])},
 							 ];

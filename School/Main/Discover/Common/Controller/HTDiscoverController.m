@@ -16,6 +16,7 @@
 #import "HTDiscoverActivityModel.h"
 #import "HTGossIPItemModel.h"
 #import "THToeflDiscoverModel.h"
+#import "HTHeadlineHeaderView.h"
 
 @interface HTDiscoverController ()
 
@@ -24,6 +25,8 @@
 @property (nonatomic, strong) NSArray *itemModelArray;
 
 @property (nonatomic, strong) NSMutableDictionary *controllerDictionary;
+
+@property (nonatomic, strong) HTHeadlineHeaderView *headlineHeaderView;
 
 @end
 
@@ -37,15 +40,16 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	if (!self.headerView.bannerModelArray.count) {
+	if (!self.headlineHeaderView.activityModelArray.count) {
 		HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
 		[HTRequestManager requestActivityBannerWithNetworkModel:networkModel complete:^(id response, HTError *errorModel) {
 			if (errorModel.existError) {
 				return;
 			}
 			NSArray *bannerModelArray = [HTDiscoverActivityModel mj_objectArrayWithKeyValuesArray:response[@"banner"]];
-			[self.headerView setBannerModelArray:bannerModelArray];
-			[self.headerView setTopLineModelArray:bannerModelArray];
+			self.headlineHeaderView.activityModelArray = bannerModelArray;
+		//	[self.headerView setBannerModelArray:bannerModelArray];
+		//	[self.headerView setTopLineModelArray:bannerModelArray];
 		}];
 	}
 }
@@ -72,12 +76,18 @@
 	UIBarButtonItem *issueBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:issueButton];
 	self.navigationItem.rightBarButtonItem = issueBarButtonItem;
 	
-	self.magicView.headerHeight = self.headerView.ht_h;
-	[self.magicView.headerView addSubview:self.headerView];
+//	self.magicView.headerHeight = self.headerView.ht_h;
+//	[self.magicView.headerView addSubview:self.headerView];
+
+	self.magicView.headerHeight = self.headlineHeaderView.ht_h;
+	[self.magicView.headerView addSubview:self.headlineHeaderView];
+	
 	self.magicView.layoutStyle = VTLayoutStyleDefault;
 	self.magicView.headerHidden = false;
 	self.magicView.sliderHeight = 1 / [UIScreen mainScreen].scale;
 	self.magicView.sliderColor = [UIColor ht_colorStyle:HTColorStyleTintColor];
+	
+	self.headlineHeaderView.frame = CGRectMake(0, 0, HTSCREENWIDTH, 144);
 	
 	NSArray *itemModelArray = self.itemModelArray;
 	NSMutableArray *pageModelArray = [@[] mutableCopy];
@@ -142,6 +152,14 @@
 		_headerView = [[HTDiscoverHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 320)];
 	}
 	return _headerView;
+}
+
+- (HTHeadlineHeaderView *) headlineHeaderView{
+	if (!_headlineHeaderView) {
+		_headlineHeaderView =  [[NSBundle mainBundle] loadNibNamed:@"HTHeadlineHeaderView" owner:nil options:nil].firstObject;
+		_headlineHeaderView.frame = CGRectMake(0, 0, HTSCREENWIDTH, 144);
+	}
+	return _headlineHeaderView;
 }
 
 - (NSArray *)itemModelArray {
