@@ -14,7 +14,7 @@
 #import <UITableViewCell_HTSeparate.h>
 #import "HTDiscoverCell.h"
 
-@interface HTDiscoverAttentionController () <UITableViewDelegate, UITableViewDataSource>
+@interface HTDiscoverAttentionController ()
 
 @end
 
