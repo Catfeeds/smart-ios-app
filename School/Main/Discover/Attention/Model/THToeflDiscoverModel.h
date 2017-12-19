@@ -51,6 +51,7 @@
 @property (nonatomic, strong) NSArray<THDiscoverReply *> *Reply;
 
 @property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSString *replyNum;
 
 
 - (void)creatDetailAttributedString;

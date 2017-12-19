@@ -48,7 +48,7 @@
 							  kHTTabBarTITLEKEY:@"Mentor问答",
 							  kHTTabBarIMAGEKEY:@"cn2_icon_tabbaritem_2_n",
 							  kHTTabBarSELECTEDIMAGEKEY:@"cn2_icon_tabbaritem_2_s"},
-							@{kHTTabBarCONTROLLERKEY:NSStringFromClass([HTDiscoverController class]),
+							@{kHTTabBarCONTROLLERKEY:NSStringFromClass([HTStudyCommunityController class]),
 							  kHTTabBarTITLEKEY:@"留学社区",
 							  kHTTabBarIMAGEKEY:@"cn2_icon_tabbaritem_3_n",
 							  kHTTabBarSELECTEDIMAGEKEY:@"cn2_icon_tabbaritem_3_s"},

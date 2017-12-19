@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "THToeflDiscoverModel.h"
 
-@interface HTDiscoverCell : UITableViewCell <UICollectionViewDataSource>
+@interface HTDiscoverCell : UITableViewCell <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) THToeflDiscoverModel *discoverMode;
+@property (weak, nonatomic) IBOutlet UILabel *hotLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hotLabelWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hotLabelLeftConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageConllectionHeight;
 @property (weak, nonatomic) IBOutlet UILabel *toeflTitleLabel;

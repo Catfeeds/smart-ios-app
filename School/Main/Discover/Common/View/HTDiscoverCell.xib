@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UB-8t-wTF">
-                        <rect key="frame" x="10" y="10" width="321" height="16"/>
+                        <rect key="frame" x="55" y="10" width="276" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="Z23-Dp-PdB"/>
                         </constraints>
@@ -33,23 +33,6 @@
                         <color key="textColor" red="0.61955416202545166" green="0.6196434497833252" blue="0.61952602863311768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KA6-RL-Fzw">
-                        <rect key="frame" x="10" y="104.5" width="321" height="80"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="80" id="mPe-a2-Axo"/>
-                        </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="WjR-CA-sLR">
-                            <size key="itemSize" width="110" height="80"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <connections>
-                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="Jbb-Uc-5tb"/>
-                            <outlet property="delegate" destination="KGk-i7-Jjw" id="tOx-JT-QsV"/>
-                        </connections>
-                    </collectionView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2Z-pf-oFS">
                         <rect key="frame" x="10" y="194.5" width="35.5" height="12"/>
                         <constraints>
@@ -77,14 +60,46 @@
                         <color key="textColor" red="0.61955416200000002" green="0.61964344979999997" blue="0.61952602859999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFa-tC-ctG">
+                        <rect key="frame" x="10" y="9.5" width="35" height="17"/>
+                        <color key="backgroundColor" red="0.91632372140884399" green="0.23314550518989563" blue="0.18782830238342285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="B1Z-wT-rC3"/>
+                            <constraint firstAttribute="width" constant="35" id="LGY-rc-Lf6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KA6-RL-Fzw">
+                        <rect key="frame" x="10" y="104.5" width="321" height="80"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="mPe-a2-Axo"/>
+                        </constraints>
+                        <collectionViewLayout key="collectionViewLayout" id="Bde-0S-V48" customClass="HTDiscoverImageCollectionLayout"/>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="Jbb-Uc-5tb"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="tOx-JT-QsV"/>
+                        </connections>
+                    </collectionView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="8s9-ne-ulS" firstAttribute="top" secondItem="4UB-8t-wTF" secondAttribute="bottom" constant="10" id="2eW-fH-6po"/>
                     <constraint firstItem="i2Z-pf-oFS" firstAttribute="top" secondItem="KA6-RL-Fzw" secondAttribute="bottom" constant="10" id="3D0-wF-vFU"/>
                     <constraint firstItem="8s9-ne-ulS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="7Lv-Hh-ISN"/>
+                    <constraint firstItem="JFa-tC-ctG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="8iy-MZ-Kqd"/>
+                    <constraint firstItem="4UB-8t-wTF" firstAttribute="leading" secondItem="JFa-tC-ctG" secondAttribute="trailing" constant="10" id="DBb-8l-NPJ"/>
                     <constraint firstItem="i2Z-pf-oFS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="EeB-fX-O6H"/>
                     <constraint firstAttribute="trailing" secondItem="KA6-RL-Fzw" secondAttribute="trailing" constant="10" id="GuL-Ra-PtG"/>
                     <constraint firstItem="Jsm-fk-cyI" firstAttribute="centerY" secondItem="i2Z-pf-oFS" secondAttribute="centerY" id="JDa-g5-FUZ"/>
+                    <constraint firstItem="4UB-8t-wTF" firstAttribute="centerY" secondItem="JFa-tC-ctG" secondAttribute="centerY" id="Ksx-hg-SZa"/>
                     <constraint firstAttribute="bottom" secondItem="i2Z-pf-oFS" secondAttribute="bottom" constant="10" id="Rx8-9a-Dwu"/>
                     <constraint firstAttribute="trailing" secondItem="8s9-ne-ulS" secondAttribute="trailing" constant="10" id="Wki-gq-LgD"/>
                     <constraint firstAttribute="trailing" secondItem="4UB-8t-wTF" secondAttribute="trailing" constant="10" id="aEz-kL-DKC"/>
@@ -93,12 +108,14 @@
                     <constraint firstItem="4UB-8t-wTF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hlQ-bh-tbD"/>
                     <constraint firstAttribute="trailing" secondItem="KTM-mW-Svh" secondAttribute="trailing" constant="10" id="ji0-s8-I31"/>
                     <constraint firstItem="KA6-RL-Fzw" firstAttribute="top" secondItem="8s9-ne-ulS" secondAttribute="bottom" constant="10" id="pEe-hz-7fw"/>
-                    <constraint firstItem="4UB-8t-wTF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="twW-F6-hA2"/>
                     <constraint firstItem="KA6-RL-Fzw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xgc-vA-Nu2"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="createTimeLabel" destination="Jsm-fk-cyI" id="WgW-pE-uLf"/>
+                <outlet property="hotLabel" destination="JFa-tC-ctG" id="453-11-M12"/>
+                <outlet property="hotLabelLeftConstraint" destination="8iy-MZ-Kqd" id="YWn-AG-A41"/>
+                <outlet property="hotLabelWidthConstraint" destination="LGY-rc-Lf6" id="dpA-J4-dkT"/>
                 <outlet property="imageConllectionHeight" destination="mPe-a2-Axo" id="8Vy-w3-y9l"/>
                 <outlet property="imageConllectionView" destination="KA6-RL-Fzw" id="XmY-qi-YmW"/>
                 <outlet property="lookAndReplyLabel" destination="KTM-mW-Svh" id="9Xo-dd-el0"/>

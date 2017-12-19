@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HTVersionManager.h"
 #import "HTAnswerController.h"
-#import "HTDiscoverController.h"
+#import "HTStudyCommunityController.h"
 #import "HTCommunityController.h"
 #import "HTDiscoverActivityController.h"
 
