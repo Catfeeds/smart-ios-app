@@ -32,6 +32,29 @@
 		5644C0481FE8A576004D6E27 /* HTDiscoverImageCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0471FE8A575004D6E27 /* HTDiscoverImageCollectionLayout.m */; };
 		5644C04B1FE8BD7B004D6E27 /* HTStudyCommunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C04A1FE8BD7B004D6E27 /* HTStudyCommunityController.m */; };
 		5644C04E1FE90213004D6E27 /* HTApplyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C04D1FE90213004D6E27 /* HTApplyController.m */; };
+		5644C07F1FE93605004D6E27 /* HTPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0521FE93605004D6E27 /* HTPlayerController.m */; };
+		5644C0801FE93605004D6E27 /* HTPlayerDocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0551FE93605004D6E27 /* HTPlayerDocumentModel.m */; };
+		5644C0811FE93605004D6E27 /* HTPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0571FE93605004D6E27 /* HTPlayerManager.m */; };
+		5644C0821FE93605004D6E27 /* HTPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0591FE93605004D6E27 /* HTPlayerModel.m */; };
+		5644C0831FE93605004D6E27 /* HTPlayerSpeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C05B1FE93605004D6E27 /* HTPlayerSpeedModel.m */; };
+		5644C0841FE93605004D6E27 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C05D1FE93605004D6E27 /* XMLReader.m */; };
+		5644C0851FE93605004D6E27 /* HTPlayerBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0601FE93605004D6E27 /* HTPlayerBrightnessView.m */; };
+		5644C0861FE93605004D6E27 /* HTPlayerConfigureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0621FE93605004D6E27 /* HTPlayerConfigureView.m */; };
+		5644C0871FE93605004D6E27 /* HTPlayerDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0641FE93605004D6E27 /* HTPlayerDragView.m */; };
+		5644C0881FE93605004D6E27 /* HTPlayerLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0661FE93605004D6E27 /* HTPlayerLeftView.m */; };
+		5644C0891FE93605004D6E27 /* HTPlayerNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0681FE93605004D6E27 /* HTPlayerNavigationBar.m */; };
+		5644C08A1FE93605004D6E27 /* HTPlayerSeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C06A1FE93605004D6E27 /* HTPlayerSeekView.m */; };
+		5644C08B1FE93605004D6E27 /* HTPlayerSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C06C1FE93605004D6E27 /* HTPlayerSlider.m */; };
+		5644C08C1FE93605004D6E27 /* HTPlayerSpeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C06E1FE93605004D6E27 /* HTPlayerSpeedCell.m */; };
+		5644C08D1FE93605004D6E27 /* HTPlayerSpeedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0701FE93605004D6E27 /* HTPlayerSpeedView.m */; };
+		5644C08E1FE93605004D6E27 /* HTPlayerTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0721FE93605004D6E27 /* HTPlayerTabBar.m */; };
+		5644C08F1FE93605004D6E27 /* HTPlayerTeacherDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0741FE93605004D6E27 /* HTPlayerTeacherDetailCell.m */; };
+		5644C0901FE93605004D6E27 /* HTPlayerToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0761FE93605004D6E27 /* HTPlayerToolBar.m */; };
+		5644C0911FE93605004D6E27 /* HTPlayerView+HTSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0781FE93605004D6E27 /* HTPlayerView+HTSwitch.m */; };
+		5644C0921FE93605004D6E27 /* HTPlayerView+HTTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C07A1FE93605004D6E27 /* HTPlayerView+HTTouch.m */; };
+		5644C0931FE93605004D6E27 /* HTPlayerView+HTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C07C1FE93605004D6E27 /* HTPlayerView+HTView.m */; };
+		5644C0941FE93605004D6E27 /* HTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C07E1FE93605004D6E27 /* HTPlayerView.m */; };
+		5644C0971FE93A4D004D6E27 /* HTVideoWiFIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0961FE93A4D004D6E27 /* HTVideoWiFIManager.m */; };
 		565406171FE2144000B707CD /* HTFindAgencyTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565406161FE2144000B707CD /* HTFindAgencyTitleView.m */; };
 		565406191FE2144C00B707CD /* HTFindAgencyTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565406181FE2144C00B707CD /* HTFindAgencyTitleView.xib */; };
 		565EA2AC1FDFB8810042732B /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2831FDFB87D0042732B /* ShareSDK.framework */; };
@@ -665,6 +688,52 @@
 		5644C04A1FE8BD7B004D6E27 /* HTStudyCommunityController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTStudyCommunityController.m; sourceTree = "<group>"; };
 		5644C04C1FE90213004D6E27 /* HTApplyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTApplyController.h; sourceTree = "<group>"; };
 		5644C04D1FE90213004D6E27 /* HTApplyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTApplyController.m; sourceTree = "<group>"; };
+		5644C0511FE93605004D6E27 /* HTPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerController.h; sourceTree = "<group>"; };
+		5644C0521FE93605004D6E27 /* HTPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerController.m; sourceTree = "<group>"; };
+		5644C0541FE93605004D6E27 /* HTPlayerDocumentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerDocumentModel.h; sourceTree = "<group>"; };
+		5644C0551FE93605004D6E27 /* HTPlayerDocumentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerDocumentModel.m; sourceTree = "<group>"; };
+		5644C0561FE93605004D6E27 /* HTPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerManager.h; sourceTree = "<group>"; };
+		5644C0571FE93605004D6E27 /* HTPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerManager.m; sourceTree = "<group>"; };
+		5644C0581FE93605004D6E27 /* HTPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerModel.h; sourceTree = "<group>"; };
+		5644C0591FE93605004D6E27 /* HTPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerModel.m; sourceTree = "<group>"; };
+		5644C05A1FE93605004D6E27 /* HTPlayerSpeedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerSpeedModel.h; sourceTree = "<group>"; };
+		5644C05B1FE93605004D6E27 /* HTPlayerSpeedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerSpeedModel.m; sourceTree = "<group>"; };
+		5644C05C1FE93605004D6E27 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		5644C05D1FE93605004D6E27 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		5644C05F1FE93605004D6E27 /* HTPlayerBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerBrightnessView.h; sourceTree = "<group>"; };
+		5644C0601FE93605004D6E27 /* HTPlayerBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerBrightnessView.m; sourceTree = "<group>"; };
+		5644C0611FE93605004D6E27 /* HTPlayerConfigureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerConfigureView.h; sourceTree = "<group>"; };
+		5644C0621FE93605004D6E27 /* HTPlayerConfigureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerConfigureView.m; sourceTree = "<group>"; };
+		5644C0631FE93605004D6E27 /* HTPlayerDragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerDragView.h; sourceTree = "<group>"; };
+		5644C0641FE93605004D6E27 /* HTPlayerDragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerDragView.m; sourceTree = "<group>"; };
+		5644C0651FE93605004D6E27 /* HTPlayerLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerLeftView.h; sourceTree = "<group>"; };
+		5644C0661FE93605004D6E27 /* HTPlayerLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerLeftView.m; sourceTree = "<group>"; };
+		5644C0671FE93605004D6E27 /* HTPlayerNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerNavigationBar.h; sourceTree = "<group>"; };
+		5644C0681FE93605004D6E27 /* HTPlayerNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerNavigationBar.m; sourceTree = "<group>"; };
+		5644C0691FE93605004D6E27 /* HTPlayerSeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerSeekView.h; sourceTree = "<group>"; };
+		5644C06A1FE93605004D6E27 /* HTPlayerSeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerSeekView.m; sourceTree = "<group>"; };
+		5644C06B1FE93605004D6E27 /* HTPlayerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerSlider.h; sourceTree = "<group>"; };
+		5644C06C1FE93605004D6E27 /* HTPlayerSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerSlider.m; sourceTree = "<group>"; };
+		5644C06D1FE93605004D6E27 /* HTPlayerSpeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerSpeedCell.h; sourceTree = "<group>"; };
+		5644C06E1FE93605004D6E27 /* HTPlayerSpeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerSpeedCell.m; sourceTree = "<group>"; };
+		5644C06F1FE93605004D6E27 /* HTPlayerSpeedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerSpeedView.h; sourceTree = "<group>"; };
+		5644C0701FE93605004D6E27 /* HTPlayerSpeedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerSpeedView.m; sourceTree = "<group>"; };
+		5644C0711FE93605004D6E27 /* HTPlayerTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerTabBar.h; sourceTree = "<group>"; };
+		5644C0721FE93605004D6E27 /* HTPlayerTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerTabBar.m; sourceTree = "<group>"; };
+		5644C0731FE93605004D6E27 /* HTPlayerTeacherDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerTeacherDetailCell.h; sourceTree = "<group>"; };
+		5644C0741FE93605004D6E27 /* HTPlayerTeacherDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerTeacherDetailCell.m; sourceTree = "<group>"; };
+		5644C0751FE93605004D6E27 /* HTPlayerToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerToolBar.h; sourceTree = "<group>"; };
+		5644C0761FE93605004D6E27 /* HTPlayerToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerToolBar.m; sourceTree = "<group>"; };
+		5644C0771FE93605004D6E27 /* HTPlayerView+HTSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTPlayerView+HTSwitch.h"; sourceTree = "<group>"; };
+		5644C0781FE93605004D6E27 /* HTPlayerView+HTSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTPlayerView+HTSwitch.m"; sourceTree = "<group>"; };
+		5644C0791FE93605004D6E27 /* HTPlayerView+HTTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTPlayerView+HTTouch.h"; sourceTree = "<group>"; };
+		5644C07A1FE93605004D6E27 /* HTPlayerView+HTTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTPlayerView+HTTouch.m"; sourceTree = "<group>"; };
+		5644C07B1FE93605004D6E27 /* HTPlayerView+HTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTPlayerView+HTView.h"; sourceTree = "<group>"; };
+		5644C07C1FE93605004D6E27 /* HTPlayerView+HTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTPlayerView+HTView.m"; sourceTree = "<group>"; };
+		5644C07D1FE93605004D6E27 /* HTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPlayerView.h; sourceTree = "<group>"; };
+		5644C07E1FE93605004D6E27 /* HTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPlayerView.m; sourceTree = "<group>"; };
+		5644C0951FE93A4C004D6E27 /* HTVideoWiFIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTVideoWiFIManager.h; sourceTree = "<group>"; };
+		5644C0961FE93A4D004D6E27 /* HTVideoWiFIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTVideoWiFIManager.m; sourceTree = "<group>"; };
 		565406151FE2144000B707CD /* HTFindAgencyTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFindAgencyTitleView.h; sourceTree = "<group>"; };
 		565406161FE2144000B707CD /* HTFindAgencyTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTFindAgencyTitleView.m; sourceTree = "<group>"; };
 		565406181FE2144C00B707CD /* HTFindAgencyTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTFindAgencyTitleView.xib; sourceTree = "<group>"; };
@@ -1841,6 +1910,83 @@
 			children = (
 				56CFDE8A1FDE5773002FAAE5 /* HTWorkExperienceCell.h */,
 				56CFDE8B1FDE5773002FAAE5 /* HTWorkExperienceCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5644C04F1FE93605004D6E27 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				5644C0501FE93605004D6E27 /* Controller */,
+				5644C0531FE93605004D6E27 /* Model */,
+				5644C05E1FE93605004D6E27 /* View */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		5644C0501FE93605004D6E27 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5644C0511FE93605004D6E27 /* HTPlayerController.h */,
+				5644C0521FE93605004D6E27 /* HTPlayerController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5644C0531FE93605004D6E27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5644C0951FE93A4C004D6E27 /* HTVideoWiFIManager.h */,
+				5644C0961FE93A4D004D6E27 /* HTVideoWiFIManager.m */,
+				5644C0541FE93605004D6E27 /* HTPlayerDocumentModel.h */,
+				5644C0551FE93605004D6E27 /* HTPlayerDocumentModel.m */,
+				5644C0561FE93605004D6E27 /* HTPlayerManager.h */,
+				5644C0571FE93605004D6E27 /* HTPlayerManager.m */,
+				5644C0581FE93605004D6E27 /* HTPlayerModel.h */,
+				5644C0591FE93605004D6E27 /* HTPlayerModel.m */,
+				5644C05A1FE93605004D6E27 /* HTPlayerSpeedModel.h */,
+				5644C05B1FE93605004D6E27 /* HTPlayerSpeedModel.m */,
+				5644C05C1FE93605004D6E27 /* XMLReader.h */,
+				5644C05D1FE93605004D6E27 /* XMLReader.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5644C05E1FE93605004D6E27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5644C05F1FE93605004D6E27 /* HTPlayerBrightnessView.h */,
+				5644C0601FE93605004D6E27 /* HTPlayerBrightnessView.m */,
+				5644C0611FE93605004D6E27 /* HTPlayerConfigureView.h */,
+				5644C0621FE93605004D6E27 /* HTPlayerConfigureView.m */,
+				5644C0631FE93605004D6E27 /* HTPlayerDragView.h */,
+				5644C0641FE93605004D6E27 /* HTPlayerDragView.m */,
+				5644C0651FE93605004D6E27 /* HTPlayerLeftView.h */,
+				5644C0661FE93605004D6E27 /* HTPlayerLeftView.m */,
+				5644C0671FE93605004D6E27 /* HTPlayerNavigationBar.h */,
+				5644C0681FE93605004D6E27 /* HTPlayerNavigationBar.m */,
+				5644C0691FE93605004D6E27 /* HTPlayerSeekView.h */,
+				5644C06A1FE93605004D6E27 /* HTPlayerSeekView.m */,
+				5644C06B1FE93605004D6E27 /* HTPlayerSlider.h */,
+				5644C06C1FE93605004D6E27 /* HTPlayerSlider.m */,
+				5644C06D1FE93605004D6E27 /* HTPlayerSpeedCell.h */,
+				5644C06E1FE93605004D6E27 /* HTPlayerSpeedCell.m */,
+				5644C06F1FE93605004D6E27 /* HTPlayerSpeedView.h */,
+				5644C0701FE93605004D6E27 /* HTPlayerSpeedView.m */,
+				5644C0711FE93605004D6E27 /* HTPlayerTabBar.h */,
+				5644C0721FE93605004D6E27 /* HTPlayerTabBar.m */,
+				5644C0731FE93605004D6E27 /* HTPlayerTeacherDetailCell.h */,
+				5644C0741FE93605004D6E27 /* HTPlayerTeacherDetailCell.m */,
+				5644C0751FE93605004D6E27 /* HTPlayerToolBar.h */,
+				5644C0761FE93605004D6E27 /* HTPlayerToolBar.m */,
+				5644C0771FE93605004D6E27 /* HTPlayerView+HTSwitch.h */,
+				5644C0781FE93605004D6E27 /* HTPlayerView+HTSwitch.m */,
+				5644C0791FE93605004D6E27 /* HTPlayerView+HTTouch.h */,
+				5644C07A1FE93605004D6E27 /* HTPlayerView+HTTouch.m */,
+				5644C07B1FE93605004D6E27 /* HTPlayerView+HTView.h */,
+				5644C07C1FE93605004D6E27 /* HTPlayerView+HTView.m */,
+				5644C07D1FE93605004D6E27 /* HTPlayerView.h */,
+				5644C07E1FE93605004D6E27 /* HTPlayerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4771,6 +4917,7 @@
 		C2DF88381F3ED2EB00509288 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				5644C04F1FE93605004D6E27 /* Player */,
 				C2DF88391F3ED2EB00509288 /* Controller */,
 				C2DF883A1F3ED2EB00509288 /* Model */,
 				C2DF883B1F3ED2EB00509288 /* View */,
@@ -5939,6 +6086,7 @@
 				C2E66AAF1F2F09DF0000651A /* HTIndexModel.m in Sources */,
 				C203812D1F4637FD00194A9D /* HTLikeCell.m in Sources */,
 				C29E36891F740C83000A85D9 /* HTProfessionalRequireCell.m in Sources */,
+				5644C0931FE93605004D6E27 /* HTPlayerView+HTView.m in Sources */,
 				C2E66AB91F2F09DF0000651A /* HTIndexSectionHeaderView.m in Sources */,
 				C29646A51F5CED130031C109 /* JSQMessagesCollectionViewCell.m in Sources */,
 				C20CDF211EF12E3A00BA6D60 /* HTShareView.m in Sources */,
@@ -5957,6 +6105,7 @@
 				C20CDE7A1EF11B8A00BA6D60 /* NSKeyedUnarchiver+YYAdd.m in Sources */,
 				C2EE1FA21F5B281200C8176F /* HTAdvisorDetailAnswerCell.m in Sources */,
 				C20CDF1D1EF12D9C00BA6D60 /* HTUser.m in Sources */,
+				5644C0811FE93605004D6E27 /* HTPlayerManager.m in Sources */,
 				C20CDEB11EF11B8A00BA6D60 /* UIPasteboard+YYText.m in Sources */,
 				C2FF3E201F4141620005F287 /* HTCommunityCell.m in Sources */,
 				C29646C91F5D399C0031C109 /* HTSellerModel.m in Sources */,
@@ -6020,6 +6169,7 @@
 				C2F740CD1F408D4D00B8828A /* HTAnswerDetailController.m in Sources */,
 				C2D6177A1F78E1EB00F4C932 /* THToeflDiscoverCommentCell.m in Sources */,
 				C20CDEBA1EF11B8A00BA6D60 /* YYAsyncLayer.m in Sources */,
+				5644C08A1FE93605004D6E27 /* HTPlayerSeekView.m in Sources */,
 				C251C5C31F734A1800D0D165 /* HTDiscoverExampleModel.m in Sources */,
 				C20CDEB81EF11B8A00BA6D60 /* YYLabel.m in Sources */,
 				56829A471FD91D8C0093DA25 /* HTChooseSchoolCell.m in Sources */,
@@ -6048,6 +6198,7 @@
 				C20CDEA81EF11B8A00BA6D60 /* YYTextEffectWindow.m in Sources */,
 				C2EE1FB71F5BAC9300C8176F /* HTCollectionViewLayoutAttributes.m in Sources */,
 				C20CDED91EF11F0600BA6D60 /* HTLoginManager.m in Sources */,
+				5644C0971FE93A4D004D6E27 /* HTVideoWiFIManager.m in Sources */,
 				C29646981F5CED130031C109 /* JSQMessagesCollectionViewFlowLayout.m in Sources */,
 				C23EB4E11F441F41004F9639 /* RTDragCellTableView.m in Sources */,
 				C2EE1FA31F5B281200C8176F /* HTAdvisorDetailInformationCell.m in Sources */,
@@ -6083,14 +6234,18 @@
 				C20CDE4B1EF11B8A00BA6D60 /* VTMagicController.m in Sources */,
 				C2EE1EF51F59E96A00C8176F /* HTUserStoreModel.m in Sources */,
 				C20CDE8A1EF11B8A00BA6D60 /* UIDevice+YYAdd.m in Sources */,
+				5644C0861FE93605004D6E27 /* HTPlayerConfigureView.m in Sources */,
 				C20CDE441EF11B8A00BA6D60 /* MBProgressHUD.m in Sources */,
+				5644C08B1FE93605004D6E27 /* HTPlayerSlider.m in Sources */,
 				C20CDE3D1EF11B8A00BA6D60 /* AXWebViewControllerActivityChrome.m in Sources */,
 				C2EE1FAB1F5B975F00C8176F /* HTAdvisorDetailHeaderView.m in Sources */,
+				5644C0891FE93605004D6E27 /* HTPlayerNavigationBar.m in Sources */,
 				C29E367D1F74056F000A85D9 /* HTProfessionalController.m in Sources */,
 				C2FA0FBD1F67BFC4002F111D /* HTOrganizationCountryCell.m in Sources */,
 				02348D211FDD88DA007DE05C /* HTSchoolMatriculateContainerController.m in Sources */,
 				56A7D7431FCE4A6900F20D2C /* HTChooseSchoolController.m in Sources */,
 				C20CDE361EF11B8A00BA6D60 /* SCCatWaitingHUD.m in Sources */,
+				5644C07F1FE93605004D6E27 /* HTPlayerController.m in Sources */,
 				C24BBF3F1F7151800025CBEB /* HTLibraryModel.m in Sources */,
 				C296469D1F5CED130031C109 /* JSQMediaItem.m in Sources */,
 				C251C62C1F73763000D0D165 /* HTEvaluateCell.m in Sources */,
@@ -6105,6 +6260,7 @@
 				C2FF3E1B1F4141620005F287 /* HTCommunityMessageController.m in Sources */,
 				C20CDEB61EF11B8A00BA6D60 /* YYTextRunDelegate.m in Sources */,
 				C2EE1FFA1F5C4B6400C8176F /* HTMinePreferenceInputCell.m in Sources */,
+				5644C0911FE93605004D6E27 /* HTPlayerView+HTSwitch.m in Sources */,
 				C24BC0411F7152790025CBEB /* HTProfessionalModel.m in Sources */,
 				C20CDE391EF11B8A00BA6D60 /* Aspects.m in Sources */,
 				C251C6421F7376B100D0D165 /* HTMatriculateResultAnalysisFooterView.m in Sources */,
@@ -6138,6 +6294,7 @@
 				C2FA0FC11F67BFC4002F111D /* HTOrganizationContentController.m in Sources */,
 				C2DA539D1F7C02C000191E30 /* HTAnswerHeaderView.m in Sources */,
 				C2E66ACA1F2F0A9C0000651A /* HTDiscoverController.m in Sources */,
+				5644C08C1FE93605004D6E27 /* HTPlayerSpeedCell.m in Sources */,
 				C20CDEC11EF11B8A00BA6D60 /* YYThreadSafeArray.m in Sources */,
 				C2E66AB11F2F09DF0000651A /* HTIndexActivityIndexCell.m in Sources */,
 				C22EAB6F1F3030BC00969300 /* HTAnswerOnlineController.m in Sources */,
@@ -6175,6 +6332,7 @@
 				C2D1D8331F46921F007B6269 /* HTMatriculateRecordCell.m in Sources */,
 				C25304461F53A903002354A4 /* HTImageTextView.m in Sources */,
 				56F3A53C1FD4F487002D0016 /* HTChooseMajorCell.m in Sources */,
+				5644C08E1FE93605004D6E27 /* HTPlayerTabBar.m in Sources */,
 				C2FF3E221F4141620005F287 /* HTCommunityImageView.m in Sources */,
 				5625E7531FE3A5150089034C /* HTUniversityRankController.m in Sources */,
 				C20CDE831EF11B8A00BA6D60 /* CALayer+YYAdd.m in Sources */,
@@ -6203,7 +6361,9 @@
 				C29646A11F5CED130031C109 /* JSQPhotoMediaItem.m in Sources */,
 				C2FF3E741F4175AF0005F287 /* HTMineController.m in Sources */,
 				C24BC02F1F7152790025CBEB /* HTMajorDetailController.m in Sources */,
+				5644C08D1FE93605004D6E27 /* HTPlayerSpeedView.m in Sources */,
 				C2F1801C1F7B717400EFD083 /* HTExampleScrollController.m in Sources */,
+				5644C0841FE93605004D6E27 /* XMLReader.m in Sources */,
 				C29646921F5CED130031C109 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				C24BC0391F7152790025CBEB /* HTMajorContentController.m in Sources */,
 				C20CDE721EF11B8A00BA6D60 /* TZProgressView.m in Sources */,
@@ -6250,6 +6410,7 @@
 				C24BC0301F7152790025CBEB /* HTMajorDetailModel.m in Sources */,
 				C20CDE2D1EF11B8A00BA6D60 /* BQActivityView.m in Sources */,
 				C20CDCC61EF11A1000BA6D60 /* UIColor+HTColorCategory.m in Sources */,
+				5644C0801FE93605004D6E27 /* HTPlayerDocumentModel.m in Sources */,
 				C296468A1F5CED130031C109 /* NSString+JSQMessages.m in Sources */,
 				C251C63B1F73763000D0D165 /* HTSchoolMatriculateResultController.m in Sources */,
 				C2FF3E791F4175AF0005F287 /* HTMineFontSizeController.m in Sources */,
@@ -6268,10 +6429,12 @@
 				C296468C1F5CED130031C109 /* UIImage+JSQMessages.m in Sources */,
 				C27E20B11EF257CA00B41AC6 /* HTLoginTextFieldCell.m in Sources */,
 				C21022E31F42A3D600C6902C /* HTLibraryVideoController.m in Sources */,
+				5644C08F1FE93605004D6E27 /* HTPlayerTeacherDetailCell.m in Sources */,
 				C20CDE811EF11B8A00BA6D60 /* NSThread+YYAdd.m in Sources */,
 				C29646911F5CED130031C109 /* JSQMessagesBubbleImageFactory.m in Sources */,
 				C2FA0FBC1F67BFC4002F111D /* HTOrganizationAdvisorCell.m in Sources */,
 				C20CDE731EF11B8A00BA6D60 /* TZVideoPlayerController.m in Sources */,
+				5644C0831FE93605004D6E27 /* HTPlayerSpeedModel.m in Sources */,
 				C20CDEB31EF11B8A00BA6D60 /* YYTextAttribute.m in Sources */,
 				C2EE1FC41F5C013700C8176F /* HTFansModel.m in Sources */,
 				C251C64B1F73770400D0D165 /* HTMatriculateResultSectionModel.m in Sources */,
@@ -6291,6 +6454,7 @@
 				C29646971F5CED130031C109 /* JSQMessagesBubblesSizeCalculator.m in Sources */,
 				C2FF3E261F4141620005F287 /* HTCommunityReplyContentLabel.m in Sources */,
 				C29E36741F73F471000A85D9 /* HTSchoolMajorCell.m in Sources */,
+				5644C0921FE93605004D6E27 /* HTPlayerView+HTTouch.m in Sources */,
 				C20CDE6F1EF11B8A00BA6D60 /* TZPhotoPickerController.m in Sources */,
 				C29646B41F5CED130031C109 /* JSQMessagesTypingView.m in Sources */,
 				C2D6175E1F78D38E00F4C932 /* HTMatriculateResultAnalysisModel.m in Sources */,
@@ -6331,10 +6495,12 @@
 				C2FA0FD11F67CF8B002F111D /* HTSearchRequestManager.m in Sources */,
 				C20CDE851EF11B8A00BA6D60 /* UIApplication+YYAdd.m in Sources */,
 				C251C5D71F73679400D0D165 /* HTActivityTopLineCell.m in Sources */,
+				5644C0901FE93605004D6E27 /* HTPlayerToolBar.m in Sources */,
 				C251C6371F73763000D0D165 /* HTSchoolMatriculatePickerView.m in Sources */,
 				C20CDE881EF11B8A00BA6D60 /* UIColor+YYAdd.m in Sources */,
 				C23EE6941F3EFD3C00DBB2E5 /* HTDiscoverActivityDetailController.m in Sources */,
 				C20CDE451EF11B8A00BA6D60 /* RTRootNavigationController.m in Sources */,
+				5644C0851FE93605004D6E27 /* HTPlayerBrightnessView.m in Sources */,
 				C20CDEA01EF11B8A00BA6D60 /* YYImageCoder.m in Sources */,
 				C2D617741F78E1B100F4C932 /* THToeflDiscoverDetailController.m in Sources */,
 				C2FA0FD71F67D31D002F111D /* HTSearchResultCell.m in Sources */,
@@ -6400,6 +6566,7 @@
 				C29646961F5CED130031C109 /* JSQAudioMediaViewAttributes.m in Sources */,
 				C2D1D8301F469202007B6269 /* HTMatriculateRecordController.m in Sources */,
 				C2FF3E211F4141620005F287 /* HTCommunityDetailHeaderView.m in Sources */,
+				5644C0871FE93605004D6E27 /* HTPlayerDragView.m in Sources */,
 				C29E36861F740A6E000A85D9 /* HTProfessionalSectionModel.m in Sources */,
 				C251C63C1F73763000D0D165 /* HTSchoolMatriculateResultHeaderView.m in Sources */,
 				C22EAB621F30303F00969300 /* HTAnswerController.m in Sources */,
@@ -6412,6 +6579,7 @@
 				C2F180191F7B70C600EFD083 /* HTExampleSectionScrollView.m in Sources */,
 				C29646A21F5CED130031C109 /* JSQVideoMediaItem.m in Sources */,
 				C2EE1F0E1F59FBF900C8176F /* HTStoreItemModel.m in Sources */,
+				5644C0881FE93605004D6E27 /* HTPlayerLeftView.m in Sources */,
 				C2FF3E7F1F417E790005F287 /* HTAnswerOnlineDetailController.m in Sources */,
 				C2D6176E1F78DABB00F4C932 /* THToeflDiscoverIssueController.m in Sources */,
 				C29E36801F740801000A85D9 /* HTProfessionalSectionHeaderView.m in Sources */,
@@ -6421,10 +6589,12 @@
 				C20CDEB71EF11B8A00BA6D60 /* YYTextUtilities.m in Sources */,
 				C23C03551F57E9CE0093F354 /* HTMatriculateAllSchoolController.m in Sources */,
 				C251C5CB1F734BF500D0D165 /* HTExampleSectionModel.m in Sources */,
+				5644C0941FE93605004D6E27 /* HTPlayerView.m in Sources */,
 				C251C6301F73763000D0D165 /* HTSchoolMatriculateDetailController.m in Sources */,
 				C29646AB1F5CED130031C109 /* JSQMessagesInputToolbar.m in Sources */,
 				C20CDE471EF11B8A00BA6D60 /* UIColor+VTMagic.m in Sources */,
 				C25304731F5418AC002354A4 /* HTAnswerSingleController.m in Sources */,
+				5644C0821FE93605004D6E27 /* HTPlayerModel.m in Sources */,
 				C291B0D91F566B5A00B1BEDC /* HTAnswerKeboardManager.m in Sources */,
 				C241A4631EF21EC100094EF7 /* HTLoginController.m in Sources */,
 				563103D71FCC02EA004C85D7 /* HTPersonBackgroundController.m in Sources */,

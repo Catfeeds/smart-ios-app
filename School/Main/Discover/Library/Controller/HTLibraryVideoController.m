@@ -14,6 +14,7 @@
 #import "HTWebController.h"
 #import <UIScrollView+HTRefresh.h>
 #import "HTSellerDetailController.h"
+#import "HTPlayerController.h"
 
 @interface HTLibraryVideoController ()
 
@@ -61,6 +62,10 @@
 			}] didSelectedCellBlock:^(UICollectionView *collectionView, NSInteger item, __kindof UICollectionViewCell *cell, __kindof HTLibraryProjectVideoContentModel *model) {
 				HTSellerDetailController *detailController = [[HTSellerDetailController alloc] init];
 				detailController.sellerIdString = model.ID;
+				
+			//	HTPlayerController *detailController = [[HTPlayerController alloc]init];
+			//	detailController.courseURLString = model.url;
+				
 				[weakSelf.navigationController pushViewController:detailController animated:true];
 			}];
 		}];
