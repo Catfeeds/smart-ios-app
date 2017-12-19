@@ -107,7 +107,7 @@
 	[UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseInOut animations:^{
 		[self layoutIfNeeded];
 	} completion:nil];
-	[IQKeyboardManager sharedManager].enable = false;
+	[IQKeyboardManager sharedManager].enable = YES;
 	return true;
 }
 
@@ -125,7 +125,9 @@
 		self.style = THToeflDiscoverDetailSpeakViewEditStyleComment;
 		self.placeTextView.text = @"我也说一句";
 	}
-	[IQKeyboardManager sharedManager].enable = true;
+	[IQKeyboardManager sharedManager].enable = NO;
+	[self.window setNeedsLayout];
+	[self.window layoutIfNeeded];
 	return true;
 }
 

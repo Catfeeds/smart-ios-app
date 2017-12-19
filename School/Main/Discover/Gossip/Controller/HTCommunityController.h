@@ -15,6 +15,4 @@
 
 @property (nonatomic, strong) HTCommunityRingHeaderView *communityHeaderView;
 
-@property (nonatomic, strong) NSString *catIdString;
-
 @end

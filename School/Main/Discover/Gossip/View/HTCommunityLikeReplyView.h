@@ -19,4 +19,6 @@
 
 @property (nonatomic, strong) UIButton *communityReplyButton;
 
+@property (nonatomic, strong) UIButton *deleteButton;
+
 @end

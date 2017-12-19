@@ -20,4 +20,6 @@ typedef NS_ENUM(NSInteger, HTDiscoverItemType) {
 
 @property (nonatomic, assign) Class controllerClass;
 
++ (NSArray <HTDiscoverItemModel *> *)applyModelArray;
+
 @end

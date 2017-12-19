@@ -7,9 +7,9 @@
 //
 
 #import "HTCommunityCell.h"
-#import "HTCommunityDetailHeaderView.h"
 #import "HTCommunityReplyContentView.h"
 #import <NSObject+HTTableRowHeight.h>
+#import "HTUserManager.h"
 
 @interface HTCommunityCell ()
 
@@ -34,7 +34,8 @@
 
 - (void)setModel:(HTCommunityLayoutModel *)model row:(NSInteger)row {
     _model = model;
-    [self.headerContentView setModel:model row:row];
+	BOOL isShowDelete = [model.originModel.uid isEqualToString:[HTUserManager currentUser].uid];
+    [self.headerContentView setModel:model row:row isShowDelete:isShowDelete];
 	self.replyContentView.model = model;
     self.replyContentView.ht_y = self.headerContentView.whiteContentView.ht_h;
     self.headerContentView.whiteContentView.ht_h += self.replyContentView.ht_h;

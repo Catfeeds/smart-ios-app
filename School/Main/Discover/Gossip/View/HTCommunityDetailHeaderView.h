@@ -14,10 +14,12 @@
 #import "HTCommunityImageView.h"
 #import "HTCommunityLikeReplyView.h"
 
+#define DELETE  @"deleteGossip"
+
 @interface HTCommunityDetailHeaderView : UIView
 
 @property (nonatomic, strong) UIView *whiteContentView;
 
-- (void)setModel:(HTCommunityLayoutModel *)model row:(NSInteger)row;
+- (void)setModel:(HTCommunityLayoutModel *)model row:(NSInteger)row isShowDelete:(BOOL)isShowDelete;
 
 @end

@@ -64,9 +64,12 @@ static NSString *kHTApplicationIdString = @"1271275068";
 	}
 }
 
++ (void)deleteGossipWithNetworkModel:(HTNetworkModel *)networkModel gossipIdString:(NSString *)gossipIdString complete:(HTUserTaskCompleteBlock)complete{
+	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://bbs.viplgw.cn/cn/app-api/delete-gossip" parameter:@{@"gossipId":HTPlaceholderString(gossipIdString, @"0")} complete:complete];
+}
 
-+ (void)requestGossipListWithNetworkModel:(HTNetworkModel *)networkModel pageSize:(NSString *)pageSize currentPage:(NSString *)currentPage catIdString:(NSString *)catIdString complete:(HTUserTaskCompleteBlock)complete {
-	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodPost url:@"http://bbs.viplgw.cn/cn/app-api/gossip-list" parameter:@{@"page":HTPlaceholderString(currentPage, @"1"), @"pageSize":HTPlaceholderString(pageSize, @"10"), @"belong":HTPlaceholderString(catIdString, @"14")} complete:complete];
++ (void)requestGossipListWithNetworkModel:(HTNetworkModel *)networkModel pageSize:(NSString *)pageSize currentPage:(NSString *)currentPage complete:(HTUserTaskCompleteBlock)complete {
+	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodPost url:@"http://bbs.viplgw.cn/cn/app-api/gossip-list" parameter:@{@"page":HTPlaceholderString(currentPage, @"1"), @"pageSize":HTPlaceholderString(pageSize, @"10"), @"belong":@"3"} complete:complete];
 }
 
 + (void)requestGossipDetailWithNetworkModel:(HTNetworkModel *)networkModel gossipIdString:(NSString *)gossipIdString complete:(HTUserTaskCompleteBlock)complete {
@@ -94,13 +97,13 @@ static NSString *kHTApplicationIdString = @"1271275068";
 										 @"userImage":HTPlaceholderString([HTUserManager currentUser].image, @""),
 										 @"replyUser":HTPlaceholderString(beingReplyModel.originReplyModel.uid, @"0"),
 										 @"replyUserName":HTPlaceholderString(beingReplyModel.originReplyModel.uName, @""),
-										 @"belong":@"14"} complete:complete];
+										 @"belong":@"3"} complete:complete];
 	}];
 }
 
 + (void)requestGossipGoodGossipWithNetworkModel:(HTNetworkModel *)networkModel gossipIdString:(NSString *)gossipIdString complete:(HTUserTaskCompleteBlock)complete {
 	[HTUserManager surePermissionHighOrEqual:HTUserPermissionExerciseAbleUser passCompareBlock:^(HTUser *user) {
-		[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodPost url:@"http://bbs.viplgw.cn/cn/app-api/add-like" parameter:@{@"gossipId":HTPlaceholderString(gossipIdString, @"0"), @"belong":@"14"} complete:complete];
+		[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodPost url:@"http://bbs.viplgw.cn/cn/app-api/add-like" parameter:@{@"gossipId":HTPlaceholderString(gossipIdString, @"0"), @"belong":@"3"} complete:complete];
 	}];
 }
 
@@ -125,12 +128,12 @@ static NSString *kHTApplicationIdString = @"1271275068";
 										 @"audio":@[],
 										 @"icon":HTPlaceholderString([HTUserManager currentUser].image, @""),
 										 @"publisher":HTPlaceholderString([HTUserManager currentUser].nickname, @""),
-										 @"belong":@"14"} complete:complete];
+										 @"belong":@"3"} complete:complete];
 	}];
 }
 
 + (void)requestGossipMessageWithNetworkModel:(HTNetworkModel *)networkModel complete:(HTUserTaskCompleteBlock)complete {
-	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://bbs.viplgw.cn/cn/app-api/reply-list" parameter:@{@"uid":HTPlaceholderString([HTUserManager currentUser].uid, @"0"), @"belong":@"14"} complete:complete];
+	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://bbs.viplgw.cn/cn/app-api/reply-list" parameter:@{@"uid":HTPlaceholderString([HTUserManager currentUser].uid, @"0"), @"belong":@"3"} complete:complete];
 }
 
 

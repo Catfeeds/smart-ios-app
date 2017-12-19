@@ -178,9 +178,10 @@
 			return;
 		}
 		[HTAlert title:@"发表成功"];
-		HTCommunityController *communityController = [HTManagerController defaultManagerController].communityController;
+		if (weakSelf.delegate) {
+			[weakSelf.delegate sendPostSuccess];
+		}
 		[weakSelf.navigationController popViewControllerAnimated:true];
-		[communityController.tableView ht_startRefreshHeader];
 	}];
 }
 

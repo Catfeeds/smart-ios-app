@@ -19,7 +19,7 @@
 #import <NSObject+HTTableRowHeight.h>
 #import "HTMineFontSizeController.h"
 
-@interface HTCommunityController ()
+@interface HTCommunityController ()  <HTCommunityIssueControllerDelete>
 
 @property (nonatomic, strong) NSMutableArray <HTCommunityLayoutModel *> *communityLayoutModelArray;
 
@@ -31,6 +31,7 @@
 	[super viewDidLoad];
 	[self initializeDataSource];
 	[self initializeUserInterface];
+	[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deleteGossip:) name:DELETE object:nil];
 }
 
 - (void)initializeDataSource {
@@ -39,7 +40,7 @@
 	__weak HTCommunityController *weakSelf = self;
 	[self.tableView ht_setRefreshBlock:^(NSString *pageSize, NSString *currentPage) {
 		HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
-		[HTRequestManager requestGossipListWithNetworkModel:networkModel pageSize:pageSize currentPage:currentPage catIdString:weakSelf.catIdString complete:^(id response, HTError *errorModel) {
+		[HTRequestManager requestGossipListWithNetworkModel:networkModel pageSize:pageSize currentPage:currentPage complete:^(id response, HTError *errorModel) {
 			if (errorModel.existError) {
 				[weakSelf.tableView ht_endRefreshWithModelArrayCount:errorModel.errorType];
 				return;
@@ -111,6 +112,31 @@
 	}
 	return _tableView;
 }
+
+#pragma mark - deleteGossip
+- (void)deleteGossip:(NSNotification *)notification{
+	[HTAlert title:@"" message:@"确定删除?" sureAction:^{
+		__weak HTCommunityController *weakSelf = self;
+		HTCommunityModel *model = notification.userInfo[@"model"];
+		[HTRequestManager deleteGossipWithNetworkModel:nil gossipIdString:model.ID complete:^(id response, HTError *errorModel) {
+			if (!errorModel.existError) {
+				[weakSelf.tableView ht_startRefreshHeader];
+			}
+		}] ;
+	} cancelAction:^{
+		
+	} animated:YES completion:nil];
+	
+}
+
+#pragma mark - HTCommunityIssueControllerDelete
+
+//发帖成功
+- (void)sendPostSuccess{
+	[self.tableView ht_startRefreshHeader];
+}
+
+#pragma  mark -
 
 - (HTCommunityRingHeaderView *)communityHeaderView {
 	if (!_communityHeaderView) {

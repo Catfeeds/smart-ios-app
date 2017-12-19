@@ -15,7 +15,7 @@
 	self.layer.masksToBounds = true;
 	[self addSubview:self.communityRingView];
 	[self.communityRingView mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.width.mas_equalTo(HTADAPT568(140));
+		make.width.mas_equalTo(HTADAPT568(160));
 		make.height.mas_equalTo(HTADAPT568(30));
 		make.center.mas_equalTo(self);
 	}];

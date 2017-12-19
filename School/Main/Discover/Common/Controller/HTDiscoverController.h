@@ -11,4 +11,6 @@
 
 @interface HTDiscoverController : HTPageController
 
+- (NSString *)getCurrentCatIDString;
+
 @end

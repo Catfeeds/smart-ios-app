@@ -22,6 +22,7 @@
 	if (self = [super initWithFrame:frame]) {
 		[self addSubview:self.communityLikeButton];
 		[self addSubview:self.communityReplyButton];
+		[self addSubview:self.deleteButton];
 	}
 	return self;
 }
@@ -31,12 +32,14 @@
 	CGFloat likeToReplyDistance = 20;
 	[self.communityReplyButton ht_makeEdgeWithDirection:HTButtonEdgeDirectionHorizontal imageViewToTitleLabelSpeceOffset:TitleImageDistance];
 	[self.communityLikeButton ht_makeEdgeWithDirection:HTButtonEdgeDirectionHorizontal imageViewToTitleLabelSpeceOffset:TitleImageDistance];
-    [self.communityReplyButton sizeToFit];
-    [self.communityLikeButton sizeToFit];
+	[self.communityReplyButton sizeToFit];
+	[self.communityLikeButton sizeToFit];
 	self.communityReplyButton.ht_x = self.ht_w - self.communityReplyButton.ht_w - (HTSCREENWIDTH - CommunityCellContentWidth) / 2;
 	self.communityLikeButton.ht_x = self.communityReplyButton.ht_x - self.communityLikeButton.ht_w - likeToReplyDistance;
+	self.deleteButton.ht_x = (HTSCREENWIDTH - CommunityCellContentWidth) / 2;
 	self.communityLikeButton.ht_cy = CommunityLikeReplyViewHeight / 2;
 	self.communityReplyButton.ht_cy = CommunityLikeReplyViewHeight / 2;
+	self.deleteButton.ht_cy = CommunityLikeReplyViewHeight / 2;;
 }
 
 - (void)setCommunityLikeCount:(NSInteger)communityLikeCount {
@@ -74,6 +77,16 @@
 		[_communityReplyButton setTitleColor:[UIColor ht_colorStyle:HTColorStyleSecondaryTitle] forState:UIControlStateNormal];
 	}
 	return _communityReplyButton;
+}
+
+- (UIButton *)deleteButton {
+	if (!_deleteButton) {
+		_deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
+		
+		[_deleteButton setBackgroundImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
+		[_deleteButton setTitleColor:[UIColor ht_colorStyle:HTColorStyleSecondaryTitle] forState:UIControlStateNormal];
+	}
+	return _deleteButton;
 }
 
 @end

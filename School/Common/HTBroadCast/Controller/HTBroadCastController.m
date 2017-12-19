@@ -103,6 +103,7 @@
 			} repeats:true];
 			dispatch_async(dispatch_get_global_queue(0, 0), ^{
 				[[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+				//问题
 				[self.timer fire];
 
 			});

@@ -58,23 +58,28 @@
 	
 }
 
+- (NSString *)getCurrentCatIDString{
+	HTGossIPItemModel *model = self.itemModelArray[self.currentPage];
+	return model.catIdString;
+}
+
 - (void)initializeUserInterface {
 	self.navigationItem.title = @"发现";
-	__weak typeof(self) weakSelf = self;
+//	__weak typeof(self) weakSelf = self;
 
-	UIButton *issueButton = [[UIButton alloc] init];
-	UIImage *image = [UIImage imageNamed:@"cn_discover_issue"];
-	image = [image ht_tintColor:[UIColor whiteColor]];
-	[issueButton setImage:image forState:UIControlStateNormal];
-	[issueButton ht_whenTap:^(UIView *view) {
-		THToeflDiscoverIssueController *issueController = [[THToeflDiscoverIssueController alloc] init];
-		HTGossIPItemModel *model = weakSelf.itemModelArray[weakSelf.currentPage];
-		issueController.catIdString = model.catIdString;
-		[weakSelf.navigationController pushViewController:issueController animated:true];
-	}];
-	[issueButton sizeToFit];
-	UIBarButtonItem *issueBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:issueButton];
-	self.navigationItem.rightBarButtonItem = issueBarButtonItem;
+//	UIButton *issueButton = [[UIButton alloc] init];
+//	UIImage *image = [UIImage imageNamed:@"cn_discover_issue"];
+//	image = [image ht_tintColor:[UIColor whiteColor]];
+//	[issueButton setImage:image forState:UIControlStateNormal];
+//	[issueButton ht_whenTap:^(UIView *view) {
+//		THToeflDiscoverIssueController *issueController = [[THToeflDiscoverIssueController alloc] init];
+//		HTGossIPItemModel *model = weakSelf.itemModelArray[weakSelf.currentPage];
+//		issueController.catIdString = model.catIdString;
+//		[weakSelf.navigationController pushViewController:issueController animated:true];
+//	}];
+//	[issueButton sizeToFit];
+//	UIBarButtonItem *issueBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:issueButton];
+//	self.navigationItem.rightBarButtonItem = issueBarButtonItem;
 	
 //	self.magicView.headerHeight = self.headerView.ht_h;
 //	[self.magicView.headerView addSubview:self.headerView];

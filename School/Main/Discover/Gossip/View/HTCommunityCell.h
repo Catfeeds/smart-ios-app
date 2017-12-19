@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTCommunityDetailHeaderView.h"
 
 @interface HTCommunityCell : UITableViewCell
 

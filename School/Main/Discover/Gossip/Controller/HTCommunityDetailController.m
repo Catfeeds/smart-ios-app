@@ -63,7 +63,7 @@
 				weakSelf.communityLayoutModel = [HTCommunityLayoutModel layoutModelWithOriginModel:communityModel isDetail:true];
 				dispatch_async(dispatch_get_main_queue(), ^{
 					weakSelf.navigationItem.title = communityModel.title;
-					[weakSelf.detailHeaderView setModel:weakSelf.communityLayoutModel row:0];
+					[weakSelf.detailHeaderView setModel:weakSelf.communityLayoutModel row:0 isShowDelete:NO];
 					weakSelf.tableView.tableHeaderView = weakSelf.detailHeaderView;
 					[weakSelf.tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
 						sectionMaker.modelArray(weakSelf.communityLayoutModel.replyLayoutModelArray);

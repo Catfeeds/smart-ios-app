@@ -41,8 +41,10 @@
  @param pageSize 每页返回个数
  @param currentPage 当前页
  */
-+ (void)requestGossipListWithNetworkModel:(HTNetworkModel *)networkModel pageSize:(NSString *)pageSize currentPage:(NSString *)currentPage catIdString:(NSString *)catIdString complete:(HTUserTaskCompleteBlock)complete;
++ (void)requestGossipListWithNetworkModel:(HTNetworkModel *)networkModel pageSize:(NSString *)pageSize currentPage:(NSString *)currentPage complete:(HTUserTaskCompleteBlock)complete;
 
+//删除八卦
++ (void)deleteGossipWithNetworkModel:(HTNetworkModel *)networkModel gossipIdString:(NSString *)gossipIdString complete:(HTUserTaskCompleteBlock)complete;
 
 /**
  获取某一个八卦的详情

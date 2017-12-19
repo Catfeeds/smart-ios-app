@@ -65,7 +65,7 @@
     return self;
 }
 
-- (void)setModel:(HTCommunityLayoutModel *)model row:(NSInteger)row {
+- (void)setModel:(HTCommunityLayoutModel *)model row:(NSInteger)row isShowDelete:(BOOL)isShowDelete{
     _model = model;
     UIImage *placeImage = [HTPLACEHOLDERIMAGE ht_resetSize:CGSizeMake(CommunityUserHeadImageHeight, CommunityUserHeadImageHeight)];
     placeImage = [placeImage imageByRoundCornerRadius:CommunityUserHeadImageHeight / 2 borderWidth:0 borderColor:nil];
@@ -79,6 +79,13 @@
     self.likeReplyView.communityLikeButton.selected = model.originModel.likeId;
     
     __weak HTCommunityDetailHeaderView *weakSelf = self;
+	
+	self.likeReplyView.deleteButton.hidden = !isShowDelete;
+	
+	[self.likeReplyView.deleteButton ht_whenTap:^(UIView *view) {
+		[[NSNotificationCenter defaultCenter]postNotificationName:DELETE object:nil userInfo:@{@"model":model.originModel}];
+	}];
+	
     [self.likeReplyView.communityLikeButton ht_whenTap:^(UIView *view) {
 		
 		[HTUserManager surePermissionHighOrEqual:HTUserPermissionExerciseAbleUser passCompareBlock:^(HTUser *user) {

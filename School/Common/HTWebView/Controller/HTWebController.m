@@ -22,6 +22,7 @@
 
 - (void)dealloc {
 	self.webView.scrollView.delegate = nil;
+	[self.webView stopLoading];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

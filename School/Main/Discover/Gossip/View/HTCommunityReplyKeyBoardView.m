@@ -36,13 +36,7 @@ static HTCommunityReplyKeyBoardView *replyKeyBoardView;
 	[self.contentView addSubview:self.placeTextView];
 	[self ht_whenTap:^(UIView *view) {
 		
-		
 		[IQKeyboardManager sharedManager].enable = true;
-		
-		
-		
-		
-		
 		[self removeFromSuperview];
 	}];
 	[self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
