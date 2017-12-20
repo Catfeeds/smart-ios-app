@@ -8,28 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol HTPlayerCourseProtocol <NSObject>
-
-@required
-
-- (NSString *)courseURLString;
-
-- (NSString *)courseTitleString;
-
-- (NSString *)courseTeacherImage;
-
-- (NSAttributedString *)courseTeacherTitle;
-
-- (NSAttributedString *)courseTeacherDetail;
-
-@end
-
-
 
 @interface HTPlayerController : UIViewController
 
-@property (nonatomic, strong) id <HTPlayerCourseProtocol> courseModel;
-
 @property (nonatomic, strong) NSString *courseURLString;
-
+@property (nonatomic, strong) NSString *courseTitleString;
+@property (nonatomic, strong) NSString *sellerIdString;
 @end

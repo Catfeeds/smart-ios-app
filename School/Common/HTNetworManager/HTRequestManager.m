@@ -229,6 +229,27 @@ static NSString *kHTApplicationIdString = @"1271275068";
 	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://www.smartapply.cn/cn/app-api/know" parameter:nil complete:complete];
 }
 
+//sortType 0-综合 1-销量 2-价格 3-最新
++ (void)requestStudyAbroadWithNetworkModel:(HTNetworkModel *)networkModel page:(NSString *)page countryID:(NSString *)countryID categoryID:(NSString *)categoryID sortType:(NSInteger)type complete:(HTUserTaskCompleteBlock)complete{
+	
+	NSURLSessionTask *task = [networkModel ht_valueForSelector:@selector(task) runtime:false];
+	if(task)[task cancel]; //取消上次请求
+	
+	NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+	NSString *key = @"";
+	if (type == 1)       key = @"buyNum";
+	else if (type == 2)  key = @"price";
+	else if (type  == 3) key = @"time";
+	
+	if (StringNotEmpty(key)) {
+		[dic setObject:@"1" forKey:key];
+	}
+	if (StringNotEmpty(countryID)) [dic setObject:countryID forKey:@"country"];
+	if (StringNotEmpty(categoryID)) [dic setObject:categoryID forKey:@"category"];
+	[dic setObject:page forKey:@"page"];
+	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://www.smartapply.cn/cn/app-api/goods-page" parameter:dic complete:complete];
+}
+
 + (void)requestExampleItemWithNetworkModel:(HTNetworkModel *)networkModel complete:(HTUserTaskCompleteBlock)complete {
 	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://www.smartapply.cn/cn/app-api/case" parameter:nil complete:complete];
 }

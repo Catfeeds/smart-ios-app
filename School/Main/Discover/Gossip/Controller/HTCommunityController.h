@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HTCommunityRingHeaderView.h"
+#import "HTCommunityIssueController.h"
 
-@interface HTCommunityController : UIViewController
+@interface HTCommunityController : UIViewController  <HTCommunityIssueControllerDelete>
 
 @property (nonatomic, strong) UITableView *tableView;
 

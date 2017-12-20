@@ -145,6 +145,8 @@
 
 @property (nonatomic, copy) NSString *fabulous;
 
+@property (nonatomic, copy) NSString *url;
+
 @end
 
 @interface HTLibraryProjectVideoHeaderModel : NSObject

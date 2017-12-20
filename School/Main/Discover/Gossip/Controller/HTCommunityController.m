@@ -7,7 +7,6 @@
 //
 
 #import "HTCommunityController.h"
-#import "HTCommunityIssueController.h"
 #import "HTLoginManager.h"
 #import "HTCommunityLayoutModel.h"
 #import "HTCommunityCell.h"
@@ -19,7 +18,7 @@
 #import <NSObject+HTTableRowHeight.h>
 #import "HTMineFontSizeController.h"
 
-@interface HTCommunityController ()  <HTCommunityIssueControllerDelete>
+@interface HTCommunityController () 
 
 @property (nonatomic, strong) NSMutableArray <HTCommunityLayoutModel *> *communityLayoutModelArray;
 

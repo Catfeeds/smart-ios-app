@@ -60,11 +60,12 @@
 			  .itemSize(itemSize).modelArray(modelArray).headerClass([HTLibraryVideoHeaderView class]).headerSize(CGSizeMake(HTSCREENWIDTH, 45)) customReusableViewBlock:^(UICollectionView *collectionView, __kindof HTLibraryVideoHeaderView *reusableView, BOOL isHeader) {
 				[reusableView.titleNameButton setTitle:headerTitle forState:UIControlStateNormal];
 			}] didSelectedCellBlock:^(UICollectionView *collectionView, NSInteger item, __kindof UICollectionViewCell *cell, __kindof HTLibraryProjectVideoContentModel *model) {
-				HTSellerDetailController *detailController = [[HTSellerDetailController alloc] init];
-				detailController.sellerIdString = model.ID;
+			//HTSellerDetailController *detailController = [[HTSellerDetailController alloc] init];
+			//	detailController.sellerIdString = model.ID;
 				
-			//	HTPlayerController *detailController = [[HTPlayerController alloc]init];
-			//	detailController.courseURLString = model.url;
+				HTPlayerController *detailController = [[HTPlayerController alloc]init];
+				detailController.courseURLString = model.url;
+				detailController.sellerIdString = model.ID;
 				
 				[weakSelf.navigationController pushViewController:detailController animated:true];
 			}];

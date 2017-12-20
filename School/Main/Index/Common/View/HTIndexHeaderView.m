@@ -27,6 +27,7 @@
 #import "HTDiscoverActivityDetailController.h"
 #import "HTFindAgencyViewController.h"
 #import "HTUniversityRankClassController.h"
+#import "HTStudyAbroadController.h"
 
 @interface HTIndexHeaderView ()
 
@@ -137,8 +138,9 @@
 						break;
 					}
 					case HTIndexHeaderCollectionItemTypeAdvisor: {
-						HTIndexAdvisorController *advisorController = [[HTIndexAdvisorController alloc] init];
-						viewController = advisorController;
+						//HTIndexAdvisorController *advisorController = [[HTIndexAdvisorController alloc] init];
+						HTStudyAbroadController *studyAbroadController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTStudyAbroadController");
+						viewController = studyAbroadController;
 						break;
 					}
 				}

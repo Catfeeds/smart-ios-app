@@ -46,6 +46,7 @@
 		make.left.mas_equalTo(10);
 		make.bottom.mas_equalTo(self);
 		make.height.mas_equalTo(bottomHeight);
+		make.right.mas_equalTo(self.rightLookButton.mas_left);
 	}];
 	[self.rightLookButton mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.right.mas_equalTo(- 10);
@@ -87,6 +88,8 @@
 - (UIButton *)leftTimeButton {
 	if (!_leftTimeButton) {
 		_leftTimeButton = [[UIButton alloc] init];
+		_leftTimeButton.titleLabel.minimumScaleFactor = 0.5;
+		_leftTimeButton.titleLabel.adjustsFontSizeToFitWidth = YES;
 		UIColor *tintColor = [UIColor ht_colorStyle:HTColorStyleSecondaryTitle];
 		UIImage *image = [UIImage imageNamed:@"cn_answer_online_clock"];
 		image = [image ht_resetSizeWithStandard:15 isMinStandard:false];

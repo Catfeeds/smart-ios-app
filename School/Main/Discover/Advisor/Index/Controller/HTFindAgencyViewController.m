@@ -9,11 +9,10 @@
 #import "HTFindAgencyViewController.h"
 #import "HTIndexAdvisorController.h"
 #import "HTOrganizationController.h"
-#import "HTFindAgencyTitleView.h"
 
-@interface HTFindAgencyViewController () <VTMagicViewDataSource, VTMagicViewDelegate, HTFindAgencyTitleViewDelegate>
+@interface HTFindAgencyViewController () <VTMagicViewDataSource, VTMagicViewDelegate >
 
-@property (nonatomic, strong) HTFindAgencyTitleView *findAgencyTitleView;
+@property (nonatomic, strong) UISegmentedControl *segement;
 
 @end
 
@@ -28,10 +27,12 @@
 	self.magicView.navigationHeight = 0;
 	[self.magicView reloadData];
 	
-	self.findAgencyTitleView =  [[[NSBundle mainBundle] loadNibNamed:@"HTFindAgencyTitleView" owner:nil options:nil] lastObject];
-	self.findAgencyTitleView.delegate = self;
-	self.navigationItem.titleView = self.findAgencyTitleView;
-	
+	self.segement =  [[UISegmentedControl alloc]initWithItems:@[@"寻机构",@"选顾问"]];
+	self.segement.frame = CGRectMake(0, 0, 180, 30);
+	self.segement.selectedSegmentIndex = 0;
+	[self.segement addTarget:self action:@selector(changeController:) forControlEvents:UIControlEventValueChanged];
+	self.segement.tintColor = [UIColor whiteColor];
+	self.navigationItem.titleView = self.segement;
 }
 
 
@@ -42,15 +43,9 @@
 
 #pragma mark - HTFindAgencyTitleViewDelegate
 
-- (void)clickAction:(UIButton *)button{
-	NSInteger tag = button.tag;
-	if (tag == 100) {
-		[self.magicView reloadDataToPage:0];
-		[self.magicView switchToPage:0 animated:YES];
-	}else if (tag == 101){
-		[self.magicView reloadDataToPage:1];
-		[self.magicView switchToPage:1 animated:YES];
-	}
+- (void)changeController:(UISegmentedControl *)segmented{
+	
+	[self.magicView switchToPage:segmented.selectedSegmentIndex animated:YES];
 }
 
 
@@ -96,7 +91,7 @@
 
 #pragma mark - VTMagicViewDelegate
 - (void)magicView:(VTMagicView *)magicView viewDidAppear:(__kindof UIViewController *)viewController atPage:(NSUInteger)pageIndex{
-	[self.findAgencyTitleView setSelectIndex:pageIndex];
+	self.segement.selectedSegmentIndex = pageIndex;
 }
 
 /*

@@ -727,7 +727,15 @@
  */
 + (void)requestExampleIndexWithNetworkModel:(HTNetworkModel *)networkModel singleSectionItemCount:(NSInteger)singleSectionItemCount complete:(HTUserTaskCompleteBlock)complete;
 
-
+/**
+ 获取出国留学服务
+ 
+ @param page 页数
+ @param countryID 国家 id
+ @param categoryID  服务类型
+ @param type  0-综合 1-销量 2-价格 3-最新
+ */
++ (void)requestStudyAbroadWithNetworkModel:(HTNetworkModel *)networkModel page:(NSString *)page countryID:(NSString *)countryID categoryID:(NSString *)categoryID sortType:(NSInteger)type complete:(HTUserTaskCompleteBlock)complete;
 
 /**
  获取论坛列表
