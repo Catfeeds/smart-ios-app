@@ -13,6 +13,7 @@
 
 - (void)selectedModel:(HTStudyAbroadSelectorModel *)selectedMoel;
 
+- (void)hiddenSelectorView;
 
 @end
 
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) NSArray *models;
 @property (nonatomic, assign) id<HTSelectorDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightLayoutConstraint;
 
 - (void)reloadDataModels:(NSArray *)models selecetdModelId:(NSString *)selectedModelId;
 

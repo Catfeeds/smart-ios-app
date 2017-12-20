@@ -51,12 +51,12 @@
 	headerHeader.lastUpdatedTimeLabel.hidden = YES;
 	self.tableView.mj_header = headerHeader;
 	
-	MJRefreshAutoNormalFooter *footerHeader = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    
+    MJRefreshBackNormalFooter *footerHeader = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
 		self.currentPage++;
 		[self requestUniversityRank];
 	}];
-	footerHeader.refreshingTitleHidden = YES;
-	[footerHeader setTitle:@"" forState:MJRefreshStateIdle];
+    footerHeader.stateLabel.hidden = YES;
 	self.tableView.mj_footer = footerHeader;
 	
 	[self chooseYearAction:self.yearButton_2018];
@@ -90,9 +90,15 @@
 		
 		if (self.currentPage == 1) {
 			if (modelArray.count == 0) [self.tableView ht_endRefreshWithModelArrayCount:0];
-			[self.schoolRankModelArray setArray:modelArray];
-			[self.tableView reloadData];
-		}else{
+            [self.tableView setContentOffset:CGPointZero];
+            [self.schoolRankModelArray setArray:modelArray];
+            [self.tableView reloadData];
+            [self.tableView layoutIfNeeded];
+            if (ArrayNotEmpty(self.schoolRankModelArray)) {
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            }
+            
+		}else if(ArrayNotEmpty(modelArray)){
 			NSMutableArray *indexPathArray =  [NSMutableArray array];
 			for (int i = 0; i < modelArray.count; i++) {
 				NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.schoolRankModelArray.count + i inSection:0];

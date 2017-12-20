@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 10);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,10 +27,23 @@
 
 - (void)reloadDataModels:(NSArray *)models selecetdModelId:(NSString *)selectedModelId{
 	
+    CGFloat maxHeight = CGRectGetHeight(self.view.frame) / 4.0 * 3.0; //页面三分二高度
+    if ((models.count * 44) > maxHeight) {
+        self.tableViewHeightLayoutConstraint.constant = maxHeight;
+    }else{
+        self.tableViewHeightLayoutConstraint.constant = models.count * 44;
+    }
+    
 	self.models = models;
 	self.selectedModelId = selectedModelId;
 	[self.tableView reloadData];
 }
+
+//tap手势 点击空白处
+- (IBAction)tapBlank:(id)sender {
+    [self.delegate hiddenSelectorView];
+}
+
 
 #pragma mark -UITableViewDataSource
 
@@ -54,8 +68,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[self.delegate selectedModel:self.models[indexPath.row]];
+    [self.delegate hiddenSelectorView];
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+
 
 /*
 #pragma mark - Navigation

@@ -25,6 +25,26 @@
 			 };
 }
 
+- (void)mj_keyValuesDidFinishConvertingToObject{
+    HTStudyAbroadSelectorModel *allCountryModel = [HTStudyAbroadSelectorModel new];
+    allCountryModel.name = @"所有国家";
+    allCountryModel.type = HTSelectorModelCountryType;
+    allCountryModel.ID = @"";
+    
+    NSMutableArray *tempCountryArray = [NSMutableArray arrayWithArray:self.countrys];
+    [tempCountryArray insertObject:allCountryModel atIndex:0];
+    self.countrys = tempCountryArray;
+    
+    HTStudyAbroadSelectorModel *allServiceModel = [HTStudyAbroadSelectorModel new];
+    allServiceModel.name = @"所有服务";
+    allServiceModel.type = HTSelectorModelServiceType;
+    allServiceModel.ID = @"";
+    
+    NSMutableArray *tempServiceArray = [NSMutableArray arrayWithArray:self.serviceTypes];
+    [tempServiceArray insertObject:allServiceModel atIndex:0];
+    self.serviceTypes = tempServiceArray;
+}
+
 @end
 
 

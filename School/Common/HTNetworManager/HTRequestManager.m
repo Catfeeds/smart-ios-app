@@ -247,7 +247,7 @@ static NSString *kHTApplicationIdString = @"1271275068";
 	if (StringNotEmpty(countryID)) [dic setObject:countryID forKey:@"country"];
 	if (StringNotEmpty(categoryID)) [dic setObject:categoryID forKey:@"category"];
 	[dic setObject:page forKey:@"page"];
-	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://www.smartapply.cn/cn/app-api/goods-page" parameter:dic complete:complete];
+	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodPost url:@"http://www.smartapply.cn/cn/app-api/goods-page" parameter:dic complete:complete];
 }
 
 + (void)requestExampleItemWithNetworkModel:(HTNetworkModel *)networkModel complete:(HTUserTaskCompleteBlock)complete {

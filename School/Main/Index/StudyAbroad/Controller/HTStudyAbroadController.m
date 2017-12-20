@@ -55,12 +55,11 @@
 	headerHeader.lastUpdatedTimeLabel.hidden = YES;
 	self.tableView.mj_header = headerHeader;
 	
-	MJRefreshAutoNormalFooter *footerHeader = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+	MJRefreshBackNormalFooter *footerHeader = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
 		self.page++;
 		[self loadData];
 	}];
-	footerHeader.refreshingTitleHidden = YES;
-	[footerHeader setTitle:@"" forState:MJRefreshStateIdle];
+    footerHeader.stateLabel.hidden = YES;
 	self.tableView.mj_footer = footerHeader;
 }
 
@@ -77,9 +76,14 @@
 		NSArray *modelArray = self.studyAbroadModel.data;
 		if (self.page == 1) {
 			if (modelArray.count == 0) [self.tableView ht_endRefreshWithModelArrayCount:0];
-			[self.studyAbroadDataArray setArray:modelArray];
-			[self.tableView reloadData];
-		}else{
+            [self.studyAbroadDataArray setArray:modelArray];
+            [self.tableView reloadData];
+            [self.tableView layoutIfNeeded];
+            if (ArrayNotEmpty(self.studyAbroadDataArray)) {
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            }
+            
+		}else if(ArrayNotEmpty(modelArray)){
 			NSMutableArray *indexPathArray =  [NSMutableArray array];
 			for (int i = 0; i < modelArray.count; i++) {
 				NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.studyAbroadDataArray.count + i inSection:0];
@@ -117,11 +121,15 @@
 
 //选择服务 / 国家
 - (IBAction)showSelectorAction:(UIButton *)sender {
+    
 	if (sender == self.countryButton) {
+        self.serviceButton.selected = NO;
 		[self.studyAbroadSelectorController reloadDataModels:self.studyAbroadModel.countrys selecetdModelId:self.selectedCountryID];
 	}else{
+        self.countryButton.selected = NO;
 		[self.studyAbroadSelectorController reloadDataModels:self.studyAbroadModel.serviceTypes selecetdModelId:self.selectedCategoryID];
 	}
+    sender.selected = YES;
 	[self.view bringSubviewToFront:self.selectorView];
 }
 
@@ -131,12 +139,21 @@
 - (void)selectedModel:(HTStudyAbroadSelectorModel *)selectedMoel{
 	if (selectedMoel.type == HTSelectorModelCountryType)
 	{
+        [self.countryButton setTitle:selectedMoel.name forState:UIControlStateNormal];
 		self.selectedCountryID = selectedMoel.ID;
 	}else{
+        [self.serviceButton setTitle:selectedMoel.name forState:UIControlStateNormal];
 		self.selectedCategoryID = selectedMoel.ID;
 	}
+    self.page = 1;
+    [self loadData];
 }
 
+- (void)hiddenSelectorView{
+    self.countryButton.selected = NO;
+    self.serviceButton.selected = NO;
+    [self.view sendSubviewToBack:self.selectorView];
+}
 
 #pragma mark -UITableViewDataSource
 
