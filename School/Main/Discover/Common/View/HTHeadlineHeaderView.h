@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "HTDiscoverActivityModel.h"
 
+@protocol HTHeadlineHeaderViewDelegate <NSObject>
+
+- (void)clickHeadLinde:(HTDiscoverActivityModel *)activityModel;
+
+@end
+
+
 @interface HTHeadlineHeaderView : UIView <UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property (nonatomic, assign) id<HTHeadlineHeaderViewDelegate> delegate;
 @property (nonatomic, strong) NSArray *activityModelArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *headlineCollectionView;
 

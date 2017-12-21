@@ -16,12 +16,15 @@
 #import "HTUserHistoryManager.h"
 #import "HTUserStoreManager.h"
 #import "HTStoreBarButtonItem.h"
+#import "HTAnswerInputView.h"
 
 @interface HTAnswerDetailController ()
 
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) HTAnswerModel *answerModel;
+
+@property (nonatomic, strong) HTAnswerInputView *inputView;
 
 @end
 
@@ -90,6 +93,23 @@
 - (void)initializeUserInterface {
     self.navigationItem.title = @"问答详情";
     [self.view addSubview:self.tableView];
+	[self.view addSubview:self.inputView];
+	
+	[self.inputView mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.left.right.bottom.mas_equalTo(self.view);
+		make.height.mas_equalTo(56);
+	}];
+	[self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.top.left.right.mas_equalTo(self.view);
+		make.bottom.mas_equalTo(self.inputView.mas_top);
+	}];
+}
+
+- (HTAnswerInputView *) inputView{
+	if (!_inputView) {
+		_inputView = [[NSBundle mainBundle] loadNibNamed:@"HTAnswerInputView" owner:nil options:nil].firstObject;
+	}
+	return _inputView;
 }
 
 - (UITableView *)tableView {

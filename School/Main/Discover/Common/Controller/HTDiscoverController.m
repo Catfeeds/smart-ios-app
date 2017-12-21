@@ -16,11 +16,11 @@
 #import "HTDiscoverActivityModel.h"
 #import "HTGossIPItemModel.h"
 #import "THToeflDiscoverModel.h"
-#import "HTHeadlineHeaderView.h"
+#import "HTDiscoverActivityDetailController.h"
 
-@interface HTDiscoverController ()
+@interface HTDiscoverController () <HTHeadlineHeaderViewDelegate>
 
-@property (nonatomic, strong) HTDiscoverHeaderView *headerView;
+@property (nonatomic, strong) HTDiscoverHeaderView *headerView; //之前的
 
 @property (nonatomic, strong) NSArray *itemModelArray;
 
@@ -48,8 +48,8 @@
 			}
 			NSArray *bannerModelArray = [HTDiscoverActivityModel mj_objectArrayWithKeyValuesArray:response[@"banner"]];
 			self.headlineHeaderView.activityModelArray = bannerModelArray;
-		//	[self.headerView setBannerModelArray:bannerModelArray];
-		//	[self.headerView setTopLineModelArray:bannerModelArray];
+//			[self.headerView setBannerModelArray:bannerModelArray];
+//			[self.headerView setTopLineModelArray:bannerModelArray];
 		}];
 	}
 }
@@ -152,6 +152,16 @@
 	return viewController;
 }
 
+#pragma mark - HTHeadlineHeaderViewDelegate
+
+- (void)clickHeadLinde:(HTDiscoverActivityModel *)activityModel{
+	HTDiscoverActivityDetailController *detailController = [[HTDiscoverActivityDetailController alloc] init];
+	detailController.activityIdString = activityModel.ID;
+	[self.navigationController pushViewController:detailController animated:YES];
+}
+
+#pragma mark -
+
 - (HTDiscoverHeaderView *)headerView {
 	if (!_headerView) {
 		_headerView = [[HTDiscoverHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 320)];
@@ -163,6 +173,7 @@
 	if (!_headlineHeaderView) {
 		_headlineHeaderView =  [[NSBundle mainBundle] loadNibNamed:@"HTHeadlineHeaderView" owner:nil options:nil].firstObject;
 		_headlineHeaderView.frame = CGRectMake(0, 0, HTSCREENWIDTH, 144);
+		_headlineHeaderView.delegate = self;
 	}
 	return _headlineHeaderView;
 }

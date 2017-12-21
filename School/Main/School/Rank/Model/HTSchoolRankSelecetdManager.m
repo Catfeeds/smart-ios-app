@@ -67,7 +67,7 @@
 							[weakSelectedController.tableView ht_endRefreshWithModelArrayCount:errorModel.errorType];
 							return;
 						}
-						filterModel.modelArray = [HTSchoolRankSelectedModel mj_objectArrayWithKeyValuesArray:response[@"class"]];
+						filterModel.modelArray = [HTSchoolRankSelectedModel mj_objectArrayWithKeyValuesArray:response[@"classes"]];
 						findSelectedModelComplete();
 					}];
 				} else {

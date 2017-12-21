@@ -42,7 +42,7 @@
             compareScore = result.score;
             break;
         case HTCompareResultToefl:
-            compareName = @"toefl";
+            compareName = @"TOEFL/IELTS";
             compareScore = result.score;
             break;
         case HTCompareResultSchool:

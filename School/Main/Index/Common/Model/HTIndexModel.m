@@ -37,7 +37,10 @@
 								   @{typeNameKey:@(HTIndexHeaderTypeActivity), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexActivityIndexCell class]), headerHeightKey:@(40), cellHeigithKey:@(0), footerHeightKey:@(0), titleNameKey:@"特色活动推荐", imageNameKey:@"cn2_index_activity_header_left", separatorLineHiddenKey:@(false), modelArrayKey:self.activity},
 //								   @{typeNameKey:@(HTIndexHeaderTypeExample), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexExampleIndexCell class]), headerHeightKey:@(0), cellHeigithKey:@(80), footerHeightKey:@(0), titleNameKey:@"", imageNameKey:@"", separatorLineHiddenKey:@(false), modelArrayKey:@[@""]},
 								   @{typeNameKey:@(HTIndexHeaderTypeBook), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexBookIndexCell class]), headerHeightKey:@(40), cellHeigithKey:@(0), footerHeightKey:@(0), titleNameKey:@"特色文书服务", imageNameKey:@"cn2_index_document_header_left", separatorLineHiddenKey:@(false), modelArrayKey:self.document},
-								   @{typeNameKey:@(HTIndexHeaderTypeForYou), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexExampleIndexCell class]), headerHeightKey:@(40), cellHeigithKey:@(0), footerHeightKey:@(0), titleNameKey:@"为你推荐", imageNameKey:@"cn2_index_recommend_header_left", separatorLineHiddenKey:@(true), modelArrayKey:@[]},
+								   /*
+									*隐藏
+									*/
+//								   @{typeNameKey:@(HTIndexHeaderTypeForYou), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexExampleIndexCell class]), headerHeightKey:@(40), cellHeigithKey:@(0), footerHeightKey:@(0), titleNameKey:@"为你推荐", imageNameKey:@"cn2_index_recommend_header_left", separatorLineHiddenKey:@(true), modelArrayKey:@[]},
 							 ];
 	NSMutableArray *modelArray = [@[] mutableCopy];
 	[keyValueArray enumerateObjectsUsingBlock:^(NSDictionary *dictionary, NSUInteger index, BOOL * _Nonnull stop) {

@@ -53,13 +53,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "School/Main/Index/StudyAbroad/Controller/HTStudyAbroadSelectorController.m"
-            timestampString = "535470292.257068"
+            filePath = "School/Main/Discover/Common/View/HTDiscoverHeaderView.m"
+            timestampString = "535556319.679369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "-setBannerModelArray:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

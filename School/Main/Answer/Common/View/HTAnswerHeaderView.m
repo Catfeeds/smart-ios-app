@@ -19,20 +19,38 @@
 
 @property (nonatomic, strong) UIButton *rightIssueButton;
 
+@property (nonatomic, strong) UIView *grayBackgroundView;
+
+@property (nonatomic, strong) UIView *statusBarView;
+
 @end
 
 @implementation HTAnswerHeaderView
 
 - (void)didMoveToSuperview {
 	[self addSubview:self.backgroundButton];
+	[self addSubview:self.statusBarView];
+	[self addSubview:self.grayBackgroundView];
 	[self addSubview:self.searchTitleLabel];
 	[self addSubview:self.rightIssueButton];
+	
 	[self.backgroundButton mas_updateConstraints:^(MASConstraintMaker *make) {
-		make.edges.mas_equalTo(UIEdgeInsetsZero);
+		make.edges.mas_equalTo(UIEdgeInsetsMake(20, 0, 0, 0));
 	}];
+	[self.statusBarView mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.left.right.top.mas_equalTo(0);
+		make.height.mas_equalTo(20);
+	}];
+	
+	[self.grayBackgroundView mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.left.right.mas_equalTo(0);
+		make.top.mas_equalTo(self.statusBarView.mas_bottom);
+		make.height.mas_equalTo(40);
+	}];
+
 	[self.rightIssueButton mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.right.mas_equalTo(- 10);
-		make.top.mas_equalTo(30);
+		make.centerY.mas_equalTo(self.grayBackgroundView);
 		make.width.mas_equalTo(60);
 	}];
 	[self.searchTitleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -41,12 +59,24 @@
 		make.height.mas_equalTo(30);
 		make.centerY.mas_equalTo(self.rightIssueButton);
 	}];
+	
 }
 
-- (void)layoutSubviews {
-	[super layoutSubviews];
-	self.searchTitleLabel.layer.cornerRadius = self.searchTitleLabel.bounds.size.height / 2;
-	self.searchTitleLabel.layer.masksToBounds = true;
+- (UIView *)grayBackgroundView{
+	if (!_grayBackgroundView) {
+		_grayBackgroundView = [[UIView alloc] init];
+		_grayBackgroundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+		
+	}
+	return _grayBackgroundView;
+}
+
+- (UIView *)statusBarView{
+	if (!_statusBarView) {
+		_statusBarView = [[UIView alloc] init];
+		_statusBarView.backgroundColor = [UIColor ht_colorStyle:HTColorStylePrimaryTheme];
+	}
+	return _statusBarView;
 }
 
 - (UIButton *)backgroundButton {
@@ -74,12 +104,16 @@
 		
 		appendAttributedString = [NSAttributedString attributedStringWithAttachment:textAttachment];
 		[attributedString appendAttributedString:appendAttributedString];
-		appendAttributedString = [[NSAttributedString alloc] initWithString:@"搜索你关心的问题"
-																 attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
+		appendAttributedString = [[NSAttributedString alloc] initWithString:@"你关心得问题?"
+																 attributes:@{NSForegroundColorAttributeName:[UIColor ht_colorString:@"bebebe"],
 																			  NSFontAttributeName:[UIFont systemFontOfSize:15]}];
 		[attributedString appendAttributedString:appendAttributedString];
 		_searchTitleLabel.attributedText = attributedString;
-		_searchTitleLabel.backgroundColor = [UIColor colorWithWhite:1 alpha:0.2];
+		_searchTitleLabel.backgroundColor = [UIColor whiteColor];
+		
+		_searchTitleLabel.layer.cornerRadius = 4;
+		_searchTitleLabel.layer.masksToBounds = true;
+		
 		[_searchTitleLabel ht_whenTap:^(UIView *view) {
 			[HTSearchController presentSearchControllerAnimated:true defaultSelectedType:HTSearchTypeAnswer];
 		}];

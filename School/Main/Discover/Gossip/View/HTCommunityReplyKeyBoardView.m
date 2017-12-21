@@ -62,14 +62,7 @@ static HTCommunityReplyKeyBoardView *replyKeyBoardView;
 
 + (void)showReplyKeyBoardViewPlaceHodler:(NSString *)placeHodler keyBoardAppearance:(UIKeyboardAppearance)keyBoardAppearance completeBlock:(void(^)(NSString *replyText))completeBlock {
 	
-	
-	
 	[IQKeyboardManager sharedManager].enable = false;
-	
-	
-	
-	
-	
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		replyKeyBoardView = [[HTCommunityReplyKeyBoardView alloc] initWithFrame:[UIScreen mainScreen].bounds];

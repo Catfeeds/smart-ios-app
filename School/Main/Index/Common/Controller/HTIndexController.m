@@ -24,6 +24,8 @@
 #import "HTExampleSuccessController.h"
 #import "HTSchoolHotDetailController.h"
 #import "HTDiscoverActivityModel.h"
+#import "HTSchoolFilterController.h"
+#import "HTStudyAbroadController.h"
 
 @interface HTIndexController ()
 
@@ -73,8 +75,11 @@
 						switch (headerModel.type) {
 							case HTIndexHeaderTypeSchool: {
 								[reuseView setHeaderRightDetailTapedBlock:^{
-									HTSchoolHotDetailController *hotController = [[HTSchoolHotDetailController alloc] init];
-									[weakSelf.navigationController pushViewController:hotController animated:true];
+									//特色学校推荐 more
+//									HTSchoolHotDetailController *hotController = [[HTSchoolHotDetailController alloc] init];
+									HTSchoolFilterController *controller = [[HTSchoolFilterController alloc] init];
+									[weakSelf.navigationController pushViewController:controller animated:true];
+									
 								}];
 								break;
 							}
@@ -90,8 +95,9 @@
 							}
 							case HTIndexHeaderTypeBook: {
 								[reuseView setHeaderRightDetailTapedBlock:^{
-									HTBookController *bookController = [[HTBookController alloc] init];
-									[weakSelf.navigationController pushViewController:bookController animated:true];
+									//HTBookController *bookController = [[HTBookController alloc] init];
+									HTStudyAbroadController *studyAbroadController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTStudyAbroadController");
+									[weakSelf.navigationController pushViewController:studyAbroadController animated:true];
 								}];
 								break;
 							}
@@ -159,8 +165,10 @@
 
 - (HTIndexForYouIndexFooterView *)indexFooterView {
 	if (!_indexFooterView) {
-		_indexFooterView = [[HTIndexForYouIndexFooterView alloc] init];
-		_indexFooterView.superTableView = self.tableView;
+		//隐藏为你推荐
+//		_indexFooterView = [[HTIndexForYouIndexFooterView alloc] init];
+//		_indexFooterView.superTableView = self.tableView;
+		
 	}
 	return _indexFooterView;
 }

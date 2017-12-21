@@ -30,6 +30,7 @@
 
 - (void)loadData{
 	HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
+	networkModel.autoAlertString = @"获取意向国家";
 	[HTRequestManager requestSchoolMatriculateCountryListAndMajorListWithNetworkModel:networkModel complete:^(id response, HTError *errorModel) {
 		if (errorModel.existError) {
 			

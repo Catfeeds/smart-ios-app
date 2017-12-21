@@ -69,6 +69,7 @@ typedef NS_ENUM(NSUInteger, HTCompareResultType) {
 @interface HTResultUser : NSObject
 
 @property (nonatomic, strong) NSString *userName;
+@property (nonatomic, strong) NSString *nickname;
 
 @end
 

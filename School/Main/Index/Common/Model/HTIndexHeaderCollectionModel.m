@@ -19,10 +19,10 @@
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeRank), titleNameKey:@"看排名", imageNameKey:@"cn2_index_collection_rank"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeMajor), titleNameKey:@"专业库", imageNameKey:@"cn2_index_collection_major"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeLibrary), titleNameKey:@"Mentor课程", imageNameKey:@"cn2_index_collection_library"},
-							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeMatriculate), titleNameKey:@"做测评", imageNameKey:@"cn_index_collection_matricuclate"},
+							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeMatriculate), titleNameKey:@"选校匹配", imageNameKey:@"cn_index_collection_matricuclate"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeWork), titleNameKey:@"找实习", imageNameKey:@"cn_index_collection_work"},
 							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeOrganization), titleNameKey:@"找中介", imageNameKey:@"cn_index_collection_organization"},
-							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeAdvisor), titleNameKey:@"选顾问", imageNameKey:@"cn_index_collection_advisor"},
+							@{typeNameKey:@(HTIndexHeaderCollectionItemTypeAdvisor), titleNameKey:@"留学商城", imageNameKey:@"cn_index_collection_advisor"},
 						];
 	NSMutableArray *modelArray = [@[] mutableCopy];
 	[response enumerateObjectsUsingBlock:^(NSDictionary *dictionary, NSUInteger index, BOOL * _Nonnull stop) {

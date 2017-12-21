@@ -23,7 +23,7 @@
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-	return self.activityModelArray.count > 3 ? 3 : self.activityModelArray.count;
+	return self.activityModelArray.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -31,10 +31,17 @@
 	HTHeadlineCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HTHeadlineCollectionCell" forIndexPath:indexPath];
 	HTDiscoverActivityModel *model = self.activityModelArray[indexPath.row];
 	cell.titleLabel.text = model.title;
-	cell.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"discover_headline_bg_%ld",(long)indexPath.row+1]];
+	cell.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"discover_headline_bg_%ld",(long)(indexPath.row%3)+1]];
 	return cell;
 }
 
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+	
+	[self.delegate clickHeadLinde:self.activityModelArray[indexPath.row]];
+	[collectionView deselectItemAtIndexPath:indexPath animated:YES];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

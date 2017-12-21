@@ -40,7 +40,7 @@
 			}
 			return;
 		}
-		NSArray <HTSchoolRankSelectedModel *> *classModelArray = [HTSchoolRankSelectedModel mj_objectArrayWithKeyValuesArray:response[@"class"]];
+		NSArray <HTSchoolRankSelectedModel *> *classModelArray = [HTSchoolRankSelectedModel mj_objectArrayWithKeyValuesArray:response[@"classes"]];
 		classModelArray.firstObject.isSelected = true;
 		
 		[weakSelf.filterModelArray enumerateObjectsUsingBlock:^(HTSchoolRankFilterModel *filterModel, NSUInteger index, BOOL * _Nonnull stop) {

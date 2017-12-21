@@ -82,6 +82,10 @@
 - (void)requestUniversityRank{
 	
 	[HTRequestManager requestRankSchoolListWithNetworkModel:self.networkModel classIdString:self.selectedRankClassModel.ID yearIdString:@(self.selectedYear.tag).stringValue currentPage:@(self.currentPage).stringValue pageSize:@"10" complete:^(id response, HTError *errorModel) {
+		
+		[self.tableView.mj_header endRefreshing];
+		[self.tableView.mj_footer endRefreshing];
+		
 		if (errorModel.existError) {
 			[self.tableView ht_endRefreshWithModelArrayCount:errorModel.errorType];
 			return;
@@ -109,8 +113,6 @@
 			[self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
 			[self.tableView endUpdates];
 		}
-		[self.tableView.mj_header endRefreshing];
-		[self.tableView.mj_footer endRefreshing];
 	}];
 }
 

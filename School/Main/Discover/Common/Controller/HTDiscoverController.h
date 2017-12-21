@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HTPageController.h"
+#import "HTHeadlineHeaderView.h"
+
 
 @interface HTDiscoverController : HTPageController
+
+@property (nonatomic, assign) id<HTHeadlineHeaderViewDelegate>delegate;
 
 - (NSString *)getCurrentCatIDString;
 

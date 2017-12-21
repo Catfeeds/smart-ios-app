@@ -73,7 +73,7 @@
 }
 
 - (void)initializeMagicView {
-	HTAnswerHeaderView *headerView = [[HTAnswerHeaderView alloc] initWithFrame:CGRectMake(0, 0, HTSCREENWIDTH, 240)];
+	HTAnswerHeaderView *headerView = [[HTAnswerHeaderView alloc] initWithFrame:CGRectMake(0, 0, HTSCREENWIDTH, 404.0f/750.0f * HTSCREENWIDTH + 20)]; //增加20状态栏
 	self.magicView.headerHeight = headerView.ht_h;
 	self.magicView.headerHidden = false;
 	[self.magicView.headerView addSubview:headerView];

@@ -39,8 +39,8 @@
 }
 
 - (void)loadData{
-    
-    [self layoutHeaderView:self.resultModel.user.userName score:self.resultModel.data.score];
+    NSString *nickname = HTPlaceholderString(self.resultModel.user.nickname, self.resultModel.user.userName);
+    [self layoutHeaderView:nickname score:self.resultModel.data.score];
     [self.tableView reloadData];
     
 }

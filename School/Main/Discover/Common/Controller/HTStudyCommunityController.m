@@ -12,9 +12,10 @@
 #import "THToeflDiscoverIssueController.h"
 #import "HTCommunityIssueController.h"
 #import "HTApplyController.h"
+#import "HTDiscoverActivityDetailController.h"
 
-@interface HTStudyCommunityController ()
 
+@interface HTStudyCommunityController () 
 @property (nonatomic, strong) UISegmentedControl *segement;
 @property (nonatomic, strong) UIBarButtonItem *postItem;
 
@@ -48,6 +49,7 @@
 	self.magicView.navigationHeight = 0;
 	
 }
+
 
 - (void)postAction{
 	

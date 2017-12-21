@@ -37,7 +37,7 @@
 		if (errorModel.existError) {
 			return;
 		}
-		self.rankClassArray = [HTUniversityRankClassModel mj_objectArrayWithKeyValuesArray:response[@"class"]];
+		self.rankClassArray = [HTUniversityRankClassModel mj_objectArrayWithKeyValuesArray:response[@"classes"]];
 		[self.tableView reloadData];
 	}];
 }

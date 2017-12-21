@@ -100,10 +100,12 @@
 			[sectionMaker.cellClass([HTIndexHeaderCollectionCell class]).modelArray(modelArray).itemSize(itemSize).sectionInset(sectionEdge).itemHorizontalSpacing(itemHorizontalSpacing).itemVerticalSpacing(itemVerticalSpacing) didSelectedCellBlock:^(UICollectionView *collectionView, NSInteger item, __kindof UICollectionViewCell *cell, __kindof HTIndexHeaderCollectionModel *model) {
 				UIViewController *viewController = nil;
 				switch (model.type) {
+						//院校查询
 					case HTIndexHeaderCollectionItemTypeSchool: {
 						viewController = [[HTSchoolFilterController alloc] init];
 						break;
 					}
+						//看排名
 					case HTIndexHeaderCollectionItemTypeRank: {
 					//	HTSchoolRankController *rankController = [[HTSchoolRankController alloc] init];
 						HTUniversityRankClassController *rankController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTUniversityRankClassController");
@@ -111,32 +113,38 @@
 						
 						break;
 					}
+						//专业库
 					case HTIndexHeaderCollectionItemTypeMajor: {
                         HTMajorController *majorController = [[HTMajorController alloc] init];
                         viewController = majorController;
 						break;
 					}
+						//Mentor 课程
 					case HTIndexHeaderCollectionItemTypeLibrary: {
                         HTLibraryController *libraryController = [[HTLibraryController alloc] init];
 						viewController = libraryController;
 						break;
 					}
+						//选校匹配
 					case HTIndexHeaderCollectionItemTypeMatriculate: {
 						HTEvaluateController *evaluateController = [[HTEvaluateController alloc] init];
 						viewController = evaluateController;
 						break;
 					}
+						//找实习
 					case HTIndexHeaderCollectionItemTypeWork: {
 						HTIndexWorkController *workController = [[HTIndexWorkController alloc] init];
 						viewController = workController;
 						break;
 					}
+						//找中介
 					case HTIndexHeaderCollectionItemTypeOrganization: {
 					//	HTOrganizationController *organizationController = [[HTOrganizationController alloc] init];
 						HTFindAgencyViewController *findAgencyViewController = [[HTFindAgencyViewController alloc]init];
 						viewController = findAgencyViewController;
 						break;
 					}
+						//留学商城
 					case HTIndexHeaderCollectionItemTypeAdvisor: {
 						//HTIndexAdvisorController *advisorController = [[HTIndexAdvisorController alloc] init];
 						HTStudyAbroadController *studyAbroadController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTStudyAbroadController");

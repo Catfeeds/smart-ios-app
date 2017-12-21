@@ -94,9 +94,8 @@
 
 - (VTMagicView *)magicView {
 	if (!_magicView) {
+		
 		_magicView = [[VTMagicView alloc] initWithFrame:CGRectMake(0, 0, HTSCREENWIDTH, 0)];
-		
-		
 		_magicView.layoutStyle = VTLayoutStyleDivide;
 		_magicView.sliderStyle = VTSliderStyleDefault;
 		_magicView.navigationHeight = 40;

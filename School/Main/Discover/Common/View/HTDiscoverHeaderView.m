@@ -88,7 +88,7 @@
 	_topLineModelArray = topLineModelArray;
 	if (_topLineModelArray.count > 3) {
 		_topLineModelArray = [_topLineModelArray subarrayWithRange:NSMakeRange(0, 3)];
-	}
+	} 
 	
 	__weak typeof(self) weakSelf = self;
 	[self.topLineTabelView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {

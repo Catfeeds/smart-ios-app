@@ -10,6 +10,7 @@
 #import "HTAnswerCell.h"
 #import "HTAnswerDetailController.h"
 #import <UITableViewCell_HTSeparate.h>
+#import "HTMentorAnswerCell.h"
 
 @interface HTAnswerContentController ()
 
@@ -30,17 +31,30 @@
 - (void)initializeUserInterface {
     
     __weak typeof(self) weakSelf = self;
+//	[self.tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
+//		[sectionMaker.cellClass([HTAnswerCell class]) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTAnswerModel *model) {
+//            HTAnswerDetailController *detailController = [[HTAnswerDetailController alloc] init];
+//			detailController.answerIdString = model.ID;
+//			[detailController setReloadAnswerModel:^(HTAnswerModel *detailAnswerModel) {
+//				[weakSelf.pageModel.modelArray replaceObjectAtIndex:row withObject:detailAnswerModel];
+//				[cell setModel:detailAnswerModel row:row];
+//			}];
+//            [weakSelf.navigationController pushViewController:detailController animated:true];
+//        }];
+//	}];
+	
 	[self.tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
-		[sectionMaker.cellClass([HTAnswerCell class]) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTAnswerModel *model) {
-            HTAnswerDetailController *detailController = [[HTAnswerDetailController alloc] init];
+		[sectionMaker.cellClass([HTMentorAnswerCell class]) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTAnswerModel *model) {
+			HTAnswerDetailController *detailController = [[HTAnswerDetailController alloc] init];
 			detailController.answerIdString = model.ID;
 			[detailController setReloadAnswerModel:^(HTAnswerModel *detailAnswerModel) {
 				[weakSelf.pageModel.modelArray replaceObjectAtIndex:row withObject:detailAnswerModel];
 				[cell setModel:detailAnswerModel row:row];
 			}];
-            [weakSelf.navigationController pushViewController:detailController animated:true];
-        }];
+			[weakSelf.navigationController pushViewController:detailController animated:true];
+		}];
 	}];
+	
 }
 
 

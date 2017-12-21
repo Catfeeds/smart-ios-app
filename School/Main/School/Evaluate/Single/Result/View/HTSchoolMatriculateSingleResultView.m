@@ -36,8 +36,8 @@
 	NSString *comparePercent = model.percent;
 	HTSchoolMatriculateSingleResultView *resultView = [[HTSchoolMatriculateSingleResultView alloc] init];
 	[resultView fillScoreSchoolName:model.school majorName:model.major];
-	[resultView fillScoreNumberText:scoreNumber];
-	[resultView createComparePercentNumber:comparePercent];
+	[resultView fillPercentNumberText:comparePercent];
+	[resultView createComparePercentNumber:scoreNumber.integerValue];
 	
 	__weak typeof(resultView) weakResultView = resultView;
 	[[UIApplication sharedApplication].keyWindow addSubview:weakResultView.backgroundView];
@@ -141,16 +141,25 @@
 	NSMutableAttributedString *attributedString = [[[NSAttributedString alloc] initWithString:@"申请到" attributes:normalDictionary] mutableCopy];
 	NSAttributedString *appendAttributedString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@-%@", schoolName, majorName] attributes:selectedDictionary];
 	[attributedString appendAttributedString:appendAttributedString];
-	appendAttributedString = [[NSAttributedString alloc] initWithString:@"专业的分数为: " attributes:normalDictionary];
+	appendAttributedString = [[NSAttributedString alloc] initWithString:@"专业的成功率为: " attributes:normalDictionary];
 	[attributedString appendAttributedString:appendAttributedString];
 	self.scoreSchoolLabel.attributedText = attributedString;
 }
 
-- (void)fillScoreNumberText:(NSString *)score {
-	self.scoreNumberLabel.text = [NSString stringWithFormat:@"%@分", score];
+- (void)fillPercentNumberText:(NSString *)percent {
+	self.scoreNumberLabel.text = [NSString stringWithFormat:@"%@%%", percent];
 }
 
-- (void)createComparePercentNumber:(NSString *)percent {
+- (void)createComparePercentNumber:(NSInteger)score {
+	
+	NSString *percent = @"0";
+	if (score <= 50) percent = @"30";
+	else if ( score > 50 && score <= 60)  percent = @"40";
+	else if ( score > 60 && score <= 70)  percent = @"55";
+	else if ( score > 70 && score <= 80)  percent = @"70";
+	else if ( score > 80 && score <= 90)  percent = @"80";
+	else if ( score > 90 && score <= 100) percent = @"85";
+
 	NSDictionary *normalDictionary = @{NSFontAttributeName:[UIFont systemFontOfSize:18],
 									   NSForegroundColorAttributeName:[UIColor ht_colorStyle:HTColorStyleTintColor]};
 	NSDictionary *selectedDictionary = @{NSFontAttributeName:[UIFont systemFontOfSize:18],

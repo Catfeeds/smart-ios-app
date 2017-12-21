@@ -49,6 +49,7 @@
 	[super willMoveToSuperview:newSuperview];
 	self.delegate = self;
 	self.dataSource = self;
+	self.tintColor = [UIColor ht_colorStyle:HTColorStylePrimaryTheme];
 	self.backgroundColor = [UIColor whiteColor];
 	[self setAnimationWillShow:!newSuperview];
 	[UIView animateWithDuration:0.25 animations:^{

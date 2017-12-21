@@ -59,6 +59,13 @@
 		5644C0941FE93605004D6E27 /* HTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C07E1FE93605004D6E27 /* HTPlayerView.m */; };
 		5644C0971FE93A4D004D6E27 /* HTVideoWiFIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0961FE93A4D004D6E27 /* HTVideoWiFIManager.m */; };
 		5644CFC61FEA51EF000D451E /* HTStudyAbroadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644CFC51FEA51EF000D451E /* HTStudyAbroadModel.m */; };
+		56565E851FEB574300441993 /* HTMentorAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E831FEB574300441993 /* HTMentorAnswerCell.m */; };
+		56565E861FEB574300441993 /* HTMentorAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56565E841FEB574300441993 /* HTMentorAnswerCell.xib */; };
+		56565E8A1FEB61A900441993 /* HTMentorAnswerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E881FEB61A900441993 /* HTMentorAnswerCollectionCell.m */; };
+		56565E8B1FEB61A900441993 /* HTMentorAnswerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56565E891FEB61A900441993 /* HTMentorAnswerCollectionCell.xib */; };
+		56565E8E1FEB667900441993 /* HTAnswerTagCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E8D1FEB667900441993 /* HTAnswerTagCollectionViewLayout.m */; };
+		56565E911FEBE2F600441993 /* HTAnswerInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E901FEBE2F600441993 /* HTAnswerInputView.m */; };
+		56565E931FEBE30F00441993 /* HTAnswerInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56565E921FEBE30F00441993 /* HTAnswerInputView.xib */; };
 		565EA2AC1FDFB8810042732B /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2831FDFB87D0042732B /* ShareSDK.framework */; };
 		565EA2AD1FDFB8810042732B /* ShareSDKConfigFile.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 565EA2861FDFB87D0042732B /* ShareSDKConfigFile.bundle */; };
 		565EA2AE1FDFB8810042732B /* ShareSDKConfigFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2871FDFB87D0042732B /* ShareSDKConfigFile.framework */; };
@@ -743,6 +750,17 @@
 		5644C0961FE93A4D004D6E27 /* HTVideoWiFIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTVideoWiFIManager.m; sourceTree = "<group>"; };
 		5644CFC41FEA51EF000D451E /* HTStudyAbroadModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTStudyAbroadModel.h; sourceTree = "<group>"; };
 		5644CFC51FEA51EF000D451E /* HTStudyAbroadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTStudyAbroadModel.m; sourceTree = "<group>"; };
+		56565E821FEB574300441993 /* HTMentorAnswerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMentorAnswerCell.h; sourceTree = "<group>"; };
+		56565E831FEB574300441993 /* HTMentorAnswerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMentorAnswerCell.m; sourceTree = "<group>"; };
+		56565E841FEB574300441993 /* HTMentorAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMentorAnswerCell.xib; sourceTree = "<group>"; };
+		56565E871FEB61A900441993 /* HTMentorAnswerCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMentorAnswerCollectionCell.h; sourceTree = "<group>"; };
+		56565E881FEB61A900441993 /* HTMentorAnswerCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMentorAnswerCollectionCell.m; sourceTree = "<group>"; };
+		56565E891FEB61A900441993 /* HTMentorAnswerCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMentorAnswerCollectionCell.xib; sourceTree = "<group>"; };
+		56565E8C1FEB667900441993 /* HTAnswerTagCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAnswerTagCollectionViewLayout.h; sourceTree = "<group>"; };
+		56565E8D1FEB667900441993 /* HTAnswerTagCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAnswerTagCollectionViewLayout.m; sourceTree = "<group>"; };
+		56565E8F1FEBE2F600441993 /* HTAnswerInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAnswerInputView.h; sourceTree = "<group>"; };
+		56565E901FEBE2F600441993 /* HTAnswerInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAnswerInputView.m; sourceTree = "<group>"; };
+		56565E921FEBE30F00441993 /* HTAnswerInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAnswerInputView.xib; sourceTree = "<group>"; };
 		565EA2831FDFB87D0042732B /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		565EA2861FDFB87D0042732B /* ShareSDKConfigFile.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKConfigFile.bundle; sourceTree = "<group>"; };
 		565EA2871FDFB87D0042732B /* ShareSDKConfigFile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConfigFile.framework; sourceTree = "<group>"; };
@@ -3435,6 +3453,8 @@
 				C25C85F41F3052B8001B2F59 /* HTAnswerTagController.m */,
 				C25304711F5418AC002354A4 /* HTAnswerSingleController.h */,
 				C25304721F5418AC002354A4 /* HTAnswerSingleController.m */,
+				56565E8C1FEB667900441993 /* HTAnswerTagCollectionViewLayout.h */,
+				56565E8D1FEB667900441993 /* HTAnswerTagCollectionViewLayout.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3469,6 +3489,15 @@
 				C27218FF1F55371800522984 /* HTAnswerSolutionCell.m */,
 				C27219011F555BD900522984 /* HTAnswerReplyCell.h */,
 				C27219021F555BD900522984 /* HTAnswerReplyCell.m */,
+				56565E821FEB574300441993 /* HTMentorAnswerCell.h */,
+				56565E831FEB574300441993 /* HTMentorAnswerCell.m */,
+				56565E841FEB574300441993 /* HTMentorAnswerCell.xib */,
+				56565E871FEB61A900441993 /* HTMentorAnswerCollectionCell.h */,
+				56565E881FEB61A900441993 /* HTMentorAnswerCollectionCell.m */,
+				56565E891FEB61A900441993 /* HTMentorAnswerCollectionCell.xib */,
+				56565E8F1FEBE2F600441993 /* HTAnswerInputView.h */,
+				56565E901FEBE2F600441993 /* HTAnswerInputView.m */,
+				56565E921FEBE30F00441993 /* HTAnswerInputView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5989,6 +6018,7 @@
 				C20CDEDF1EF1219200BA6D60 /* Settings.bundle in Resources */,
 				C26C66AD1F25FB8700FFC7E5 /* cn2_login_background.png in Resources */,
 				565EA2BA1FDFB8810042732B /* read_me.txt in Resources */,
+				56565E8B1FEB61A900441993 /* HTMentorAnswerCollectionCell.xib in Resources */,
 				565EA2B81FDFB8810042732B /* WeiboSDK.bundle in Resources */,
 				565EA2B61FDFB8810042732B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				C20CDE331EF11B8A00BA6D60 /* MAO@2x.png in Resources */,
@@ -6013,11 +6043,13 @@
 				56FA64211FE7A2E70013A165 /* HTHeadlineHeaderView.xib in Resources */,
 				C29646A91F5CED130031C109 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				C29646B31F5CED130031C109 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
+				56565E861FEB574300441993 /* HTMentorAnswerCell.xib in Resources */,
 				C20CDE621EF11B8A00BA6D60 /* MTA Developing Guide.pdf in Resources */,
 				C29646AE1F5CED130031C109 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				C20CDE641EF11B8A00BA6D60 /* ReleaseNotes.txt in Resources */,
 				C29646B11F5CED130031C109 /* JSQMessagesToolbarContentView.xib in Resources */,
 				C26C66AB1F25FA3000FFC7E5 /* cn2_launch_introduce_3.png in Resources */,
+				56565E931FEBE30F00441993 /* HTAnswerInputView.xib in Resources */,
 				C296468F1F5CED130031C109 /* JSQMessagesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6232,6 +6264,7 @@
 				C20CDEA61EF11B8A00BA6D60 /* YYTextContainerView.m in Sources */,
 				C20CDE681EF11B8A00BA6D60 /* TZAssetCell.m in Sources */,
 				C2FF3E281F4141620005F287 /* HTCommunityReplyKeyBoardView.m in Sources */,
+				56565E8E1FEB667900441993 /* HTAnswerTagCollectionViewLayout.m in Sources */,
 				5625E7471FE35A260089034C /* HTUniversityRankClassController.m in Sources */,
 				C26D701C1EF3B43A00697EC1 /* HTPageModel.m in Sources */,
 				C20CDEA81EF11B8A00BA6D60 /* YYTextEffectWindow.m in Sources */,
@@ -6312,6 +6345,7 @@
 				5625E74A1FE35A870089034C /* HTUniversityRankClassCell.m in Sources */,
 				C28D39F51F3967D1005FD635 /* HTIndexBookIndexCell.m in Sources */,
 				5644C04E1FE90213004D6E27 /* HTApplyController.m in Sources */,
+				56565E911FEBE2F600441993 /* HTAnswerInputView.m in Sources */,
 				C22EAB7B1F30345800969300 /* HTAnswerOnlineCell.m in Sources */,
 				C20CDE3F1EF11B8A00BA6D60 /* NJKWebViewProgress.m in Sources */,
 				C2D617771F78E1CE00F4C932 /* THToeflDiscoverDetailHeaderView.m in Sources */,
@@ -6455,6 +6489,7 @@
 				C2FF3E791F4175AF0005F287 /* HTMineFontSizeController.m in Sources */,
 				C20CDE421EF11B8A00BA6D60 /* HTImageBrowserView.m in Sources */,
 				C2242FD61F75856700EC82F0 /* HTDropBoxView.m in Sources */,
+				56565E8A1FEB61A900441993 /* HTMentorAnswerCollectionCell.m in Sources */,
 				C2FF3E1D1F4141620005F287 /* HTCommunityMessageLayoutModel.m in Sources */,
 				C2E66AD31F2F10B00000651A /* HTDiscoverActivityController.m in Sources */,
 				C29646891F5CED130031C109 /* NSBundle+JSQMessages.m in Sources */,
@@ -6593,6 +6628,7 @@
 				02348D181FDD83D2007DE05C /* HTSchoolMatriculateController.m in Sources */,
 				C2FA0FC01F67BFC4002F111D /* HTOrganizationTextCell.m in Sources */,
 				020D042E1FDED58900021CA4 /* HTProfessionDetailCell.m in Sources */,
+				56565E851FEB574300441993 /* HTMentorAnswerCell.m in Sources */,
 				C20CDECF1EF11D7B00BA6D60 /* HTVersionManager.m in Sources */,
 				C23EE68B1F3ED97F00DBB2E5 /* HTLibraryCell.m in Sources */,
 				C241A4661EF21EDB00094EF7 /* HTForgetPasswordController.m in Sources */,

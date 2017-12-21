@@ -11,6 +11,7 @@
 #import <UIScrollView+HTRefresh.h>
 #import "HTStudyAbroadCell.h"
 #import "HTStudyAbroadSelectorController.h"
+#import "HTSellerDetailController.h"
 
 @interface HTStudyAbroadController () <UITableViewDataSource, UITableViewDelegate, HTSelectorDelegate>
 
@@ -18,7 +19,7 @@
 @property (nonatomic, strong) NSString *selectedCountryID;
 @property (nonatomic, strong) NSString *selectedCategoryID;
 @property (nonatomic, assign) NSInteger selectedSortType;
-@property (nonatomic, strong) NSMutableArray *studyAbroadDataArray;
+@property (nonatomic, strong) NSMutableArray<HTStudyAbroadData *> *studyAbroadDataArray;
 @property (nonatomic, strong) UIButton *selectedSortButton;
 @property (nonatomic, strong) HTStudyAbroadSelectorController *studyAbroadSelectorController;
 @property (nonatomic, strong) HTStudyAbroadModel *studyAbroadModel;
@@ -45,6 +46,10 @@
 }
 
 - (void)loadInterface{
+	
+	[self setButton:self.countryButton title:@"国家"];
+	[self setButton:self.serviceButton title:@"服务类型"];
+	
 	MJRefreshNormalHeader *headerHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 		self.page = 1;
 		[self loadData];
@@ -66,6 +71,9 @@
 - (void)loadData{
 	
 	[HTRequestManager requestStudyAbroadWithNetworkModel:nil page:@(self.page).stringValue countryID:self.selectedCountryID categoryID:self.selectedCategoryID sortType:self.selectedSortType complete:^(id response, HTError *errorModel) {
+		
+		[self.tableView.mj_header endRefreshing];
+		[self.tableView.mj_footer endRefreshing];
 		
 		if (errorModel.existError) {
 			[self.tableView ht_endRefreshWithModelArrayCount:errorModel.errorType];
@@ -94,8 +102,6 @@
 			[self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
 			[self.tableView endUpdates];
 		}
-		[self.tableView.mj_header endRefreshing];
-		[self.tableView.mj_footer endRefreshing];
 	}];
 }
 
@@ -139,14 +145,25 @@
 - (void)selectedModel:(HTStudyAbroadSelectorModel *)selectedMoel{
 	if (selectedMoel.type == HTSelectorModelCountryType)
 	{
-        [self.countryButton setTitle:selectedMoel.name forState:UIControlStateNormal];
+		[self setButton:self.countryButton title:selectedMoel.name];
 		self.selectedCountryID = selectedMoel.ID;
 	}else{
-        [self.serviceButton setTitle:selectedMoel.name forState:UIControlStateNormal];
+        [self setButton:self.serviceButton title:selectedMoel.name];
 		self.selectedCategoryID = selectedMoel.ID;
 	}
     self.page = 1;
     [self loadData];
+}
+
+//设置服务类型 / 选择国家 button title
+- (void)setButton:(UIButton *)btn  title:(NSString *)title{
+	[btn setTitle:title forState:UIControlStateNormal];
+	[btn.titleLabel sizeToFit];
+	CGFloat textWidth = btn.titleLabel.frame.size.width;
+	CGFloat imageWidth = btn.imageView.frame.size.width;
+	
+	[btn setTitleEdgeInsets:UIEdgeInsetsMake(0, -imageWidth, 0, imageWidth)];
+	[btn setImageEdgeInsets:UIEdgeInsetsMake(0, (textWidth+5), 0, -(textWidth+5))];
 }
 
 - (void)hiddenSelectorView{
@@ -174,6 +191,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	HTSellerDetailController *detailController = [[HTSellerDetailController alloc] init];
+	detailController.sellerIdString = self.studyAbroadDataArray[indexPath.row].ID;
+	[self.navigationController pushViewController:detailController animated:true];
 }
 
 /*
