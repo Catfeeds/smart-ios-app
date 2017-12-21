@@ -54,7 +54,7 @@
         if (weakSelf.rightLikeButton.selected) {
 			[HTAlert title:@"确定取消关注" sureAction:^{
 				HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
-				networkModel.autoAlertString = @"关注用户";
+				networkModel.autoAlertString = @"取消关注";
 				networkModel.autoShowError = true;
 				networkModel.offlineCacheStyle = HTCacheStyleNone;
 				[HTRequestManager requestCancelAttentionUserWithNetworkModel:networkModel toUidString:model.uid complete:^(id response, HTError *errorModel) {
@@ -66,7 +66,7 @@
 				}];
 			}];
         } else {
-			[HTAlert title:@"确定取消关注" sureAction:^{
+			[HTAlert title:@"确定关注" sureAction:^{
 				HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
 				networkModel.autoAlertString = @"关注用户";
 				networkModel.autoShowError = true;

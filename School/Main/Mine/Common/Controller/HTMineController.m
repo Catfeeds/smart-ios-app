@@ -18,6 +18,7 @@
 #import "HTIndexAdvisorController.h"
 #import "HTHistoryController.h"
 #import "HTMinePreferenceController.h"
+#import "HTBackgroundController.h"
 
 @interface HTMineController ()
 
@@ -128,8 +129,9 @@
 			break;
 		}
 		case HTMineTypeService: {
-			HTIndexAdvisorController *advisorController = [[HTIndexAdvisorController alloc] init];
-			viewController = advisorController;
+//            HTIndexAdvisorController *advisorController = [[HTIndexAdvisorController alloc] init];
+            HTBackgroundController *backgroundController = [[HTBackgroundController alloc] init];
+			viewController = backgroundController;
 			break;
 		}
 		case HTMineTypeMoney: {

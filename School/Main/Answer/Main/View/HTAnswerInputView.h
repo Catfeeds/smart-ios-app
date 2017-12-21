@@ -8,9 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+@interface HTInputTextView : UITextView
+
+@end
+
+@protocol HTInputTextViewDelegate <NSObject>
+
+- (void)sendText:(NSString *)text;
+
+@end
+
+
 @interface HTAnswerInputView : UIView <UITextViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextView *inputTextView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightLayoutConstraint;
+@property (nonatomic, assign) id<HTInputTextViewDelegate> delegate;
+@property (nonatomic, strong) NSString *placeholder;
+@property (weak, nonatomic) IBOutlet HTInputTextView *inputTextView;
+
+- (void)showInputViewWithPlaceholder:(NSString *)placeholder;
 
 @end

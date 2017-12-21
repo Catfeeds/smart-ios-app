@@ -110,7 +110,11 @@
 				if (errorModel.existError) {
 					return;
 				}
-				weakSelf.goodSolutionButton.selected = !weakSelf.goodSolutionButton.selected;
+
+                NSInteger num = model.praise.integerValue;
+                num = num > 0 ? num - 1 : 0;
+                [weakSelf.goodSolutionButton setTitle:@(num).stringValue forState:UIControlStateNormal];
+                weakSelf.goodSolutionButton.selected = NO;
 			}];
 
 		} else {
@@ -122,7 +126,11 @@
 				if (errorModel.existError) {
 					return;
 				}
-				weakSelf.goodSolutionButton.selected = !weakSelf.goodSolutionButton.selected;
+                NSInteger num = model.praise.integerValue;
+                num += 1;
+                [weakSelf.goodSolutionButton setTitle:@(num).stringValue forState:UIControlStateNormal];
+                weakSelf.goodSolutionButton.selected = YES;
+                
 			}];
 		}
 	}];
