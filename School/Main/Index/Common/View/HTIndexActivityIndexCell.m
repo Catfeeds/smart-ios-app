@@ -55,7 +55,7 @@
         
         __weak typeof(self) weakSelf = self;
 		[_collectionView ht_updateSection:0 sectionMakerBlock:^(HTCollectionViewSectionMaker *sectionMaker) {
-			[sectionMaker.cellClass([HTIndexActivityCell class]).itemSize(itemSize).itemHorizontalSpacing(itemHorizontalSpacing).itemVerticalSpacing(itemVerticalSpacing).sectionInset(sectionEdge) didSelectedCellBlock:^(UICollectionView *collectionView, NSInteger item, __kindof UICollectionViewCell *cell, __kindof HTIndexActivity *model) {
+			[sectionMaker.cellClass([HTIndexActivityCell class]).itemSize(itemSize).itemHorizontalSpacing(itemHorizontalSpacing).itemVerticalSpacing(itemVerticalSpacing).sectionInset(sectionEdge) didSelectedCellBlock:^(UICollectionView *collectionView, NSInteger item, __kindof UICollectionViewCell *cell, __kindof HTIndexOpenModel *model) {
                 HTDiscoverActivityDetailController *detailController = [[HTDiscoverActivityDetailController alloc] init];
                 detailController.activityIdString = model.ID;
                 [weakSelf.ht_controller.navigationController pushViewController:detailController animated:true];

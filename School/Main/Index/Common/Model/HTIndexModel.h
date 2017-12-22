@@ -10,7 +10,7 @@
 
 #import "HTIndexSectionHeaderView.h"
 
-@class HTIndexActivity, HTIndexSchools, HTIndexDocument, HTDiscoverActivityModel, HTIndexBanner, HTIndexHeaderModel;
+@class HTIndexActivity, HTIndexSchools, HTIndexDocument, HTDiscoverActivityModel, HTIndexBanner, HTIndexHeaderModel, HTIndexOpenModel;
 
 typedef NS_ENUM(NSInteger, HTIndexHeaderType) {
 	HTIndexHeaderTypeSchool = 0,
@@ -21,7 +21,6 @@ typedef NS_ENUM(NSInteger, HTIndexHeaderType) {
 };
 
 @interface HTIndexModel : NSObject
-
 
 @property (nonatomic, strong) NSArray<HTIndexActivity *> *activity;
 
@@ -35,8 +34,23 @@ typedef NS_ENUM(NSInteger, HTIndexHeaderType) {
 
 @property (nonatomic, strong) NSArray <HTIndexHeaderModel *> *headerModelArray;
 
+@property (nonatomic, strong) NSArray <HTIndexOpenModel *> *open;
+
 @end
 
+
+@interface HTIndexOpenModel : NSObject
+
+@property (nonatomic, strong) NSString *ID;
+@property (nonatomic, strong) NSString *catId;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *createTime;
+@property (nonatomic, strong) NSString *image;
+@property (nonatomic, strong) NSString *alternatives;
+
+
+@end
 
 @interface HTIndexHeaderModel : NSObject
 

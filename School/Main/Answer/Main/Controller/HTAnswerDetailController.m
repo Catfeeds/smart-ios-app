@@ -18,7 +18,7 @@
 #import "HTStoreBarButtonItem.h"
 #import "HTAnswerInputView.h"
 
-@interface HTAnswerDetailController () <HTInputTextViewDelegate>
+@interface HTAnswerDetailController ()
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -84,7 +84,9 @@
             UIImage *image = [UIImage imageNamed:@"cn2_index_answer_reply"];
             image = [image ht_resetSizeZoomNumber:1.1];
             UIBarButtonItem *solutionBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:image style:UIBarButtonItemStylePlain handler:^(id sender) {
-                [weakSelf.inputView showInputViewWithPlaceholder:nil];
+				[weakSelf.inputView showInputViewWithPlaceholder:nil sendText:^(NSString *text) {
+					[weakSelf sendNewAnswer:text];
+				}];
 //                [HTAnswerKeboardManager beginKeyboardWithAnswerModel:weakSelf.answerModel success:^{
 //                    [weakSelf.tableView ht_startRefreshHeader];
 //                }];
@@ -110,9 +112,10 @@
 	}];
 }
 
-#pragma mark - HTInputTextViewDelegate
+#pragma mark -
 
-- (void)sendText:(NSString *)text{
+//发一个新回答
+- (void)sendNewAnswer:(NSString *)text{
     
     HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
     networkModel.autoAlertString = @"发表一个新的回答";
@@ -125,20 +128,23 @@
         [self.tableView ht_startRefreshHeader];
         [HTAlert title:@"发表回答成功"];
     }];
-    
-//    HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
-//    networkModel.autoAlertString = @"发表一个新的评论";
-//    networkModel.offlineCacheStyle = HTCacheStyleNone;
-//    networkModel.autoShowError = true;
-//    [HTRequestManager requestCreateAnswerReplyWithNetworkModel:networkModel contentString:text answerSolutionModel:solutionModel answerReplyModel:answerReplyModel complete:^(id response, HTError *errorModel) {
-//        if (errorModel.existError) {
-//            return;
-//        }
-//        [HTAlert title:@"发表评论成功"];
-//        if (success) {
-//            success();
-//        }
-//    }];
+	
+
+}
+
+
+//发一个新答案回复
+- (void)sendNewSolution:(HTAnswerSolutionModel *)solutionModel  answerReplyModel:(HTAnswerReplyModel *)answerReplyModel text:(NSString *)text{
+	    HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
+	    networkModel.autoAlertString = @"发表一个新的评论";
+	    networkModel.offlineCacheStyle = HTCacheStyleNone;
+	    networkModel.autoShowError = true;
+	    [HTRequestManager requestCreateAnswerReplyWithNetworkModel:networkModel contentString:text answerSolutionModel:solutionModel answerReplyModel:answerReplyModel complete:^(id response, HTError *errorModel) {
+	        if (errorModel.existError) {
+	            return;
+	        }
+	        [HTAlert title:@"发表评论成功"];
+	    }];
 }
 
 #pragma mark -
@@ -146,7 +152,6 @@
 - (HTAnswerInputView *) inputView{
 	if (!_inputView) {
 		_inputView = [[NSBundle mainBundle] loadNibNamed:@"HTAnswerInputView" owner:nil options:nil].firstObject;
-        _inputView.delegate = self;
 	}
 	return _inputView;
 }
@@ -162,15 +167,22 @@
         [_tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
             [sectionMaker.cellClass([HTAnswerCell class]) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTAnswerModel *model) {
 //                [HTAnswerKeboardManager beginKeyboardWithAnswerModel:model success:^{
-//                    [weakSelf.tableView ht_startRefreshHeader];
-//                }];
-                [weakSelf.inputView showInputViewWithPlaceholder:nil];
+////                    [weakSelf.tableView ht_startRefreshHeader];
+////                }];
+				
+					[weakSelf.inputView showInputViewWithPlaceholder:nil sendText:^(NSString *text) {
+						[weakSelf sendNewAnswer:text];
+					}];
             }];
         }];
 		[_tableView ht_updateSection:1 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
 			[[sectionMaker.cellClass([HTAnswerSolutionCell class]).headerHeight(7.5) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTAnswerSolutionModel *model) {
-				[HTAnswerKeboardManager beginKeyboardWithAnswerSolutionModel:model answerReplyModel:nil success:^{
-					[weakSelf.tableView ht_startRefreshHeader];
+//				[HTAnswerKeboardManager beginKeyboardWithAnswerSolutionModel:model answerReplyModel:nil success:^{
+////////					[weakSelf.tableView ht_startRefreshHeader];
+//				}];
+				 NSString * placeholder = [NSString stringWithFormat:@"回复 %@ 的回答", HTPlaceholderString(model.nickname, model.username)];
+				[weakSelf.inputView showInputViewWithPlaceholder:placeholder sendText:^(NSString *text) {
+					[weakSelf sendNewSolution:model answerReplyModel:nil text:text];
 				}];
 			}] customCellBlock:^(UITableView *tableView, NSInteger row, __kindof HTAnswerSolutionCell *cell, __kindof NSObject *model) {
 				if (!cell.reloadHeightBlock) {
@@ -184,6 +196,16 @@
 						}
 					}];
 				}
+				
+				if (!cell.replycommentBlock) {
+					cell.replycommentBlock = ^(HTAnswerSolutionModel *solutionModel, HTAnswerReplyModel *answerReplyModel) {
+					NSString *placeholder = [NSString stringWithFormat:@"回复 %@ 的评论", HTPlaceholderString(solutionModel.nickname, solutionModel.username)];
+						[weakSelf.inputView showInputViewWithPlaceholder:placeholder sendText:^(NSString *text) {
+							[weakSelf sendNewSolution:solutionModel answerReplyModel:answerReplyModel text:text];
+						}];
+					};
+				}
+				
 			}];
 		}];
     }

@@ -54,7 +54,7 @@
 
 @interface HTAnswerSolutionModel : NSObject
 
-@property (nonatomic, copy) NSString *userid;
+@property (nonatomic, copy) NSString *userId;
 
 @property (nonatomic, copy) NSString *content;
 

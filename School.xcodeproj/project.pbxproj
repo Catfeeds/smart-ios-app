@@ -93,6 +93,11 @@
 		56829A471FD91D8C0093DA25 /* HTChooseSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56829A461FD91D8C0093DA25 /* HTChooseSchoolCell.m */; };
 		56829A4A1FD92F170093DA25 /* HTChooseSchoolEvaluationResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56829A491FD92F170093DA25 /* HTChooseSchoolEvaluationResultModel.m */; };
 		56A7D7431FCE4A6900F20D2C /* HTChooseSchoolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7D7421FCE4A6900F20D2C /* HTChooseSchoolController.m */; };
+		56ABF0AE1FECD19600E500B7 /* HTOpenCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ABF0AD1FECD19600E500B7 /* HTOpenCourseController.m */; };
+		56ABF0B11FECD1EC00E500B7 /* HTOpenCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ABF0B01FECD1EC00E500B7 /* HTOpenCourseCell.m */; };
+		56ABF0B41FECD6A500E500B7 /* HTOpenCourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ABF0B31FECD6A500E500B7 /* HTOpenCourseModel.m */; };
+		56ABF0B71FECE65400E500B7 /* HTOpenCourseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ABF0B61FECE65400E500B7 /* HTOpenCourseDetailController.m */; };
+		56ABF0BA1FECEF3400E500B7 /* HTOpenCourseDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ABF0B91FECEF3400E500B7 /* HTOpenCourseDetailModel.m */; };
 		56CFDE891FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFDE881FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m */; };
 		56CFDE8C1FDE5773002FAAE5 /* HTWorkExperienceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFDE8B1FDE5773002FAAE5 /* HTWorkExperienceCell.m */; };
 		56CFDE921FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFDE911FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.m */; };
@@ -808,6 +813,16 @@
 		56829A491FD92F170093DA25 /* HTChooseSchoolEvaluationResultModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseSchoolEvaluationResultModel.m; sourceTree = "<group>"; };
 		56A7D7411FCE4A6900F20D2C /* HTChooseSchoolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseSchoolController.h; sourceTree = "<group>"; };
 		56A7D7421FCE4A6900F20D2C /* HTChooseSchoolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseSchoolController.m; sourceTree = "<group>"; };
+		56ABF0AC1FECD19600E500B7 /* HTOpenCourseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTOpenCourseController.h; sourceTree = "<group>"; };
+		56ABF0AD1FECD19600E500B7 /* HTOpenCourseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTOpenCourseController.m; sourceTree = "<group>"; };
+		56ABF0AF1FECD1EC00E500B7 /* HTOpenCourseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTOpenCourseCell.h; sourceTree = "<group>"; };
+		56ABF0B01FECD1EC00E500B7 /* HTOpenCourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTOpenCourseCell.m; sourceTree = "<group>"; };
+		56ABF0B21FECD6A500E500B7 /* HTOpenCourseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTOpenCourseModel.h; sourceTree = "<group>"; };
+		56ABF0B31FECD6A500E500B7 /* HTOpenCourseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTOpenCourseModel.m; sourceTree = "<group>"; };
+		56ABF0B51FECE65400E500B7 /* HTOpenCourseDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTOpenCourseDetailController.h; sourceTree = "<group>"; };
+		56ABF0B61FECE65400E500B7 /* HTOpenCourseDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTOpenCourseDetailController.m; sourceTree = "<group>"; };
+		56ABF0B81FECEF3400E500B7 /* HTOpenCourseDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTOpenCourseDetailModel.h; sourceTree = "<group>"; };
+		56ABF0B91FECEF3400E500B7 /* HTOpenCourseDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTOpenCourseDetailModel.m; sourceTree = "<group>"; };
 		56CFDE871FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateSelectMajorController.h; sourceTree = "<group>"; };
 		56CFDE881FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateSelectMajorController.m; sourceTree = "<group>"; };
 		56CFDE8A1FDE5773002FAAE5 /* HTWorkExperienceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTWorkExperienceCell.h; sourceTree = "<group>"; };
@@ -2163,6 +2178,23 @@
 			path = InterfaceBuilder;
 			sourceTree = "<group>";
 		};
+		56ABF0AB1FECD14B00E500B7 /* OpenCourse */ = {
+			isa = PBXGroup;
+			children = (
+				56ABF0AC1FECD19600E500B7 /* HTOpenCourseController.h */,
+				56ABF0AD1FECD19600E500B7 /* HTOpenCourseController.m */,
+				56ABF0AF1FECD1EC00E500B7 /* HTOpenCourseCell.h */,
+				56ABF0B01FECD1EC00E500B7 /* HTOpenCourseCell.m */,
+				56ABF0B21FECD6A500E500B7 /* HTOpenCourseModel.h */,
+				56ABF0B31FECD6A500E500B7 /* HTOpenCourseModel.m */,
+				56ABF0B51FECE65400E500B7 /* HTOpenCourseDetailController.h */,
+				56ABF0B61FECE65400E500B7 /* HTOpenCourseDetailController.m */,
+				56ABF0B81FECEF3400E500B7 /* HTOpenCourseDetailModel.h */,
+				56ABF0B91FECEF3400E500B7 /* HTOpenCourseDetailModel.m */,
+			);
+			path = OpenCourse;
+			sourceTree = "<group>";
+		};
 		98C5A7E586A3E784E964DA73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -3259,6 +3291,7 @@
 		C20CDEF21EF1258D00BA6D60 /* Index */ = {
 			isa = PBXGroup;
 			children = (
+				56ABF0AB1FECD14B00E500B7 /* OpenCourse */,
 				560EEA861FEA38790018A0CC /* StudyAbroad */,
 				C2E66A811F2F09DF0000651A /* Common */,
 				C2E66AA51F2F09DF0000651A /* Search */,
@@ -6457,6 +6490,7 @@
 				C24BC02D1F7152790025CBEB /* HTSchoolHotModel.m in Sources */,
 				C2FF3E1C1F4141620005F287 /* HTCommunityLayoutModel.m in Sources */,
 				C24BC04A1F7152790025CBEB /* HTSchoolRankModel.m in Sources */,
+				56ABF0B41FECD6A500E500B7 /* HTOpenCourseModel.m in Sources */,
 				027637421FC17FA100959DD1 /* HTChooseSchoolAppraisalHeaderView.m in Sources */,
 				C2FF3E271F4141620005F287 /* HTCommunityReplyContentView.m in Sources */,
 				C20CDE8E1EF11B8A00BA6D60 /* UIScreen+YYAdd.m in Sources */,
@@ -6508,8 +6542,10 @@
 				C2FA0FBC1F67BFC4002F111D /* HTOrganizationAdvisorCell.m in Sources */,
 				C20CDE731EF11B8A00BA6D60 /* TZVideoPlayerController.m in Sources */,
 				5644C0831FE93605004D6E27 /* HTPlayerSpeedModel.m in Sources */,
+				56ABF0B71FECE65400E500B7 /* HTOpenCourseDetailController.m in Sources */,
 				C20CDEB31EF11B8A00BA6D60 /* YYTextAttribute.m in Sources */,
 				C2EE1FC41F5C013700C8176F /* HTFansModel.m in Sources */,
+				56ABF0BA1FECEF3400E500B7 /* HTOpenCourseDetailModel.m in Sources */,
 				C251C64B1F73770400D0D165 /* HTMatriculateResultSectionModel.m in Sources */,
 				C20CDE7F1EF11B8A00BA6D60 /* NSObject+YYAddForKVO.m in Sources */,
 				C2EE1EFE1F59F04B00C8176F /* HTStoreBarButtonItem.m in Sources */,
@@ -6551,11 +6587,13 @@
 				C26D701A1EF3B43A00697EC1 /* HTPageController.m in Sources */,
 				C251C6291F73763000D0D165 /* HTBackgroundResultView.m in Sources */,
 				563103D11FCC01E1004C85D7 /* HTGradeEvaluationController.m in Sources */,
+				56ABF0AE1FECD19600E500B7 /* HTOpenCourseController.m in Sources */,
 				C20CDC811EF111A300BA6D60 /* main.m in Sources */,
 				C20CDEBE1EF11B8A00BA6D60 /* YYKeychain.m in Sources */,
 				C20CDE301EF11B8A00BA6D60 /* HTOctopusAlertView.m in Sources */,
 				C2B2E6491F7507DD004EEBB1 /* HTSchoolFilterSelectedCollectionCell.m in Sources */,
 				C20CDE931EF11B8A00BA6D60 /* YYCache.m in Sources */,
+				56ABF0B11FECD1EC00E500B7 /* HTOpenCourseCell.m in Sources */,
 				C20CDEA71EF11B8A00BA6D60 /* YYTextDebugOption.m in Sources */,
 				C2242FD11F75856700EC82F0 /* HTDropBoxDetailRightCell.m in Sources */,
 				C2242FD01F75856700EC82F0 /* HTDropBoxDetailLeftCell.m in Sources */,
@@ -6853,6 +6891,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -6893,6 +6932,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

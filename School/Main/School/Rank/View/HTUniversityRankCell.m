@@ -26,6 +26,8 @@
 	[self.universityIconView sd_setImageWithURL:[NSURL URLWithString:rankModel.image] placeholderImage:[UIImage imageNamed:@"cn_placeholder"]];
 	self.universityNameLabel.text = rankModel.name;
 	self.universityTitleLabel.text = rankModel.title;
+	self.hotLabel.text = rankModel.viewCount;
+	self.commentLabel.text =rankModel.answer;
 }
 
 - (void)setRankNum:(NSInteger)rankNum{

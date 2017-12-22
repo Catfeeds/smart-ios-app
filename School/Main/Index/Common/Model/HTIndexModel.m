@@ -15,9 +15,8 @@
 
 @implementation HTIndexModel
 
-
 + (NSDictionary *)objectClassInArray{
-    return @{@"activity" : [HTIndexActivity class], @"schools" : [HTIndexSchools class], @"document" : [HTIndexDocument class], @"specialColumn" : [HTDiscoverActivityModel class], @"banner" : [HTIndexBanner class]};
+    return @{@"activity" : [HTIndexActivity class],@"open" : [HTIndexOpenModel class], @"schools" : [HTIndexSchools class], @"document" : [HTIndexDocument class], @"specialColumn" : [HTDiscoverActivityModel class], @"banner" : [HTIndexBanner class]};
 }
 
 - (void)mj_keyValuesDidFinishConvertingToObject {
@@ -34,7 +33,7 @@
 	NSString *modelArrayKey = @"modelArrayKey";
 	NSArray *keyValueArray = @[
 								   @{typeNameKey:@(HTIndexHeaderTypeSchool), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexSchoolIndexCell class]), headerHeightKey:@(40), cellHeigithKey:@(0), footerHeightKey:@(0), titleNameKey:@"特色学校推荐", imageNameKey:@"cn2_index_school_header_left", separatorLineHiddenKey:@(false), modelArrayKey:self.schools},
-								   @{typeNameKey:@(HTIndexHeaderTypeActivity), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexActivityIndexCell class]), headerHeightKey:@(40), cellHeigithKey:@(0), footerHeightKey:@(0), titleNameKey:@"特色活动推荐", imageNameKey:@"cn2_index_activity_header_left", separatorLineHiddenKey:@(false), modelArrayKey:self.activity},
+								   @{typeNameKey:@(HTIndexHeaderTypeActivity), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexActivityIndexCell class]), headerHeightKey:@(40), cellHeigithKey:@(0), footerHeightKey:@(0), titleNameKey:@"特色活动推荐", imageNameKey:@"cn2_index_activity_header_left", separatorLineHiddenKey:@(false), modelArrayKey:self.open},
 //								   @{typeNameKey:@(HTIndexHeaderTypeExample), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexExampleIndexCell class]), headerHeightKey:@(0), cellHeigithKey:@(80), footerHeightKey:@(0), titleNameKey:@"", imageNameKey:@"", separatorLineHiddenKey:@(false), modelArrayKey:@[@""]},
 								   @{typeNameKey:@(HTIndexHeaderTypeBook), headerClassKey:NSStringFromClass([HTIndexSectionHeaderView class]), cellClassKey:NSStringFromClass([HTIndexBookIndexCell class]), headerHeightKey:@(40), cellHeigithKey:@(0), footerHeightKey:@(0), titleNameKey:@"特色文书服务", imageNameKey:@"cn2_index_document_header_left", separatorLineHiddenKey:@(false), modelArrayKey:self.document},
 								   /*
@@ -83,6 +82,15 @@
 
 @end
 
+@implementation HTIndexOpenModel
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+	return @{
+			 @"ID" : @"id"
+			 };
+}
+
+@end
 
 @implementation HTIndexDocument
 

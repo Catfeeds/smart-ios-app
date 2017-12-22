@@ -104,7 +104,7 @@
 		
 		appendAttributedString = [NSAttributedString attributedStringWithAttachment:textAttachment];
 		[attributedString appendAttributedString:appendAttributedString];
-		appendAttributedString = [[NSAttributedString alloc] initWithString:@"你关心得问题?"
+		appendAttributedString = [[NSAttributedString alloc] initWithString:@"你关心的问题?"
 																 attributes:@{NSForegroundColorAttributeName:[UIColor ht_colorString:@"bebebe"],
 																			  NSFontAttributeName:[UIFont systemFontOfSize:15]}];
 		[attributedString appendAttributedString:appendAttributedString];

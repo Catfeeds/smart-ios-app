@@ -26,6 +26,7 @@
 #import "HTDiscoverActivityModel.h"
 #import "HTSchoolFilterController.h"
 #import "HTStudyAbroadController.h"
+#import "HTOpenCourseController.h"
 
 @interface HTIndexController ()
 
@@ -88,7 +89,8 @@
 							}
 							case HTIndexHeaderTypeActivity: {
 								[reuseView setHeaderRightDetailTapedBlock:^{
-									HTDiscoverActivityController *activityController = [[HTDiscoverActivityController alloc] init];
+//									HTDiscoverActivityController *activityController = [[HTDiscoverActivityController alloc] init];
+									HTOpenCourseController *activityController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTOpenCourseController");
 									[weakSelf.navigationController pushViewController:activityController animated:true];
 								}];
 								break;

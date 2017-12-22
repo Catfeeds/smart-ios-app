@@ -8,23 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SendTextBlock)(NSString *text);
+
 @interface HTInputTextView : UITextView
 
 @end
 
-@protocol HTInputTextViewDelegate <NSObject>
-
-- (void)sendText:(NSString *)text;
-
-@end
-
-
 @interface HTAnswerInputView : UIView <UITextViewDelegate>
 
-@property (nonatomic, assign) id<HTInputTextViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
+@property (nonatomic, copy) SendTextBlock sendTextBlock;
 @property (nonatomic, strong) NSString *placeholder;
 @property (weak, nonatomic) IBOutlet HTInputTextView *inputTextView;
 
-- (void)showInputViewWithPlaceholder:(NSString *)placeholder;
+- (void)showInputViewWithPlaceholder:(NSString *)placeholder sendText:(SendTextBlock)completeBlock;
+
+
 
 @end

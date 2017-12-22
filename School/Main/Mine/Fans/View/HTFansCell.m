@@ -61,8 +61,7 @@
 					if (errorModel.existError) {
 						return;
 					}
-					[HTAlert title:@"取消关注成功"];
-					weakSelf.rightLikeButton.selected = true;
+					weakSelf.rightLikeButton.selected = false;
 				}];
 			}];
         } else {
@@ -75,7 +74,7 @@
 					if (errorModel.existError) {
 						return;
 					}
-					weakSelf.rightLikeButton.selected = false;
+					weakSelf.rightLikeButton.selected = true;
 				}];
 			}];
         }

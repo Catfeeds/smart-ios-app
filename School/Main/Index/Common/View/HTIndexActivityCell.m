@@ -42,9 +42,10 @@
 	}];
 }
 
-- (void)setModel:(HTIndexActivity *)model row:(NSInteger)row {
+- (void)setModel:(HTIndexOpenModel *)model row:(NSInteger)row {
 	self.titleNameLabel.text = model.name;
-	[self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:SmartApplyResourse(model.image)] placeholderImage:HTPLACEHOLDERIMAGE];
+	NSString *urlStr = [NSString stringWithFormat:@"http://open.viplgw.cn%@",model.image];
+	[self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:HTPLACEHOLDERIMAGE];
 }
 
 - (void)setHighlighted:(BOOL)highlighted {

@@ -185,10 +185,9 @@
 	
     [self.headImageView ht_whenTap:^(UIView *view) {
         HTSomeoneController *someoneController = [[HTSomeoneController alloc] init];
-        someoneController.userIdString = model.userid;
+        someoneController.userIdString = model.userId;
         [weakSelf.ht_controller.navigationController pushViewController:someoneController animated:true];
     }];
-	
 }
 
 - (UIImageView *)headImageView {
@@ -274,9 +273,14 @@
 		__weak typeof(self) weakSelf = self;
 		[_replyTableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
 			[sectionMaker.cellClass([HTAnswerReplyCell class]) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTAnswerReplyModel *model) {
-				[HTAnswerKeboardManager beginKeyboardWithAnswerSolutionModel:weakSelf.solutionModel answerReplyModel:model success:^{
+				
+				if (self.replycommentBlock) {
+					self.replycommentBlock(weakSelf.solutionModel, model);
+				}else{
+					[HTAnswerKeboardManager beginKeyboardWithAnswerSolutionModel:weakSelf.solutionModel answerReplyModel:model success:^{
 					[HTAnswerKeboardManager tryRefreshWithView:weakSelf];
-				}];
+					}];
+				}
 			}];
 		}];
 	}

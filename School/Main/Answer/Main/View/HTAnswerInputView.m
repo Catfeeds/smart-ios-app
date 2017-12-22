@@ -12,13 +12,6 @@
 
 @implementation HTAnswerInputView
 
-- (void)awakeFromNib{
-    [super awakeFromNib];
-    self.inputTextView.text = DefaultPlaceholderStr;
-    if (!StringNotEmpty(self.placeholder)) {
-        self.placeholder = DefaultPlaceholderStr;
-    }
-}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -27,26 +20,19 @@
 }
 */
 
-- (void)showInputViewWithPlaceholder:(NSString *)placeholder{
-    
-    self.placeholder = StringNotEmpty(placeholder) ? placeholder : DefaultPlaceholderStr;
+- (void)showInputViewWithPlaceholder:(NSString *)placeholder sendText:(SendTextBlock)completeBlock{
+	
+	self.sendTextBlock = completeBlock;
+	self.placeholderLabel.text = StringNotEmpty(placeholder) ? placeholder : DefaultPlaceholderStr;
     [self.inputTextView becomeFirstResponder];
-    
 }
 
 #pragma mark - UITextViewDelegate
-- (void)textViewDidBeginEditing:(UITextView *)textView {
-    if ([textView.text isEqualToString:self.placeholder]) {
-        textView.text = @"";
-    }
-}
-
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-    
-    if (textView.text.length == 0 ) {
-        textView.text = self.placeholder;
-    }
+	if (!textView.hasText) {
+		self.placeholderLabel.text = DefaultPlaceholderStr;
+	}
 	[self.window setNeedsLayout];
 	[self.window layoutIfNeeded];
 }
@@ -64,13 +50,13 @@
     [self mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(height+20);
     }];
+	self.placeholderLabel.hidden = textView.hasText;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     if ([text isEqualToString:@"\n"]){
-        [self.delegate sendText:textView.text];
-        textView.text = self.placeholder;
+		self.sendTextBlock(textView.text);
         [textView resignFirstResponder];
         return NO;
     }
@@ -79,11 +65,7 @@
 }
 
 @end
-
-
 @implementation HTInputTextView
-
-
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
     if (action == @selector(copy:))

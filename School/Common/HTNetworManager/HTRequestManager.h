@@ -73,6 +73,9 @@
 + (void)requestGossipReplyGossipLoopReplyWithNetworkModel:(HTNetworkModel *)networkModel replyContent:(NSString *)replyContent communityLayoutModel:(HTCommunityLayoutModel *)communityLayoutModel beingReplyModel:(HTCommunityReplyLayoutModel *)beingReplyModel complete:(HTUserTaskCompleteBlock)complete;
 
 
+
+
+
 /**
  八卦点赞或取消点赞
  
@@ -156,6 +159,11 @@
 + (void)requestProfessionalWithNetworkModel:(HTNetworkModel *)networkModel professionalId:(NSString *)professionalId complete:(HTUserTaskCompleteBlock)complete;
 
 
+//获取公开课列表
++ (void)requestOpenCourseListWithNetworkModel:(HTNetworkModel *)networkModel currentPage:(NSString *)currentPage pageSize:(NSString *)pageSize complete:(HTUserTaskCompleteBlock)complete;
+
+//获取公开课详情
++ (void)requestOpenCourseDetailWithNetworkModel:(HTNetworkModel *)networkModel courseID:(NSString *)courseID  complete:(HTUserTaskCompleteBlock)complete;
 
 /**
  获取热门学校列表

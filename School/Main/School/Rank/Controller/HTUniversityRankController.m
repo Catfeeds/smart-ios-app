@@ -11,6 +11,7 @@
 #import <UIScrollView+HTRefresh.h>
 #import "HTUniversityRankCell.h"
 #import "MJRefresh.h"
+#import "HTSchoolController.h"
 
 @interface HTUniversityRankController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -18,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *yearButton_2018;
 @property (nonatomic, assign) NSInteger currentPage;
 @property (nonatomic, strong) UIButton *selectedYear;
-@property (nonatomic, strong) NSMutableArray *schoolRankModelArray;
+@property (nonatomic, strong) NSMutableArray<HTSchoolRankModel *> *schoolRankModelArray;
 @property (nonatomic, strong) HTNetworkModel *networkModel;
 
 @end
@@ -135,6 +136,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	HTSchoolController *schoolController = [HTSchoolController new];
+	schoolController.schoolIdString = self.schoolRankModelArray[indexPath.row].ID;
+	[self.navigationController pushViewController:schoolController animated:YES];
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 /*

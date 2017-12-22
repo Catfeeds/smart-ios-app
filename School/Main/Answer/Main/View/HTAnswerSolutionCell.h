@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) void(^reloadHeightBlock)(void);
 
+@property (nonatomic, copy) void(^replycommentBlock)(HTAnswerSolutionModel *solutionModel, HTAnswerReplyModel *answerReplyModel);
+
 @end

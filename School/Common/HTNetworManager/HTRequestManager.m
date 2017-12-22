@@ -309,6 +309,7 @@ static NSString *kHTApplicationIdString = @"1271275068";
 						 parameter:@{@"questionId":solutionModel.ID, @"contents":HTPlaceholderString(contentString, @""), @"replyUser":replyUser, @"type":replyType, @"replyUid":replyUid} complete:complete];
 }
 
+
 + (void)requestWorkListWithNetworkModel:(HTNetworkModel *)networkModel complete:(HTUserTaskCompleteBlock)complete {
 	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://www.smartapply.cn/cn/app-api/background-lift" parameter:nil complete:complete];
 }
@@ -316,6 +317,23 @@ static NSString *kHTApplicationIdString = @"1271275068";
 + (void)requestActivityBannerWithNetworkModel:(HTNetworkModel *)networkModel complete:(HTUserTaskCompleteBlock)complete {
 	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodPost url:@"http://www.smartapply.cn/cn/app-api/activity" parameter:nil complete:complete];
 }
+
++ (void)requestOpenCourseListWithNetworkModel:(HTNetworkModel *)networkModel currentPage:(NSString *)currentPage pageSize:(NSString *)pageSize complete:(HTUserTaskCompleteBlock)complete{
+
+	[HTNetworkManager requestModel:networkModel
+							method:HTNetworkRequestMethodPost
+							   url:@"http://open.viplgw.cn/cn/api/study-open-list"
+						 parameter:@{@"page":HTPlaceholderString(currentPage, @"1"),
+									 @"pageSize":HTPlaceholderString(pageSize, @"20")} complete:complete];
+}
+
++ (void)requestOpenCourseDetailWithNetworkModel:(HTNetworkModel *)networkModel courseID:(NSString *)courseID  complete:(HTUserTaskCompleteBlock)complete{
+	[HTNetworkManager requestModel:networkModel
+							method:HTNetworkRequestMethodPost
+							   url:@"http://open.viplgw.cn/cn/api/app-open-details"
+						 parameter:@{@"id":HTPlaceholderString(courseID, @"")} complete:complete];
+}
+
 
 + (void)requestActivityListWithNetworkModel:(HTNetworkModel *)networkModel pageSize:(NSString *)pageSize currentPage:(NSString *)currentPage complete:(HTUserTaskCompleteBlock)complete {
 	[HTNetworkManager requestModel:networkModel
@@ -683,14 +701,14 @@ static NSString *kHTApplicationIdString = @"1271275068";
     [HTNetworkManager requestModel:networkModel
                             method:HTNetworkRequestMethodPost
                                url:@"http://www.smartapply.cn/cn/app-api/follow-user"
-                         parameter:@{@"fallowUser":HTPlaceholderString(toUidString, @"")} complete:complete];
+                         parameter:@{@"followUser":HTPlaceholderString(toUidString, @"")} complete:complete];
 }
 
 + (void)requestCancelAttentionUserWithNetworkModel:(HTNetworkModel *)networkModel toUidString:(NSString *)toUidString complete:(HTUserTaskCompleteBlock)complete {
 	[HTNetworkManager requestModel:networkModel
 							method:HTNetworkRequestMethodPost
 							   url:@"http://www.smartapply.cn/cn/app-api/cancel-follow"
-						 parameter:@{@"fallowUser":HTPlaceholderString(toUidString, @"")} complete:complete];
+						 parameter:@{@"followUser":HTPlaceholderString(toUidString, @"")} complete:complete];
 }
 
 + (void)requestUserInfomationWithNetworkModel:(HTNetworkModel *)networkModel uidString:(NSString *)uidString complete:(HTUserTaskCompleteBlock)complete {
