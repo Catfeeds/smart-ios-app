@@ -53,8 +53,8 @@
 	self.teacherDescriptionLabel.text = model.teacherDescription;
 	[self.teacherDescriptionLabel sizeToFit];
 	//[self.courseContentTextView setAttributedText:[model.courseContent htmlToAttributeStringContent:@"http://open.viplgw.cn" width:CGRectGetWidth(self.courseContentTextView.frame)]];
-	
-	CGFloat contentHeight = self.teacherDescriptionLabel.frame.size.height + 375;//375 : 简介以上高度
+//    [self.courseContentTextView setAttributedText:self];
+	CGFloat contentHeight = self.teacherDescriptionLabel.frame.size.height + 875;//375 : 简介以上高度
 	self.scrollContentHeightLayoutConstraint.constant = contentHeight > CGRectGetHeight(self.scrollView.frame)  ? contentHeight : CGRectGetHeight(self.scrollView.frame);
 	
 }
@@ -87,5 +87,30 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+@end
+
+@implementation HTOpenCourseDetailTextView
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesMoved:touches withEvent:event];
+    NSLog(@"huadong");
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    UIView *view = [super hitTest:point withEvent:event];
+    NSLog(@"。。。。%@",view);
+    return view;
+}
+
+@end
+
+@implementation HTOpenCourseDetailScroll
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    UIView *view = [super hitTest:point withEvent:event];
+  //  NSLog(@"%@",view);
+    return view;
+}
 
 @end

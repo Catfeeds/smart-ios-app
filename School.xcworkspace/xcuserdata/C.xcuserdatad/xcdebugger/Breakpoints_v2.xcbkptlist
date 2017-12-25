@@ -184,16 +184,16 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__37-[HTAnswerDetailController tableView]_block_invoke_2.236"
+                  symbolName = "__37-[HTAnswerDetailController tableView]_block_invoke_2"
                   moduleName = "School"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/School/School/School/Main/Answer/Main/Controller/HTAnswerDetailController.m"
-                  timestampString = "535576931.456875"
+                  timestampString = "535909948.439997"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "116">
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "136">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -203,12 +203,12 @@
                   moduleName = "School"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/School/School/School/Main/Answer/Main/Controller/HTAnswerDetailController.m"
-                  timestampString = "535576931.45843"
+                  timestampString = "535909948.441729"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "20">
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -259,38 +259,6 @@
             endingLineNumber = "69"
             landmarkName = "-setModel:row:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__27-[HTFansCell setModel:row:]_block_invoke"
-                  moduleName = "School"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/School/School/School/Main/Mine/Fans/View/HTFansCell.m"
-                  timestampString = "535576931.467863"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "388">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__27-[HTFansCell setModel:row:]_block_invoke.117"
-                  moduleName = "School"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/School/School/School/Main/Mine/Fans/View/HTFansCell.m"
-                  timestampString = "535576931.469444"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -322,6 +290,38 @@
             startingLineNumber = "134"
             endingLineNumber = "134"
             landmarkName = "-pushControllerWithType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "School/Main/Index/OpenCourse/HTOpenCourseDetailController.m"
+            timestampString = "535910268.622707"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-hitTest:withEvent:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "School/Main/Index/OpenCourse/HTOpenCourseDetailController.m"
+            timestampString = "535910268.622814"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-touchesMoved:withEvent:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
