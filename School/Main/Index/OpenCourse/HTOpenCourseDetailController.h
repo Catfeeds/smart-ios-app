@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTImageTextView.h"
 
 @interface HTOpenCourseDetailController : UIViewController
 
@@ -43,6 +44,11 @@
 //老师简介
 @property (weak, nonatomic) IBOutlet UILabel *teacherDescriptionLabel;
 
-
+//滑动高度区域
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollContentHeightLayoutConstraint;
+//外层 scrollview
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+//按钮底部横向相对于"课程内容"按钮水平对齐约束
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineCenterXLayoutConstraint;
 
 @end

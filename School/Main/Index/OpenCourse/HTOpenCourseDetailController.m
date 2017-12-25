@@ -9,7 +9,7 @@
 #import "HTOpenCourseDetailController.h"
 #import "HTOpenCourseDetailModel.h"
 
-@interface HTOpenCourseDetailController ()
+@interface HTOpenCourseDetailController () <UIScrollViewDelegate>
 
 @end
 
@@ -42,10 +42,39 @@
 - (void)loadInterfaceWithModel:(HTOpenCourseDetailModel *)model{
 	NSString *urlStr = [NSString stringWithFormat:@"http://open.viplgw.cn%@",model.courseImage];
 	[self.courseImageView sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:HTPLACEHOLDERIMAGE];
+	
 	self.courseTitleLabel.text = model.title;
 	self.openCourseTimeLabel.text = [NSString stringWithFormat:@"开课时间:%@",model.openCourseTime];
 	self.courseTimeLabel.text = [NSString stringWithFormat:@"课程时长:%@",model.durationTime];
 	self.teacherLabel.text = [NSString stringWithFormat:@"授课老师:%@",model.teacherName];
+	NSString * teacherHeader = [NSString stringWithFormat:@"http://open.viplgw.cn%@",model.teacherImage];
+	[self.teacherImageView sd_setImageWithURL:[NSURL URLWithString:teacherHeader]  placeholderImage:HTPLACEHOLDERIMAGE];
+	self.teacherDescriptionNameLabel.text = model.teacherName;
+	self.teacherDescriptionLabel.text = model.teacherDescription;
+	[self.teacherDescriptionLabel sizeToFit];
+	//[self.courseContentTextView setAttributedText:[model.courseContent htmlToAttributeStringContent:@"http://open.viplgw.cn" width:CGRectGetWidth(self.courseContentTextView.frame)]];
+	
+	CGFloat contentHeight = self.teacherDescriptionLabel.frame.size.height + 375;//375 : 简介以上高度
+	self.scrollContentHeightLayoutConstraint.constant = contentHeight > CGRectGetHeight(self.scrollView.frame)  ? contentHeight : CGRectGetHeight(self.scrollView.frame);
+	
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+	
+	if (scrollView.contentOffset.x > 0) {
+		self.teacherButton.selected = YES;
+		self.contentButton.selected = NO;
+		self.lineCenterXLayoutConstraint.constant = CGRectGetWidth(self.contentButton.frame);
+	}else{
+		self.teacherButton.selected = NO;
+		self.contentButton.selected = YES;
+		self.lineCenterXLayoutConstraint.constant = 0;
+	}
+	
+	[UIView animateWithDuration:0.2  animations:^{
+		[self.view layoutIfNeeded];
+	}];
 	
 }
 
