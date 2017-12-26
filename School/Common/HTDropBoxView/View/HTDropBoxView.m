@@ -27,6 +27,8 @@
 
 @property (nonatomic, strong) NSLayoutConstraint *willOpenDetailConstraint;
 
+@property (nonatomic, strong) NSString *leftOldSelectedID;
+@property (nonatomic, strong) NSString *rightOldSelectedID;
 @end
 
 @implementation HTDropBoxView
@@ -143,6 +145,9 @@
 		__weak typeof(self) weakSelf = self;
 		[_titleView setDidSelectedBlock:^(id <HTDropBoxProtocol> model) {
 			if (model.isSelected) {
+                
+                
+                
 				NSMutableArray <HTDropBoxProtocol> *detailModelArray = model.selectedModelArray;
 				CGFloat detailHeight = [weakSelf.detailView heightWithSetModelArray:detailModelArray];
 				detailHeight = MIN(detailHeight, 300);

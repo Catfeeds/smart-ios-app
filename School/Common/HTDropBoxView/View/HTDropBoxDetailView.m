@@ -119,6 +119,7 @@ static NSString *kHTDropBoxDetailTableCellIdentifier = @"kHTDropBoxDetailTableCe
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	id <HTDropBoxProtocol> model = self.modelArray[indexPath.row];
 	model.isSelected = true;
+    
 	self.leftSelectedModel = model;
 	[self.rightCollectionView reloadData];
 	[model.selectedModelArray enumerateObjectsUsingBlock:^(id <HTDropBoxProtocol> model, NSUInteger index, BOOL * _Nonnull stop) {

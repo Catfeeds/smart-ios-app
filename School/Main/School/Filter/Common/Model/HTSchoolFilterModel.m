@@ -57,6 +57,13 @@
 	}];
 }
 
+- (void)mj_keyValuesDidFinishConvertingToObject{
+    //默认选择美国
+    if ([self.ID isEqualToString:@"155"]) {
+        self.isSelected = YES;
+    }
+}
+
 @end
 
 

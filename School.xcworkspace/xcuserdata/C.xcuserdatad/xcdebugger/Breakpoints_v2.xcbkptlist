@@ -48,22 +48,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "School/Main/School/Filter/Common/Controller/HTSchoolFilterController.m"
-            timestampString = "534778353.613018"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-requestSchoolModelArrayPageSize:currentPage:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
@@ -188,7 +172,7 @@
                   moduleName = "School"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/School/School/School/Main/Answer/Main/Controller/HTAnswerDetailController.m"
-                  timestampString = "535909948.439997"
+                  timestampString = "536003302.419818"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "173"
@@ -203,7 +187,7 @@
                   moduleName = "School"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/School/School/School/Main/Answer/Main/Controller/HTAnswerDetailController.m"
-                  timestampString = "535909948.441729"
+                  timestampString = "536003302.421529"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
@@ -300,12 +284,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "School/Main/Index/OpenCourse/HTOpenCourseDetailController.m"
-            timestampString = "535910268.622707"
+            timestampString = "535997895.538011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "-hitTest:withEvent:"
+            landmarkName = "-submit:phone:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -316,12 +300,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "School/Main/Index/OpenCourse/HTOpenCourseDetailController.m"
-            timestampString = "535910268.622814"
+            timestampString = "535997895.538098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
-            landmarkName = "-touchesMoved:withEvent:"
+            landmarkName = "-signUpAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

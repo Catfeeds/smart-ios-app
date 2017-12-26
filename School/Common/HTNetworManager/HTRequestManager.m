@@ -202,8 +202,8 @@ static NSString *kHTApplicationIdString = @"1271275068";
 	[HTNetworkManager requestModel:networkModel
 							method:HTNetworkRequestMethodPost
 							   url:@"http://schools.smartapply.cn/cn/app-api/class-school"
-						 // 国家默认美国  155
-						 parameter:@{@"country":HTPlaceholderString(countryIdString, @"155"),
+     
+						 parameter:@{@"country":HTPlaceholderString(countryIdString, @""),
 									 @"rank":HTPlaceholderString(rankIdString, @""),
 									 @"major":HTPlaceholderString(professionalIdString, @""),
 									 @"page":HTPlaceholderString(currentPage, @"1"),

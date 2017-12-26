@@ -44,6 +44,8 @@
 
 @property (nonatomic, copy) NSString *place;
 
+@property (nonatomic, assign) BOOL isSelectedMajor; //自定义属性，是否选择了专业属性
+
 @end
 
 @interface HTFilterResultProfessionalModel : NSObject

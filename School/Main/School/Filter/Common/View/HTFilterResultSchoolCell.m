@@ -24,7 +24,7 @@
 
 @property (nonatomic, strong) UILabel *addressLabel;
 @property (nonatomic, strong) UILabel *rankingLabel;
-@property (nonatomic, strong) UIButton *majorButton;
+
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
@@ -48,8 +48,9 @@ static NSString *kHTFilterResultCollectionCellIdentifier = @"kHTFilterResultColl
 	[self addSubview:self.detailNameLabel];
 	[self addSubview:self.addressLabel];
 	[self addSubview:self.rankingLabel];
-	[self addSubview:self.majorButton];
-//	[self addSubview:self.collectionView];
+	
+    [self addSubview:self.collectionView];
+    self.collectionView.backgroundColor = [UIColor redColor];
 	[self.headImageView mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.left.mas_equalTo(15);
 		make.top.mas_equalTo(15);
@@ -57,70 +58,76 @@ static NSString *kHTFilterResultCollectionCellIdentifier = @"kHTFilterResultColl
 	}];
 	[self.titleNameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.left.mas_equalTo(self.headImageView.mas_right).offset(15);
-		make.top.mas_equalTo(self.headImageView);
+		make.top.mas_equalTo(self.headImageView.mas_top);
 		make.right.mas_equalTo(- 15);
+        
 	}];
-	[self.detailNameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-		make.left.right.mas_equalTo(self.titleNameLabel);
-		make.bottom.mas_equalTo(self.headImageView);
-	}];
+	
 	
 	[self.rankingLabel mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.left.right.mas_equalTo(self.titleNameLabel);
 		make.top.mas_equalTo(self.titleNameLabel.mas_bottom).offset(4);
+        
 	}];
 	
 	[self.addressLabel mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.left.right.mas_equalTo(self.titleNameLabel);
 		make.top.mas_equalTo(self.rankingLabel.mas_bottom).offset(4);
+        
 	}];
-	
-	[self.majorButton mas_updateConstraints:^(MASConstraintMaker *make) {
-		make.left.right.mas_equalTo(self.titleNameLabel);
-		make.top.mas_equalTo(self.addressLabel.mas_bottom).offset(4);
-	}];
-	
-//	[self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
-//		make.left.mas_equalTo(self.headImageView);
-//		make.right.mas_equalTo(- 15);
-//		make.bottom.mas_equalTo(- 15);
-//		make.top.mas_equalTo(self.headImageView.mas_bottom).offset(15);
-//	}];
+    [self.detailNameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.titleNameLabel);
+       // make.top.mas_equalTo(self.addressLabel.mas_bottom).offset(4);
+        make.bottom.mas_equalTo(self.headImageView.mas_bottom);
+        make.height.mas_equalTo(15);
+        
+    }];
+    
+    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.titleNameLabel);
+     //   make.bottom.mas_equalTo(15);
+        make.height.mas_equalTo(20);
+        make.top.mas_equalTo(self.detailNameLabel.mas_bottom).offset(4);
+    }];
 }
 
 - (void)setModel:(HTFilterResultSchoolModel *)model row:(NSInteger)row {
-//	_model = model;
+	_model = model;
 	[self.headImageView sd_setImageWithURL:[NSURL URLWithString:SchoolResourse(model.image)] placeholderImage:HTPLACEHOLDERIMAGE];
 	self.titleNameLabel.text = model.name;
 	self.detailNameLabel.text = model.title;
 	self.addressLabel.text = [NSString stringWithFormat:@"地址:%@",model.place];
 	self.rankingLabel.text = [NSString stringWithFormat:@"排名:%@",model.rank];
 //	self.collectionView.ht_w = HTSCREENWIDTH - 30;
-//	
-//	NSMutableArray *modelSizeArray = [@[] mutableCopy];
-//	HTFilterResultProfessionalCell *cell = [[HTFilterResultProfessionalCell alloc] init];
-//	UIFont *titleNameFont = cell.titleNameButton.titleLabel.font;
-//	[self.model.major enumerateObjectsUsingBlock:^(HTFilterResultProfessionalModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
-//		CGSize itemSize = CGSizeZero;
-//		itemSize.height = [self.class itemHeight];
-//		NSString *titleName = model.title;
-//		itemSize.width = [titleName boundingRectWithSize:CGSizeMake(MAXFLOAT, itemSize.height)
-//												 options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-//											  attributes:@{NSFontAttributeName:titleNameFont} context:nil].size.width;
-//		itemSize.width += 16;
-//		[modelSizeArray addObject:[NSValue valueWithCGSize:itemSize]];
-//	}];
-//	self.modelSizeArray = modelSizeArray;
-//	
-//	[self.collectionView reloadData];
-//	
-	CGFloat modelHeight = 0;
-	modelHeight += 15;
-	modelHeight += 75;
-	modelHeight += 15;
-//	modelHeight += self.collectionView.collectionViewLayout.collectionViewContentSize.height;
-//	modelHeight += 15;
-	[model ht_setRowHeightNumber:@(modelHeight) forCellClass:self.class];
+//
+    
+    CGFloat modelHeight = 0;
+    modelHeight += 15;
+    modelHeight += 75;
+    modelHeight += 15;
+
+    if (model.isSelectedMajor) {
+        self.collectionView.hidden = NO;
+        NSMutableArray *modelSizeArray = [@[] mutableCopy];
+        [self.model.major enumerateObjectsUsingBlock:^(HTFilterResultProfessionalModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
+            CGSize itemSize = CGSizeZero;
+            itemSize.height = 15;
+            NSString *titleName = model.title;
+            itemSize.width = [titleName boundingRectWithSize:CGSizeMake(MAXFLOAT, itemSize.height)
+                                                     options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                  attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.width;
+            itemSize.width += 10;
+            [modelSizeArray addObject:[NSValue valueWithCGSize:itemSize]];
+        }];
+        self.modelSizeArray = modelSizeArray;
+        [self.collectionView reloadData];
+//        modelHeight += self.collectionView.collectionViewLayout.collectionViewContentSize.height + 4;
+        modelHeight += 24;
+    }else{
+        self.collectionView.hidden = YES;
+    }
+//
+    [model ht_setRowHeightNumber:@(modelHeight) forCellClass:self.class];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -162,7 +169,7 @@ static NSString *kHTFilterResultCollectionCellIdentifier = @"kHTFilterResultColl
 - (UIImageView *)headImageView {
 	if (!_headImageView) {
 		_headImageView = [[UIImageView alloc] init];
-		_headImageView.contentMode = UIViewContentModeScaleAspectFill;
+//        _headImageView.contentMode = UIViewContentModeScaleAspectFill;
 		_headImageView.clipsToBounds = true;
 	}
 	return _headImageView;
@@ -204,28 +211,20 @@ static NSString *kHTFilterResultCollectionCellIdentifier = @"kHTFilterResultColl
 	return _rankingLabel;
 }
 
-- (UIButton *)majorButton{
-	if (!_majorButton) {
-		_majorButton = [[UIButton alloc]init];
-		_majorButton.titleLabel.font = [UIFont systemFontOfSize:12];
-	}
-	return _majorButton;
-}
-
-
 - (UICollectionView *)collectionView {
 	if (!_collectionView) {
 		UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-		flowLayout.minimumLineSpacing = 15;
-		flowLayout.minimumInteritemSpacing = 15;
+		flowLayout.minimumLineSpacing = 0;
+		flowLayout.minimumInteritemSpacing = 10;
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 		_collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-		_collectionView.scrollEnabled = false;
+//        _collectionView.scrollEnabled = false;
+        _collectionView.showsHorizontalScrollIndicator = NO;
 		_collectionView.delegate = self;
 		_collectionView.dataSource = self;
 		[_collectionView registerClass:[HTFilterResultProfessionalCell class] forCellWithReuseIdentifier:kHTFilterResultCollectionCellIdentifier];
 	}
 	return _collectionView;
 }
-
 
 @end

@@ -35,7 +35,7 @@
 - (UIButton *)titleNameButton {
 	if (!_titleNameButton) {
 		_titleNameButton = [[UIButton alloc] init];
-		_titleNameButton.titleLabel.font = [UIFont systemFontOfSize:13];
+		_titleNameButton.titleLabel.font = [UIFont systemFontOfSize:14];
 		_titleNameButton.layer.cornerRadius = 3;
 		_titleNameButton.layer.masksToBounds = true;
 		[_titleNameButton setTitleColor:[UIColor ht_colorStyle:HTColorStyleSecondaryTitle] forState:UIControlStateNormal];

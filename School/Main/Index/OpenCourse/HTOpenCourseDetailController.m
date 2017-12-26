@@ -66,7 +66,7 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
 	self.teacherDescriptionNameLabel.text = model.teacherName;
 	self.teacherDescriptionLabel.text = model.teacherDescription;
 	[self.teacherDescriptionLabel sizeToFit];
-	[self.courseContentTextView setAttributedText:[model.courseContent htmlToAttributeStringContent:@"http://open.viplgw.cn" width:CGRectGetWidth(self.courseContentTextView.frame)]];
+	//[self.courseContentTextView setAttributedText:[model.courseContent htmlToAttributeStringContent:@"http://open.viplgw.cn" width:CGRectGetWidth(self.courseContentTextView.frame)]];
 	CGFloat contentHeight = self.teacherDescriptionLabel.frame.size.height + 375;//375 : 简介以上高度
 	self.scrollContentHeightLayoutConstraint.constant = contentHeight > CGRectGetHeight(self.scrollView.frame)  ? contentHeight : CGRectGetHeight(self.scrollView.frame);
 	

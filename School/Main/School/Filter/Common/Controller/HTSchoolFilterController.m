@@ -118,6 +118,15 @@
 			return;
 		}
 		NSMutableArray *filterResultArray = [HTFilterResultSchoolModel mj_objectArrayWithKeyValuesArray:response[@"data"]];
+        
+        if (StringNotEmpty(professionalIdString)) {
+            [filterResultArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                ((HTFilterResultSchoolModel *)obj).isSelectedMajor = YES;
+                
+            }];
+        }
+        
+        
 		if (currentPage.integerValue <= 1) {
 			self.filterResultArray = filterResultArray;
 		} else {
@@ -170,7 +179,6 @@
         if (model.type == HTFilterTypeRank)     model.title = self.seltedRank;
         if (model.type == HTFilterTypeMajor)     model.title = self.seletedProfessional;
         [newTitleSelecetd addObject:model];
-        
     }];
     self.filterHeaderView.titleModelArray  = newTitleSelecetd;
     

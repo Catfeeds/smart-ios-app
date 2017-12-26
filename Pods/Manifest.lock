@@ -29,16 +29,16 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - FBRetainCycleDetector (0.1.3)
+  - FBRetainCycleDetector (0.1.4)
   - HTManager (1.0.0):
     - AFNetworking (~> 3.1.0)
     - BlocksKit (~> 2.2.5)
     - Masonry (~> 1.0.1)
     - MJRefresh (~> 3.1.12)
-  - IQKeyboardManager (5.0.6)
+  - IQKeyboardManager (5.0.7)
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
-  - MJRefresh (3.1.15)
+  - MJRefresh (3.1.15.1)
   - MLeaksFinder (0.2.1):
     - FBRetainCycleDetector
   - SDWebImage (4.2.2):
@@ -63,15 +63,15 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   HTManager: 286123dabed1d1df33be92f38afe228a487d5e91
-  IQKeyboardManager: 077b7f691dfa9d69db9cff66f2bed68ebfc02d9b
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   MLeaksFinder: 0850e2f2abc7227adc4d4e2d1992b431264eb4d5
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
 
 PODFILE CHECKSUM: a931c1cb13fd510520dbf35d5e3cf7aaf042799f
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.4.0.beta.2
