@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTFilterResultSchoolModel.h"
+
 
 @interface HTFilterResultSchoolCell : UITableViewCell
+
+@property (nonatomic, copy) void(^clickMajorAction)(HTFilterResultProfessionalModel *major);
 
 @end

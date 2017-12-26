@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -2496,7 +2496,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTZ-4E-Hiu" customClass="HTOpenCourseDetailScroll">
-                                <rect key="frame" x="0.0" y="20" width="375" height="680"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="636"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRB-S8-hAI">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
@@ -2528,7 +2528,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="jlP-Ba-nU4"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTG-Ok-fab">
+                                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTG-Ok-fab">
                                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="授课老师">
@@ -2537,8 +2537,11 @@
                                                         <state key="selected">
                                                             <color key="titleColor" red="0.5950242281" green="0.73499131200000001" blue="0.2127738297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="detailChangeAction:" destination="dFV-KX-V1L" eventType="touchUpInside" id="UFf-Gk-Cql"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4g-hl-1tQ">
+                                                    <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4g-hl-1tQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="课程内容">
@@ -2547,6 +2550,9 @@
                                                         <state key="selected">
                                                             <color key="titleColor" red="0.5950242280960083" green="0.73499131202697754" blue="0.21277382969856262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="detailChangeAction:" destination="dFV-KX-V1L" eventType="touchUpInside" id="1Wk-Ls-mGt"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94211500883102417" green="0.93339109420776367" blue="0.93314439058303833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2588,18 +2594,20 @@
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFF-Ut-mPZ" customClass="HTOpenCourseDetailScroll">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFF-Ut-mPZ" customClass="HTOpenCourseDetailScroll">
                                                 <rect key="frame" x="0.0" y="142" width="375" height="558"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOu-wf-rad">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="558"/>
                                                         <subviews>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9ZO-va-XLb" customClass="HTOpenCourseDetailTextView">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9ZO-va-XLb" customClass="HTOpenCourseDetailTextView">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="558"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <mutableString key="text">测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试二分法额外废物测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</mutableString>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="dFV-KX-V1L" id="SLB-ef-0ki"/>
+                                                                </connections>
                                                             </textView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2696,6 +2704,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="zRB-S8-hAI" secondAttribute="bottom" id="3ga-fA-YtM"/>
                                     <constraint firstItem="zRB-S8-hAI" firstAttribute="leading" secondItem="zTZ-4E-Hiu" secondAttribute="leading" id="3iC-L6-Xbj"/>
@@ -2704,13 +2713,31 @@
                                     <constraint firstItem="zRB-S8-hAI" firstAttribute="centerX" secondItem="zTZ-4E-Hiu" secondAttribute="centerX" id="qIh-vG-ybZ"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eto-kT-Sgr">
+                                <rect key="frame" x="0.0" y="656" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.5950242280960083" green="0.73499131202697754" blue="0.21277382969856262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="V5v-8a-AnR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="立即报名">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpAction:" destination="dFV-KX-V1L" eventType="touchUpInside" id="ldx-97-RS2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zTZ-4E-Hiu" firstAttribute="top" secondItem="Z3f-bf-Xi9" secondAttribute="bottom" id="9qZ-9C-4Mf"/>
-                            <constraint firstItem="5Sn-5U-Ivf" firstAttribute="top" secondItem="zTZ-4E-Hiu" secondAttribute="bottom" id="Kf9-pM-Z1E"/>
+                            <constraint firstItem="eto-kT-Sgr" firstAttribute="leading" secondItem="TQ8-Vj-NF7" secondAttribute="leading" id="ie4-Rc-vml"/>
+                            <constraint firstAttribute="trailing" secondItem="eto-kT-Sgr" secondAttribute="trailing" id="k5a-20-UFE"/>
+                            <constraint firstItem="5Sn-5U-Ivf" firstAttribute="top" secondItem="eto-kT-Sgr" secondAttribute="bottom" id="lP8-ya-q53"/>
                             <constraint firstItem="zTZ-4E-Hiu" firstAttribute="leading" secondItem="TQ8-Vj-NF7" secondAttribute="leading" id="lVv-HW-9FQ"/>
                             <constraint firstAttribute="trailing" secondItem="zTZ-4E-Hiu" secondAttribute="trailing" id="pVb-do-TLS"/>
+                            <constraint firstItem="eto-kT-Sgr" firstAttribute="top" secondItem="zTZ-4E-Hiu" secondAttribute="bottom" id="vG5-jX-Ndm"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="700"/>

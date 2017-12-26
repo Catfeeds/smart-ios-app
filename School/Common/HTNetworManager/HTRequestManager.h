@@ -166,6 +166,16 @@
 + (void)requestOpenCourseDetailWithNetworkModel:(HTNetworkModel *)networkModel courseID:(NSString *)courseID  complete:(HTUserTaskCompleteBlock)complete;
 
 /**
+ 报名公开课
+ 
+ @param courseID 课程的 id
+ @param usernameString  预约的用户的名字
+ @param phoneNumberString 预约的用户的电话
+ @param courseTitleString 预约的课程名字
+ */
++ (void)requestSignupOpenCourseWithNetworkModel:(HTNetworkModel *)networkModel courseID:(NSString *)courseID usernameString:(NSString *)usernameString phoneNumberString:(NSString *)phoneNumberString courseTitleString:(NSString *)courseTitleString complete:(HTUserTaskCompleteBlock)complete;
+
+/**
  获取热门学校列表
 
  @param currentPage 当前页码

@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) UILabel *addressLabel;
 @property (nonatomic, strong) UILabel *rankingLabel;
+@property (nonatomic, strong) UIButton *majorButton;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
@@ -47,6 +48,7 @@ static NSString *kHTFilterResultCollectionCellIdentifier = @"kHTFilterResultColl
 	[self addSubview:self.detailNameLabel];
 	[self addSubview:self.addressLabel];
 	[self addSubview:self.rankingLabel];
+	[self addSubview:self.majorButton];
 //	[self addSubview:self.collectionView];
 	[self.headImageView mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.left.mas_equalTo(15);
@@ -71,6 +73,11 @@ static NSString *kHTFilterResultCollectionCellIdentifier = @"kHTFilterResultColl
 	[self.addressLabel mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.left.right.mas_equalTo(self.titleNameLabel);
 		make.top.mas_equalTo(self.rankingLabel.mas_bottom).offset(4);
+	}];
+	
+	[self.majorButton mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.left.right.mas_equalTo(self.titleNameLabel);
+		make.top.mas_equalTo(self.addressLabel.mas_bottom).offset(4);
 	}];
 	
 //	[self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -196,6 +203,15 @@ static NSString *kHTFilterResultCollectionCellIdentifier = @"kHTFilterResultColl
 	}
 	return _rankingLabel;
 }
+
+- (UIButton *)majorButton{
+	if (!_majorButton) {
+		_majorButton = [[UIButton alloc]init];
+		_majorButton.titleLabel.font = [UIFont systemFontOfSize:12];
+	}
+	return _majorButton;
+}
+
 
 - (UICollectionView *)collectionView {
 	if (!_collectionView) {

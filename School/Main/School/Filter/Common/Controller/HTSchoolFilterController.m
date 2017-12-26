@@ -198,21 +198,23 @@
         
         __weak typeof(self) weakSelf = self;
         [_tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
-            [[sectionMaker.cellClass([HTFilterResultSchoolCell class]) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTFilterResultSchoolModel *model) {
+			[[[sectionMaker.cellClass([HTFilterResultSchoolCell class]) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTFilterResultSchoolModel *model) {
 				HTFilterResultSchoolController *schoolController = [[HTFilterResultSchoolController alloc] init];
 				schoolController.resultSchoolModel = model;
 				[weakSelf.navigationController pushViewController:schoolController animated:true];
-            }] willEndDraggingBlock:^(UIScrollView *scrollView, CGPoint contentOffSet, UIEdgeInsets contentInSet, CGPoint velocity, CGPoint targetContentOffSet) {
-//                if (velocity.y > 0.5) {
-//                    if (!weakSelf.filterHeaderView.selectedHidden) {
-//                        [weakSelf.filterHeaderView setSelectedHidden:true duration:0.4];
-//                    }
-//                } else if (velocity.y < - 1) {
-//                    if (weakSelf.filterHeaderView.selectedHidden) {
-//                        [weakSelf.filterHeaderView setSelectedHidden:false duration:0.4];
-//                    }
-//                }
-            }];
+			}] willEndDraggingBlock:^(UIScrollView *scrollView, CGPoint contentOffSet, UIEdgeInsets contentInSet, CGPoint velocity, CGPoint targetContentOffSet) {
+				//                if (velocity.y > 0.5) {
+				//                    if (!weakSelf.filterHeaderView.selectedHidden) {
+				//                        [weakSelf.filterHeaderView setSelectedHidden:true duration:0.4];
+				//                    }
+				//                } else if (velocity.y < - 1) {
+				//                    if (weakSelf.filterHeaderView.selectedHidden) {
+				//                        [weakSelf.filterHeaderView setSelectedHidden:false duration:0.4];
+				//                    }
+				//                }
+			}] customCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof NSObject *model) {
+				
+			}] ;
         }];
     }
     return _tableView;

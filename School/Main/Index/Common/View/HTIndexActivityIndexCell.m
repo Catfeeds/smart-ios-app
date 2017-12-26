@@ -12,6 +12,7 @@
 #import "HTIndexActivityCell.h"
 #import "HTDiscoverActivityDetailController.h"
 #import "HTIndexModel.h"
+#import "HTOpenCourseDetailController.h"
 
 @interface HTIndexActivityIndexCell ()
 
@@ -56,8 +57,12 @@
         __weak typeof(self) weakSelf = self;
 		[_collectionView ht_updateSection:0 sectionMakerBlock:^(HTCollectionViewSectionMaker *sectionMaker) {
 			[sectionMaker.cellClass([HTIndexActivityCell class]).itemSize(itemSize).itemHorizontalSpacing(itemHorizontalSpacing).itemVerticalSpacing(itemVerticalSpacing).sectionInset(sectionEdge) didSelectedCellBlock:^(UICollectionView *collectionView, NSInteger item, __kindof UICollectionViewCell *cell, __kindof HTIndexOpenModel *model) {
-                HTDiscoverActivityDetailController *detailController = [[HTDiscoverActivityDetailController alloc] init];
-                detailController.activityIdString = model.ID;
+//                HTDiscoverActivityDetailController *detailController = [[HTDiscoverActivityDetailController alloc] init];
+//                detailController.activityIdString = model.ID;
+				
+				HTOpenCourseDetailController *detailController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTOpenCourseDetailController");
+				detailController.courseId = model.ID;
+				
                 [weakSelf.ht_controller.navigationController pushViewController:detailController animated:true];
             }];
 		}];

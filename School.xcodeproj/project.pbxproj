@@ -66,6 +66,8 @@
 		56565E8E1FEB667900441993 /* HTAnswerTagCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E8D1FEB667900441993 /* HTAnswerTagCollectionViewLayout.m */; };
 		56565E911FEBE2F600441993 /* HTAnswerInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E901FEBE2F600441993 /* HTAnswerInputView.m */; };
 		56565E931FEBE30F00441993 /* HTAnswerInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56565E921FEBE30F00441993 /* HTAnswerInputView.xib */; };
+		5658D5AF1FF1FB24005CD994 /* HTSignUpOpenCourseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5658D5AE1FF1FB24005CD994 /* HTSignUpOpenCourseView.m */; };
+		5658D5B11FF1FB2F005CD994 /* HTSignUpOpenCourseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5658D5B01FF1FB2F005CD994 /* HTSignUpOpenCourseView.xib */; };
 		565EA2AC1FDFB8810042732B /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2831FDFB87D0042732B /* ShareSDK.framework */; };
 		565EA2AD1FDFB8810042732B /* ShareSDKConfigFile.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 565EA2861FDFB87D0042732B /* ShareSDKConfigFile.bundle */; };
 		565EA2AE1FDFB8810042732B /* ShareSDKConfigFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2871FDFB87D0042732B /* ShareSDKConfigFile.framework */; };
@@ -766,6 +768,9 @@
 		56565E8F1FEBE2F600441993 /* HTAnswerInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAnswerInputView.h; sourceTree = "<group>"; };
 		56565E901FEBE2F600441993 /* HTAnswerInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAnswerInputView.m; sourceTree = "<group>"; };
 		56565E921FEBE30F00441993 /* HTAnswerInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTAnswerInputView.xib; sourceTree = "<group>"; };
+		5658D5AD1FF1FB24005CD994 /* HTSignUpOpenCourseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSignUpOpenCourseView.h; sourceTree = "<group>"; };
+		5658D5AE1FF1FB24005CD994 /* HTSignUpOpenCourseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSignUpOpenCourseView.m; sourceTree = "<group>"; };
+		5658D5B01FF1FB2F005CD994 /* HTSignUpOpenCourseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTSignUpOpenCourseView.xib; sourceTree = "<group>"; };
 		565EA2831FDFB87D0042732B /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		565EA2861FDFB87D0042732B /* ShareSDKConfigFile.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKConfigFile.bundle; sourceTree = "<group>"; };
 		565EA2871FDFB87D0042732B /* ShareSDKConfigFile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConfigFile.framework; sourceTree = "<group>"; };
@@ -2191,6 +2196,9 @@
 				56ABF0B61FECE65400E500B7 /* HTOpenCourseDetailController.m */,
 				56ABF0B81FECEF3400E500B7 /* HTOpenCourseDetailModel.h */,
 				56ABF0B91FECEF3400E500B7 /* HTOpenCourseDetailModel.m */,
+				5658D5AD1FF1FB24005CD994 /* HTSignUpOpenCourseView.h */,
+				5658D5AE1FF1FB24005CD994 /* HTSignUpOpenCourseView.m */,
+				5658D5B01FF1FB2F005CD994 /* HTSignUpOpenCourseView.xib */,
 			);
 			path = OpenCourse;
 			sourceTree = "<group>";
@@ -6072,6 +6080,7 @@
 				C20CDC921EF111A300BA6D60 /* LaunchScreen.storyboard in Resources */,
 				565EA2BB1FDFB8810042732B /* README.txt in Resources */,
 				565EA2AD1FDFB8810042732B /* ShareSDKConfigFile.bundle in Resources */,
+				5658D5B11FF1FB2F005CD994 /* HTSignUpOpenCourseView.xib in Resources */,
 				C20CDE611EF11B8A00BA6D60 /* MTA Advanced Gamming Model Programming Guide.pdf in Resources */,
 				56FA64211FE7A2E70013A165 /* HTHeadlineHeaderView.xib in Resources */,
 				C29646A91F5CED130031C109 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
@@ -6682,6 +6691,7 @@
 				C2FF3E211F4141620005F287 /* HTCommunityDetailHeaderView.m in Sources */,
 				5644C0871FE93605004D6E27 /* HTPlayerDragView.m in Sources */,
 				C29E36861F740A6E000A85D9 /* HTProfessionalSectionModel.m in Sources */,
+				5658D5AF1FF1FB24005CD994 /* HTSignUpOpenCourseView.m in Sources */,
 				C251C63C1F73763000D0D165 /* HTSchoolMatriculateResultHeaderView.m in Sources */,
 				C22EAB621F30303F00969300 /* HTAnswerController.m in Sources */,
 				C2EE1F9E1F5B281200C8176F /* HTAdvisorDetailInformationController.m in Sources */,

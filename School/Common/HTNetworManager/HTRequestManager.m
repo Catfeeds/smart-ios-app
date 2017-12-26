@@ -202,7 +202,8 @@ static NSString *kHTApplicationIdString = @"1271275068";
 	[HTNetworkManager requestModel:networkModel
 							method:HTNetworkRequestMethodPost
 							   url:@"http://schools.smartapply.cn/cn/app-api/class-school"
-						 parameter:@{@"country":HTPlaceholderString(countryIdString, @""),
+						 // 国家默认美国  155
+						 parameter:@{@"country":HTPlaceholderString(countryIdString, @"155"),
 									 @"rank":HTPlaceholderString(rankIdString, @""),
 									 @"major":HTPlaceholderString(professionalIdString, @""),
 									 @"page":HTPlaceholderString(currentPage, @"1"),
@@ -332,6 +333,10 @@ static NSString *kHTApplicationIdString = @"1271275068";
 							method:HTNetworkRequestMethodPost
 							   url:@"http://open.viplgw.cn/cn/api/app-open-details"
 						 parameter:@{@"id":HTPlaceholderString(courseID, @"")} complete:complete];
+}
+
++ (void)requestSignupOpenCourseWithNetworkModel:(HTNetworkModel *)networkModel courseID:(NSString *)courseID usernameString:(NSString *)usernameString phoneNumberString:(NSString *)phoneNumberString courseTitleString:(NSString *)courseTitleString complete:(HTUserTaskCompleteBlock)complete {
+	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodPost url:@"http://www.smartapply.cn/cn/api/add-content" parameter:@{@"catId":@"236", @"name":HTPlaceholderString(usernameString, @""), @"extend":@[HTPlaceholderString(courseID, @"0"), HTPlaceholderString(phoneNumberString, @""), HTPlaceholderString(courseTitleString, @""), @"iOS 留学"]} complete:complete];
 }
 
 
