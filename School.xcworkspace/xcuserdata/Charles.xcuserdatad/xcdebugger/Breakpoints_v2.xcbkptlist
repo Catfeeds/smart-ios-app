@@ -54,7 +54,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "School/Main/Discover/Common/View/HTDiscoverHeaderView.m"
-            timestampString = "535556319.679369"
+            timestampString = "536061507.651754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -117,29 +117,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "School/Main/School/Filter/Common/Controller/HTSchoolFilterController.m"
-            timestampString = "535976181.721716"
+            filePath = "School/Main/Discover/Activity/Controller/HTDiscoverActivityDetailController.m"
+            timestampString = "536062848.026407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "-setChooseResultForTitle"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "School/Main/School/Filter/Common/Controller/HTSchoolFilterController.m"
-            timestampString = "535976181.721781"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-requestSchoolModelArrayPageSize:currentPage:"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-initializeDataSource"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

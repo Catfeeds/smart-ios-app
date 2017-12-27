@@ -14,6 +14,7 @@
 #import "HTSchoolMajorDetailCell.h"
 #import "HTProfessionalController.h"
 #import "HTProfessionDetailController.h"
+#import "UIViewController+HTAlertProfessionalDetailView.h"
 
 @interface HTSchoolMajorCell () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -111,9 +112,13 @@ static NSString *kHTSchoolMajorReuseIdentifier = @"kHTSchoolMajorReuseIdentifier
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	HTSchoolProfessionalSubModel *model = self.selectedProfessionalModel.content[indexPath.row];
 	//HTProfessionalController *professionalController = [[HTProfessionalController alloc] init];
-	HTProfessionDetailController *professionalController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
-	professionalController.professionalId = model.ID;
-	[self.ht_controller.navigationController pushViewController:professionalController animated:true];
+//	HTProfessionDetailController *professionalController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
+	//professionalController.professionalId = model.ID;
+
+//	[self.ht_controller.navigationController pushViewController:professionalController animated:true];
+	
+	[self.ht_controller showProfessionDetailView:model.ID];
+	
 	[collectionView deselectItemAtIndexPath:indexPath animated:true];
 }
 

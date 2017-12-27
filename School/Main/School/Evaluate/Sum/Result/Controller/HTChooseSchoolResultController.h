@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HTChooseSchoolEvaluationResultModel.h"
 
 @interface HTChooseSchoolResultController : UIViewController
 
-@property (nonatomic, strong) HTChooseSchoolEvaluationResultModel *resultModel;
+@property (nonatomic, strong) NSString *resultID;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

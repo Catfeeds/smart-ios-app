@@ -12,5 +12,6 @@
 
 @interface HTFilterResultSchoolCell : UITableViewCell
 
+@property (nonatomic, copy) void(^chooseMajorBlock)(HTFilterResultProfessionalModel *professional);
 
 @end

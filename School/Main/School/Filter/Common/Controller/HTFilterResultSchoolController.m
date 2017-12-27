@@ -68,7 +68,6 @@
 	[self.view addSubview:self.tableView];
 }
 
-
 - (UITableView *)tableView {
 	if (!_tableView) {
 		_tableView = [[UITableView alloc] initWithFrame:self.view.bounds];

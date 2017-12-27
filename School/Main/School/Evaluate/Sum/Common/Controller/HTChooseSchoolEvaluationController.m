@@ -74,24 +74,8 @@
 			[HTRequestManager requestSendSchoolMatriculateWithNetworkModel:networkModel parameter:para complete:^(id response, HTError *errorModel) {
 				if ([[NSString stringWithFormat:@"%@",response[@"code"]] isEqualToString:@"1"]) {
 					
-					HTNetworkModel *resultNetwork = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleNone];
-                    networkModel.autoAlertString = @"获取选校结果";
-					[HTRequestManager requestSchoolMatriculateAllResultListWithNetworkModel:resultNetwork resultIdString:@"" complete:^(id response, HTError *errorModel) {
-						if (!errorModel.existError) {
-                            [HTRequestManager requestSchoolMatriculateAllResultListWithNetworkModel:resultNetwork resultIdString:@"" complete:^(id response, HTError *errorModel) {
-                                if (errorModel.existError) {
-                                    return;
-                                }
-                                
-                                HTChooseSchoolEvaluationResultModel *resultModel = [HTChooseSchoolEvaluationResultModel mj_objectWithKeyValues:response];
-                                
-                                [self performSegueWithIdentifier:@"evaluationToResult" sender:resultModel];
-                                
-                            }];
-                            
-						}
-					}];
-				}
+					[self performSegueWithIdentifier:@"evaluationToResult" sender:nil];
+			}
 		}];
 	}];
 }
@@ -117,12 +101,11 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"evaluationToResult"]) {
-        HTChooseSchoolResultController *controller = segue.destinationViewController;
-        controller.resultModel = sender;
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([segue.identifier isEqualToString:@"evaluationToResult"]) {
+//        HTChooseSchoolResultController *controller = segue.destinationViewController;
+//    }
+//}
 
 
 @end

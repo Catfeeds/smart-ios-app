@@ -27,7 +27,7 @@
 	self.magicView.navigationHeight = 0;
 	[self.magicView reloadData];
 	
-	self.segement =  [[UISegmentedControl alloc]initWithItems:@[@"寻机构",@"选顾问"]];
+	self.segement =  [[UISegmentedControl alloc]initWithItems:@[@"选顾问",@"寻机构"]];
 	self.segement.frame = CGRectMake(0, 0, 180, 30);
 	self.segement.selectedSegmentIndex = 0;
 	[self.segement addTarget:self action:@selector(changeController:) forControlEvents:UIControlEventValueChanged];
@@ -53,7 +53,7 @@
 
 - (NSArray<NSString *> *)menuTitlesForMagicView:(VTMagicView *)magicView
 {
-	return @[@"寻机构",@"选顾问"];
+	return @[@"选顾问",@"寻机构"];
 }
 
 - (UIButton *)magicView:(VTMagicView *)magicView menuItemAtIndex:(NSUInteger)itemIndex
@@ -71,7 +71,7 @@
 
 - (UIViewController *)magicView:(VTMagicView *)magicView viewControllerAtPage:(NSUInteger)pageIndex
 {
-	if (pageIndex == 0) {
+	if (pageIndex == 1) {
 		static NSString *recomId = @"HTOrganizationController";
 		HTOrganizationController *organizationController = [magicView dequeueReusablePageWithIdentifier:recomId];
 		if (!organizationController) {

@@ -48,7 +48,7 @@
 					break;
 				}
 				case HTSearchTypeProfessional: {
-//					HTProfessionalController *detailController = [[HTProfessionalController alloc] init];
+				//	HTProfessionalController *detailController = [[HTProfessionalController alloc] init];
 					  HTProfessionDetailController *detailController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
 					detailController.professionalId = model.ID;
 					viewController = detailController;

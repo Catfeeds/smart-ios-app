@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIButton *leftTimeButton;
 
 @property (nonatomic, strong) UIButton *rightLookButton;
+@property (nonatomic, strong) UIImageView *playerIcon;
 
 @end
 
@@ -31,7 +32,7 @@
 	[self addSubview:self.titleNameLabel];
 	[self addSubview:self.leftTimeButton];
 	[self addSubview:self.rightLookButton];
-	
+	[self addSubview:self.playerIcon];
 	CGFloat bottomHeight = 30;
 	[self.backgroundImageView mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.left.right.top.mas_equalTo(self);
@@ -52,6 +53,12 @@
 		make.right.mas_equalTo(- 10);
 		make.bottom.mas_equalTo(self);
 		make.height.mas_equalTo(bottomHeight);
+	}];
+	
+	[self.playerIcon mas_updateConstraints:^(MASConstraintMaker *make) {
+		make.centerX.mas_equalTo(self.backgroundImageView);
+		make.centerY.mas_equalTo(self.backgroundImageView);
+		make.height.width.mas_equalTo(47);
 	}];
 }
 
@@ -99,6 +106,13 @@
 		[_leftTimeButton setTitleColor:tintColor forState:UIControlStateNormal];
 	}
 	return _leftTimeButton;
+}
+
+- (UIImageView *)playerIcon{
+	if (!_playerIcon) {
+		_playerIcon = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"index_player"]];
+	}
+	return _playerIcon;
 }
 
 - (UIButton *)rightLookButton {

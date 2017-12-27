@@ -12,7 +12,7 @@
 #import "HTMatriculateAllHeaderCell.h"
 #import "HTMatriculateAllCell.h"
 #import "HTMatriculateRecordModel.h"
-#import "HTSchoolMatriculateResultController.h"
+#import "HTChooseSchoolResultController.h"
 
 @interface HTMatriculateAllSchoolController ()
 
@@ -65,8 +65,11 @@
 		__weak typeof(self) weakSelf = self;
 		[_tableView ht_updateSection:1 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
 			[sectionMaker.cellClass([HTMatriculateAllCell class]).rowHeight(60) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTMatriculateSingleSchoolModel *model) {
-				HTSchoolMatriculateResultController *resultController = [[HTSchoolMatriculateResultController alloc] init];
-				resultController.resultIdString = model.ID;
+			//	HTSchoolMatriculateResultController *resultController = [[HTSchoolMatriculateResultController alloc] init];
+			//	resultController.resultIdString = model.ID;
+				
+				HTChooseSchoolResultController *resultController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTChooseSchoolResultController");
+				resultController.resultID = model.ID;
 				[weakSelf.navigationController pushViewController:resultController animated:true];
 			}];
 		}];

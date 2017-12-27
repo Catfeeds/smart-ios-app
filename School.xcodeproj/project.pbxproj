@@ -59,6 +59,9 @@
 		5644C0941FE93605004D6E27 /* HTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C07E1FE93605004D6E27 /* HTPlayerView.m */; };
 		5644C0971FE93A4D004D6E27 /* HTVideoWiFIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644C0961FE93A4D004D6E27 /* HTVideoWiFIManager.m */; };
 		5644CFC61FEA51EF000D451E /* HTStudyAbroadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644CFC51FEA51EF000D451E /* HTStudyAbroadModel.m */; };
+		5648B3541FF3315000DB099E /* HTProfessionalDetailAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648B3531FF3315000DB099E /* HTProfessionalDetailAlertView.m */; };
+		5648B3561FF3315C00DB099E /* HTProfessionalDetailAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5648B3551FF3315C00DB099E /* HTProfessionalDetailAlertView.xib */; };
+		5648B3591FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648B3581FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.m */; };
 		56565E851FEB574300441993 /* HTMentorAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E831FEB574300441993 /* HTMentorAnswerCell.m */; };
 		56565E861FEB574300441993 /* HTMentorAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56565E841FEB574300441993 /* HTMentorAnswerCell.xib */; };
 		56565E8A1FEB61A900441993 /* HTMentorAnswerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E881FEB61A900441993 /* HTMentorAnswerCollectionCell.m */; };
@@ -757,6 +760,11 @@
 		5644C0961FE93A4D004D6E27 /* HTVideoWiFIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTVideoWiFIManager.m; sourceTree = "<group>"; };
 		5644CFC41FEA51EF000D451E /* HTStudyAbroadModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTStudyAbroadModel.h; sourceTree = "<group>"; };
 		5644CFC51FEA51EF000D451E /* HTStudyAbroadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTStudyAbroadModel.m; sourceTree = "<group>"; };
+		5648B3521FF3315000DB099E /* HTProfessionalDetailAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTProfessionalDetailAlertView.h; sourceTree = "<group>"; };
+		5648B3531FF3315000DB099E /* HTProfessionalDetailAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTProfessionalDetailAlertView.m; sourceTree = "<group>"; };
+		5648B3551FF3315C00DB099E /* HTProfessionalDetailAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTProfessionalDetailAlertView.xib; sourceTree = "<group>"; };
+		5648B3571FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HTAlertProfessionalDetailView.h"; sourceTree = "<group>"; };
+		5648B3581FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HTAlertProfessionalDetailView.m"; sourceTree = "<group>"; };
 		56565E821FEB574300441993 /* HTMentorAnswerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMentorAnswerCell.h; sourceTree = "<group>"; };
 		56565E831FEB574300441993 /* HTMentorAnswerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMentorAnswerCell.m; sourceTree = "<group>"; };
 		56565E841FEB574300441993 /* HTMentorAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMentorAnswerCell.xib; sourceTree = "<group>"; };
@@ -3609,6 +3617,8 @@
 		C24BBF411F7152790025CBEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5648B3571FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.h */,
+				5648B3581FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4805,6 +4815,9 @@
 				C2B2E6261F7507DD004EEBB1 /* HTSchoolFilterProfessionalCell.m */,
 				C2B2E6271F7507DD004EEBB1 /* HTSchoolFilterSelectedCollectionCell.h */,
 				C2B2E6281F7507DD004EEBB1 /* HTSchoolFilterSelectedCollectionCell.m */,
+				5648B3521FF3315000DB099E /* HTProfessionalDetailAlertView.h */,
+				5648B3531FF3315000DB099E /* HTProfessionalDetailAlertView.m */,
+				5648B3551FF3315C00DB099E /* HTProfessionalDetailAlertView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6071,6 +6084,7 @@
 				565EA2BD1FDFB8810042732B /* ShareSDK.bundle in Resources */,
 				C20CDE6D1EF11B8A00BA6D60 /* TZImagePickerController.bundle in Resources */,
 				C26C66AA1F25FA3000FFC7E5 /* cn2_launch_introduce_2.png in Resources */,
+				5648B3561FF3315C00DB099E /* HTProfessionalDetailAlertView.xib in Resources */,
 				C26C66A91F25FA3000FFC7E5 /* cn2_launch_introduce_1.png in Resources */,
 				56FA642E1FE7DC210013A165 /* HTDiscoverCell.xib in Resources */,
 				C29646881F5CED130031C109 /* JSQMessagesAssets.bundle in Resources */,
@@ -6272,6 +6286,7 @@
 				C29646BA1F5CEE0B0031C109 /* HTChatController.m in Sources */,
 				C23C037A1F5802CD0093F354 /* HTUserHistoryManager.m in Sources */,
 				C22EAB721F3030CE00969300 /* HTAnswerContentController.m in Sources */,
+				5648B3541FF3315000DB099E /* HTProfessionalDetailAlertView.m in Sources */,
 				C296469A1F5CED130031C109 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
 				C251C62F1F73763000D0D165 /* HTMatriculateSearchController.m in Sources */,
 				C2EE1FBA1F5BBAFB00C8176F /* HTMatriculateRecordTypeModel.m in Sources */,
@@ -6453,6 +6468,7 @@
 				560EEA941FEA3D5E0018A0CC /* HTStudyAbroadSelectorController.m in Sources */,
 				C2242FD31F75856700EC82F0 /* HTDropBoxDetailView.m in Sources */,
 				C20CDE841EF11B8A00BA6D60 /* YYCGUtilities.m in Sources */,
+				5648B3591FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.m in Sources */,
 				C251C6331F73763000D0D165 /* HTSchoolMatriculateModel.m in Sources */,
 				C2FF3E181F4141620005F287 /* HTCommunityController.m in Sources */,
 				C251C6361F73763000D0D165 /* HTSchoolMatriculateHeaderView.m in Sources */,

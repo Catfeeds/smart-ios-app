@@ -15,11 +15,13 @@
 #import "HTChooseSchoolEvaluationController.h"
 #import "RTRootNavigationController.h"
 #import "HTShareView.h"
+#import "HTChooseSchoolEvaluationResultModel.h"
 
 #define HEADER @"header"
 
 @interface HTChooseSchoolResultController ()<UITableViewDelegate, UITableViewDataSource,HTAllSchoolCellDelegate>
 
+@property (nonatomic, strong) HTChooseSchoolEvaluationResultModel *resultModel;
 
 @end
 
@@ -39,9 +41,19 @@
 }
 
 - (void)loadData{
-    NSString *nickname = HTPlaceholderString(self.resultModel.user.nickname, self.resultModel.user.userName);
-    [self layoutHeaderView:nickname score:self.resultModel.data.score];
-    [self.tableView reloadData];
+	
+	HTNetworkModel *resultNetwork = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleNone];
+	resultNetwork.autoAlertString = @"获取选校结果";
+	[HTRequestManager requestSchoolMatriculateAllResultListWithNetworkModel:resultNetwork resultIdString:self.resultID complete:^(id response, HTError *errorModel) {
+		if (!errorModel.existError) {
+			self.resultModel = [HTChooseSchoolEvaluationResultModel mj_objectWithKeyValues:response];
+			NSString *nickname = HTPlaceholderString(self.resultModel.user.nickname, self.resultModel.user.userName);
+			[self layoutHeaderView:nickname score:self.resultModel.data.score];
+			[self.tableView reloadData];
+		}
+	}];
+	
+	
     
 }
 

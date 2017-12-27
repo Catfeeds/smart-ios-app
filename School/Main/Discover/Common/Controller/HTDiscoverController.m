@@ -40,18 +40,18 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	if (!self.headlineHeaderView.activityModelArray.count) {
+	//if (!self.headlineHeaderView.activityModelArray.count) {
 		HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
 		[HTRequestManager requestActivityBannerWithNetworkModel:networkModel complete:^(id response, HTError *errorModel) {
 			if (errorModel.existError) {
 				return;
 			}
-			NSArray *bannerModelArray = [HTDiscoverActivityModel mj_objectArrayWithKeyValuesArray:response[@"banner"]];
+			NSArray *bannerModelArray = [HTDiscoverActivityModel mj_objectArrayWithKeyValuesArray:response[@"data"][@"data"]];
 			self.headlineHeaderView.activityModelArray = bannerModelArray;
-//			[self.headerView setBannerModelArray:bannerModelArray];
-//			[self.headerView setTopLineModelArray:bannerModelArray];
+		//	[self.headerView setBannerModelArray:bannerModelArray];
+		//	[self.headerView setTopLineModelArray:bannerModelArray];
 		}];
-	}
+	//}
 }
 
 - (void)initializeDataSource {
@@ -81,7 +81,7 @@
 //	UIBarButtonItem *issueBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:issueButton];
 //	self.navigationItem.rightBarButtonItem = issueBarButtonItem;
 	
-//	self.magicView.headerHeight = self.headerView.ht_h;
+//  self.magicView.headerHeight = self.headerView.ht_h;
 //	[self.magicView.headerView addSubview:self.headerView];
 
 	self.magicView.headerHeight = self.headlineHeaderView.ht_h;

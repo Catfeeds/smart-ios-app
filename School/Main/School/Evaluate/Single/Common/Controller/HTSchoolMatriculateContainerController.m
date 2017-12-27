@@ -28,25 +28,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	if (StringNotEmpty(self.schoolID)) {
+		[self requestSchool];
+	}else{
+		[self loadInterface:self.evaluationSchool];
+	}
+	
+}
+
+- (void)requestSchool{
+	HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
+	networkModel.autoAlertString = @"获取学校详情";
+	[HTRequestManager requestSchoolDetailWithNetworkModel:networkModel schoolId:self.schoolID complete:^(id response, HTError *errorModel) {
+		if (errorModel.existError) {
+			[self loadInterface:self.evaluationSchool];
+		}
+		HTSchoolModel *schoolModel = [HTSchoolModel mj_objectWithKeyValues:response[@"data"]];
+		schoolModel.major = [HTSchoolProfessionalModel mj_objectArrayWithKeyValuesArray:response[@"major"]];
+		schoolModel.country = [NSString stringWithFormat:@"%@",response[@"country"]];
+		[self loadInterface:schoolModel];
+	}];
+}
+
+- (void)loadInterface:(HTSchoolModel *)evaluationSchool{
+	
 	self.parameter = [HTSchoolMatriculateParameterModel new];
-    self.childControllerArray = [NSMutableArray arrayWithArray:self.childViewControllers];
-    UIViewController *currentController = self.childViewControllers.lastObject;
-    
-    [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        ((HTSchoolMatriculateController *)obj).delegate = self;
-        obj.view.hidden = YES;
+	self.childControllerArray = [NSMutableArray arrayWithArray:self.childViewControllers];
+	UIViewController *currentController = self.childViewControllers.lastObject;
+	
+	[self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		((HTSchoolMatriculateController *)obj).delegate = self;
+		obj.view.hidden = YES;
 		if ([obj isKindOfClass:[HTSelectSchoolController class]]) {
 			
 			HTSelectSchoolController *vc = ((HTSelectSchoolController *)obj);
 			vc.parameter = self.parameter;
-			vc.selectedSchool = self.evaluationSchool;
+			vc.selectedSchool = evaluationSchool;
 			self.childControllerArray[0] = obj;
 		}
-        if ([obj isKindOfClass:[HTPersonMessageContainerController class]]) self.childControllerArray[1] = obj;
-    }];
-    
-    [self transitionController:currentController toControllerIndex:0];
+		if ([obj isKindOfClass:[HTPersonMessageContainerController class]]) self.childControllerArray[1] = obj;
+	}];
 	
+	[self transitionController:currentController toControllerIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,7 +124,10 @@
 	
         HTSchoolMatriculateController *toController = (HTSchoolMatriculateController*)self.childControllerArray[index];
 		toController.parameter = self.parameter;
-      if (toController == currentController) return;
+	if (toController == currentController){
+		toController.view.hidden = NO;
+		return;
+	}
 	  if ([toController isKindOfClass:[HTPersonMessageContainerController class]]) {
 			HTPersonMessageContainerController *tempToController = (HTPersonMessageContainerController *)toController;
 			HTSelectSchoolController *tempCurrentController = (HTSelectSchoolController *)currentController;

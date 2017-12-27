@@ -13,9 +13,14 @@
 #import "HTFilterResultSchoolController.h"
 #import "HTFilterResultSchoolModel.h"
 #import "HTFilterResultSchoolCell.h"
+#import "HTSchoolMatriculateContainerController.h"
 #import "HTDropBoxView.h"
+#import "HTWebController.h"
+#import "HTProfessionalDetailAlertView.h"
+#import "HTSchoolController.h"
+#import "UIViewController+HTAlertProfessionalDetailView.h"
 
-@interface HTSchoolFilterController ()
+@interface HTSchoolFilterController () <HTProfessionalDetailAlertViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -207,9 +212,12 @@
         __weak typeof(self) weakSelf = self;
         [_tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
 			[[[sectionMaker.cellClass([HTFilterResultSchoolCell class]) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTFilterResultSchoolModel *model) {
-				HTFilterResultSchoolController *schoolController = [[HTFilterResultSchoolController alloc] init];
-				schoolController.resultSchoolModel = model;
-				[weakSelf.navigationController pushViewController:schoolController animated:true];
+//				HTFilterResultSchoolController *schoolController = [[HTFilterResultSchoolController alloc] init];
+//				schoolController.resultSchoolModel = model;
+				
+				HTSchoolController *schoolDetailController = [[HTSchoolController alloc] init];
+				schoolDetailController.schoolIdString = model.ID;
+				[weakSelf.navigationController pushViewController:schoolDetailController animated:true];
 			}] willEndDraggingBlock:^(UIScrollView *scrollView, CGPoint contentOffSet, UIEdgeInsets contentInSet, CGPoint velocity, CGPoint targetContentOffSet) {
 				//                if (velocity.y > 0.5) {
 				//                    if (!weakSelf.filterHeaderView.selectedHidden) {
@@ -221,7 +229,11 @@
 				//                    }
 				//                }
 			}] customCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof NSObject *model) {
-				
+				HTFilterResultSchoolCell *resultSchoolcell = (HTFilterResultSchoolCell *)cell;
+				resultSchoolcell.chooseMajorBlock = ^(HTFilterResultProfessionalModel *professional) {
+					
+					[self showProfessionDetailView:professional.ID];
+				} ;
 			}] ;
         }];
     }
@@ -234,6 +246,10 @@
     }
     return _filterHeaderView;
 }
+
+
+
+
 
 
 @end

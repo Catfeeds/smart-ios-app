@@ -15,6 +15,8 @@
 #import "HTLibraryApplyContentController.h"
 #import "HTDiscoverActivityDetailController.h"
 #import "HTProfessionDetailController.h"
+#import "UIViewController+HTAlertProfessionalDetailView.h"
+#import "UIViewController+VTMagic.h"
 
 @interface HTStoreContentController ()
 
@@ -49,9 +51,10 @@
                 }
                 case HTUserStoreTypeProfessional: {
 //                    HTProfessionalController *detailController = [[HTProfessionalController alloc] init];
-					HTProfessionDetailController *detailController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
-                    detailController.professionalId = model.lookId;
-                    viewController = detailController;
+//					HTProfessionDetailController *detailController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
+//                    detailController.professionalId = model.lookId;
+//                    viewController = detailController;
+					[weakSelf.magicController showProfessionDetailView:model.lookId];
                     break;
                 }
                 case HTUserStoreTypeAnswer: {
