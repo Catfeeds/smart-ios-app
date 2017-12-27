@@ -66,9 +66,9 @@
 			[weakSelf.tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
 				sectionMaker.modelArray(@[weakSelf.answerModel]);
 			}];
-			[weakSelf.tableView ht_updateSection:1 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
-				sectionMaker.modelArray(weakSelf.answerModel.answer);
-			}];
+            [weakSelf.tableView ht_updateSection:1 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
+                sectionMaker.modelArray(weakSelf.answerModel.answer);
+            }];
 			
 			NSString *answerIdString = HTPlaceholderString(weakSelf.answerIdString, @"");
 			[HTUserActionManager trackUserActionWithType:HTUserActionTypeVisitAnswerDetail keyValue:@{@"id":answerIdString}];
@@ -152,6 +152,8 @@
 - (HTAnswerInputView *) inputView{
 	if (!_inputView) {
 		_inputView = [[NSBundle mainBundle] loadNibNamed:@"HTAnswerInputView" owner:nil options:nil].firstObject;
+        __weak typeof(self) weakSelf = self;
+        
 	}
 	return _inputView;
 }
@@ -185,17 +187,7 @@
 					[weakSelf sendNewSolution:model answerReplyModel:nil text:text];
 				}];
 			}] customCellBlock:^(UITableView *tableView, NSInteger row, __kindof HTAnswerSolutionCell *cell, __kindof NSObject *model) {
-				if (!cell.reloadHeightBlock) {
-					[cell setReloadHeightBlock:^{
-						@try {
-							[weakSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:1]] withRowAnimation:UITableViewRowAnimationAutomatic];
-						} @catch (NSException *exception) {
-							
-						} @finally {
-							
-						}
-					}];
-				}
+			
 				
 				if (!cell.replycommentBlock) {
 					cell.replycommentBlock = ^(HTAnswerSolutionModel *solutionModel, HTAnswerReplyModel *answerReplyModel) {

@@ -67,7 +67,7 @@
         [_tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
             [sectionMaker.cellClass([HTLikeCell class]).rowHeight(80) didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTLikeModel *model) {
                 HTSomeoneController *someoneController = [[HTSomeoneController alloc] init];
-                someoneController.userIdString = model.uid;
+                someoneController.userIdString = model.followUser;
                 [weakSelf.navigationController pushViewController:someoneController animated:true];
             }];
         }];

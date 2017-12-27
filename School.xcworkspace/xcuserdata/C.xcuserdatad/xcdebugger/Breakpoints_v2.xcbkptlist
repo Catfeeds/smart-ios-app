@@ -156,11 +156,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "School/Main/Answer/Main/Controller/HTAnswerDetailController.m"
-            timestampString = "535576931.100067"
+            timestampString = "536083865.867087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "-tableView"
             landmarkType = "7">
             <Locations>
@@ -172,11 +172,11 @@
                   moduleName = "School"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/School/School/School/Main/Answer/Main/Controller/HTAnswerDetailController.m"
-                  timestampString = "536003302.419818"
+                  timestampString = "536083816.231567"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
                   offsetFromSymbolStart = "136">
                </Location>
                <Location
@@ -187,11 +187,11 @@
                   moduleName = "School"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/School/School/School/Main/Answer/Main/Controller/HTAnswerDetailController.m"
-                  timestampString = "536003302.421529"
+                  timestampString = "536083816.233164"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "174"
-                  endingLineNumber = "174"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
                   offsetFromSymbolStart = "48">
                </Location>
             </Locations>
@@ -306,6 +306,22 @@
             startingLineNumber = "97"
             endingLineNumber = "97"
             landmarkName = "-signUpAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "School/Main/Mine/Likes/Controller/HTLikeController.m"
+            timestampString = "536083865.867282"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-tableView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

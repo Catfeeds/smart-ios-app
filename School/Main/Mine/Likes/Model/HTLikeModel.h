@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString *uid;
 
 @property (nonatomic, copy) NSString *image;
-
+@property (nonatomic, strong) NSString *followUser;
 @property (nonatomic, copy) NSString *username;
 
 @property (nonatomic, copy) NSString *nickname;

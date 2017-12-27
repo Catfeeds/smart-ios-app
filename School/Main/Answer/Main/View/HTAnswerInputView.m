@@ -33,6 +33,7 @@
 	if (!textView.hasText) {
 		self.placeholderLabel.text = DefaultPlaceholderStr;
 	}
+    
 	[self.window setNeedsLayout];
 	[self.window layoutIfNeeded];
 }

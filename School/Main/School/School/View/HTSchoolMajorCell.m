@@ -77,7 +77,9 @@ static NSString *kHTSchoolMajorReuseIdentifier = @"kHTSchoolMajorReuseIdentifier
 			[self tableView:self.titleTableView didSelectItemAtIndexPath:indexPath];
 		}
 	}];
-	CGFloat modelHeight = [self.class titleTableRowHeight] * modelArray.count;
+    
+    NSInteger tempCount = modelArray.count > 7 ?  modelArray.count : 7; //最低 7个cell高度
+	CGFloat modelHeight = [self.class titleTableRowHeight] * tempCount;
 	[model ht_setRowHeightNumber:@(modelHeight) forCellClass:self.class];
 }
 
@@ -87,7 +89,7 @@ static NSString *kHTSchoolMajorReuseIdentifier = @"kHTSchoolMajorReuseIdentifier
 	CGFloat pointSize = [HTSchoolMajorDetailCell cellFontPointSize];
 	CGFloat width = [model.name boundingRectWithSize:CGSizeMake(MAXFLOAT, height) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:pointSize]} context:nil].size.width;
 	width += 45;
-	return CGSizeMake(width, height);
+	return CGSizeMake(collectionView.frame.size.width, height);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

@@ -32,7 +32,10 @@
 	self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage ht_pureColor:[UIColor clearColor]]];
 	self.selectedBackgroundView.alpha = 0;
 	[self.titleNameButton mas_updateConstraints:^(MASConstraintMaker *make) {
-		make.edges.mas_equalTo(UIEdgeInsetsZero);
+		//make.edges.mas_equalTo(UIEdgeInsetsZero);
+        make.centerX.mas_equalTo(self);
+        make.top.mas_equalTo(self);
+        make.bottom.mas_equalTo(self);
 	}];
 }
 
@@ -61,6 +64,7 @@
 		[_titleNameButton setTitleColor:[UIColor ht_colorStyle:HTColorStylePrimaryTitle] forState:UIControlStateNormal];
 		[_titleNameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 		_titleNameButton.userInteractionEnabled = false;
+        _titleNameButton.contentEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 20);
 	}
 	return _titleNameButton;
 }

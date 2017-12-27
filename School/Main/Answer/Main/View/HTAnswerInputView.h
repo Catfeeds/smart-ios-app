@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^SendTextBlock)(NSString *text);
-
 @interface HTInputTextView : UITextView
 
 @end
@@ -18,6 +17,7 @@ typedef void(^SendTextBlock)(NSString *text);
 
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (nonatomic, copy) SendTextBlock sendTextBlock;
+@property (nonatomic, copy) void(^resignFirstResponderBlock)(void);
 @property (nonatomic, strong) NSString *placeholder;
 @property (weak, nonatomic) IBOutlet HTInputTextView *inputTextView;
 
