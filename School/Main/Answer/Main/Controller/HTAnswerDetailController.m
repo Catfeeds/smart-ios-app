@@ -152,7 +152,7 @@
 - (HTAnswerInputView *) inputView{
 	if (!_inputView) {
 		_inputView = [[NSBundle mainBundle] loadNibNamed:@"HTAnswerInputView" owner:nil options:nil].firstObject;
-        __weak typeof(self) weakSelf = self;
+       
         
 	}
 	return _inputView;

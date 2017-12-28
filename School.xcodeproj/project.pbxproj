@@ -62,6 +62,7 @@
 		5648B3541FF3315000DB099E /* HTProfessionalDetailAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648B3531FF3315000DB099E /* HTProfessionalDetailAlertView.m */; };
 		5648B3561FF3315C00DB099E /* HTProfessionalDetailAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5648B3551FF3315C00DB099E /* HTProfessionalDetailAlertView.xib */; };
 		5648B3591FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648B3581FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.m */; };
+		565071D41FF488ED006205D1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565071D31FF488ED006205D1 /* Login.storyboard */; };
 		56565E851FEB574300441993 /* HTMentorAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E831FEB574300441993 /* HTMentorAnswerCell.m */; };
 		56565E861FEB574300441993 /* HTMentorAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56565E841FEB574300441993 /* HTMentorAnswerCell.xib */; };
 		56565E8A1FEB61A900441993 /* HTMentorAnswerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565E881FEB61A900441993 /* HTMentorAnswerCollectionCell.m */; };
@@ -92,6 +93,8 @@
 		565EA2BE1FDFB8810042732B /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EA2AB1FDFB87E0042732B /* ShareSDKConnector.framework */; };
 		5663C0A71FAAC6660026663E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5663C0A61FAAC6660026663E /* Home.storyboard */; };
 		5663C0A91FAB18C20026663E /* ChooseSchoolHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5663C0A81FAB18C20026663E /* ChooseSchoolHead.xib */; };
+		568216181FF48A8E00A45CDA /* HTUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 568216171FF48A8E00A45CDA /* HTUserProtocolViewController.m */; };
+		5682161B1FF4CE8D00A45CDA /* HTRankYearCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5682161A1FF4CE8D00A45CDA /* HTRankYearCollectionCell.m */; };
 		56829A3E1FD914080093DA25 /* HTChooseSchoolResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56829A3D1FD914080093DA25 /* HTChooseSchoolResultController.m */; };
 		56829A411FD917430093DA25 /* HTConditionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56829A401FD917430093DA25 /* HTConditionCell.m */; };
 		56829A441FD9193F0093DA25 /* HTAllSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56829A431FD9193F0093DA25 /* HTAllSchoolCell.m */; };
@@ -350,13 +353,9 @@
 		C24BC03C1F7152790025CBEB /* HTMajorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFCD1F7152790025CBEB /* HTMajorModel.m */; };
 		C24BC03D1F7152790025CBEB /* HTMajorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFD01F7152790025CBEB /* HTMajorCell.m */; };
 		C24BC0411F7152790025CBEB /* HTProfessionalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFDB1F7152790025CBEB /* HTProfessionalModel.m */; };
-		C24BC0481F7152790025CBEB /* HTSchoolRankController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFEC1F7152790025CBEB /* HTSchoolRankController.m */; };
 		C24BC0491F7152790025CBEB /* HTSchoolRankFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFEF1F7152790025CBEB /* HTSchoolRankFilterModel.m */; };
 		C24BC04A1F7152790025CBEB /* HTSchoolRankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFF11F7152790025CBEB /* HTSchoolRankModel.m */; };
 		C24BC04B1F7152790025CBEB /* HTSchoolRankSelecetdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFF31F7152790025CBEB /* HTSchoolRankSelecetdManager.m */; };
-		C24BC04C1F7152790025CBEB /* HTSchoolRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFF61F7152790025CBEB /* HTSchoolRankCell.m */; };
-		C24BC04D1F7152790025CBEB /* HTSchoolRankFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFF81F7152790025CBEB /* HTSchoolRankFilterCell.m */; };
-		C24BC04E1F7152790025CBEB /* HTSchoolRankFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BBFFA1F7152790025CBEB /* HTSchoolRankFilterView.m */; };
 		C24BC0521F7152790025CBEB /* HTSchoolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BC0051F7152790025CBEB /* HTSchoolModel.m */; };
 		C24BC0541F7152790025CBEB /* HTSchoolSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C24BC00A1F7152790025CBEB /* HTSchoolSectionHeaderView.m */; };
 		C24D88FB1EFAF1EE00E4EDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C24D88FA1EFAF1EE00E4EDD7 /* Assets.xcassets */; };
@@ -765,6 +764,7 @@
 		5648B3551FF3315C00DB099E /* HTProfessionalDetailAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTProfessionalDetailAlertView.xib; sourceTree = "<group>"; };
 		5648B3571FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HTAlertProfessionalDetailView.h"; sourceTree = "<group>"; };
 		5648B3581FF3815D00DB099E /* UIViewController+HTAlertProfessionalDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HTAlertProfessionalDetailView.m"; sourceTree = "<group>"; };
+		565071D31FF488ED006205D1 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		56565E821FEB574300441993 /* HTMentorAnswerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMentorAnswerCell.h; sourceTree = "<group>"; };
 		56565E831FEB574300441993 /* HTMentorAnswerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMentorAnswerCell.m; sourceTree = "<group>"; };
 		56565E841FEB574300441993 /* HTMentorAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMentorAnswerCell.xib; sourceTree = "<group>"; };
@@ -814,6 +814,10 @@
 		565EA2AB1FDFB87E0042732B /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
 		5663C0A61FAAC6660026663E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		5663C0A81FAB18C20026663E /* ChooseSchoolHead.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseSchoolHead.xib; sourceTree = "<group>"; };
+		568216161FF48A8E00A45CDA /* HTUserProtocolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUserProtocolViewController.h; sourceTree = "<group>"; };
+		568216171FF48A8E00A45CDA /* HTUserProtocolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUserProtocolViewController.m; sourceTree = "<group>"; };
+		568216191FF4CE8D00A45CDA /* HTRankYearCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankYearCollectionCell.h; sourceTree = "<group>"; };
+		5682161A1FF4CE8D00A45CDA /* HTRankYearCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankYearCollectionCell.m; sourceTree = "<group>"; };
 		56829A3C1FD914080093DA25 /* HTChooseSchoolResultController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChooseSchoolResultController.h; sourceTree = "<group>"; };
 		56829A3D1FD914080093DA25 /* HTChooseSchoolResultController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChooseSchoolResultController.m; sourceTree = "<group>"; };
 		56829A3F1FD917430093DA25 /* HTConditionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTConditionCell.h; sourceTree = "<group>"; };
@@ -1329,20 +1333,12 @@
 		C24BBFD01F7152790025CBEB /* HTMajorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMajorCell.m; sourceTree = "<group>"; };
 		C24BBFDA1F7152790025CBEB /* HTProfessionalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProfessionalModel.h; sourceTree = "<group>"; };
 		C24BBFDB1F7152790025CBEB /* HTProfessionalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProfessionalModel.m; sourceTree = "<group>"; };
-		C24BBFEB1F7152790025CBEB /* HTSchoolRankController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSchoolRankController.h; sourceTree = "<group>"; };
-		C24BBFEC1F7152790025CBEB /* HTSchoolRankController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSchoolRankController.m; sourceTree = "<group>"; };
 		C24BBFEE1F7152790025CBEB /* HTSchoolRankFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSchoolRankFilterModel.h; sourceTree = "<group>"; };
 		C24BBFEF1F7152790025CBEB /* HTSchoolRankFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSchoolRankFilterModel.m; sourceTree = "<group>"; };
 		C24BBFF01F7152790025CBEB /* HTSchoolRankModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSchoolRankModel.h; sourceTree = "<group>"; };
 		C24BBFF11F7152790025CBEB /* HTSchoolRankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSchoolRankModel.m; sourceTree = "<group>"; };
 		C24BBFF21F7152790025CBEB /* HTSchoolRankSelecetdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSchoolRankSelecetdManager.h; sourceTree = "<group>"; };
 		C24BBFF31F7152790025CBEB /* HTSchoolRankSelecetdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSchoolRankSelecetdManager.m; sourceTree = "<group>"; };
-		C24BBFF51F7152790025CBEB /* HTSchoolRankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSchoolRankCell.h; sourceTree = "<group>"; };
-		C24BBFF61F7152790025CBEB /* HTSchoolRankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSchoolRankCell.m; sourceTree = "<group>"; };
-		C24BBFF71F7152790025CBEB /* HTSchoolRankFilterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSchoolRankFilterCell.h; sourceTree = "<group>"; };
-		C24BBFF81F7152790025CBEB /* HTSchoolRankFilterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSchoolRankFilterCell.m; sourceTree = "<group>"; };
-		C24BBFF91F7152790025CBEB /* HTSchoolRankFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSchoolRankFilterView.h; sourceTree = "<group>"; };
-		C24BBFFA1F7152790025CBEB /* HTSchoolRankFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSchoolRankFilterView.m; sourceTree = "<group>"; };
 		C24BC0041F7152790025CBEB /* HTSchoolModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSchoolModel.h; sourceTree = "<group>"; };
 		C24BC0051F7152790025CBEB /* HTSchoolModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSchoolModel.m; sourceTree = "<group>"; };
 		C24BC0091F7152790025CBEB /* HTSchoolSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSchoolSectionHeaderView.h; sourceTree = "<group>"; };
@@ -2187,6 +2183,7 @@
 			children = (
 				5663C0A61FAAC6660026663E /* Home.storyboard */,
 				5663C0A81FAB18C20026663E /* ChooseSchoolHead.xib */,
+				565071D31FF488ED006205D1 /* Login.storyboard */,
 			);
 			path = InterfaceBuilder;
 			sourceTree = "<group>";
@@ -3212,6 +3209,8 @@
 				C241A4681EF21EEC00094EF7 /* HTRegisterController.m */,
 				C2D4C5E61F0B8EBC00723169 /* HTSureNicknameController.h */,
 				C2D4C5E71F0B8EBC00723169 /* HTSureNicknameController.m */,
+				568216161FF48A8E00A45CDA /* HTUserProtocolViewController.h */,
+				568216171FF48A8E00A45CDA /* HTUserProtocolViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3862,8 +3861,6 @@
 		C24BBFEA1F7152790025CBEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C24BBFEB1F7152790025CBEB /* HTSchoolRankController.h */,
-				C24BBFEC1F7152790025CBEB /* HTSchoolRankController.m */,
 				5625E7451FE35A260089034C /* HTUniversityRankClassController.h */,
 				5625E7461FE35A260089034C /* HTUniversityRankClassController.m */,
 				5625E7511FE3A5150089034C /* HTUniversityRankController.h */,
@@ -3890,16 +3887,12 @@
 		C24BBFF41F7152790025CBEB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C24BBFF51F7152790025CBEB /* HTSchoolRankCell.h */,
-				C24BBFF61F7152790025CBEB /* HTSchoolRankCell.m */,
-				C24BBFF71F7152790025CBEB /* HTSchoolRankFilterCell.h */,
-				C24BBFF81F7152790025CBEB /* HTSchoolRankFilterCell.m */,
-				C24BBFF91F7152790025CBEB /* HTSchoolRankFilterView.h */,
-				C24BBFFA1F7152790025CBEB /* HTSchoolRankFilterView.m */,
 				5625E7481FE35A870089034C /* HTUniversityRankClassCell.h */,
 				5625E7491FE35A870089034C /* HTUniversityRankClassCell.m */,
 				5625E74E1FE3A2AF0089034C /* HTUniversityRankCell.h */,
 				5625E74F1FE3A2AF0089034C /* HTUniversityRankCell.m */,
+				568216191FF4CE8D00A45CDA /* HTRankYearCollectionCell.h */,
+				5682161A1FF4CE8D00A45CDA /* HTRankYearCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6068,6 +6061,7 @@
 			files = (
 				5663C0A91FAB18C20026663E /* ChooseSchoolHead.xib in Resources */,
 				56FA64331FE7F0D40013A165 /* HTDiscoverImageCollectionCell.xib in Resources */,
+				565071D41FF488ED006205D1 /* Login.storyboard in Resources */,
 				C20CDE341EF11B8A00BA6D60 /* mouse@2x.png in Resources */,
 				C20CDEDF1EF1219200BA6D60 /* Settings.bundle in Resources */,
 				C26C66AD1F25FB8700FFC7E5 /* cn2_login_background.png in Resources */,
@@ -6194,6 +6188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2E66AB51F2F09DF0000651A /* HTIndexHeaderView.m in Sources */,
+				5682161B1FF4CE8D00A45CDA /* HTRankYearCollectionCell.m in Sources */,
 				C29646B21F5CED130031C109 /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
 				C2E66AAE1F2F09DF0000651A /* HTIndexHeaderCollectionModel.m in Sources */,
 				C252D8591F00F1E200463644 /* HTLoginNavigationController.m in Sources */,
@@ -6269,7 +6264,6 @@
 				C23C036D1F58012D0093F354 /* HTHistoryCell.m in Sources */,
 				C29646A61F5CED130031C109 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				C20CDE961EF11B8A00BA6D60 /* YYMemoryCache.m in Sources */,
-				C24BC04D1F7152790025CBEB /* HTSchoolRankFilterCell.m in Sources */,
 				C2D617681F78D9E500F4C932 /* HTDiscoverAttentionModel.m in Sources */,
 				C29E366E1F73E27E000A85D9 /* HTSchoolTextCell.m in Sources */,
 				C28BD67F1F45301F00FC689D /* NSObject+HTExtension.m in Sources */,
@@ -6426,6 +6420,7 @@
 				5644C08C1FE93605004D6E27 /* HTPlayerSpeedCell.m in Sources */,
 				C20CDEC11EF11B8A00BA6D60 /* YYThreadSafeArray.m in Sources */,
 				C2E66AB11F2F09DF0000651A /* HTIndexActivityIndexCell.m in Sources */,
+				568216181FF48A8E00A45CDA /* HTUserProtocolViewController.m in Sources */,
 				C22EAB6F1F3030BC00969300 /* HTAnswerOnlineController.m in Sources */,
 				C2D4C5E81F0B8EBC00723169 /* HTSureNicknameController.m in Sources */,
 				C20CDE891EF11B8A00BA6D60 /* UIControl+YYAdd.m in Sources */,
@@ -6474,7 +6469,6 @@
 				C251C6361F73763000D0D165 /* HTSchoolMatriculateHeaderView.m in Sources */,
 				027637481FC1DB4B00959DD1 /* HTChooseSchoolEvaluationController.m in Sources */,
 				C24BC02E1F7152790025CBEB /* HTSchoolHotDetailCell.m in Sources */,
-				C24BC04E1F7152790025CBEB /* HTSchoolRankFilterView.m in Sources */,
 				C2E66AB41F2F09DF0000651A /* HTIndexHeaderCollectionCell.m in Sources */,
 				C20CDE7C1EF11B8A00BA6D60 /* NSNumber+YYAdd.m in Sources */,
 				C20CDE981EF11B8A00BA6D60 /* CALayer+YYWebImage.m in Sources */,
@@ -6745,10 +6739,8 @@
 				C20CDE6B1EF11B8A00BA6D60 /* TZImageCropManager.m in Sources */,
 				C29646991F5CED130031C109 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				C20CDEC01EF11B8A00BA6D60 /* YYSentinel.m in Sources */,
-				C24BC0481F7152790025CBEB /* HTSchoolRankController.m in Sources */,
 				C2EE1F9D1F5B281200C8176F /* HTAdvisorDetailAnswerController.m in Sources */,
 				C2EE1FC71F5C014500C8176F /* HTLikeModel.m in Sources */,
-				C24BC04C1F7152790025CBEB /* HTSchoolRankCell.m in Sources */,
 				C296469E1F5CED130031C109 /* JSQMessage.m in Sources */,
 				5644CFC61FEA51EF000D451E /* HTStudyAbroadModel.m in Sources */,
 				C20CDE401EF11B8A00BA6D60 /* NJKWebViewProgressView.m in Sources */,

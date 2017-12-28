@@ -181,7 +181,7 @@ static NSString *kHTApplicationIdString = @"1271275068";
 							method:HTNetworkRequestMethodGet
 							   url:@"http://www.smartapply.cn/cn/app-api/university-class"
 						 parameter:@{@"page":HTPlaceholderString(currentPage, @"1"),
-									 @"pageSize":HTPlaceholderString(pageSize, @"10")} complete:complete];
+									 @"pageSize":HTPlaceholderString(pageSize, @"20")} complete:complete];
 }
 
 + (void)requestRankSchoolListWithNetworkModel:(HTNetworkModel *)networkModel classIdString:(NSString *)classIdString yearIdString:(NSString *)yearIdString currentPage:(NSString *)currentPage pageSize:(NSString *)pageSize complete:(HTUserTaskCompleteBlock)complete {
@@ -191,7 +191,7 @@ static NSString *kHTApplicationIdString = @"1271275068";
 	
 	[HTNetworkManager requestModel:networkModel
 							method:HTNetworkRequestMethodPost
-							   url:@"http://www.smartapply.cn/cn/app-api/university-rank"
+							   url:@"http://www.smartapply.cn/cn/app-api/school-rank"
 						 parameter:@{@"classId":HTPlaceholderString(classIdString, @""),
 									 @"yearId":HTPlaceholderString(yearIdString, @""),
 									 @"page":HTPlaceholderString(currentPage, @"1"),
@@ -303,7 +303,7 @@ static NSString *kHTApplicationIdString = @"1271275068";
 	NSString *replyType = @"3";
 	NSString *replyUser = HTPlaceholderString(answerReplyModel.nickname, answerReplyModel.username);
 	replyUser = HTPlaceholderString(replyUser, @"");
-	NSString *replyUid = HTPlaceholderString(answerReplyModel.userid, @"");
+	NSString *replyUid = HTPlaceholderString(answerReplyModel.userId, @"");
 	[HTNetworkManager requestModel:networkModel
 							method:HTNetworkRequestMethodPost
 							   url:@"http://www.smartapply.cn/cn/app-api/sub-answer"

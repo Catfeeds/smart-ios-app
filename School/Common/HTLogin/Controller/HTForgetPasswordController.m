@@ -38,7 +38,9 @@
 }
 
 - (void)initializeDataSource {
-	
+	[HTRequestManager requestMessageCodeSurePersonWithNetworkModel:nil complete:^(id response, HTError *errorModel) {
+		
+	}];
 }
 
 - (void)initializeUserInterface {

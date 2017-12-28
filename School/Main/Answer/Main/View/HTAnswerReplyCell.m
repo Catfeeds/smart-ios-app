@@ -74,7 +74,7 @@
     
     [self.headImageView ht_whenTap:^(UIView *view) {
         HTSomeoneController *someoneController = [[HTSomeoneController alloc] init];
-        someoneController.userIdString = model.userid;
+        someoneController.userIdString = model.userId;
         [weakSelf.ht_controller.navigationController pushViewController:someoneController animated:true];
     }];
 }

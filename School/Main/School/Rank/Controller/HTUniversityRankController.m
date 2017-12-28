@@ -12,15 +12,19 @@
 #import "HTUniversityRankCell.h"
 #import "MJRefresh.h"
 #import "HTSchoolController.h"
+#import "HTRankYearCollectionCell.h"
 
-@interface HTUniversityRankController () <UITableViewDelegate, UITableViewDataSource>
+@interface HTUniversityRankController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *yearButton_2018;
 @property (nonatomic, assign) NSInteger currentPage;
 @property (nonatomic, strong) UIButton *selectedYear;
-@property (nonatomic, strong) NSMutableArray<HTSchoolRankModel *> *schoolRankModelArray;
+@property (nonatomic, strong) NSMutableArray<HTUniversityRankModel *> *schoolRankModelArray;
 @property (nonatomic, strong) HTNetworkModel *networkModel;
+@property (nonatomic, strong) NSArray *yearArray;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *yearCollectionView;
 
 @end
 
@@ -92,7 +96,15 @@
 			return;
 		}
 		NSMutableArray *modelArray = [HTSchoolRankModel mj_objectArrayWithKeyValuesArray:response[@"data"]];
+//		NSMutableArray *modelArray;
 		
+		if (!ArrayNotEmpty(self.yearArray)) {
+			
+			self.yearArray = modelArray;
+			[self.yearCollectionView reloadData];
+			UICollectionViewCell *cell = [self.yearCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+			cell.selected = YES;
+		}
 		if (self.currentPage == 1) {
 			if (modelArray.count == 0) [self.tableView ht_endRefreshWithModelArrayCount:0];
             [self.tableView setContentOffset:CGPointZero];
@@ -132,7 +144,7 @@
 	return cell;
 }
 
-#pragma mark -UITableViewDelegate
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -141,6 +153,33 @@
 	[self.navigationController pushViewController:schoolController animated:YES];
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+	return 10;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+	HTRankYearCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HTRankYearCollectionCell" forIndexPath:indexPath];
+	cell.yearLabel.text = @(indexPath.row).stringValue;
+	//[self setLabelhighlight:cell.yearLabel isHighlight:cell.yearLabel.highlighted];
+	return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+	HTRankYearCollectionCell *cell = (HTRankYearCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
+	
+}
+
+
+
+
+
+
+
 /*
 #pragma mark - Navigation
 

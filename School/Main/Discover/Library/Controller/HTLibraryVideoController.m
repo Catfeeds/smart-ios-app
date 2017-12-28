@@ -15,6 +15,7 @@
 #import <UIScrollView+HTRefresh.h>
 #import "HTSellerDetailController.h"
 #import "HTPlayerController.h"
+#import "HTUserManager.h"
 
 @interface HTLibraryVideoController ()
 
@@ -62,12 +63,12 @@
 			}] didSelectedCellBlock:^(UICollectionView *collectionView, NSInteger item, __kindof UICollectionViewCell *cell, __kindof HTLibraryProjectVideoContentModel *model) {
 			//HTSellerDetailController *detailController = [[HTSellerDetailController alloc] init];
 			//	detailController.sellerIdString = model.ID;
-				
-				HTPlayerController *detailController = [[HTPlayerController alloc]init];
-				detailController.courseURLString = model.url;
-				detailController.sellerIdString = model.ID;
-				
-				[weakSelf.navigationController pushViewController:detailController animated:true];
+				[HTUserManager surePermissionHighOrEqual:HTUserPermissionExerciseAbleUser passCompareBlock:^(HTUser *user) {
+					HTPlayerController *detailController = [[HTPlayerController alloc]init];
+					detailController.courseURLString = model.url;
+					detailController.sellerIdString = model.ID;
+					[weakSelf.navigationController pushViewController:detailController animated:true];
+				}];
 			}];
 		}];
 	}];

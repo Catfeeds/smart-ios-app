@@ -21,7 +21,6 @@
 #import "HTSchoolFilterController.h"
 #import "HTOrganizationController.h"
 #import "HTMajorController.h"
-#import "HTSchoolRankController.h"
 #import "HTEvaluateController.h"
 #import "HTDiscoverActivityModel.h"
 #import "HTDiscoverActivityDetailController.h"

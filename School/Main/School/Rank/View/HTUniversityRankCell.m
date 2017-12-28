@@ -21,11 +21,11 @@
     // Configure the view for the selected state
 }
 
-- (void)setRankModel:(HTSchoolRankModel *)rankModel{
+- (void)setRankModel:(HTUniversityRankModel *)rankModel{
 	_rankModel = rankModel;
 	[self.universityIconView sd_setImageWithURL:[NSURL URLWithString:rankModel.image] placeholderImage:[UIImage imageNamed:@"cn_placeholder"]];
-	self.universityNameLabel.text = rankModel.name;
-	self.universityTitleLabel.text = rankModel.title;
+	self.universityNameLabel.text = rankModel.chineseName;
+	self.universityTitleLabel.text = rankModel.englishName;
 	self.hotLabel.text = rankModel.viewCount;
 	self.commentLabel.text =rankModel.answer;
 }

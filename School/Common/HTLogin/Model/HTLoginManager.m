@@ -58,6 +58,7 @@ static NSString *const KLoginAutoFillPassword = @"KLoginAutoFillPassword";
 		}
 		[self saveUserDefaultsUserName:username];
 		[self saveUserDefaultsPassword:password];
+		
 		[self loginSuccessAndReloadSessionWithLoginRequestParameterDictionary:@{@"username":username, @"password":password} responseParameterDictionary:response alert:alert complete:complete loginIdentifier:@"NormalLogin"];
 	}];
 }
@@ -121,7 +122,7 @@ static NSString *const KLoginAutoFillPassword = @"KLoginAutoFillPassword";
 					UIViewController *presentController = [HTManagerController defaultManagerController].presentedViewController;
 					if ([presentController isKindOfClass:[HTLoginNavigationController class]]) {
 						HTLoginNavigationController *loginNavigationController = (HTLoginNavigationController *)presentController;
-						[loginNavigationController popToRootViewControllerAnimated:true complete:^(BOOL finished) {
+					//	[loginNavigationController popToRootViewControllerAnimated:true complete:^(BOOL finished) {
 							[HTSureNicknameController presentFromController:loginNavigationController dismissNicknameBlock:^(NSString *nickname) {
 								if (nickname.length) {
 									NSString *username = HTPlaceholderString(requestParameterDictionary[@"username"], @"");
@@ -132,7 +133,7 @@ static NSString *const KLoginAutoFillPassword = @"KLoginAutoFillPassword";
 										[self loginAlertTitlt:@"需要先完善昵称" alert:alert complete:complete loginSuccess:false];
 									}];
 								}
-							}];
+						//	}];
 						}];
 					} else {
 						[self exitLoginWithComplete:^{

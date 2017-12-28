@@ -13,6 +13,7 @@
 #import <HTValidateManager.h>
 #import <NSObject+HTTableRowHeight.h>
 #import "HTLoginManager.h"
+#import "HTUserProtocolViewController.h"
 
 @interface HTRegisterController ()
 
@@ -22,7 +23,10 @@
 
 @property (nonatomic, strong) UIButton *registerButton;
 
+@property (nonatomic, strong) UIView *agreementView;
+
 @property (nonatomic, strong) UILabel *loginLabel;
+@property (nonatomic, strong) UIButton *agreeButton;
 
 @end
 
@@ -39,8 +43,12 @@
 	self.registerButton.layer.cornerRadius = self.registerButton.bounds.size.height / 2;
 }
 
+
+
 - (void)initializeDataSource {
-	
+	[HTRequestManager requestMessageCodeSurePersonWithNetworkModel:nil complete:^(id response, HTError *errorModel) {
+		
+	}];
 }
 
 - (void)initializeUserInterface {
@@ -48,7 +56,7 @@
 	[self.view addSubview:self.tableView];
 	
 	__weak HTRegisterController *weakSelf = self;
-	NSArray *textFieldArray = @[self.textFieldGroup.phoneEmailTextField, self.textFieldGroup.messageCodeTextField, self.textFieldGroup.passwordTextField, self.textFieldGroup.surePasswordTextField, self.registerButton, self.loginLabel];
+	NSArray *textFieldArray = @[self.textFieldGroup.phoneEmailTextField, self.textFieldGroup.messageCodeTextField, self.textFieldGroup.passwordTextField, self.textFieldGroup.surePasswordTextField, self.registerButton, self.loginLabel,self.agreementView];
 	
 	[self.tableView ht_updateSection:0 sectionMakerBlock:^(HTTableViewSectionMaker *sectionMaker) {
 		[sectionMaker.cellClass([HTLoginTextFieldCell class]).modelArray(textFieldArray) customCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof UIView *model) {
@@ -77,6 +85,13 @@
 				[model mas_makeConstraints:^(MASConstraintMaker *make) {
 					make.edges.mas_equalTo(UIEdgeInsetsZero);
 				}];
+			}else if (row == 6){
+				rowHeight = 30;
+				[model mas_updateConstraints:^(MASConstraintMaker *make) {
+					make.centerX.mas_equalTo(cell);
+					make.top.bottom.mas_equalTo(0);
+					make.width.mas_equalTo(180);
+				}];
 			} else {
 				[model mas_makeConstraints:^(MASConstraintMaker *make) {
 					make.edges.mas_equalTo(UIEdgeInsetsZero);
@@ -92,6 +107,10 @@
 		[weakSelf.navigationController popViewControllerAnimated:true];
 	}];
 	[self.registerButton ht_whenTap:^(UIView *view) {
+		if (!self.agreeButton.selected) {
+			[HTAlert title:@"请阅读并同意《用户协议》"];
+			return ;
+		}
 		if (!([HTValidateManager ht_validateMobile:weakSelf.textFieldGroup.phoneEmailTextField.text] || [HTValidateManager ht_validateEmail:weakSelf.textFieldGroup.phoneEmailTextField.text])) {
 			[HTAlert title:@"手机号或邮箱格式不大对哦"];
 		} else if (!weakSelf.textFieldGroup.messageCodeTextField.text.length) {
@@ -117,7 +136,7 @@
 						if (weakSelf.tapLoginSuccess) {
 							weakSelf.tapLoginSuccess();
 						}
-						[weakSelf dismissViewControllerAnimated:true completion:nil];
+						[weakSelf.navigationController dismissViewControllerAnimated:true completion:nil];
 					} else {
 						[weakSelf.navigationController popViewControllerAnimated:true];
 					}
@@ -160,6 +179,40 @@
 	return _textFieldGroup;
 }
 
+- (UIView *)agreementView{
+	if (!_agreementView) {
+		_agreementView = [[UIView alloc]init];
+		self.agreeButton = [[UIButton alloc]init];
+		[self.agreeButton setImage:[UIImage imageNamed:@"dx-2"] forState:UIControlStateSelected];
+		[self.agreeButton setImage:[UIImage imageNamed:@"dx"] forState:UIControlStateNormal];
+		self.agreeButton.selected = YES;
+		[self.agreeButton addTarget:self action:@selector(agreeAction:) forControlEvents:UIControlEventTouchUpInside];
+		UILabel *label = [[UILabel alloc]init];
+		label.text = @"已阅读并同意《用户协议》";
+		label.font = [UIFont systemFontOfSize:13];
+		label.textColor = [UIColor ht_colorStyle:HTColorStylePrimaryTitle];
+		[label ht_whenTap:^(UIView *view) {
+			HTUserProtocolViewController *viewController = STORYBOARD_VIEWCONTROLLER(@"Login", @"HTUserProtocolViewController");
+			[self.navigationController pushViewController:viewController animated:YES];
+		}];
+		
+		[_agreementView addSubview:self.agreeButton];
+		[_agreementView addSubview:label];
+		
+		[self.agreeButton mas_updateConstraints:^(MASConstraintMaker *make) {
+			make.left.mas_equalTo(_agreementView);
+			make.centerY.mas_equalTo(_agreementView);
+			make.height.width.mas_equalTo(20);
+		}];
+		[label mas_updateConstraints:^(MASConstraintMaker *make) {
+			make.centerY.mas_equalTo(_agreementView);
+			make.left.mas_equalTo(self.agreeButton.mas_right).offset(10);
+		}];
+		
+	}
+	return _agreementView;
+}
+
 - (UILabel *)loginLabel {
 	if (!_loginLabel) {
 		_loginLabel = [[UILabel alloc] init];
@@ -169,6 +222,10 @@
 		_loginLabel.attributedText = attributedString;
 	}
 	return _loginLabel;
+}
+
+- (void)agreeAction:(UIButton *)btn{
+	btn.selected = !btn.selected;
 }
 
 @end

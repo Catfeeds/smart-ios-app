@@ -9,7 +9,30 @@
 #import "HTSchoolRankModel.h"
 #import <HTRandomNumberManager.h>
 
+
+
 @implementation HTSchoolRankModel
+
++ (NSDictionary *)mj_objectClassInArray{
+	return @{
+			 @"data" : @"HTUniversityRankModel",
+			 @"years":@"HTYearModel"
+			 };
+}
+
+@end
+
+@implementation HTYearModel
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+	return @{
+			 @"ID" : @"id"
+			 };
+}
+
+@end
+
+@implementation HTUniversityRankModel
 
 - (void)mj_keyValuesDidFinishConvertingToObject {
 	NSString *viewCountIdentifier = [NSString stringWithFormat:@"HTRankViewCount%@", self.ID];
@@ -21,38 +44,11 @@
 	self.answer = [NSString stringWithFormat:@"%ld", replyCount];
 }
 
-- (void)reloadModelImageWithIndex:(NSInteger)index {
-	UIEdgeInsets titleEdgeInsets = UIEdgeInsetsMake(0, 0, 10, 0);
-	switch (index) {
-		case 0: {
-			self.imageName = @"cn_school_rank_first";
-			self.titleEdgeInsets = titleEdgeInsets;
-			self.imageSize = CGSizeMake(55, 63);
-			self.titleColor = [UIColor whiteColor];
-			break;
-		}
-		case 1: {
-			self.imageName = @"cn_school_rank_second";
-			self.titleEdgeInsets = titleEdgeInsets;
-			self.imageSize = CGSizeMake(57, 65);
-			self.titleColor = [UIColor whiteColor];
-			break;
-		}
-		case 2: {
-			self.imageName = @"cn_school_rank_third";
-			self.titleEdgeInsets = titleEdgeInsets;
-			self.imageSize = CGSizeMake(58, 67);
-			self.titleColor = [UIColor whiteColor];
-			break;
-		}
-		default: {
-			self.imageName = @"cn_school_rank_normal";
-			self.titleEdgeInsets = UIEdgeInsetsZero;
-			self.imageSize = CGSizeMake(49, 55);
-			self.titleColor = [UIColor ht_colorStyle:HTColorStyleSecondaryTitle];
-			break;
-		}
-	}
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+	return @{
+			 @"ID" : @"id"
+			 };
 }
+
 
 @end

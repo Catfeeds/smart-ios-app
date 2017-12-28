@@ -11,7 +11,7 @@
 
 @interface HTUniversityRankCell : UITableViewCell
 
-@property (nonatomic, strong) HTSchoolRankModel *rankModel;
+@property (nonatomic, strong) HTUniversityRankModel *rankModel;
 @property (nonatomic, assign) NSInteger rankNum;  //排名
 
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;

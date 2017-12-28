@@ -2969,12 +2969,59 @@
                                             <action selector="chooseYearAction:" destination="gAK-Xk-KSH" eventType="touchUpInside" id="yzT-7G-A3v"/>
                                         </connections>
                                     </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vXO-n0-Pdn">
+                                        <rect key="frame" x="99" y="13" width="266" height="25"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="n6b-Vk-aDo"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Ybu-Gy-tgg">
+                                            <size key="itemSize" width="54" height="22"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HTRankYearCollectionCell" id="0fP-fy-bh5" customClass="HTRankYearCollectionCell">
+                                                <rect key="frame" x="0.0" y="1.5" width="54" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yns-Dh-Q0Y">
+                                                            <rect key="frame" x="0.0" y="0.0" width="54" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Yns-Dh-Q0Y" secondAttribute="trailing" id="Yag-ak-qNF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Yns-Dh-Q0Y" secondAttribute="bottom" id="ai1-6w-AuU"/>
+                                                    <constraint firstItem="Yns-Dh-Q0Y" firstAttribute="leading" secondItem="0fP-fy-bh5" secondAttribute="leading" id="gbl-88-Z0G"/>
+                                                    <constraint firstItem="Yns-Dh-Q0Y" firstAttribute="top" secondItem="0fP-fy-bh5" secondAttribute="top" id="lPE-Od-8MF"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="yearLabel" destination="Yns-Dh-Q0Y" id="efh-ei-8DJ"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="gAK-Xk-KSH" id="AeK-Ej-4Qw"/>
+                                            <outlet property="delegate" destination="gAK-Xk-KSH" id="CSf-Ce-vni"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="vXO-n0-Pdn" firstAttribute="leading" secondItem="jaZ-vf-cFY" secondAttribute="trailing" constant="10" id="0A7-Qc-nny"/>
+                                    <constraint firstItem="vXO-n0-Pdn" firstAttribute="centerY" secondItem="jaZ-vf-cFY" secondAttribute="centerY" id="0tx-z0-E0y"/>
                                     <constraint firstItem="uye-Ku-7jb" firstAttribute="centerY" secondItem="x37-uM-RYn" secondAttribute="centerY" id="1ho-Ff-Sfs"/>
                                     <constraint firstItem="xlL-Tn-xUO" firstAttribute="leading" secondItem="TSP-Vb-fFk" secondAttribute="trailing" constant="17" id="4Wo-qt-nnU"/>
                                     <constraint firstItem="uye-Ku-7jb" firstAttribute="leading" secondItem="x37-uM-RYn" secondAttribute="leading" constant="10" id="55Z-1o-W0t"/>
+                                    <constraint firstAttribute="trailing" secondItem="vXO-n0-Pdn" secondAttribute="trailing" constant="10" id="7ga-Nz-YYe"/>
                                     <constraint firstItem="TSP-Vb-fFk" firstAttribute="centerY" secondItem="x37-uM-RYn" secondAttribute="centerY" id="DxY-RL-qQy"/>
                                     <constraint firstAttribute="height" constant="50" id="Dxl-gj-K1D"/>
                                     <constraint firstItem="jaZ-vf-cFY" firstAttribute="centerY" secondItem="x37-uM-RYn" secondAttribute="centerY" id="Hzd-48-rkG"/>
@@ -3011,11 +3058,12 @@
                     <connections>
                         <outlet property="tableView" destination="Z4m-nJ-N72" id="rQP-GE-bXN"/>
                         <outlet property="yearButton_2018" destination="TSP-Vb-fFk" id="fjf-bd-7OZ"/>
+                        <outlet property="yearCollectionView" destination="vXO-n0-Pdn" id="9EI-65-QQR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8EJ-hd-hgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="2178"/>
+            <point key="canvasLocation" x="1549.5999999999999" y="2177.3613193403298"/>
         </scene>
         <!--Person Message Container Controller-->
         <scene sceneID="Rs2-if-3Fr">

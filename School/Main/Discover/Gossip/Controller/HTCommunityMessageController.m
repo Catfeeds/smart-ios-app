@@ -30,10 +30,6 @@
 	[super viewDidLoad];
 	[self initializeDataSource];
 	[self initializeUserInterface];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 	[self.tabelView ht_startRefreshHeader];
 }
 
