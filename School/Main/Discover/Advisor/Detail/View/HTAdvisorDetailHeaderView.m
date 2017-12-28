@@ -46,16 +46,16 @@
     }];
     [self.nicknameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headImageView.mas_right).offset(15);
-        make.top.mas_equalTo(self.headImageView).offset(10);
-    }];
-    [self.titleNameButton mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.nicknameLabel.mas_right).offset(15);
-        make.right.mas_lessThanOrEqualTo(- 15);
-        make.centerY.mas_equalTo(self.nicknameLabel);
+        make.top.mas_equalTo(self.headImageView);
     }];
     [self.detailNameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headImageView.mas_right).offset(15);
         make.top.mas_equalTo(self.nicknameLabel.mas_bottom).offset(10);
+    }];
+    [self.titleNameButton mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.nicknameLabel.mas_left);
+        make.right.mas_lessThanOrEqualTo(- 15);
+        make.top.mas_equalTo(self.detailNameLabel.mas_bottom).offset(10);
     }];
 }
 
@@ -64,7 +64,7 @@
     HTIndexAdvisorModel *advisorModel = model.data.firstObject;
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:SmartApplyResourse(advisorModel.image)] placeholderImage:HTPLACEHOLDERIMAGE];
     self.nicknameLabel.text = advisorModel.name;
-    [self.titleNameButton setTitle:advisorModel.catName forState:UIControlStateNormal];
+    [self.titleNameButton setTitle:advisorModel.A forState:UIControlStateNormal];
     self.detailNameLabel.text = [NSString stringWithFormat:@"%@, 从业%@年", advisorModel.alternatives, advisorModel.article];
     [self.animatorCollectionView ht_updateSection:0 sectionMakerBlock:^(HTCollectionViewSectionMaker *sectionMaker) {
         [sectionMaker.modelArray(model.circelModelArray) didSelectedCellBlock:^(UICollectionView *collectionView, NSInteger item, __kindof UICollectionViewCell *cell, __kindof NSObject *model) {
@@ -100,6 +100,7 @@
         [_titleNameButton setBackgroundImage:[UIImage ht_pureColor:[UIColor whiteColor]] forState:UIControlStateHighlighted];
         _titleNameButton.layer.cornerRadius = 3;
         _titleNameButton.layer.masksToBounds = true;
+        _titleNameButton.titleLabel.adjustsFontSizeToFitWidth = YES;
         _titleNameButton.layer.borderWidth = 1 / [UIScreen mainScreen].scale;
         _titleNameButton.layer.borderColor = [UIColor whiteColor].CGColor;
         [_titleNameButton setContentEdgeInsets:UIEdgeInsetsMake(3, 7, 3, 7)];

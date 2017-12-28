@@ -7,7 +7,6 @@
 //
 
 #import "HTUniversityRankController.h"
-#import "HTSchoolRankModel.h"
 #import <UIScrollView+HTRefresh.h>
 #import "HTUniversityRankCell.h"
 #import "MJRefresh.h"
@@ -17,12 +16,11 @@
 @interface HTUniversityRankController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *yearButton_2018;
 @property (nonatomic, assign) NSInteger currentPage;
-@property (nonatomic, strong) UIButton *selectedYear;
+@property (nonatomic, strong) HTYearModel *selectedYear;
 @property (nonatomic, strong) NSMutableArray<HTUniversityRankModel *> *schoolRankModelArray;
 @property (nonatomic, strong) HTNetworkModel *networkModel;
-@property (nonatomic, strong) NSArray *yearArray;
+@property (nonatomic, strong) NSArray<HTYearModel *> *yearArray;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *yearCollectionView;
 
@@ -37,7 +35,7 @@
 	self.currentPage = 1;
 	self.networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
 	[self loadInterface];
-	
+    [self requestUniversityRank];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,7 +62,7 @@
     footerHeader.stateLabel.hidden = YES;
 	self.tableView.mj_footer = footerHeader;
 	
-	[self chooseYearAction:self.yearButton_2018];
+	//[self chooseYearAction:self.yearButton_2018];
 }
 
 - (void)setSelectedRankClassModel:(HTUniversityRankClassModel *)selectedRankClassModel{
@@ -72,21 +70,15 @@
 	self.title = selectedRankClassModel.name;
 }
 
-- (IBAction)chooseYearAction:(UIButton *)sender {
-	if (sender != self.selectedYear) {
-		sender.backgroundColor = [UIColor ht_colorString:@"769bod"];
-		sender.selected = YES;
-		self.selectedYear.backgroundColor = [UIColor ht_colorString:@"f5f3e8"];
-		self.selectedYear.selected = NO;
-		self.selectedYear = sender;
-		self.currentPage = 1;
-		[self requestUniversityRank];
-	}
+- (void)chooseYearAction:(HTYearModel *)yaer{
+    self.selectedYear = yaer;
+    self.currentPage = 1;
+    [self requestUniversityRank];
 }
 
 - (void)requestUniversityRank{
 	
-	[HTRequestManager requestRankSchoolListWithNetworkModel:self.networkModel classIdString:self.selectedRankClassModel.ID yearIdString:@(self.selectedYear.tag).stringValue currentPage:@(self.currentPage).stringValue pageSize:@"10" complete:^(id response, HTError *errorModel) {
+	[HTRequestManager requestRankSchoolListWithNetworkModel:self.networkModel classIdString:self.selectedRankClassModel.ID yearIdString:self.selectedYear.ID currentPage:@(self.currentPage).stringValue pageSize:@"10" complete:^(id response, HTError *errorModel) {
 		
 		[self.tableView.mj_header endRefreshing];
 		[self.tableView.mj_footer endRefreshing];
@@ -95,18 +87,17 @@
 			[self.tableView ht_endRefreshWithModelArrayCount:errorModel.errorType];
 			return;
 		}
-		NSMutableArray *modelArray = [HTSchoolRankModel mj_objectArrayWithKeyValuesArray:response[@"data"]];
-//		NSMutableArray *modelArray;
-		
+				
+        HTSchoolRankModel *schoolRankModel = [HTSchoolRankModel mj_objectWithKeyValues:response];
+        NSArray *modelArray = schoolRankModel.data;
 		if (!ArrayNotEmpty(self.yearArray)) {
-			
-			self.yearArray = modelArray;
+			self.yearArray = schoolRankModel.years;;
 			[self.yearCollectionView reloadData];
-			UICollectionViewCell *cell = [self.yearCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-			cell.selected = YES;
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            [self.yearCollectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
+            [self chooseYearAction:self.yearArray.firstObject];
 		}
 		if (self.currentPage == 1) {
-			if (modelArray.count == 0) [self.tableView ht_endRefreshWithModelArrayCount:0];
             [self.tableView setContentOffset:CGPointZero];
             [self.schoolRankModelArray setArray:modelArray];
             [self.tableView reloadData];
@@ -125,7 +116,10 @@
 			[self.tableView beginUpdates];
 			[self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
 			[self.tableView endUpdates];
-		}
+        }
+        
+      //  [self.tableView ht_endRefreshWithModelArrayCount:self.schoolRankModelArray.count];
+        
 	}];
 }
 
@@ -149,7 +143,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	HTSchoolController *schoolController = [HTSchoolController new];
-	schoolController.schoolIdString = self.schoolRankModelArray[indexPath.row].ID;
+	schoolController.schoolIdString = self.schoolRankModelArray[indexPath.row].relationId;
 	[self.navigationController pushViewController:schoolController animated:YES];
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -157,21 +151,19 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-	return 10;
+	return self.yearArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 	HTRankYearCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HTRankYearCollectionCell" forIndexPath:indexPath];
-	cell.yearLabel.text = @(indexPath.row).stringValue;
-	//[self setLabelhighlight:cell.yearLabel isHighlight:cell.yearLabel.highlighted];
+    cell.year = self.yearArray[indexPath.row];
 	return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-	HTRankYearCollectionCell *cell = (HTRankYearCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
-	
+    [self chooseYearAction:self.yearArray[indexPath.row]];
 }
 
 

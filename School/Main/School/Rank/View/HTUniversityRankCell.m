@@ -23,11 +23,12 @@
 
 - (void)setRankModel:(HTUniversityRankModel *)rankModel{
 	_rankModel = rankModel;
-	[self.universityIconView sd_setImageWithURL:[NSURL URLWithString:rankModel.image] placeholderImage:[UIImage imageNamed:@"cn_placeholder"]];
+	[self.universityIconView sd_setImageWithURL:[NSURL URLWithString:SchoolResourse(rankModel.image)] placeholderImage:HTPLACEHOLDERIMAGE];
 	self.universityNameLabel.text = rankModel.chineseName;
 	self.universityTitleLabel.text = rankModel.englishName;
 	self.hotLabel.text = rankModel.viewCount;
 	self.commentLabel.text =rankModel.answer;
+    
 }
 
 - (void)setRankNum:(NSInteger)rankNum{

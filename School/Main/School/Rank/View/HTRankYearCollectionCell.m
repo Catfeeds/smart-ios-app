@@ -13,9 +13,12 @@
 - (void)setSelected:(BOOL)selected{
 	[super setSelected:selected];
 	self.yearLabel.textColor = selected ? [UIColor whiteColor] : [UIColor ht_colorString:@"666666"];
-	self.yearLabel.backgroundColor = selected ? [UIColor ht_colorStyle:HTColorStylePrimaryTheme] : [UIColor whiteColor];
-//	eslf.label.highlighted = isHighlight;
-	
+	self.yearLabel.backgroundColor = selected ? [UIColor ht_colorStyle:HTColorStylePrimaryTheme] : [UIColor ht_colorString:@"F5F3E8"];
+}
+
+- (void)setYear:(HTYearModel *)year{
+    _year = year;
+    self.yearLabel.text = year.name;
 }
 
 @end

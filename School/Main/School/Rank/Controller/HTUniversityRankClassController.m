@@ -30,6 +30,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidLayoutSubviews{
+    self.tableView.contentOffset = CGPointZero;
+    [self.tableView setNeedsDisplay];
+    [self.tableView layoutIfNeeded];
+}
+
 - (void)loadData{
 	HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
 	networkModel.autoAlertString = @"获取排名分类";

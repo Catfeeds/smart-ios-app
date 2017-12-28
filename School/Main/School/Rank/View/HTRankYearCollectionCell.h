@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTSchoolRankModel.h"
 
 @interface HTRankYearCollectionCell : UICollectionViewCell
 
-
+@property (nonatomic, strong) HTYearModel *year;
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 
 @end

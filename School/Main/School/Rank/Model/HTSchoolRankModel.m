@@ -20,6 +20,12 @@
 			 };
 }
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{
+             @"data" : @"data.data"
+             };
+}
+
 @end
 
 @implementation HTYearModel

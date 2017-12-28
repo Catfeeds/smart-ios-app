@@ -29,6 +29,7 @@
 
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *schoolId;
+@property (nonatomic, strong) NSString *relationId;
 @property (nonatomic, strong) NSString *ranking2017;
 @property (nonatomic, strong) NSString *ranking2018;
 @property (nonatomic, strong) NSString *ranking2019;

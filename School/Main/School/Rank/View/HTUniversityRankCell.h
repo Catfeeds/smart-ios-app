@@ -21,5 +21,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *hotLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 
-
 @end

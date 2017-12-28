@@ -17,10 +17,18 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
 	HTTeacherDescription
 };
 
-@interface HTOpenCourseDetailController () <UIScrollViewDelegate, UITextViewDelegate, HTSignUpOpenCourseViewDelegate>
+@interface HTOpenCourseDetailController () <UIScrollViewDelegate, UITextViewDelegate, HTSignUpOpenCourseViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) HTOpenCourseDetailModel *model;
 @property (nonatomic, strong) HTSignUpOpenCourseView  *singupView;
+
+@property (nonatomic, assign) HTShowContent currentShowContent;
+
+@property (nonatomic, assign) BOOL mainScrollEnabled;
+@property (nonatomic, assign) BOOL subScrollEnabled;
+
+@property (nonatomic, assign) CGFloat maxOffsetY;
+@property (nonatomic, assign) CGFloat currentPanY;
 
 @end
 
@@ -35,6 +43,12 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
 
 - (void)loadData{
 	
+    self.currentShowContent = HTCourseContent;
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureAction:)];
+    [self.scrollView addGestureRecognizer:pan];
+    pan.delegate = self;
+    
 	HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
 	networkModel.autoShowError = true;
 	networkModel.autoAlertString = @"获取公开课详情";
@@ -50,6 +64,43 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UIGestureRecognizer
+- (void)panGestureAction:(UIPanGestureRecognizer *)recognizer{
+    if (recognizer.state != UIGestureRecognizerStateChanged){
+        self.currentPanY = 0;
+        // 每次滑动结束都清空状态
+        self.mainScrollEnabled = false;
+        self.subScrollEnabled = false;
+    }else {
+//        CGFloat currentY = recognizer.translation(in: mainScrollView).y
+        CGFloat currentY = [recognizer translationInView:self.scrollView].y;
+        // 说明在这次滑动过程中经过了临界点
+        if (self.mainScrollEnabled || self.subScrollEnabled) {
+            if (self.currentPanY == 0) {
+                self.currentPanY = currentY; //记录下经过临界点是的 y
+            }
+            CGFloat offsetY = self.currentPanY - currentY; //计算在临界点后的 offsetY
+            
+            if (self.mainScrollEnabled) {
+                CGFloat supposeY = self.maxOffsetY + offsetY;
+                if (supposeY >= 0) {
+                    [self.scrollView setContentOffset:CGPointMake(0, supposeY)];
+                }else {
+                    [self.scrollView setContentOffset:CGPointZero];
+                }
+            }else {
+                [self.courseContentTextView setContentOffset:CGPointMake(0, offsetY)];
+            }
+        }
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
+}
+
+#pragma mark  -
 
 - (void)loadInterfaceWithModel:(HTOpenCourseDetailModel *)model{
 	self.model = model;
@@ -67,20 +118,29 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
 	self.teacherDescriptionLabel.text = model.teacherDescription;
 	[self.teacherDescriptionLabel sizeToFit];
 	//[self.courseContentTextView setAttributedText:[model.courseContent htmlToAttributeStringContent:@"http://open.viplgw.cn" width:CGRectGetWidth(self.courseContentTextView.frame)]];
-	CGFloat contentHeight = self.teacherDescriptionLabel.frame.size.height + 375;//375 : 简介以上高度
+    self.courseContentTextView.text =  @"t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊完成了！";
+	CGFloat contentHeight = self.teacherDescriptionLabel.frame.size.height + 875;//375 : 简介以上高度
 	self.scrollContentHeightLayoutConstraint.constant = contentHeight > CGRectGetHeight(self.scrollView.frame)  ? contentHeight : CGRectGetHeight(self.scrollView.frame);
+    
+    self.maxOffsetY = 0;
 	
 }
 
 
 
 - (void)changeContent:(HTShowContent) showContent{
+    
+    if(self.currentShowContent == showContent) return;
+    
 	if (showContent == HTTeacherDescription) {
+        self.scrollView.delegate = nil;
+        self.scrollView.scrollEnabled = YES;
 		self.teacherButton.selected = YES;
 		self.contentButton.selected = NO;
 		[self.detailScrollView setContentOffset:CGPointMake(HTSCREENWIDTH, 0) animated:YES];
 		self.lineCenterXLayoutConstraint.constant = CGRectGetWidth(self.contentButton.frame);
 	}else{
+        self.scrollView.delegate = self;
 		self.teacherButton.selected = NO;
 		self.contentButton.selected = YES;
 		self.lineCenterXLayoutConstraint.constant = 0;
@@ -130,14 +190,26 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
 	}
 }
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//	if (scrollView == self.courseContentTextView) {
-//		if (self.courseContentTextView.contentOffset.y > self.courseContentTextView.contentSize.height) {
-//
-//			[self.scrollView setContentOffset:scrollView.contentOffset];
-//		}
-//	}
-//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    if (scrollView == self.scrollView) {
+        if (scrollView.contentOffset.y >= self.maxOffsetY) {
+            [scrollView setContentOffset:CGPointMake(0, self.maxOffsetY)];
+            self.scrollView.scrollEnabled = false;
+            self.courseContentTextView.scrollEnabled = true;
+            self.subScrollEnabled = true;
+            self.mainScrollEnabled = false;
+        }
+    }else if (scrollView == self.courseContentTextView){
+        if (scrollView.contentOffset.y <= 0){
+            [scrollView setContentOffset:CGPointMake(0, 0)];
+            self.scrollView.scrollEnabled = true;
+            self.courseContentTextView.scrollEnabled = false;
+            self.mainScrollEnabled = true;
+            self.subScrollEnabled = false;
+        }
+    }
+}
 
 
 
@@ -153,12 +225,3 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
 
 @end
 
-@implementation HTOpenCourseDetailTextView
-
-
-
-@end
-
-@implementation HTOpenCourseDetailScroll
-
-@end

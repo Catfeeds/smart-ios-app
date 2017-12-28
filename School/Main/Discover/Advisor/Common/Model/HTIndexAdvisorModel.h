@@ -54,6 +54,8 @@
 
 @property (nonatomic, copy) NSString *catName;
 
+@property (nonatomic, copy) NSString *A;
+
 @property (nonatomic, copy) NSString *alternatives;
 
 @property (nonatomic, copy) NSString *article;
