@@ -81,26 +81,26 @@
     
     //-----------------------------------------/ 极光 /-----------------------------------------//
     
-    [JMessage addDelegate:self withConversation:nil];
-    [JMessage setupJMessage:launchOptions
-                     appKey:[HTChatManager jmessageAppKey]
-                    channel:@""
-           apsForProduction:true
-                   category:nil
-             messageRoaming:YES];
-    
-    #ifdef __IPHONE_8_0
-        [JMessage registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
-                                                      UIUserNotificationTypeSound |
-                                                      UIUserNotificationTypeAlert)
-                                          categories:nil];
-    #else
-        [JMessage registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                      UIRemoteNotificationTypeSound |
-                                                      UIRemoteNotificationTypeAlert)
-                                          categories:nil];
-    #endif
-    
+//    [JMessage addDelegate:self withConversation:nil];
+//    [JMessage setupJMessage:launchOptions
+//                     appKey:[HTChatManager jmessageAppKey]
+//                    channel:@""
+//           apsForProduction:true
+//                   category:nil
+//             messageRoaming:YES];
+//
+//    #ifdef __IPHONE_8_0
+//        [JMessage registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+//                                                      UIUserNotificationTypeSound |
+//                                                      UIUserNotificationTypeAlert)
+//                                          categories:nil];
+//    #else
+//        [JMessage registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+//                                                      UIRemoteNotificationTypeSound |
+//                                                      UIRemoteNotificationTypeAlert)
+//                                          categories:nil];
+//    #endif
+	
     //-----------------------------------------/ 缓存 /-----------------------------------------//
     
     NSURLCache *cache = [[NSURLCache alloc] initWithMemoryCapacity:20 * 1024 * 1024 diskCapacity:100 * 1024 * 1024 diskPath:[HTCacheManager rootCacheFloderPath]];

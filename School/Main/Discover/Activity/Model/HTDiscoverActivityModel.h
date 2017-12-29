@@ -38,4 +38,6 @@
 
 @property (nonatomic, copy) NSString *alternatives;
 
+@property (nonatomic, copy) NSString *relationId;
+
 @end

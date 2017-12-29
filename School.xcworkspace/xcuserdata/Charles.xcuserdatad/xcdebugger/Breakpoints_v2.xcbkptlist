@@ -70,7 +70,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "School/Main/Index/Common/Controller/HTIndexController.m"
-            timestampString = "536145001.947497"
+            timestampString = "536239454.230484"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -82,16 +82,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "School/Main/Answer/Main/View/HTAnswerInputView.m"
-            timestampString = "535628393.60391"
+            filePath = "School/Main/Index/Common/Controller/HTIndexController.m"
+            timestampString = "536239454.230554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
+            landmarkName = "-initializeDataSource"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -102,27 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "School/Main/Discover/Activity/Controller/HTDiscoverActivityDetailController.m"
-            timestampString = "536062848.026407"
+            timestampString = "536237923.18112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "-initializeDataSource"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "School/Main/Index/Common/Controller/HTIndexController.m"
-            timestampString = "536145001.948308"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-initializeDataSource"
             landmarkType = "7">
          </BreakpointContent>

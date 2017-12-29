@@ -28,7 +28,7 @@
 	self.universityTitleLabel.text = rankModel.englishName;
 	self.hotLabel.text = rankModel.viewCount;
 	self.commentLabel.text =rankModel.answer;
-    
+	self.rankNum = rankModel.ranking.integerValue;
 }
 
 - (void)setRankNum:(NSInteger)rankNum{

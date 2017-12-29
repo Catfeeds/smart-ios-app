@@ -35,6 +35,7 @@
 - (void)oddsTestAction:(HTProfessionalModel *)professionalModel{
 	HTSchoolMatriculateContainerController *singleController =STORYBOARD_VIEWCONTROLLER(@"Home", @"HTSchoolMatriculateContainerController");
 	singleController.schoolID = professionalModel.school.firstObject.ID;
+	singleController.defaultSelectMajorId = professionalModel.data.firstObject.ID;
 	[self.navigationController pushViewController:singleController animated:YES];
 }
 

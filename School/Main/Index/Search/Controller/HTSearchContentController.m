@@ -15,6 +15,8 @@
 #import "HTLibraryApplyContentController.h"
 #import "HTDiscoverActivityDetailController.h"
 #import "HTProfessionDetailController.h"
+#import "HTMajorDetailController.h"
+#import "HTOpenCourseDetailController.h"
 
 @interface HTSearchContentController ()
 
@@ -49,8 +51,14 @@
 				}
 				case HTSearchTypeProfessional: {
 				//	HTProfessionalController *detailController = [[HTProfessionalController alloc] init];
-					  HTProfessionDetailController *detailController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
-					detailController.professionalId = model.ID;
+				//	  HTProfessionDetailController *detailController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTProfessionDetailController");
+					//这儿
+					//detailController.professionalId = model.ID;
+					//viewController = detailController;
+					//[weakSelf.magicController showProfessionDetailView:model.ID];
+					
+					HTMajorDetailController *detailController = [[HTMajorDetailController alloc] init];
+					detailController.majorIdString = model.ID;
 					viewController = detailController;
 					break;
 				}
@@ -61,8 +69,11 @@
 					break;
 				}
 				case HTSearchTypeActivity: {
-					HTDiscoverActivityDetailController *detailController = [[HTDiscoverActivityDetailController alloc] init];
-					detailController.activityIdString = model.ID;
+//					HTDiscoverActivityDetailController *detailController = [[HTDiscoverActivityDetailController alloc] init];
+//					detailController.activityIdString = model.ID;
+					
+					HTOpenCourseDetailController *detailController = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTOpenCourseDetailController");
+					detailController.courseId = model.ID;
 					viewController = detailController;
 					break;
 				}

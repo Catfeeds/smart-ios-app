@@ -45,9 +45,9 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
 	
     self.currentShowContent = HTCourseContent;
     
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureAction:)];
-    [self.scrollView addGestureRecognizer:pan];
-    pan.delegate = self;
+//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureAction:)];
+//    [self.scrollView addGestureRecognizer:pan];
+//    pan.delegate = self;
     
 	HTNetworkModel *networkModel = [[HTNetworkModel alloc] init];
 	networkModel.autoShowError = true;
@@ -117,13 +117,11 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
 	self.teacherDescriptionNameLabel.text = model.teacherName;
 	self.teacherDescriptionLabel.text = model.teacherDescription;
 	[self.teacherDescriptionLabel sizeToFit];
-	//[self.courseContentTextView setAttributedText:[model.courseContent htmlToAttributeStringContent:@"http://open.viplgw.cn" width:CGRectGetWidth(self.courseContentTextView.frame)]];
-    self.courseContentTextView.text =  @"t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊t特殊完成了！";
-	CGFloat contentHeight = self.teacherDescriptionLabel.frame.size.height + 875;//375 : 简介以上高度
-	self.scrollContentHeightLayoutConstraint.constant = contentHeight > CGRectGetHeight(self.scrollView.frame)  ? contentHeight : CGRectGetHeight(self.scrollView.frame);
+	[self.courseContentTextView setAttributedText:[model.courseContent htmlToAttributeStringContent:@"http://open.viplgw.cn" width:CGRectGetWidth(self.courseContentTextView.frame)]];
+	self.teacherHeightLayoutConstraint.constant = self.teacherDescriptionLabel.frame.size.height + 220; // 简介以上高度
+	self.scrollContentHeightLayoutConstraint.constant = CGRectGetHeight(self.scrollView.frame);
     
-    self.maxOffsetY = 0;
-	
+//    self.maxOffsetY = self.scrollContentHeightLayoutConstraint.constant - CGRectGetHeight(self.scrollView.frame) ;
 }
 
 
@@ -133,20 +131,20 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
     if(self.currentShowContent == showContent) return;
     
 	if (showContent == HTTeacherDescription) {
-        self.scrollView.delegate = nil;
-        self.scrollView.scrollEnabled = YES;
+
 		self.teacherButton.selected = YES;
 		self.contentButton.selected = NO;
 		[self.detailScrollView setContentOffset:CGPointMake(HTSCREENWIDTH, 0) animated:YES];
 		self.lineCenterXLayoutConstraint.constant = CGRectGetWidth(self.contentButton.frame);
 	}else{
-        self.scrollView.delegate = self;
+		
 		self.teacherButton.selected = NO;
 		self.contentButton.selected = YES;
 		self.lineCenterXLayoutConstraint.constant = 0;
 		[self.detailScrollView setContentOffset:CGPointZero animated:YES];
 	}
 	
+	self.currentShowContent = showContent;
 	[UIView animateWithDuration:0.2  animations:^{
 		[self.view layoutIfNeeded];
 	}];
@@ -190,26 +188,26 @@ typedef NS_ENUM(NSUInteger, HTShowContent) {
 	}
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-    if (scrollView == self.scrollView) {
-        if (scrollView.contentOffset.y >= self.maxOffsetY) {
-            [scrollView setContentOffset:CGPointMake(0, self.maxOffsetY)];
-            self.scrollView.scrollEnabled = false;
-            self.courseContentTextView.scrollEnabled = true;
-            self.subScrollEnabled = true;
-            self.mainScrollEnabled = false;
-        }
-    }else if (scrollView == self.courseContentTextView){
-        if (scrollView.contentOffset.y <= 0){
-            [scrollView setContentOffset:CGPointMake(0, 0)];
-            self.scrollView.scrollEnabled = true;
-            self.courseContentTextView.scrollEnabled = false;
-            self.mainScrollEnabled = true;
-            self.subScrollEnabled = false;
-        }
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//
+//    if (scrollView == self.scrollView) {
+//        if (scrollView.contentOffset.y >= self.maxOffsetY) {
+//            [scrollView setContentOffset:CGPointMake(0, self.maxOffsetY)];
+//            self.scrollView.scrollEnabled = false;
+//            self.courseContentTextView.scrollEnabled = true;
+//            self.subScrollEnabled = true;
+//            self.mainScrollEnabled = false;
+//        }
+//    }else if (scrollView == self.courseContentTextView){
+//        if (scrollView.contentOffset.y <= 0){
+//            [scrollView setContentOffset:CGPointMake(0, 0)];
+//            self.scrollView.scrollEnabled = true;
+//            self.courseContentTextView.scrollEnabled = false;
+//            self.mainScrollEnabled = true;
+//            self.subScrollEnabled = false;
+//        }
+//    }
+//}
 
 
 

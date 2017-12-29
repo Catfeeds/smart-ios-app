@@ -22,7 +22,7 @@
 
 @property (nonatomic, strong) HTDiscoverHeaderView *headerView; //之前的
 
-@property (nonatomic, strong) NSArray *itemModelArray;
+@property (nonatomic, strong) NSMutableArray *itemModelArray;
 
 @property (nonatomic, strong) NSMutableDictionary *controllerDictionary;
 
@@ -35,7 +35,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self initializeDataSource];
-	[self initializeUserInterface];
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -55,7 +55,22 @@
 }
 
 - (void)initializeDataSource {
-	
+	HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
+//	networkModel.autoAlertString = @"loding";
+	[HTRequestManager requestDiscoverListWithNetworkModel:networkModel catIdString:@"14" pageSize:@"" currentPage:@"" complete:^(id response, HTError *errorModel) {
+		if (errorModel.existError) {
+		//	modelArrayStatus(nil, errorModel);
+			return;
+		}
+		
+		self.itemModelArray = [HTGossIPItemModel mj_objectArrayWithKeyValuesArray:response[@"catChild"]];
+		
+		HTGossIPItemModel *all = [HTGossIPItemModel new];
+		all.titleName = @"全部";
+		all.catIdString = @"14";
+		[self.itemModelArray insertObject:all atIndex:0];
+		[self initializeUserInterface];
+	}];
 }
 
 - (NSString *)getCurrentCatIDString{
@@ -111,7 +126,7 @@
 				modelArrayStatus(nil, errorModel);
 				return;
 			}
-			NSArray *modelArray = [THToeflDiscoverModel mj_objectArrayWithKeyValuesArray:response[@"data"]];
+			NSArray *modelArray = [THToeflDiscoverModel mj_objectArrayWithKeyValuesArray:response[@"data"][@"data"]];
 			modelArrayStatus(modelArray, nil);
 		}];
 	}];
@@ -178,12 +193,12 @@
 	return _headlineHeaderView;
 }
 
-- (NSArray *)itemModelArray {
-	if (!_itemModelArray) {
-		_itemModelArray = [HTGossIPItemModel packModelArray];
-	}
-	return _itemModelArray;
-}
+//- (NSArray *)itemModelArray {
+//	if (!_itemModelArray) {
+//		_itemModelArray = [HTGossIPItemModel packModelArray];
+//	}
+//	return _itemModelArray;
+//}
 
 - (NSMutableDictionary *)controllerDictionary {
 	if (!_controllerDictionary) {

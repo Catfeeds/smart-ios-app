@@ -19,7 +19,6 @@
 @property (nonatomic, assign) NSInteger currentPage;
 @property (nonatomic, strong) HTYearModel *selectedYear;
 @property (nonatomic, strong) NSMutableArray<HTUniversityRankModel *> *schoolRankModelArray;
-@property (nonatomic, strong) HTNetworkModel *networkModel;
 @property (nonatomic, strong) NSArray<HTYearModel *> *yearArray;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *yearCollectionView;
@@ -33,7 +32,7 @@
     // Do any additional setup after loading the view.
 	self.schoolRankModelArray = [NSMutableArray array];
 	self.currentPage = 1;
-	self.networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
+	
 	[self loadInterface];
     [self requestUniversityRank];
 }
@@ -78,7 +77,9 @@
 
 - (void)requestUniversityRank{
 	
-	[HTRequestManager requestRankSchoolListWithNetworkModel:self.networkModel classIdString:self.selectedRankClassModel.ID yearIdString:self.selectedYear.ID currentPage:@(self.currentPage).stringValue pageSize:@"10" complete:^(id response, HTError *errorModel) {
+	HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
+	
+	[HTRequestManager requestRankSchoolListWithNetworkModel:networkModel classIdString:self.selectedRankClassModel.ID yearIdString:self.selectedYear.ID currentPage:@(self.currentPage).stringValue pageSize:@"10" complete:^(id response, HTError *errorModel) {
 		
 		[self.tableView.mj_header endRefreshing];
 		[self.tableView.mj_footer endRefreshing];
@@ -116,7 +117,9 @@
 			[self.tableView beginUpdates];
 			[self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
 			[self.tableView endUpdates];
-        }
+		}else{
+			self.currentPage --;
+		}
         
       //  [self.tableView ht_endRefreshWithModelArrayCount:self.schoolRankModelArray.count];
         
@@ -134,7 +137,6 @@
 {
 	HTUniversityRankCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTUniversityRankCell"];
 	cell.rankModel = self.schoolRankModelArray[indexPath.row];
-	cell.rankNum = indexPath.row + 1;
 	return cell;
 }
 
@@ -165,11 +167,6 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self chooseYearAction:self.yearArray[indexPath.row]];
 }
-
-
-
-
-
 
 
 /*

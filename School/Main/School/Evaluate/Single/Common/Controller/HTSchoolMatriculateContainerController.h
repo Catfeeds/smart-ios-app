@@ -15,6 +15,8 @@
 //要测评的学校
 @property (nonatomic, strong) HTSchoolModel *evaluationSchool;
 
+@property (nonatomic, strong) NSString *defaultSelectMajorId;
+
 //要测评学校ID
 @property (nonatomic, strong) NSString *schoolID;
 @end

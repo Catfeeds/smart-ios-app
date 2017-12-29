@@ -41,7 +41,7 @@
 	}
 	[self.view addSubview:self.scrollView];
 	[self.view addSubview:self.logoImageView];
-	NSArray *imageArray = @[@"cn2_launch_introduce_1.png", @"cn2_launch_introduce_2.png", @"cn2_launch_introduce_3.png"];
+	NSArray *imageArray = @[@"guide_1.png", @"guide_2.png", @"guide_3.png",@"guide_4.png",@"guide_5.png"];
 	
 	__weak HTFirstIntroduceController *weakSelf = self;
 	[imageArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

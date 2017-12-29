@@ -14,6 +14,7 @@
 #import <UIScrollView+HTRefresh.h>
 #import "HTSellerDetailController.h"
 #import "HTPlayerController.h"
+#import "HTUserManager.h"
 
 @interface HTLibraryAnalysisController ()
 
@@ -56,12 +57,19 @@
 		  .sectionInset(sectionEdge)
 		  .itemSize(itemSize).modelArray(model.videoAnalysis) didSelectedCellBlock:^(UICollectionView *collectionView, NSInteger item, __kindof UICollectionViewCell *cell, __kindof HTLibrarySchoolVideoModel *model) {
 //			  HTSellerDetailController *detailController = [[HTSellerDetailController alloc] init];
-//			  detailController.sellerIdString = model.ID;			  
-			  HTPlayerController *detailController = [[HTPlayerController alloc]init];
-			  detailController.courseURLString = model.url;
-			  detailController.sellerIdString = model.ID;
+//			  detailController.sellerIdString = model.ID;
 			  
-			  [weakSelf.navigationController pushViewController:detailController animated:true];
+			  [HTUserManager surePermissionHighOrEqual:HTUserPermissionExerciseAbleUser passCompareBlock:^(HTUser *user) {
+				  HTPlayerController *detailController = [[HTPlayerController alloc]init];
+				  detailController.courseURLString = model.url;
+				  detailController.sellerIdString = model.ID;
+				  [weakSelf.navigationController pushViewController:detailController animated:true];
+			  }];
+			  
+			  
+			  
+			  
+			  
 		  }];
 	}];
 

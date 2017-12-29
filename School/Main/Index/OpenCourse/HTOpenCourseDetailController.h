@@ -52,6 +52,10 @@
 //按钮底部横向相对于"课程内容"按钮水平对齐约束
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineCenterXLayoutConstraint;
 
+//底部授课老师高度
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherHeightLayoutConstraint;
+
+
 //选择 ‘课程内容’，‘授课老师’ 父view
 @property (weak, nonatomic) IBOutlet UIView *selectorView;
 

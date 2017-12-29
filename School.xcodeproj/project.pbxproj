@@ -106,6 +106,11 @@
 		56ABF0B41FECD6A500E500B7 /* HTOpenCourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ABF0B31FECD6A500E500B7 /* HTOpenCourseModel.m */; };
 		56ABF0B71FECE65400E500B7 /* HTOpenCourseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ABF0B61FECE65400E500B7 /* HTOpenCourseDetailController.m */; };
 		56ABF0BA1FECEF3400E500B7 /* HTOpenCourseDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ABF0B91FECEF3400E500B7 /* HTOpenCourseDetailModel.m */; };
+		56AC7E051FF640AC00AF57C6 /* guide_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC7E001FF640AB00AF57C6 /* guide_1.png */; };
+		56AC7E061FF640AC00AF57C6 /* guide_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC7E011FF640AC00AF57C6 /* guide_2.png */; };
+		56AC7E071FF640AC00AF57C6 /* guide_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC7E021FF640AC00AF57C6 /* guide_5.png */; };
+		56AC7E081FF640AC00AF57C6 /* guide_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC7E031FF640AC00AF57C6 /* guide_3.png */; };
+		56AC7E091FF640AC00AF57C6 /* guide_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC7E041FF640AC00AF57C6 /* guide_4.png */; };
 		56CFDE891FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFDE881FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m */; };
 		56CFDE8C1FDE5773002FAAE5 /* HTWorkExperienceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFDE8B1FDE5773002FAAE5 /* HTWorkExperienceCell.m */; };
 		56CFDE921FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFDE911FDE5CAD002FAAE5 /* HTSchoolMatriculateParameterModel.m */; };
@@ -840,6 +845,11 @@
 		56ABF0B61FECE65400E500B7 /* HTOpenCourseDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTOpenCourseDetailController.m; sourceTree = "<group>"; };
 		56ABF0B81FECEF3400E500B7 /* HTOpenCourseDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTOpenCourseDetailModel.h; sourceTree = "<group>"; };
 		56ABF0B91FECEF3400E500B7 /* HTOpenCourseDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTOpenCourseDetailModel.m; sourceTree = "<group>"; };
+		56AC7E001FF640AB00AF57C6 /* guide_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_1.png; sourceTree = "<group>"; };
+		56AC7E011FF640AC00AF57C6 /* guide_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_2.png; sourceTree = "<group>"; };
+		56AC7E021FF640AC00AF57C6 /* guide_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_5.png; sourceTree = "<group>"; };
+		56AC7E031FF640AC00AF57C6 /* guide_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_3.png; sourceTree = "<group>"; };
+		56AC7E041FF640AC00AF57C6 /* guide_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_4.png; sourceTree = "<group>"; };
 		56CFDE871FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSchoolMatriculateSelectMajorController.h; sourceTree = "<group>"; };
 		56CFDE881FDE2944002FAAE5 /* HTSchoolMatriculateSelectMajorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSchoolMatriculateSelectMajorController.m; sourceTree = "<group>"; };
 		56CFDE8A1FDE5773002FAAE5 /* HTWorkExperienceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTWorkExperienceCell.h; sourceTree = "<group>"; };
@@ -2466,6 +2476,11 @@
 		C20CDC9D1EF1166800BA6D60 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				56AC7E001FF640AB00AF57C6 /* guide_1.png */,
+				56AC7E011FF640AC00AF57C6 /* guide_2.png */,
+				56AC7E031FF640AC00AF57C6 /* guide_3.png */,
+				56AC7E041FF640AC00AF57C6 /* guide_4.png */,
+				56AC7E021FF640AC00AF57C6 /* guide_5.png */,
 				C26C66AC1F25FB8700FFC7E5 /* cn2_login_background.png */,
 				C26C66A61F25FA3000FFC7E5 /* cn2_launch_introduce_1.png */,
 				C26C66A71F25FA3000FFC7E5 /* cn2_launch_introduce_2.png */,
@@ -6067,7 +6082,9 @@
 				C26C66AD1F25FB8700FFC7E5 /* cn2_login_background.png in Resources */,
 				565EA2BA1FDFB8810042732B /* read_me.txt in Resources */,
 				56565E8B1FEB61A900441993 /* HTMentorAnswerCollectionCell.xib in Resources */,
+				56AC7E091FF640AC00AF57C6 /* guide_4.png in Resources */,
 				565EA2B81FDFB8810042732B /* WeiboSDK.bundle in Resources */,
+				56AC7E061FF640AC00AF57C6 /* guide_2.png in Resources */,
 				565EA2B61FDFB8810042732B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				C20CDE331EF11B8A00BA6D60 /* MAO@2x.png in Resources */,
 				5663C0A71FAAC6660026663E /* Home.storyboard in Resources */,
@@ -6076,6 +6093,7 @@
 				C20CDE321EF11B8A00BA6D60 /* .gitkeep in Resources */,
 				56FA64291FE7A7220013A165 /* HTHeadlineCollectionCell.xib in Resources */,
 				565EA2BD1FDFB8810042732B /* ShareSDK.bundle in Resources */,
+				56AC7E071FF640AC00AF57C6 /* guide_5.png in Resources */,
 				C20CDE6D1EF11B8A00BA6D60 /* TZImagePickerController.bundle in Resources */,
 				C26C66AA1F25FA3000FFC7E5 /* cn2_launch_introduce_2.png in Resources */,
 				5648B3561FF3315C00DB099E /* HTProfessionalDetailAlertView.xib in Resources */,
@@ -6091,6 +6109,7 @@
 				5658D5B11FF1FB2F005CD994 /* HTSignUpOpenCourseView.xib in Resources */,
 				C20CDE611EF11B8A00BA6D60 /* MTA Advanced Gamming Model Programming Guide.pdf in Resources */,
 				56FA64211FE7A2E70013A165 /* HTHeadlineHeaderView.xib in Resources */,
+				56AC7E051FF640AC00AF57C6 /* guide_1.png in Resources */,
 				C29646A91F5CED130031C109 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				C29646B31F5CED130031C109 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
 				56565E861FEB574300441993 /* HTMentorAnswerCell.xib in Resources */,
@@ -6098,6 +6117,7 @@
 				C29646AE1F5CED130031C109 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				C20CDE641EF11B8A00BA6D60 /* ReleaseNotes.txt in Resources */,
 				C29646B11F5CED130031C109 /* JSQMessagesToolbarContentView.xib in Resources */,
+				56AC7E081FF640AC00AF57C6 /* guide_3.png in Resources */,
 				C26C66AB1F25FA3000FFC7E5 /* cn2_launch_introduce_3.png in Resources */,
 				56565E931FEBE30F00441993 /* HTAnswerInputView.xib in Resources */,
 				C296468F1F5CED130031C109 /* JSQMessagesViewController.xib in Resources */,

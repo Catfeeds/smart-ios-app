@@ -55,8 +55,14 @@
 	[self.bannerBackgroundView setDidSelectedIndexPath:^(UIButton *button, NSInteger index){
 		HTDiscoverActivityModel *bannerModel = bannerModelArray[index];
 		HTDiscoverActivityDetailController *detailController = [[HTDiscoverActivityDetailController alloc] init];
-		detailController.activityIdString = bannerModel.ID;
-		[weakSelf.ht_controller.navigationController pushViewController:detailController animated:true];
+	//	detailController.activityIdString =  bannerModel.ID;
+		
+		if (StringNotEmpty(bannerModel.relationId)) {
+			detailController.activityIdString =  bannerModel.relationId;
+			[weakSelf.ht_controller.navigationController pushViewController:detailController animated:true];
+		}
+		
+		
 	}];
 	[self.bannerBackgroundView reloadData];
 }

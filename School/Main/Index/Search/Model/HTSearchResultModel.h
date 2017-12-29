@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "HTSearchItemModel.h"
 
+
+@interface HTSearchMajorModel : NSObject
+
+@property (nonatomic, strong) NSString *ID;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *answer;
+@end
+
 @interface HTSearchResultModel : NSObject
 
 @property (nonatomic, assign) HTSearchType type;

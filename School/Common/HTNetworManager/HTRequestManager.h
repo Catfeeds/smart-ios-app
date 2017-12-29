@@ -564,13 +564,17 @@
 
 
 /**
- 搜索问答, 活动, 或者知识库
+ 搜索问答,  或者知识库
 
  @param parameter 参数
  @param pageSize 每页返回个数
  @param currentPage 当前页
  */
 + (void)requestSearchAnswerOrActivityOrLibraryWithNetworkModel:(HTNetworkModel *)networkModel parameter:(NSDictionary *)parameter pageSize:(NSString *)pageSize currentPage:(NSString *)currentPage complete:(HTUserTaskCompleteBlock)complete;
+
+//搜索活动
++ (void)requestSearchActivityWithNetworkModel:(HTNetworkModel *)networkModel parameter:(NSDictionary *)parameter pageSize:(NSString *)pageSize currentPage:(NSString *)currentPage complete:(HTUserTaskCompleteBlock)complete;
+
 
 /**
  获取顾问的分类列表

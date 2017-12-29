@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, HTGossIPItemType) {
 
 @interface HTGossIPItemModel : NSObject
 
-@property (nonatomic, assign) HTGossIPItemType type;
+//@property (nonatomic, assign) HTGossIPItemType type;
 
 @property (nonatomic, strong) NSString *titleName;
 

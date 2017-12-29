@@ -55,7 +55,7 @@
 			if (errorModel.existError) {
 				return;
 			}
-			NSArray *bannerModelArray = [HTDiscoverActivityModel mj_objectArrayWithKeyValuesArray:response[@"banner"]];
+			NSArray *bannerModelArray = [HTDiscoverActivityModel mj_objectArrayWithKeyValuesArray:response[@"sy_banner"]];
 			[weakSelf.indexHeaderView setBannerModelArray:bannerModelArray];
 		}];
 		
@@ -160,7 +160,7 @@
 
 - (HTIndexHeaderView *)indexHeaderView {
 	if (!_indexHeaderView) {
-		_indexHeaderView = [[HTIndexHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 410)];
+		_indexHeaderView = [[HTIndexHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, (340.0/750.0f * self.view.bounds.size.width)+180)];
 	}
 	return _indexHeaderView;
 }

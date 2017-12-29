@@ -20,8 +20,12 @@
 			break;
 		}
 		case HTSearchTypeProfessional: {
-			NSDictionary *parameter = @{@"majors":keyWord};
-			[HTRequestManager requestSearchSchoolOrMajorListWithNetworkModel:networkModel parameter:parameter pageSize:pageSize currentPage:currentPage complete:complete];
+//			NSDictionary *parameter = @{@"majors":keyWord};
+//			[HTRequestManager requestSearchSchoolOrMajorListWithNetworkModel:networkModel parameter:parameter pageSize:pageSize currentPage:currentPage complete:complete];
+			
+			NSDictionary *parameter = @{@"majorWord":keyWord};
+			[HTRequestManager requestSearchAnswerOrActivityOrLibraryWithNetworkModel:networkModel parameter:parameter pageSize:pageSize currentPage:currentPage complete:complete];
+			
 			break;
 		}
 		case HTSearchTypeAnswer: {
@@ -30,8 +34,12 @@
 			break;
 		}
 		case HTSearchTypeActivity: {
-			NSDictionary *parameter = @{@"activityWord":keyWord};
-			[HTRequestManager requestSearchAnswerOrActivityOrLibraryWithNetworkModel:networkModel parameter:parameter pageSize:pageSize currentPage:currentPage complete:complete];
+			NSDictionary *parameter = @{@"courseWord":keyWord};
+//			[HTRequestManager requestSearchAnswerOrActivityOrLibraryWithNetworkModel:networkModel parameter:parameter pageSize:pageSize currentPage:currentPage complete:complete];
+			
+			[HTRequestManager requestSearchActivityWithNetworkModel:(HTNetworkModel *)networkModel parameter:parameter pageSize:pageSize currentPage:currentPage complete:complete];
+			
+		//	http://open.viplgw.cn//cn/api/select-open-study  
 			break;
 		}
 		case HTSearchTypeLibrary: {

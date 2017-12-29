@@ -10,6 +10,13 @@
 
 @implementation HTGossIPItemModel
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+	return @{
+			 @"titleName" : @"name",
+			 @"catIdString" : @"id"
+			 };
+}
+
 + (NSArray *)packModelArray {
 	NSString *titleNameKey = @"titleNameKey";
 	NSString *typeNameKey = @"typeNameKey";
@@ -24,7 +31,7 @@
 	NSMutableArray *modelArray = [@[] mutableCopy];
 	[keyValueArray enumerateObjectsUsingBlock:^(NSDictionary *dictionary, NSUInteger index, BOOL * _Nonnull stop) {
 		HTGossIPItemModel *model = [[HTGossIPItemModel alloc] init];
-		model.type = [dictionary[typeNameKey] integerValue];
+	//	model.type = [dictionary[typeNameKey] integerValue];
 		model.titleName = dictionary[titleNameKey];
 		model.catIdString = dictionary[catIdStringKey];
 		[modelArray addObject:model];

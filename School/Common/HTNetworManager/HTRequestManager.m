@@ -190,7 +190,7 @@ static NSString *kHTApplicationIdString = @"1271275068";
 	if(task)[task cancel]; //取消上次请求
 	
 	[HTNetworkManager requestModel:networkModel
-							method:HTNetworkRequestMethodPost
+							method:HTNetworkRequestMethodGet
 							   url:@"http://www.smartapply.cn/cn/app-api/school-rank"
 						 parameter:@{@"classId":HTPlaceholderString(classIdString, @""),
 									 @"yearId":HTPlaceholderString(yearIdString, @""),
@@ -641,6 +641,17 @@ static NSString *kHTApplicationIdString = @"1271275068";
 						 parameter:dictionary complete:complete];
 }
 
++ (void)requestSearchActivityWithNetworkModel:(HTNetworkModel *)networkModel parameter:(NSDictionary *)parameter pageSize:(NSString *)pageSize currentPage:(NSString *)currentPage complete:(HTUserTaskCompleteBlock)complete {
+	NSMutableDictionary *dictionary = [@{@"page":HTPlaceholderString(currentPage, @"1"),
+										 @"pageSize":HTPlaceholderString(pageSize, @"10")} mutableCopy];
+	[dictionary setValuesForKeysWithDictionary:parameter ? parameter : @{}];
+	
+	[HTNetworkManager requestModel:networkModel
+							method:HTNetworkRequestMethodPost
+							   url:@"http://open.viplgw.cn//cn/api/select-open-study"
+						 parameter:dictionary complete:complete];
+}
+
 + (void)requestAdvisorCateListWithNetworkModel:(HTNetworkModel *)networkModel complete:(HTUserTaskCompleteBlock)complete {
     [HTNetworkManager requestModel:networkModel
                             method:HTNetworkRequestMethodPost
@@ -813,7 +824,7 @@ static NSString *kHTApplicationIdString = @"1271275068";
 }
 
 + (void)requestDiscoverListWithNetworkModel:(HTNetworkModel *)networkModel catIdString:(NSString *)catIdString pageSize:(NSString *)pageSize currentPage:(NSString *)currentPage complete:(HTUserTaskCompleteBlock)complete {
-	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodPost url:@"http://bbs.viplgw.cn/cn/app-api/post-list" parameter:@{@"selectId":HTPlaceholderString(catIdString, @"1"), @"page":HTPlaceholderString(currentPage, @"1"), @"pageSize":HTPlaceholderString(pageSize, @"10")} complete:complete];
+	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodPost url:@"http://bbs.viplgw.cn/cn/app-api/post-list" parameter:@{@"selectId":HTPlaceholderString(catIdString, @""), @"page":HTPlaceholderString(currentPage, @"1"), @"pageSize":HTPlaceholderString(pageSize, @"10")} complete:complete];
 }
 
 

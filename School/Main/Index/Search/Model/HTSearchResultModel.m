@@ -13,6 +13,7 @@
 #import "HTDiscoverActivityModel.h"
 #import "HTLibraryModel.h"
 #import <NSString+HTString.h>
+#import "HTOpenCourseModel.h"
 
 @implementation HTSearchResultModel
 
@@ -32,13 +33,13 @@
 			break;
 		}
 		case HTSearchTypeProfessional: {
-			NSArray *responseArray = [HTProfessionalDetailModel mj_objectArrayWithKeyValuesArray:response[@"data"]];
-			[responseArray enumerateObjectsUsingBlock:^(HTProfessionalDetailModel *majorModel, NSUInteger index, BOOL * _Nonnull stop) {
+			NSArray *responseArray = [HTSearchMajorModel mj_objectArrayWithKeyValuesArray:response[@"data"]];
+			[responseArray enumerateObjectsUsingBlock:^(HTSearchMajorModel *majorModel, NSUInteger index, BOOL * _Nonnull stop) {
 				HTSearchResultModel *resultModel = [[HTSearchResultModel alloc] init];
 				resultModel.ID = majorModel.ID;
 				resultModel.titleName = majorModel.name;
-				resultModel.detailName = majorModel.title;
-				resultModel.image = majorModel.image;
+				resultModel.detailName = majorModel.answer;
+//				resultModel.image = majorModel.image;
 				[modelArray addObject:resultModel];
 			}];
 			break;
@@ -56,12 +57,12 @@
 			break;
 		}
 		case HTSearchTypeActivity: {
-			NSArray *responseArray = [HTDiscoverActivityModel mj_objectArrayWithKeyValuesArray:response[@"data"]];
-			[responseArray enumerateObjectsUsingBlock:^(HTDiscoverActivityModel *activityModel, NSUInteger index, BOOL * _Nonnull stop) {
+			NSArray *responseArray = [HTOpenCourseModel mj_objectArrayWithKeyValuesArray:response[@"data"][@"data"]];
+			[responseArray enumerateObjectsUsingBlock:^(HTOpenCourseModel *activityModel, NSUInteger index, BOOL * _Nonnull stop) {
 				HTSearchResultModel *resultModel = [[HTSearchResultModel alloc] init];
 				resultModel.ID = activityModel.ID;
 				resultModel.titleName = activityModel.name;
-				resultModel.detailName = activityModel.answer;
+				resultModel.detailName = activityModel.alternatives;
 				resultModel.image = activityModel.image;
 				[modelArray addObject:resultModel];
 			}];
@@ -87,3 +88,15 @@
 }
 
 @end
+
+
+@implementation HTSearchMajorModel
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+ return @{
+	  		@"ID" : @"id"
+		 };
+}
+
+@end
+

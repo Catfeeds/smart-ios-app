@@ -59,6 +59,7 @@
 - (void)initializeUserInterface {
 	self.navigationItem.titleView = self.searchBar;
 	[self.searchBar sizeToFit];
+	[self.navigationItem.titleView sizeToFit];
 	self.magicView.layoutStyle = VTLayoutStyleDefault;
 	self.magicView.sliderHeight = 1 / [UIScreen mainScreen].scale;
 	self.magicView.sliderColor = [UIColor ht_colorStyle:HTColorStyleTintColor];
@@ -97,6 +98,9 @@
 	[self setModelArrayBlock:^(NSString *pageIndex, NSString *pageCount, NSString *currentPage, void (^modelArrayStatus)(NSArray<NSString *> *, HTError *)) {
 		HTSearchItemModel *model = itemModelArray[pageIndex.integerValue];
 		HTSearchType type = model.type;
+		if (!StringNotEmpty(keyWord)) {
+			return ;
+		}
 		[HTSearchRequestManager searchItemType:type keyWord:keyWord pageSize:pageCount currentPage:currentPage complete:^(id response, HTError *errorModel) {
 			if (errorModel.existError) {
 				modelArrayStatus(nil, errorModel);

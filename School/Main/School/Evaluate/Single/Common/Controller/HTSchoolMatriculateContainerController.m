@@ -29,10 +29,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
+	
 	if (StringNotEmpty(self.schoolID)) {
 		[self requestSchool];
 	}else{
-		[self loadInterface:self.evaluationSchool];
+		[self loadInterface:self.evaluationSchool defaultMajor:nil];
 	}
 	
 }
@@ -42,16 +43,35 @@
 	networkModel.autoAlertString = @"获取学校详情";
 	[HTRequestManager requestSchoolDetailWithNetworkModel:networkModel schoolId:self.schoolID complete:^(id response, HTError *errorModel) {
 		if (errorModel.existError) {
-			[self loadInterface:self.evaluationSchool];
+			[self loadInterface:self.evaluationSchool defaultMajor:nil];
 		}
 		HTSchoolModel *schoolModel = [HTSchoolModel mj_objectWithKeyValues:response[@"data"]];
-		schoolModel.major = [HTSchoolProfessionalModel mj_objectArrayWithKeyValuesArray:response[@"major"]];
+		
+		//********************************临时解决 把HTSchoolProfessionalSubModel 转换成 HTSchoolProfessionalModel 用********************************
+		
+		NSMutableArray *allMajors = [NSMutableArray array];
+		__block HTSchoolProfessionalModel *defaultModel = nil;
+		NSArray <HTSchoolProfessionalModel *> *tempArray = [HTSchoolProfessionalModel mj_objectArrayWithKeyValuesArray:response[@"major"]];
+		
+		[tempArray enumerateObjectsUsingBlock:^(HTSchoolProfessionalModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+			[obj.content enumerateObjectsUsingBlock:^(HTSchoolProfessionalSubModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+				HTSchoolProfessionalModel *model = [HTSchoolProfessionalModel mj_objectWithKeyValues:[obj mj_keyValues]];
+				if (model.ID  == self.defaultSelectMajorId.integerValue) {
+					defaultModel = model;
+				}
+				[allMajors addObject:model];
+			}];
+		}];
+		schoolModel.major = allMajors;
+		
+		//********************************临时解决 把HTSchoolProfessionalSubModel 转换成 HTSchoolProfessionalModel 用********************************
+		
 		schoolModel.country = [NSString stringWithFormat:@"%@",response[@"country"]];
-		[self loadInterface:schoolModel];
+		[self loadInterface:schoolModel defaultMajor:defaultModel];
 	}];
 }
 
-- (void)loadInterface:(HTSchoolModel *)evaluationSchool{
+- (void)loadInterface:(HTSchoolModel *)evaluationSchool defaultMajor:(HTSchoolProfessionalModel *)major{
 	
 	self.parameter = [HTSchoolMatriculateParameterModel new];
 	self.childControllerArray = [NSMutableArray arrayWithArray:self.childViewControllers];
@@ -65,6 +85,7 @@
 			HTSelectSchoolController *vc = ((HTSelectSchoolController *)obj);
 			vc.parameter = self.parameter;
 			vc.selectedSchool = evaluationSchool;
+			vc.selectedMajor = major;
 			self.childControllerArray[0] = obj;
 		}
 		if ([obj isKindOfClass:[HTPersonMessageContainerController class]]) self.childControllerArray[1] = obj;

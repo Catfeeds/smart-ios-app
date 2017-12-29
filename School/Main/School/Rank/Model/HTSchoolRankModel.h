@@ -37,6 +37,7 @@
 @property (nonatomic, strong) NSString *englishName;
 @property (nonatomic, strong) NSString *image;
 @property (nonatomic, strong) NSString *answer;
+@property (nonatomic, strong) NSString *ranking;
 @property (nonatomic, strong) NSString *viewCount;
 
 @end

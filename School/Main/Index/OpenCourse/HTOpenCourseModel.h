@@ -17,5 +17,6 @@
 @property (nonatomic, strong) NSString *cnName;
 @property (nonatomic, strong) NSString *problemComplement;
 @property (nonatomic, strong) NSString *viewCount;
+@property (nonatomic, strong) NSString *alternatives;
 
 @end

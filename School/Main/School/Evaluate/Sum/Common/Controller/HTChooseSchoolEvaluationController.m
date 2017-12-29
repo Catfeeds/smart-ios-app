@@ -30,6 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	
 	self.parameterModel = [HTChooseSchoolEvaluationModel new];
 	self.childControllerArray = [NSMutableArray arrayWithArray:self.childViewControllers];
 	UIViewController *currentController = self.childViewControllers.lastObject;

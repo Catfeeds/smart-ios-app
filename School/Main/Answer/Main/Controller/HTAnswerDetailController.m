@@ -152,7 +152,10 @@
 - (HTAnswerInputView *) inputView{
 	if (!_inputView) {
 		_inputView = [[NSBundle mainBundle] loadNibNamed:@"HTAnswerInputView" owner:nil options:nil].firstObject;
-       
+		__weak typeof(self) weakSelf = self;
+		_inputView.sendTextBlock = ^(NSString *text) {
+			[weakSelf sendNewAnswer:text];
+		};
         
 	}
 	return _inputView;

@@ -83,7 +83,7 @@
 - (void)updateModel {
     __weak typeof(self) weakSelf = self;
 	HTUser *user = [HTUserManager currentUser];
-	[self.headImageView sd_setImageWithURL:[NSURL URLWithString:SmartApplyResourse(user.image)] placeholderImage:HTPLACEHOLDERIMAGE];
+	[self.headImageView sd_setImageWithURL:[NSURL URLWithString:SmartApplyResourse(user.image)] placeholderImage:[UIImage imageNamed:@"defaultHeader"]];
 	self.nickNameLabel.text = user.uid.integerValue > 0 ? (user.nickname.length ? user.nickname : user.userName) : @"未登录";
 	[self.fansCountButton setTitle:[NSString stringWithFormat:@"粉丝: %ld", user.fans.integerValue] forState:UIControlStateNormal];
 	[self.fansCountButton ht_makeEdgeWithDirection:HTButtonEdgeDirectionHorizontal imageViewToTitleLabelSpeceOffset:10];

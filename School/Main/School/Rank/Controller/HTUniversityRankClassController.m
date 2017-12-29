@@ -22,6 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	if (@available(iOS 11.0, *)) {
+		self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+	}else {
+		self.automaticallyAdjustsScrollViewInsets = NO;
+	}
+	
 	[self loadData];
 }
 
@@ -30,10 +37,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+	self.tableView.contentOffset = CGPointZero;
+}
+
 - (void)viewDidLayoutSubviews{
-    self.tableView.contentOffset = CGPointZero;
-    [self.tableView setNeedsDisplay];
-    [self.tableView layoutIfNeeded];
+	
+//    [self.tableView setNeedsDisplay];
+//    [self.tableView layoutIfNeeded];
 }
 
 - (void)loadData{

@@ -52,12 +52,29 @@
 	
 	NSDictionary *dic = [model mj_keyValues];
 	
+	//********************************临时解决 把HTSchoolProfessionalSubModel 转换成 HTSchoolProfessionalModel 用********************************
+	HTSchoolModel *newSchoolModel = [HTSchoolModel mj_objectWithKeyValues:dic];
+	NSMutableArray *allMajors = [NSMutableArray array];
+	
+	NSArray <HTSchoolProfessionalModel *> *tempArray = [HTSchoolProfessionalModel mj_objectArrayWithKeyValuesArray:dic[@"major"]];
+	
+	[tempArray enumerateObjectsUsingBlock:^(HTSchoolProfessionalModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		[obj.content enumerateObjectsUsingBlock:^(HTSchoolProfessionalSubModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+			HTSchoolProfessionalModel *model = [HTSchoolProfessionalModel mj_objectWithKeyValues:[obj mj_keyValues]];
+			[allMajors addObject:model];
+		}];
+	}];
+	newSchoolModel.major = allMajors;
+	
+	//********************************临时解决 把HTSchoolProfessionalSubModel 转换成 HTSchoolProfessionalModel 用********************************
+	
+	
 	__weak typeof(self) weakSelf = self;
 	[self.matriculateButton ht_whenTap:^(UIView *view) {
 //		HTSchoolMatriculateSingleController *singleController = [[HTSchoolMatriculateSingleController alloc] init];
 		HTSchoolMatriculateContainerController *singleController =STORYBOARD_VIEWCONTROLLER(@"Home", @"HTSchoolMatriculateContainerController");
 		
-		singleController.evaluationSchool = [HTSchoolModel mj_objectWithKeyValues:dic];
+		singleController.evaluationSchool = newSchoolModel;
 		[weakSelf.ht_controller.navigationController pushViewController:singleController animated:true];
 	}];
 }
@@ -95,5 +112,7 @@
 	}
 	return _matriculateButton;
 }
+
+
 
 @end
