@@ -659,6 +659,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0208389A1FF778ED00F1057C /* School.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = School.entitlements; sourceTree = "<group>"; };
 		020D04291FDED50900021CA4 /* HTProfessionDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTProfessionDetailController.h; sourceTree = "<group>"; };
 		020D042A1FDED50900021CA4 /* HTProfessionDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTProfessionDetailController.m; sourceTree = "<group>"; };
 		020D042C1FDED58900021CA4 /* HTProfessionDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTProfessionDetailCell.h; sourceTree = "<group>"; };
@@ -2375,6 +2376,7 @@
 		C20CDC7E1EF111A300BA6D60 /* School */ = {
 			isa = PBXGroup;
 			children = (
+				0208389A1FF778ED00F1057C /* School.entitlements */,
 				C20CDC9B1EF1166800BA6D60 /* Main */,
 				C20CDC991EF1166800BA6D60 /* Common */,
 				C20CDC9A1EF1166800BA6D60 /* Extension */,
@@ -6041,6 +6043,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = G6D8UC5DTE;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					C23EB4E51F443D84004F9639 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -6898,9 +6905,10 @@
 			baseConfigurationReference = A3FA8F91C90097514747711E /* Pods-School.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = aappIcon;
+				CODE_SIGN_ENTITLEMENTS = School/School.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = G6D8UC5DTE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6939,9 +6947,10 @@
 			baseConfigurationReference = 15FE5753DA6136E998080547 /* Pods-School.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = aappIcon;
+				CODE_SIGN_ENTITLEMENTS = School/School.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = G6D8UC5DTE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
