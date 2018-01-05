@@ -27,7 +27,7 @@
 
 - (void)reloadDataModels:(NSArray *)models selecetdModelId:(NSString *)selectedModelId{
 	
-    CGFloat maxHeight = CGRectGetHeight(self.view.frame) / 4.0 * 3.0; //页面三分二高度
+    CGFloat maxHeight = CGRectGetHeight(self.view.frame) / 4.0 * 3.0; //页面四分之三高度
     if ((models.count * 44) > maxHeight) {
         self.tableViewHeightLayoutConstraint.constant = maxHeight;
     }else{

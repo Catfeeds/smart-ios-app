@@ -126,7 +126,7 @@
 				modelArrayStatus(nil, errorModel);
 				return;
 			}
-			NSArray *modelArray = [THToeflDiscoverModel mj_objectArrayWithKeyValuesArray:response[@"data"][@"data"]];
+			NSArray *modelArray = [THToeflDiscoverModel mj_objectArrayWithKeyValuesArray:response[@"data"]];
 			modelArrayStatus(modelArray, nil);
 		}];
 	}];
