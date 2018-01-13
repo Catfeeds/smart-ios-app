@@ -143,6 +143,7 @@
 		[_communityHeaderView.communityRingView ht_whenTap:^(UIView *view) {
 			HTCommunityMessageController *messageController = [[HTCommunityMessageController alloc] init];
 			[self.navigationController pushViewController:messageController animated:true];
+			[self.tableView ht_startRefreshHeader];
 		}];
 	}
 	return _communityHeaderView;

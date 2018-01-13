@@ -40,4 +40,6 @@
 
 @property (nonatomic, copy) NSString *relationId;
 
+@property (nonatomic, assign) NSInteger judge; //2-是商品   1-是文章
+
 @end

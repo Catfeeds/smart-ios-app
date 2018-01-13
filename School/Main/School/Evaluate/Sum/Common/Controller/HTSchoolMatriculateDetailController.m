@@ -46,7 +46,6 @@
 	self.submitMatriculateButton.center = contentView.center;
 	self.tableView.tableFooterView = contentView;
 	[self.view addSubview:self.tableView];
-	
 	[self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
 		make.edges.mas_equalTo(UIEdgeInsetsZero);
 	}];

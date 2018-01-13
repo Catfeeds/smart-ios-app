@@ -27,6 +27,7 @@
 #import "HTFindAgencyViewController.h"
 #import "HTUniversityRankClassController.h"
 #import "HTStudyAbroadController.h"
+#import "HTSellerDetailController.h"
 
 @interface HTIndexHeaderView ()
 
@@ -54,15 +55,20 @@
 	}];
 	[self.bannerBackgroundView setDidSelectedIndexPath:^(UIButton *button, NSInteger index){
 		HTDiscoverActivityModel *bannerModel = bannerModelArray[index];
-		HTDiscoverActivityDetailController *detailController = [[HTDiscoverActivityDetailController alloc] init];
-	//	detailController.activityIdString =  bannerModel.ID;
 		
 		if (StringNotEmpty(bannerModel.relationId)) {
-			detailController.activityIdString =  bannerModel.relationId;
-			[weakSelf.ht_controller.navigationController pushViewController:detailController animated:true];
+			if (bannerModel.judge == 1) {
+				HTDiscoverActivityDetailController *detailController = [[HTDiscoverActivityDetailController alloc] init];
+				
+				detailController.activityIdString =  bannerModel.relationId;
+				[weakSelf.ht_controller.navigationController pushViewController:detailController animated:true];
+				
+			}else if (bannerModel.judge == 2){
+				HTSellerDetailController *detailController = [[HTSellerDetailController alloc] init];
+				detailController.sellerIdString = bannerModel.relationId;
+				[weakSelf.ht_controller.navigationController pushViewController:detailController animated:true];
+			}
 		}
-		
-		
 	}];
 	[self.bannerBackgroundView reloadData];
 }

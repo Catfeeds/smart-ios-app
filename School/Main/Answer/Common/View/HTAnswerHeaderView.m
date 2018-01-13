@@ -96,9 +96,9 @@
 		NSAttributedString *appendAttributedString;
 		NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
 		UIImage *searchImage = [UIImage imageNamed:@"cn2_index_search_zoom"];
-		searchImage = [searchImage ht_resetSizeZoomNumber:0.5];
+	//	searchImage = [searchImage ht_resetSizeZoomNumber:0.5];
 		searchImage = [searchImage ht_insertColor:[UIColor clearColor] edge:UIEdgeInsetsMake(0, 15, 0, 5)];
-		searchImage = [searchImage ht_tintColor:[UIColor whiteColor]];
+	//	searchImage = [searchImage ht_tintColor:[UIColor whiteColor]];
 		textAttachment.image = searchImage;
 		textAttachment.bounds = CGRectMake(0, - 1.5, searchImage.size.width, searchImage.size.height);
 		

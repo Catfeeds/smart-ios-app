@@ -138,7 +138,6 @@
 					}];
 			}];
 	}];
-	
 }
 
 - (void)transitionController:(UIViewController *)currentController toControllerIndex:(NSInteger)index{

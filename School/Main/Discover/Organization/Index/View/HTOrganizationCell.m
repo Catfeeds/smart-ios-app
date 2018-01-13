@@ -136,7 +136,7 @@
 - (UIImageView *)headImageView {
 	if (!_headImageView) {
 		_headImageView = [[UIImageView alloc] init];
-		_headImageView.contentMode = UIViewContentModeScaleAspectFill;
+		_headImageView.contentMode = UIViewContentModeScaleAspectFit;
 		_headImageView.clipsToBounds = true;
 	}
 	return _headImageView;
