@@ -65,7 +65,7 @@ typedef NS_ENUM(NSUInteger, HTAttributeType) {
 		title = [NSString stringWithFormat:@" 大学 : %@",str];
 	}else{
 		imageAtta.bounds = CGRectMake(0, -3, 26, 18);
-		imageAtta.image = [UIImage imageNamed:@"mz-"];
+		imageAtta.image = [UIImage imageNamed:@"mz"];
 		title = [NSString stringWithFormat:@" 专业 : %@",str];
 	}
 	

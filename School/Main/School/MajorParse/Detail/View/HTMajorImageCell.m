@@ -28,8 +28,11 @@
 }
 
 - (void)didMoveToSuperview {
-	self.backgroundColor = [UIColor clearColor];
-	[self createBackgroundGradientLayer];
+//	self.backgroundColor = [UIColor clearColor];
+	UIImageView *bgimage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"major_detail_bg"]];
+	bgimage.frame = self.bounds;
+//	[self createBackgroundGradientLayer];
+	self.backgroundView = bgimage;
 	[self addSubview:self.titleNameLabel];
 	[self addSubview:self.goodMajorButton];
 	[self addSubview:self.contactMajorButton];

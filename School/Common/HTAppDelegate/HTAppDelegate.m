@@ -49,25 +49,24 @@
 	} onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
 		switch (platformType) {
 			case SSDKPlatformTypeSinaWeibo:
-				[appInfo SSDKSetupSinaWeiboByAppKey:@"870601458"
-										  appSecret:@"b7006e1cd051475faa47dcc7b4797c45"
+				[appInfo SSDKSetupSinaWeiboByAppKey:@"4138830988"
+										  appSecret:@"a67d73d1ef869202642d8188463cb207"
 										redirectUri:@"http://sns.whalecloud.com/sina2/callback"
 										   authType:SSDKAuthTypeBoth];
 				break;
 			case SSDKPlatformTypeWechat:
 				[appInfo SSDKSetupWeChatByAppId:@"wxf128dd6bedb8cf36"
-									  appSecret:@"d4624c36b6795d1d99dcf0547af5443d"];
+									  appSecret:@"56e9f87d2ebf7b3696eaa2513ce21519"];
 				break;
 			case SSDKPlatformTypeQQ:
-				[appInfo SSDKSetupQQByAppId:@"101228026"
-									 appKey:@"31b2c819816b03598809bf9ef2f2172d"
+				[appInfo SSDKSetupQQByAppId:@"1106638752"
+									 appKey:@"rfDg0bT6H3G2B07U"
 								   authType:SSDKAuthTypeBoth];
 				break;
 			default:
 				break;
 		}
 	}];
-	
 	
     //-----------------------------------------/ 崩溃捕获 /-----------------------------------------//
     

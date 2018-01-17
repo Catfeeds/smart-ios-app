@@ -145,7 +145,6 @@ static NSString *kHTApplicationIdString = @"1271275068";
 + (void)requestSchoolFilterParameterWithNetworkModel:(HTNetworkModel *)networkModel complete:(HTUserTaskCompleteBlock)complete {
 //	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://schools.smartapply.cn/cn/app-api/university-class" parameter:nil complete:complete];
 	[HTNetworkManager requestModel:networkModel method:HTNetworkRequestMethodGet url:@"http://schools.smartapply.cn/cn/app-api/university-class" parameter:nil complete:complete];
-	
 }
 
 + (void)requestSchoolMatriculateCountryListAndMajorListWithNetworkModel:(HTNetworkModel *)networkModel complete:(HTUserTaskCompleteBlock)complete {
