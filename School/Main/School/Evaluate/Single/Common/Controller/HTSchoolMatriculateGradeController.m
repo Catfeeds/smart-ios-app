@@ -51,7 +51,7 @@
     if ((toefl_ielts >= 60 && toefl_ielts <= 120) || (toefl_ielts >= 5.0 && toefl_ielts <= 9.0)) {
         self.parameter.toefl = @(toefl_ielts).stringValue;
     }else{
-        errorString = @"toefl 成绩在 60 至 120 之间, ielts 成绩在 5.0 至 9.0 之间";
+        errorString = @"TOEFL 成绩在 60 至 120 之间, IELTS 成绩在 5.0 至 9.0 之间";
     }
 
     if (errorString.length > 0) {

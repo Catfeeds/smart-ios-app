@@ -118,7 +118,7 @@
                   moduleName = "School"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hublot/Desktop/School/School/School/Main/School/Evaluate/Sum/Common/Controller/HTChooseSchoolEvaluationController.m"
-                  timestampString = "537857365.2301379"
+                  timestampString = "537932388.430071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"
@@ -133,7 +133,7 @@
                   moduleName = "School"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hublot/Desktop/School/School/School/Main/School/Evaluate/Sum/Common/Controller/HTChooseSchoolEvaluationController.m"
-                  timestampString = "537857365.232162"
+                  timestampString = "537932388.4319611"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
@@ -141,6 +141,22 @@
                   offsetFromSymbolStart = "104">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "School/Main/Discover/Common/Controller/HTDiscoverController.m"
+            timestampString = "537932418.280409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-initializeDataSource"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

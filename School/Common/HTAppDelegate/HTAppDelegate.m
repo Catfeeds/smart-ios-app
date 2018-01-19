@@ -51,7 +51,7 @@
 			case SSDKPlatformTypeSinaWeibo:
 				[appInfo SSDKSetupSinaWeiboByAppKey:@"4138830988"
 										  appSecret:@"a67d73d1ef869202642d8188463cb207"
-										redirectUri:@"http://sns.whalecloud.com/sina2/callback"
+										redirectUri:@"http://www.smartapply.cn/"
 										   authType:SSDKAuthTypeBoth];
 				break;
 			case SSDKPlatformTypeWechat:

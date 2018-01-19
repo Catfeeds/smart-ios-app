@@ -144,7 +144,7 @@ static HTShareView *shareView;
 												  title:self.title
 												   type:self.type];
 				[ShareSDK share:[shareTypeNumber[idx] integerValue] parameters:shareParams onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
-					NSLog(@"分享失败%@",error);
+				
 				}];
 				[self removeFromSuperview];
 			}];

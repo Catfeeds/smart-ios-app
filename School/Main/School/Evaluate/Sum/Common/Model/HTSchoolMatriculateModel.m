@@ -122,7 +122,7 @@
 					} else if (!model.optionValue) {
 						sectionModel.isSelected = false;
 						NSIndexPath *errorIndexPath = [NSIndexPath indexPathForRow:row inSection:section];
-						completeBlock(@{}, @"toefl 成绩在 60 至 120 之间, ielts 成绩在 5.0 至 9.0 之间", errorIndexPath);
+						completeBlock(@{}, @"TOEFL 成绩在 60 至 120 之间, IELTS 成绩在 5.0 至 9.0 之间", errorIndexPath);
 						return;
 					}
 					break;
@@ -362,7 +362,7 @@
 						[parameter setValue:model.currentInputText forKey:@"toefl"];
 					} else if (!model.optionValue) {
 						NSIndexPath *errorIndexPath = [NSIndexPath indexPathForRow:row inSection:section];
-						completeBlock(@{}, @"请填写你的 Toefl 成绩", errorIndexPath);
+						completeBlock(@{}, @"请填写你的 TOEFL 成绩", errorIndexPath);
 						return;
 					}
 					break;
@@ -372,7 +372,7 @@
 						[parameter setValue:model.currentInputText forKey:@"ielts"];
 					} else if (!model.optionValue) {
 						NSIndexPath *errorIndexPath = [NSIndexPath indexPathForRow:row inSection:section];
-						completeBlock(@{}, @"请填写你的 Ielts 成绩", errorIndexPath);
+						completeBlock(@{}, @"请填写你的 IELTS 成绩", errorIndexPath);
 						return;
 					}
 					break;
@@ -746,8 +746,8 @@
 								 @{
 									 singleTypeKey:@(HTSchoolMatriculateBackgroundTypeToefl),
 									 inputTypeKey:@(HTSchoolMatriculateInputTypeTextFieldHorizontal),
-									 titleNameKey:@"Toefl",
-									 placeHolderKey:@"Toefl 成绩",
+									 titleNameKey:@"TOEFL",
+									 placeHolderKey:@"TOEFL 成绩",
 									 currentInputKey:@"",
 									 optionValueKey:@(true),
 									 allowMutableSelectedKey:@(false),
@@ -756,8 +756,8 @@
 								 @{
 									 singleTypeKey:@(HTSchoolMatriculateBackgroundTypeIelts),
 									 inputTypeKey:@(HTSchoolMatriculateInputTypeTextFieldHorizontal),
-									 titleNameKey:@"Ielts",
-									 placeHolderKey:@"Ielts 成绩",
+									 titleNameKey:@"IELTS",
+									 placeHolderKey:@"IELTS 成绩",
 									 currentInputKey:@"",
 									 optionValueKey:@(true),
 									 allowMutableSelectedKey:@(false),

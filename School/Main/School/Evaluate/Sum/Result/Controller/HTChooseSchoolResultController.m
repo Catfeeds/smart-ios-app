@@ -153,7 +153,7 @@
 #pragma mark - HTAllSchoolCellDelegate
 - (void)shareAction{
 	UIImage *shotScreentImage = [UIImage ht_shotScreen];
-	[HTShareView showTitle:@"选校测评" detail:@"我在雷哥留学的选校测评结果" image:shotScreentImage url:@"http://www.gmatonline.cn" type:SSDKContentTypeImage];
+	[HTShareView showTitle:@"选校测评" detail:@"我在雷哥选校的选校测评结果" image:shotScreentImage url:@"http://www.smartapply.cn/" type:SSDKContentTypeImage];
 }
 
 - (void)resetAction{
