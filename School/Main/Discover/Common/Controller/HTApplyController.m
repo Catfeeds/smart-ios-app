@@ -12,7 +12,7 @@
 #import "HTLibraryApplyController.h"
 #import "HTUniversityRankClassModel.h"
 
-@interface HTApplyController ()
+@interface HTApplyController () <HTLibraryApplyControllerDelegate>
 
 @property (nonatomic, strong) HTLibraryModel *libraryModel;
 
@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self initializeDataSource];
-	[self initializeUserInterface];
+	[self initializeUserInterface:NO];
 }
 
 
@@ -32,7 +32,8 @@
 	
 }
 
-- (void)initializeUserInterface {
+//isRefreshWithService 是否从服务器刷新
+- (void)initializeUserInterface:(BOOL)isRefreshWithService {
 	
 	self.magicView.navigationHeight = 44;
 	self.magicView.layoutStyle = VTLayoutStyleDefault;
@@ -51,7 +52,7 @@
 	}];
 	self.pageModelArray = pageModelArray;
 	[self setModelArrayBlock:^(NSString *pageIndex, NSString *pageCount, NSString *currentPage, void(^modelArrayStatus)(NSArray *modelArray, HTError *errorModel)) {
-		if (weakSelf.libraryModel) {
+		if (weakSelf.libraryModel && !isRefreshWithService) {
 			modelArrayStatus(@[weakSelf.libraryModel], nil);
 		} else {
 			HTNetworkModel *networkModel = [HTNetworkModel modelForOnlyCacheNoInterfaceForScrollViewWithCacheStyle:HTCacheStyleAllUser];
@@ -100,9 +101,17 @@
 	UIViewController *controller = [super magicView:magicView viewControllerAtPage:pageIndex];
 	if ([controller isKindOfClass:[HTLibraryApplyController class]]) {
 		HTLibraryApplyController *applyController = (HTLibraryApplyController *)controller;
+		applyController.delegate = self;
 		applyController.reuseControllerIndex = pageIndex;
 	}
 	return controller;
+}
+
+
+#pragma mark - HTLibraryApplyControllerDelegate
+
+- (void)refresh{
+	[self initializeUserInterface:YES];
 }
 
 @end

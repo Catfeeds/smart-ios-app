@@ -13,6 +13,8 @@
 #import "HTLibraryModel.h"
 #import "HTDiscoverItemModel.h"
 #import "HTUniversityRankController.h"
+#import <MJRefresh.h>
+
 
 @interface HTLibraryApplyController ()
 
@@ -26,6 +28,7 @@
 	[super viewDidLoad];
 	[self initializeDataSource];
 	[self initializeUserInterface];
+	
 }
 
 - (void)setPageModel:(HTPageModel *)pageModel {
@@ -58,6 +61,7 @@
 			}];
 		}];
 	}];
+	[self initializeUserInterface];
 }
 
 - (void)initializeDataSource {
@@ -65,6 +69,16 @@
 }
 
 - (void)initializeUserInterface {
+	
+	MJRefreshNormalHeader *headerHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+		if (self.delegate) {
+			[self.delegate refresh];
+		}
+	}];
+	headerHeader.stateLabel.hidden = YES;
+	[headerHeader setTitle:@"" forState:MJRefreshStateIdle];
+	headerHeader.lastUpdatedTimeLabel.hidden = YES;
+	self.tableView.mj_header = headerHeader;
 	self.tableView.backgroundColor = [UIColor ht_colorString:@"fafafa"];
 }
 

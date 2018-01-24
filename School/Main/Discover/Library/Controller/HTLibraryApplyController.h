@@ -8,8 +8,16 @@
 
 #import "HTReuseController.h"
 
+@protocol HTLibraryApplyControllerDelegate
+
+- (void)refresh;
+
+@end
+
 @interface HTLibraryApplyController : HTReuseController
 
+@property (nonatomic, assign) id<HTLibraryApplyControllerDelegate>delegate;
 @property (nonatomic, assign) NSInteger reuseControllerIndex;
+
 
 @end
