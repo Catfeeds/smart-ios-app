@@ -12,6 +12,7 @@
 #import "HTLibraryApplyContentController.h"
 #import "HTLibraryModel.h"
 #import "HTDiscoverItemModel.h"
+#import "HTUniversityRankController.h"
 
 @interface HTLibraryApplyController ()
 
@@ -39,12 +40,21 @@
 			[[sectionMaker.cellClass([HTLibraryCell class]).rowHeight(50).modelArray(modelArray).headerClass([HTLibraryHeaderView class]).headerHeight(45) customHeaderBlock:^(UITableView *tableView, NSInteger section, __kindof HTLibraryHeaderView *reuseView, __kindof NSArray *modelArray) {
 				[reuseView.titleNameButton setTitle:headerTitle forState:UIControlStateNormal];
 			}] didSelectedCellBlock:^(UITableView *tableView, NSInteger row, __kindof UITableViewCell *cell, __kindof HTLibraryApplyContentModel *model) {
-				NSString *libraryCatIdString = headerModel.ID;
-				NSString *libraryIdString = model.ID;
-				HTLibraryApplyContentController *contentController = [[HTLibraryApplyContentController alloc] init];
-				contentController.libraryCatIdString = libraryCatIdString;
-				contentController.libraryIdString = libraryIdString;
-				[weakSelf.navigationController pushViewController:contentController animated:true];
+				if (model.type == 1) {
+					HTUniversityRankController *controller = STORYBOARD_VIEWCONTROLLER(@"Home", @"HTUniversityRankController");
+					HTUniversityRankClassModel *classModel = [[HTUniversityRankClassModel alloc]init];
+					classModel.ID = model.ID;
+					classModel.name = model.name;
+					controller.selectedRankClassModel = classModel;
+					[weakSelf.navigationController pushViewController:controller animated:YES];
+				}else{
+					NSString *libraryCatIdString = headerModel.ID;
+					NSString *libraryIdString = model.ID;
+					HTLibraryApplyContentController *contentController = [[HTLibraryApplyContentController alloc] init];
+					contentController.libraryCatIdString = libraryCatIdString;
+					contentController.libraryIdString = libraryIdString;
+					[weakSelf.navigationController pushViewController:contentController animated:true];
+				}
 			}];
 		}];
 	}];

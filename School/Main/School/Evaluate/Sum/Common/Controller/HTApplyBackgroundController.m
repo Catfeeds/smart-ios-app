@@ -92,7 +92,7 @@
 #pragma mark - HTChooseMajorViewControllerDelegate
 
 - (void)chooseMajor:(HTSchoolMatriculateSelectedModel *)majorModel detailMajor:(HTSchoolMatriculateSelectedModel *)detailMajor {
-	self.parameter.major = detailMajor.ID;
+	self.parameter.major = majorModel.ID;
 	self.parameter.major_name2 = detailMajor.name;
 	self.majorId = majorModel.ID;
 	self.detailMajorId = detailMajor.ID;

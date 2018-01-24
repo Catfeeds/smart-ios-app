@@ -113,6 +113,8 @@
 
 @property (nonatomic, copy) NSString *answer;
 
+@property (nonatomic, assign) NSInteger type; //默认0,按之前申请指南逻辑,  1:新版大学排名,push 到大学排名
+
 @end
 
 @interface HTLibrarySchoolVideoModel : NSObject

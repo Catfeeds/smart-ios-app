@@ -111,9 +111,9 @@
 #pragma mark - HTChooseMajorViewControllerDelegate
 
 - (void)chooseMajor:(HTSchoolMatriculateSelectedModel *)majorModel detailMajor:(HTSchoolMatriculateSelectedModel *)detailMajor {
-	self.parameter.major_top  	= majorModel.ID;
+	self.parameter.major_top  	= detailMajor.ID;
 	self.parameter.major_name1  = detailMajor.name;
-	self.parameter.school_major = detailMajor.ID;
+	self.parameter.school_major = majorModel.ID;
     self.majorId = majorModel.ID;
     self.detailMajorId = detailMajor.ID;
 	self.professionField.text = [NSString stringWithFormat:@"%@-%@",majorModel.name,detailMajor.name];

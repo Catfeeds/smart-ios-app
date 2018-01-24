@@ -1115,7 +1115,7 @@
                                                         <constraint firstAttribute="height" constant="67" id="eAm-YW-Psx"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="90" backgroundImage="yuan">
+                                                    <state key="normal" title="0" backgroundImage="yuan">
                                                         <color key="titleColor" red="0.51398670673370361" green="0.72322684526443481" blue="0.18012213706970215" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
@@ -2796,7 +2796,7 @@
         <!--University Rank Controller-->
         <scene sceneID="2zZ-p3-bd9">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gAK-Xk-KSH" customClass="HTUniversityRankController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HTUniversityRankController" automaticallyAdjustsScrollViewInsets="NO" id="gAK-Xk-KSH" customClass="HTUniversityRankController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tcm-Vn-nmL"/>
                         <viewControllerLayoutGuide type="bottom" id="bt2-bk-9TF"/>
