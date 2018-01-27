@@ -92,8 +92,9 @@ static NSString *kHTDownloadURLPrefixString = @"http://bbs.viplgw.cn";
 	[self.detailReceiveButton setTitle:[NSString stringWithFormat:@"%ld", model.Reply.count] forState:UIControlStateNormal];
 	[self.sendTimeButton setTitle:[NSString stringWithFormat:@"发布于 %@", model.dateTime] forState:UIControlStateNormal];
 	
-	NSMutableAttributedString *attributedString = [[model.content ht_handleFillPlaceHolderImageWithMaxWidth:HTSCREENWIDTH - 30 placeholderImage:HTPLACEHOLDERIMAGE] mutableCopy];
+//	NSMutableAttributedString *attributedString = [[model.content ht_handleFillPlaceHolderImageWithMaxWidth:HTSCREENWIDTH - 30 placeholderImage:HTPLACEHOLDERIMAGE] mutableCopy];
 	
+	NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithAttributedString:[model.content htmlToAttributeStringContent:@"http://bbs.viplgw.cn" width:HTSCREENWIDTH - 30]];
 	
 	
 	

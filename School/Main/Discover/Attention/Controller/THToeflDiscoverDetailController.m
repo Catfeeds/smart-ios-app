@@ -78,7 +78,10 @@
 	image = [image ht_tintColor:[UIColor whiteColor]];
 	image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 	UIBarButtonItem *shareBarButtonItem = [[UIBarButtonItem alloc] bk_initWithImage:image style:UIBarButtonItemStylePlain handler:^(id sender) {
-        [HTShareView showTitle:weakSelf.model.title detail:weakSelf.model.content image:HTPLACEHOLDERIMAGE url:@"http://bbs.viplgw.cn" type:SSDKContentTypeWebPage];
+		
+		NSString *url = [NSString stringWithFormat:@"http://bbs.viplgw.cn/post/details/%@.html",weakSelf.discoverId];
+		
+        [HTShareView showTitle:weakSelf.model.title detail:weakSelf.model.title image:HTPLACEHOLDERIMAGE url:url type:SSDKContentTypeWebPage];
 	}];
 	shareBarButtonItem.tintColor = [UIColor whiteColor];
 	self.navigationItem.rightBarButtonItems = @[shareBarButtonItem];

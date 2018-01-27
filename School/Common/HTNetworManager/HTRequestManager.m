@@ -401,21 +401,6 @@ static NSString *kHTApplicationIdString = @"1271275068";
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 + (void)requestResetPasswordWithNetworkModel:(HTNetworkModel *)networkModel phoneOrEmailString:(NSString *)phoneOrEmailString resetPassword:(NSString *)resetPassword messageCode:(NSString *)messageCode complete:(HTUserTaskCompleteBlock)complete {
 	NSString *forgetType = @"1";
 	if ([HTValidateManager ht_validateMobile:phoneOrEmailString]) {
