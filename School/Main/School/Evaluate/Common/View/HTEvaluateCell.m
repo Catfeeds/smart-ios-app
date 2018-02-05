@@ -52,7 +52,7 @@
 	NSDictionary *normalDictionary = @{NSFontAttributeName:[UIFont systemFontOfSize:13],
 										 NSForegroundColorAttributeName:[UIColor whiteColor]};
 	NSDictionary *selectedDictionary = @{NSFontAttributeName:[UIFont systemFontOfSize:20 weight:0.3],
-										 NSForegroundColorAttributeName:[UIColor ht_colorStyle:HTColorStyleTintColor]};
+										 NSForegroundColorAttributeName:[UIColor whiteColor]};
 	NSMutableAttributedString *attributedString = [[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", model.titleName] attributes:selectedDictionary] mutableCopy];
 	NSAttributedString *appendAttributedString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n\n%@", model.detailName] attributes:normalDictionary];
 	[attributedString appendAttributedString:appendAttributedString];

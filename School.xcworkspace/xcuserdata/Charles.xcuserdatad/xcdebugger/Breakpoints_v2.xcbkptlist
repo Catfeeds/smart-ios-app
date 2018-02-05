@@ -79,5 +79,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "School/Main/Discover/Attention/Controller/THToeflDiscoverDetailController.m"
+            timestampString = "539053659.805905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "-bottomSpeakView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "School/Main/School/Evaluate/Single/Common/Controller/HTSchoolMatriculateContainerController.m"
+            timestampString = "539153427.599457"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-submit"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HTSchoolMatriculateContainerController submit]"
+                  moduleName = "School"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hublot/Desktop/School/School/School/Main/School/Evaluate/Single/Common/Controller/HTSchoolMatriculateContainerController.m"
+                  timestampString = "539318438.208793"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[HTSchoolMatriculateContainerController submit]_block_invoke"
+                  moduleName = "School"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hublot/Desktop/School/School/School/Main/School/Evaluate/Single/Common/Controller/HTSchoolMatriculateContainerController.m"
+                  timestampString = "539318438.2109931"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "School/Main/School/Evaluate/Single/Common/Controller/HTSchoolMatriculateContainerController.m"
+            timestampString = "539153428.4761699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "-submit"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[HTSchoolMatriculateContainerController submit]_block_invoke"
+                  moduleName = "School"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hublot/Desktop/School/School/School/Main/School/Evaluate/Single/Common/Controller/HTSchoolMatriculateContainerController.m"
+                  timestampString = "539318438.215801"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "248">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[HTSchoolMatriculateContainerController submit]_block_invoke_2"
+                  moduleName = "School"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hublot/Desktop/School/School/School/Main/School/Evaluate/Single/Common/Controller/HTSchoolMatriculateContainerController.m"
+                  timestampString = "539318438.21787"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
